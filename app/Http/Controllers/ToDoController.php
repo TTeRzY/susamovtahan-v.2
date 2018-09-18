@@ -19,12 +19,25 @@ class ToDoController extends Controller
 
     public function store(Request $request)
     {
-        if($request->input('task'))
-        {
-            $task = new Task;
-            $task->product_info = $request->input('task');
-            Auth::user()->tasks()->save($task);
+        $task = new Task;
+
+        if ($request->hasFile('product_image')) {
+            if($request->file('product_image')->isValid()) {
+                try {
+                    $file = $request->file('product_image');
+                    $name = rand(11111, 99999) . '.' . $file->getClientOriginalExtension();
+                    $task->product_image = $name;
+                    $request->file('product_image')->move("uploads", $name);
+                } catch (Illuminate\Filesystem\FileNotFoundException $e) {
+
+                }
+            }
         }
+
+
+        $task->product_title = $request->input('product_title');
+        $task->product_info = $request->input('product_info');
+        Auth::user()->tasks()->save($task);
 
         return redirect()->back();
 

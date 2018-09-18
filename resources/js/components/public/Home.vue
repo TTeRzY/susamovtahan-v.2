@@ -63,7 +63,7 @@
             <div class="row producs-holder">
                 <div class="col-lg-3" v-for="item in products">
                     <div class="rounded-circle">
-                        <img class="img-fluid" src="../../../assets/img/tahan720.png" alt="Generic placeholder image">
+                        <img class="img-fluid" :src="'/uploads/' + item.product_image" alt="Generic placeholder image">
                     </div>
                     <h2>{{ item.product_title}}</h2>
                     <p>{{ item.product_info }}</p>

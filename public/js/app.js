@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 15);
+/******/ 	return __webpack_require__(__webpack_require__.s = 14);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -70,8 +70,8 @@
 "use strict";
 
 
-var bind = __webpack_require__(8);
-var isBuffer = __webpack_require__(31);
+var bind = __webpack_require__(7);
+var isBuffer = __webpack_require__(28);
 
 /*global toString:true*/
 
@@ -408,7 +408,7 @@ module.exports = g;
 /* WEBPACK VAR INJECTION */(function(process) {
 
 var utils = __webpack_require__(0);
-var normalizeHeaderName = __webpack_require__(33);
+var normalizeHeaderName = __webpack_require__(30);
 
 var DEFAULT_CONTENT_TYPE = {
   'Content-Type': 'application/x-www-form-urlencoded'
@@ -424,10 +424,10 @@ function getDefaultAdapter() {
   var adapter;
   if (typeof XMLHttpRequest !== 'undefined') {
     // For browsers use XHR adapter
-    adapter = __webpack_require__(9);
+    adapter = __webpack_require__(8);
   } else if (typeof process !== 'undefined') {
     // For node use HTTP adapter
-    adapter = __webpack_require__(9);
+    adapter = __webpack_require__(8);
   }
   return adapter;
 }
@@ -11468,7 +11468,7 @@ Vue.compile = compileToFunctions;
 
 module.exports = Vue;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(17).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(16).setImmediate))
 
 /***/ }),
 /* 4 */
@@ -11662,53 +11662,6 @@ process.umask = function() { return 0; };
 
 /***/ }),
 /* 5 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(6)
-/* script */
-var __vue_script__ = __webpack_require__(21)
-/* template */
-var __vue_template__ = __webpack_require__(22)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/js/components/App.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-332fccf4", Component.options)
-  } else {
-    hotAPI.reload("data-v-332fccf4", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 6 */
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -11817,13 +11770,13 @@ module.exports = function normalizeComponent (
 
 
 /***/ }),
-/* 7 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(30);
+module.exports = __webpack_require__(27);
 
 /***/ }),
-/* 8 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11841,19 +11794,19 @@ module.exports = function bind(fn, thisArg) {
 
 
 /***/ }),
-/* 9 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var utils = __webpack_require__(0);
-var settle = __webpack_require__(34);
-var buildURL = __webpack_require__(36);
-var parseHeaders = __webpack_require__(37);
-var isURLSameOrigin = __webpack_require__(38);
-var createError = __webpack_require__(10);
-var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(39);
+var settle = __webpack_require__(31);
+var buildURL = __webpack_require__(33);
+var parseHeaders = __webpack_require__(34);
+var isURLSameOrigin = __webpack_require__(35);
+var createError = __webpack_require__(9);
+var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(36);
 
 module.exports = function xhrAdapter(config) {
   return new Promise(function dispatchXhrRequest(resolve, reject) {
@@ -11950,7 +11903,7 @@ module.exports = function xhrAdapter(config) {
     // This is only done if running in a standard browser environment.
     // Specifically not if we're in a web worker, or react-native.
     if (utils.isStandardBrowserEnv()) {
-      var cookies = __webpack_require__(40);
+      var cookies = __webpack_require__(37);
 
       // Add xsrf header
       var xsrfValue = (config.withCredentials || isURLSameOrigin(config.url)) && config.xsrfCookieName ?
@@ -12028,13 +11981,13 @@ module.exports = function xhrAdapter(config) {
 
 
 /***/ }),
-/* 10 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var enhanceError = __webpack_require__(35);
+var enhanceError = __webpack_require__(32);
 
 /**
  * Create an Error with the specified message, config, error code, request and response.
@@ -12053,7 +12006,7 @@ module.exports = function createError(message, config, code, request, response) 
 
 
 /***/ }),
-/* 11 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12065,7 +12018,7 @@ module.exports = function isCancel(value) {
 
 
 /***/ }),
-/* 12 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12091,7 +12044,7 @@ module.exports = Cancel;
 
 
 /***/ }),
-/* 13 */
+/* 12 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -14632,7 +14585,7 @@ Popper.Defaults = Defaults;
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(1)))
 
 /***/ }),
-/* 14 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -25003,23 +24956,23 @@ return jQuery;
 
 
 /***/ }),
-/* 15 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(16);
-module.exports = __webpack_require__(53);
+__webpack_require__(15);
+module.exports = __webpack_require__(57);
 
 
 /***/ }),
-/* 16 */
+/* 15 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_router__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__routes__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_router__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__routes__ = __webpack_require__(19);
 
 
 
@@ -25037,7 +24990,7 @@ var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-__webpack_require__(49);
+__webpack_require__(50);
 
 window.Vue = __webpack_require__(3);
 
@@ -25047,7 +25000,7 @@ window.Vue = __webpack_require__(3);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-__WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('app', __webpack_require__(5));
+__WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('app', __webpack_require__(54));
 
 var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
   el: '#app',
@@ -25055,7 +25008,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
 });
 
 /***/ }),
-/* 17 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {var scope = (typeof global !== "undefined" && global) ||
@@ -25111,7 +25064,7 @@ exports._unrefActive = exports.active = function(item) {
 };
 
 // setimmediate attaches itself to the global object
-__webpack_require__(18);
+__webpack_require__(17);
 // On some exotic environments, it's not clear which object `setimmediate` was
 // able to install onto.  Search each possibility in the same order as the
 // `setimmediate` library.
@@ -25125,7 +25078,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 18 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, process) {(function (global, undefined) {
@@ -25318,7 +25271,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(4)))
 
 /***/ }),
-/* 19 */
+/* 18 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -27948,234 +27901,110 @@ if (inBrowser && window.Vue) {
 
 
 /***/ }),
-/* 20 */
+/* 19 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return routes; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_public_Home__ = __webpack_require__(58);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_public_Home__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_public_Home___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_public_Home__);
 
 
 var routes = [{ path: '', component: __WEBPACK_IMPORTED_MODULE_0__components_public_Home___default.a }];
 
 /***/ }),
+/* 20 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(21)
+}
+var normalizeComponent = __webpack_require__(5)
+/* script */
+var __vue_script__ = __webpack_require__(26)
+/* template */
+var __vue_template__ = __webpack_require__(45)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-31bb2d2c"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/components/public/Home.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-31bb2d2c", Component.options)
+  } else {
+    hotAPI.reload("data-v-31bb2d2c", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
 /* 21 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+// style-loader: Adds some css to the DOM by adding a <style> tag
 
-/* harmony default export */ __webpack_exports__["default"] = ({});
+// load the styles
+var content = __webpack_require__(22);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(24)("7c4ded46", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-31bb2d2c\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Home.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-31bb2d2c\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Home.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
 
 /***/ }),
 /* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", [
-    _vm._m(0),
-    _vm._v(" "),
-    _c("div", { staticClass: "container-fluid" }, [
-      _c("div", { staticClass: "row" }, [_c("router-view")], 1)
-    ])
-  ])
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "nav",
-      { staticClass: "navbar navbar-expand-lg navbar-light bg-light" },
-      [
-        _c("a", { staticClass: "navbar-brand", attrs: { href: "#" } }, [
-          _vm._v("Сусамовтахан")
-        ]),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            staticClass: "navbar-toggler",
-            attrs: {
-              type: "button",
-              "data-toggle": "collapse",
-              "data-target": "#navbarSupportedContent",
-              "aria-controls": "navbarSupportedContent",
-              "aria-expanded": "false",
-              "aria-label": "Toggle navigation"
-            }
-          },
-          [_c("span", { staticClass: "navbar-toggler-icon" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticClass: "collapse navbar-collapse",
-            attrs: { id: "navbarSupportedContent" }
-          },
-          [
-            _c("ul", { staticClass: "navbar-nav ml-auto" }, [
-              _c("li", { staticClass: "nav-item active" }, [
-                _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
-                  _vm._v("Поръчай")
-                ])
-              ]),
-              _vm._v(" "),
-              _c("li", { staticClass: "nav-item" }, [
-                _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
-                  _vm._v("За Нас")
-                ])
-              ]),
-              _vm._v(" "),
-              _c("li", { staticClass: "nav-item dropdown" }, [
-                _c(
-                  "a",
-                  {
-                    staticClass: "nav-link dropdown-toggle",
-                    attrs: {
-                      href: "#",
-                      id: "navbarDropdown",
-                      role: "button",
-                      "data-toggle": "dropdown",
-                      "aria-haspopup": "true",
-                      "aria-expanded": "false"
-                    }
-                  },
-                  [
-                    _vm._v(
-                      "\n                        Продукция\n                    "
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass: "dropdown-menu",
-                    attrs: { "aria-labelledby": "navbarDropdown" }
-                  },
-                  [
-                    _c(
-                      "a",
-                      { staticClass: "dropdown-item", attrs: { href: "#" } },
-                      [_vm._v("Сусамов тахан")]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "a",
-                      { staticClass: "dropdown-item", attrs: { href: "#" } },
-                      [_vm._v("Брашно от Лимец")]
-                    ),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "dropdown-divider" }),
-                    _vm._v(" "),
-                    _c(
-                      "a",
-                      { staticClass: "dropdown-item", attrs: { href: "#" } },
-                      [_vm._v("Сусамово масло")]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "a",
-                      { staticClass: "dropdown-item", attrs: { href: "#" } },
-                      [_vm._v("Пчелен мед")]
-                    )
-                  ]
-                )
-              ]),
-              _vm._v(" "),
-              _c("li", { staticClass: "nav-item" }, [
-                _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
-                  _vm._v("Технология")
-                ])
-              ]),
-              _vm._v(" "),
-              _c("li", { staticClass: "nav-item" }, [
-                _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
-                  _vm._v("Галерия")
-                ])
-              ]),
-              _vm._v(" "),
-              _c("li", { staticClass: "nav-item" }, [
-                _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
-                  _vm._v("Видео")
-                ])
-              ])
-            ])
-          ]
-        )
-      ]
-    )
-  }
-]
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-332fccf4", module.exports)
-  }
-}
+exports = module.exports = __webpack_require__(23)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.home-content[data-v-31bb2d2c] {\n    width: 100%;\n}\n/* CUSTOMIZE THE CAROUSEL\n-------------------------------------------------- */\n/* Carousel base class */\n.carousel[data-v-31bb2d2c] {\n    margin-bottom: 4rem;\n}\n/* Since positioning the image, we need to help out the caption */\n.carousel-caption[data-v-31bb2d2c] {\n    bottom: 3rem;\n    z-index: 10;\n}\n/* Declare heights because of positioning of img element */\n.carousel-item[data-v-31bb2d2c] {\n    height: 32rem;\n    background-color: #777;\n}\n.carousel-item > img[data-v-31bb2d2c] {\n    position: absolute;\n    top: 0;\n    left: 0;\n    min-width: 100%;\n    height: 32rem;\n}\n/* MARKETING CONTENT\n-------------------------------------------------- */\n/* Center align the text within the three columns below the carousel */\n.marketing .col-lg-3[data-v-31bb2d2c] {\n    margin-bottom: 1.5rem;\n    text-align: center;\n}\n.marketing h2[data-v-31bb2d2c] {\n    font-weight: 400;\n}\n.marketing .col-lg-3 p[data-v-31bb2d2c] {\n    margin-right: .75rem;\n    margin-left: .75rem;\n}\n/* Featurettes\n------------------------- */\n.featurette-divider[data-v-31bb2d2c] {\n    margin: 5rem 0; /* Space out the Bootstrap <hr> more */\n}\n/* Thin out the marketing headings */\n.featurette-heading[data-v-31bb2d2c] {\n    font-weight: 300;\n    line-height: 1;\n    letter-spacing: -.05rem;\n}\n/* RESPONSIVE CSS\n-------------------------------------------------- */\n@media (min-width: 40em) {\n    /* Bump up size of carousel content */\n.carousel-caption p[data-v-31bb2d2c] {\n        margin-bottom: 1.25rem;\n        font-size: 1.25rem;\n        line-height: 1.4;\n}\n.featurette-heading[data-v-31bb2d2c] {\n        font-size: 50px;\n}\n}\n@media (min-width: 62em) {\n.featurette-heading[data-v-31bb2d2c] {\n        margin-top: 7rem;\n}\n}\n.rounded-circle img[data-v-31bb2d2c] {\n    margin: auto;\n    display: block;\n    max-height: 80px;\n    position: absolute;\n    left: 50%;\n    top: 50%;\n    -webkit-transform: translate(-50%, -50%);\n            transform: translate(-50%, -50%);\n}\n.rounded-circle[data-v-31bb2d2c] {\n    border-radius: 50% !important;\n    display: block;\n    background: #fff;\n    width: 140px;\n    height: 140px;\n    margin: auto;\n    -webkit-box-shadow: 0 2px 3px #ddd;\n            box-shadow: 0 2px 3px #ddd;\n    position: relative;\n}\n", ""]);
+
+// exports
+
 
 /***/ }),
-/* 23 */,
-/* 24 */,
-/* 25 */,
-/* 26 */
+/* 23 */
 /***/ (function(module, exports) {
 
 /*
@@ -28257,7 +28086,7 @@ function toComment(sourceMap) {
 
 
 /***/ }),
-/* 27 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -28276,7 +28105,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(28)
+var listToStyles = __webpack_require__(25)
 
 /*
 type StyleObject = {
@@ -28485,7 +28314,7 @@ function applyToTag (styleElement, obj) {
 
 
 /***/ }),
-/* 28 */
+/* 25 */
 /***/ (function(module, exports) {
 
 /**
@@ -28518,16 +28347,185 @@ module.exports = function listToStyles (parentId, list) {
 
 
 /***/ }),
-/* 29 */,
-/* 30 */
+/* 26 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "home",
+  data: function data() {
+    return {
+      products: []
+    };
+  },
+  created: function created() {
+    // fetch the data when the view is created and the data is
+    // already being observed
+    this.read;
+  },
+
+  computed: {
+    read: function read() {
+      var _this = this;
+
+      __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('api/tasks').then(function (res) {
+        console.log(res);
+        for (var item in res.data) {
+          _this.products.push(res.data[item]);
+        }
+      }).catch(function (err) {
+        console.log(err.response.data.message);
+      });
+    }
+  }
+});
+
+/***/ }),
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var utils = __webpack_require__(0);
-var bind = __webpack_require__(8);
-var Axios = __webpack_require__(32);
+var bind = __webpack_require__(7);
+var Axios = __webpack_require__(29);
 var defaults = __webpack_require__(2);
 
 /**
@@ -28561,15 +28559,15 @@ axios.create = function create(instanceConfig) {
 };
 
 // Expose Cancel & CancelToken
-axios.Cancel = __webpack_require__(12);
-axios.CancelToken = __webpack_require__(46);
-axios.isCancel = __webpack_require__(11);
+axios.Cancel = __webpack_require__(11);
+axios.CancelToken = __webpack_require__(43);
+axios.isCancel = __webpack_require__(10);
 
 // Expose all/spread
 axios.all = function all(promises) {
   return Promise.all(promises);
 };
-axios.spread = __webpack_require__(47);
+axios.spread = __webpack_require__(44);
 
 module.exports = axios;
 
@@ -28578,7 +28576,7 @@ module.exports.default = axios;
 
 
 /***/ }),
-/* 31 */
+/* 28 */
 /***/ (function(module, exports) {
 
 /*!
@@ -28605,7 +28603,7 @@ function isSlowBuffer (obj) {
 
 
 /***/ }),
-/* 32 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28613,8 +28611,8 @@ function isSlowBuffer (obj) {
 
 var defaults = __webpack_require__(2);
 var utils = __webpack_require__(0);
-var InterceptorManager = __webpack_require__(41);
-var dispatchRequest = __webpack_require__(42);
+var InterceptorManager = __webpack_require__(38);
+var dispatchRequest = __webpack_require__(39);
 
 /**
  * Create a new instance of Axios
@@ -28691,7 +28689,7 @@ module.exports = Axios;
 
 
 /***/ }),
-/* 33 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28710,13 +28708,13 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
 
 
 /***/ }),
-/* 34 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var createError = __webpack_require__(10);
+var createError = __webpack_require__(9);
 
 /**
  * Resolve or reject a Promise based on response status.
@@ -28743,7 +28741,7 @@ module.exports = function settle(resolve, reject, response) {
 
 
 /***/ }),
-/* 35 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28771,7 +28769,7 @@ module.exports = function enhanceError(error, config, code, request, response) {
 
 
 /***/ }),
-/* 36 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28844,7 +28842,7 @@ module.exports = function buildURL(url, params, paramsSerializer) {
 
 
 /***/ }),
-/* 37 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28904,7 +28902,7 @@ module.exports = function parseHeaders(headers) {
 
 
 /***/ }),
-/* 38 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28979,7 +28977,7 @@ module.exports = (
 
 
 /***/ }),
-/* 39 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29022,7 +29020,7 @@ module.exports = btoa;
 
 
 /***/ }),
-/* 40 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29082,7 +29080,7 @@ module.exports = (
 
 
 /***/ }),
-/* 41 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29141,18 +29139,18 @@ module.exports = InterceptorManager;
 
 
 /***/ }),
-/* 42 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var utils = __webpack_require__(0);
-var transformData = __webpack_require__(43);
-var isCancel = __webpack_require__(11);
+var transformData = __webpack_require__(40);
+var isCancel = __webpack_require__(10);
 var defaults = __webpack_require__(2);
-var isAbsoluteURL = __webpack_require__(44);
-var combineURLs = __webpack_require__(45);
+var isAbsoluteURL = __webpack_require__(41);
+var combineURLs = __webpack_require__(42);
 
 /**
  * Throws a `Cancel` if cancellation has been requested.
@@ -29234,7 +29232,7 @@ module.exports = function dispatchRequest(config) {
 
 
 /***/ }),
-/* 43 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29261,7 +29259,7 @@ module.exports = function transformData(data, headers, fns) {
 
 
 /***/ }),
-/* 44 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29282,7 +29280,7 @@ module.exports = function isAbsoluteURL(url) {
 
 
 /***/ }),
-/* 45 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29303,13 +29301,13 @@ module.exports = function combineURLs(baseURL, relativeURL) {
 
 
 /***/ }),
-/* 46 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var Cancel = __webpack_require__(12);
+var Cancel = __webpack_require__(11);
 
 /**
  * A `CancelToken` is an object that can be used to request cancellation of an operation.
@@ -29367,7 +29365,7 @@ module.exports = CancelToken;
 
 
 /***/ }),
-/* 47 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29401,13 +29399,361 @@ module.exports = function spread(callback) {
 
 
 /***/ }),
-/* 48 */,
-/* 49 */
+/* 45 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "home-content" }, [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("div", { staticClass: "container marketing" }, [
+      _c(
+        "div",
+        { staticClass: "row producs-holder" },
+        _vm._l(_vm.products, function(item) {
+          return _c("div", { staticClass: "col-lg-3" }, [
+            _c("div", { staticClass: "rounded-circle" }, [
+              _c("img", {
+                staticClass: "img-fluid",
+                attrs: {
+                  src: "/uploads/" + item.product_image,
+                  alt: "Generic placeholder image"
+                }
+              })
+            ]),
+            _vm._v(" "),
+            _c("h2", [_vm._v(_vm._s(item.product_title))]),
+            _vm._v(" "),
+            _c("p", [_vm._v(_vm._s(item.product_info))]),
+            _vm._v(" "),
+            _vm._m(1, true)
+          ])
+        })
+      ),
+      _vm._v(" "),
+      _c("hr", { staticClass: "featurette-divider" }),
+      _vm._v(" "),
+      _vm._m(2),
+      _vm._v(" "),
+      _c("hr", { staticClass: "featurette-divider" }),
+      _vm._v(" "),
+      _vm._m(3),
+      _vm._v(" "),
+      _c("hr", { staticClass: "featurette-divider" }),
+      _vm._v(" "),
+      _vm._m(4),
+      _vm._v(" "),
+      _c("hr", { staticClass: "featurette-divider" })
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass: "carousel slide",
+        attrs: { id: "myCarousel", "data-ride": "carousel" }
+      },
+      [
+        _c("ol", { staticClass: "carousel-indicators" }, [
+          _c("li", {
+            staticClass: "active",
+            attrs: { "data-target": "#myCarousel", "data-slide-to": "0" }
+          }),
+          _vm._v(" "),
+          _c("li", {
+            attrs: { "data-target": "#myCarousel", "data-slide-to": "1" }
+          }),
+          _vm._v(" "),
+          _c("li", {
+            attrs: { "data-target": "#myCarousel", "data-slide-to": "2" }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "carousel-inner" }, [
+          _c("div", { staticClass: "carousel-item active" }, [
+            _c("img", {
+              staticClass: "first-slide img-fluid",
+              attrs: {
+                src: __webpack_require__(46),
+                alt: "First slide"
+              }
+            }),
+            _vm._v(" "),
+            _c("div", { staticClass: "container" }, [
+              _c("div", { staticClass: "carousel-caption" }, [
+                _c("h1", [_vm._v("Example headline.")]),
+                _vm._v(" "),
+                _c("p", [
+                  _vm._v(
+                    "Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta\n                            gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit."
+                  )
+                ]),
+                _vm._v(" "),
+                _c("p", [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "btn btn-lg btn-primary",
+                      attrs: { href: "#", role: "button" }
+                    },
+                    [_vm._v("Sign up today")]
+                  )
+                ])
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "carousel-item" }, [
+            _c("img", {
+              staticClass: "second-slide img-fluid",
+              attrs: {
+                src: __webpack_require__(47),
+                alt: "Second slide"
+              }
+            }),
+            _vm._v(" "),
+            _c("div", { staticClass: "container" }, [
+              _c("div", { staticClass: "carousel-caption" }, [
+                _c("h1", [_vm._v("Another example headline.")]),
+                _vm._v(" "),
+                _c("p", [
+                  _vm._v(
+                    "Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta\n                            gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit."
+                  )
+                ]),
+                _vm._v(" "),
+                _c("p", [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "btn btn-lg btn-primary",
+                      attrs: { href: "#", role: "button" }
+                    },
+                    [_vm._v("Learn more")]
+                  )
+                ])
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "carousel-item" }, [
+            _c("img", {
+              staticClass: "third-slide img-fluid",
+              attrs: {
+                src: __webpack_require__(48),
+                alt: "Third slide"
+              }
+            }),
+            _vm._v(" "),
+            _c("div", { staticClass: "container" }, [
+              _c("div", { staticClass: "carousel-caption" }, [
+                _c("h1", [_vm._v("One more for good measure.")]),
+                _vm._v(" "),
+                _c("p", [
+                  _vm._v(
+                    "Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta\n                            gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit."
+                  )
+                ]),
+                _vm._v(" "),
+                _c("p", [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "btn btn-lg btn-primary",
+                      attrs: { href: "#", role: "button" }
+                    },
+                    [_vm._v("Browse gallery")]
+                  )
+                ])
+              ])
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c(
+          "a",
+          {
+            staticClass: "carousel-control-prev",
+            attrs: { href: "#myCarousel", role: "button", "data-slide": "prev" }
+          },
+          [
+            _c("span", {
+              staticClass: "carousel-control-prev-icon",
+              attrs: { "aria-hidden": "true" }
+            }),
+            _vm._v(" "),
+            _c("span", { staticClass: "sr-only" }, [_vm._v("Previous")])
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "a",
+          {
+            staticClass: "carousel-control-next",
+            attrs: { href: "#myCarousel", role: "button", "data-slide": "next" }
+          },
+          [
+            _c("span", {
+              staticClass: "carousel-control-next-icon",
+              attrs: { "aria-hidden": "true" }
+            }),
+            _vm._v(" "),
+            _c("span", { staticClass: "sr-only" }, [_vm._v("Next")])
+          ]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", [
+      _c(
+        "a",
+        {
+          staticClass: "btn btn-secondary",
+          attrs: { href: "#", role: "button" }
+        },
+        [_vm._v("Научи повече »")]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row featurette" }, [
+      _c("div", { staticClass: "col-md-7" }, [
+        _c("h2", { staticClass: "featurette-heading" }, [
+          _vm._v("First featurette heading. "),
+          _c("span", { staticClass: "text-muted" }, [
+            _vm._v("It'll blow your mind.")
+          ])
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "lead" }, [
+          _vm._v(
+            "Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis\n                    euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus,\n                    tellus ac cursus commodo."
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-md-5" }, [
+        _c("img", {
+          staticClass: "featurette-image img-fluid mx-auto",
+          attrs: {
+            "data-src": "holder.js/500x500/auto",
+            alt: "Generic placeholder image"
+          }
+        })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row featurette" }, [
+      _c("div", { staticClass: "col-md-7 order-md-2" }, [
+        _c("h2", { staticClass: "featurette-heading" }, [
+          _vm._v("Oh yeah, it's that good. "),
+          _c("span", { staticClass: "text-muted" }, [
+            _vm._v("See for yourself.")
+          ])
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "lead" }, [
+          _vm._v(
+            "Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis\n                    euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus,\n                    tellus ac cursus commodo."
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-md-5 order-md-1" }, [
+        _c("img", {
+          staticClass: "featurette-image img-fluid mx-auto",
+          attrs: {
+            "data-src": "holder.js/500x500/auto",
+            alt: "Generic placeholder image"
+          }
+        })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row featurette" }, [
+      _c("div", { staticClass: "col-md-7" }, [
+        _c("h2", { staticClass: "featurette-heading" }, [
+          _vm._v("And lastly, this one. "),
+          _c("span", { staticClass: "text-muted" }, [_vm._v("Checkmate.")])
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "lead" }, [
+          _vm._v(
+            "Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis\n                    euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus,\n                    tellus ac cursus commodo."
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-md-5" }, [
+        _c("img", {
+          staticClass: "featurette-image img-fluid mx-auto",
+          attrs: {
+            "data-src": "holder.js/500x500/auto",
+            alt: "Generic placeholder image"
+          }
+        })
+      ])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-31bb2d2c", module.exports)
+  }
+}
+
+/***/ }),
+/* 46 */
+/***/ (function(module, exports) {
+
+module.exports = "/images/first.png?2f45ec8fc4f812caec4bca643b0023ce";
+
+/***/ }),
+/* 47 */
+/***/ (function(module, exports) {
+
+module.exports = "/images/second.jpg?ee3e3441ddac23f4ea822e5b0e6c94c9";
+
+/***/ }),
+/* 48 */
+/***/ (function(module, exports) {
+
+module.exports = "/images/third.jpg?a81f26a5cb2146b4063960e663ce3f05";
+
+/***/ }),
+/* 49 */,
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-window._ = __webpack_require__(50);
-window.Popper = __webpack_require__(13).default;
+window._ = __webpack_require__(51);
+window.Popper = __webpack_require__(12).default;
 
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
@@ -29416,9 +29762,9 @@ window.Popper = __webpack_require__(13).default;
  */
 
 try {
-  window.$ = window.jQuery = __webpack_require__(14);
+  window.$ = window.jQuery = __webpack_require__(13);
 
-  __webpack_require__(52);
+  __webpack_require__(53);
 } catch (e) {}
 
 /**
@@ -29427,7 +29773,7 @@ try {
  * CSRF token as a header based on the value of the "XSRF" token cookie.
  */
 
-window.axios = __webpack_require__(7);
+window.axios = __webpack_require__(6);
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
@@ -29463,7 +29809,7 @@ if (token) {
 // });
 
 /***/ }),
-/* 50 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, module) {var __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -46575,10 +46921,10 @@ if (token) {
   }
 }.call(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(51)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(52)(module)))
 
 /***/ }),
-/* 51 */
+/* 52 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -46606,7 +46952,7 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 52 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*!
@@ -46615,7 +46961,7 @@ module.exports = function(module) {
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
   */
 (function (global, factory) {
-   true ? factory(exports, __webpack_require__(14), __webpack_require__(13)) :
+   true ? factory(exports, __webpack_require__(13), __webpack_require__(12)) :
   typeof define === 'function' && define.amd ? define(['exports', 'jquery', 'popper.js'], factory) :
   (factory((global.bootstrap = {}),global.jQuery,global.Popper));
 }(this, (function (exports,$,Popper) { 'use strict';
@@ -50556,40 +50902,21 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 53 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 54 */,
-/* 55 */,
-/* 56 */,
-/* 57 */
-/***/ (function(module, exports) {
-
-module.exports = "/images/tahan720.png?594ed061cd640a15a6d7775ef6d160b5";
-
-/***/ }),
-/* 58 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(59)
-}
-var normalizeComponent = __webpack_require__(6)
+var normalizeComponent = __webpack_require__(5)
 /* script */
-var __vue_script__ = __webpack_require__(61)
+var __vue_script__ = __webpack_require__(55)
 /* template */
-var __vue_template__ = __webpack_require__(62)
+var __vue_template__ = __webpack_require__(56)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
-var __vue_styles__ = injectStyle
+var __vue_styles__ = null
 /* scopeId */
-var __vue_scopeId__ = "data-v-31bb2d2c"
+var __vue_scopeId__ = null
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
@@ -50600,7 +50927,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/js/components/public/Home.vue"
+Component.options.__file = "resources/js/components/App.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -50609,9 +50936,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-31bb2d2c", Component.options)
+    hotAPI.createRecord("data-v-332fccf4", Component.options)
   } else {
-    hotAPI.reload("data-v-31bb2d2c", Component.options)
+    hotAPI.reload("data-v-332fccf4", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -50622,136 +50949,11 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 59 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(60);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(27)("7c4ded46", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-31bb2d2c\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Home.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-31bb2d2c\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Home.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 60 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(26)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.home-content[data-v-31bb2d2c] {\n    width: 100%;\n}\n/* CUSTOMIZE THE CAROUSEL\n-------------------------------------------------- */\n/* Carousel base class */\n.carousel[data-v-31bb2d2c] {\n    margin-bottom: 4rem;\n}\n/* Since positioning the image, we need to help out the caption */\n.carousel-caption[data-v-31bb2d2c] {\n    bottom: 3rem;\n    z-index: 10;\n}\n/* Declare heights because of positioning of img element */\n.carousel-item[data-v-31bb2d2c] {\n    height: 32rem;\n    background-color: #777;\n}\n.carousel-item > img[data-v-31bb2d2c] {\n    position: absolute;\n    top: 0;\n    left: 0;\n    min-width: 100%;\n    height: 32rem;\n}\n/* MARKETING CONTENT\n-------------------------------------------------- */\n/* Center align the text within the three columns below the carousel */\n.marketing .col-lg-3[data-v-31bb2d2c] {\n    margin-bottom: 1.5rem;\n    text-align: center;\n}\n.marketing h2[data-v-31bb2d2c] {\n    font-weight: 400;\n}\n.marketing .col-lg-3 p[data-v-31bb2d2c] {\n    margin-right: .75rem;\n    margin-left: .75rem;\n}\n/* Featurettes\n------------------------- */\n.featurette-divider[data-v-31bb2d2c] {\n    margin: 5rem 0; /* Space out the Bootstrap <hr> more */\n}\n/* Thin out the marketing headings */\n.featurette-heading[data-v-31bb2d2c] {\n    font-weight: 300;\n    line-height: 1;\n    letter-spacing: -.05rem;\n}\n/* RESPONSIVE CSS\n-------------------------------------------------- */\n@media (min-width: 40em) {\n    /* Bump up size of carousel content */\n.carousel-caption p[data-v-31bb2d2c] {\n        margin-bottom: 1.25rem;\n        font-size: 1.25rem;\n        line-height: 1.4;\n}\n.featurette-heading[data-v-31bb2d2c] {\n        font-size: 50px;\n}\n}\n@media (min-width: 62em) {\n.featurette-heading[data-v-31bb2d2c] {\n        margin-top: 7rem;\n}\n}\n.rounded-circle img[data-v-31bb2d2c] {\n    margin: auto;\n    display: block;\n    max-height: 80px;\n    position: absolute;\n    left: 50%;\n    top: 50%;\n    -webkit-transform: translate(-50%, -50%);\n            transform: translate(-50%, -50%);\n}\n.rounded-circle[data-v-31bb2d2c] {\n    border-radius: 50% !important;\n    display: block;\n    background: #fff;\n    width: 140px;\n    height: 140px;\n    margin: auto;\n    -webkit-box-shadow: 0 2px 3px #ddd;\n            box-shadow: 0 2px 3px #ddd;\n    position: relative;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 61 */
+/* 55 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -50801,77 +51003,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-  name: "home",
-  data: function data() {
-    return {
-      products: []
-    };
-  },
-  created: function created() {
-    // fetch the data when the view is created and the data is
-    // already being observed
-    this.read;
-  },
-
-  computed: {
-    read: function read() {
-      var _this = this;
-
-      __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('api/tasks').then(function (res) {
-        console.log(res);
-        for (var item in res.data) {
-          _this.products.push(res.data[item]);
-        }
-      }).catch(function (err) {
-        console.log(err.response.data.message);
-      });
-    }
-  }
-});
+/* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
-/* 62 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "home-content" }, [
+  return _c("div", [
     _vm._m(0),
     _vm._v(" "),
-    _c("div", { staticClass: "container marketing" }, [
-      _c(
-        "div",
-        { staticClass: "row producs-holder" },
-        _vm._l(_vm.products, function(item) {
-          return _c("div", { staticClass: "col-lg-3" }, [
-            _vm._m(1, true),
-            _vm._v(" "),
-            _c("h2", [_vm._v(_vm._s(item.product_title))]),
-            _vm._v(" "),
-            _c("p", [_vm._v(_vm._s(item.product_info))]),
-            _vm._v(" "),
-            _vm._m(2, true)
-          ])
-        })
-      ),
-      _vm._v(" "),
-      _c("hr", { staticClass: "featurette-divider" }),
-      _vm._v(" "),
-      _vm._m(3),
-      _vm._v(" "),
-      _c("hr", { staticClass: "featurette-divider" }),
-      _vm._v(" "),
-      _vm._m(4),
-      _vm._v(" "),
-      _c("hr", { staticClass: "featurette-divider" }),
-      _vm._v(" "),
-      _vm._m(5),
-      _vm._v(" "),
-      _c("hr", { staticClass: "featurette-divider" })
+    _c("div", { staticClass: "container-fluid" }, [
+      _c("div", { staticClass: "row" }, [_c("router-view")], 1)
     ])
   ])
 }
@@ -50881,281 +51027,128 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c(
-      "div",
-      {
-        staticClass: "carousel slide",
-        attrs: { id: "myCarousel", "data-ride": "carousel" }
-      },
+      "nav",
+      { staticClass: "navbar navbar-expand-lg navbar-light bg-light" },
       [
-        _c("ol", { staticClass: "carousel-indicators" }, [
-          _c("li", {
-            staticClass: "active",
-            attrs: { "data-target": "#myCarousel", "data-slide-to": "0" }
-          }),
-          _vm._v(" "),
-          _c("li", {
-            attrs: { "data-target": "#myCarousel", "data-slide-to": "1" }
-          }),
-          _vm._v(" "),
-          _c("li", {
-            attrs: { "data-target": "#myCarousel", "data-slide-to": "2" }
-          })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "carousel-inner" }, [
-          _c("div", { staticClass: "carousel-item active" }, [
-            _c("img", {
-              staticClass: "first-slide img-fluid",
-              attrs: {
-                src: __webpack_require__(63),
-                alt: "First slide"
-              }
-            }),
-            _vm._v(" "),
-            _c("div", { staticClass: "container" }, [
-              _c("div", { staticClass: "carousel-caption" }, [
-                _c("h1", [_vm._v("Example headline.")]),
-                _vm._v(" "),
-                _c("p", [
-                  _vm._v(
-                    "Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta\n                            gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit."
-                  )
-                ]),
-                _vm._v(" "),
-                _c("p", [
-                  _c(
-                    "a",
-                    {
-                      staticClass: "btn btn-lg btn-primary",
-                      attrs: { href: "#", role: "button" }
-                    },
-                    [_vm._v("Sign up today")]
-                  )
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "carousel-item" }, [
-            _c("img", {
-              staticClass: "second-slide img-fluid",
-              attrs: {
-                src: __webpack_require__(64),
-                alt: "Second slide"
-              }
-            }),
-            _vm._v(" "),
-            _c("div", { staticClass: "container" }, [
-              _c("div", { staticClass: "carousel-caption" }, [
-                _c("h1", [_vm._v("Another example headline.")]),
-                _vm._v(" "),
-                _c("p", [
-                  _vm._v(
-                    "Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta\n                            gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit."
-                  )
-                ]),
-                _vm._v(" "),
-                _c("p", [
-                  _c(
-                    "a",
-                    {
-                      staticClass: "btn btn-lg btn-primary",
-                      attrs: { href: "#", role: "button" }
-                    },
-                    [_vm._v("Learn more")]
-                  )
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "carousel-item" }, [
-            _c("img", {
-              staticClass: "third-slide img-fluid",
-              attrs: {
-                src: __webpack_require__(65),
-                alt: "Third slide"
-              }
-            }),
-            _vm._v(" "),
-            _c("div", { staticClass: "container" }, [
-              _c("div", { staticClass: "carousel-caption" }, [
-                _c("h1", [_vm._v("One more for good measure.")]),
-                _vm._v(" "),
-                _c("p", [
-                  _vm._v(
-                    "Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta\n                            gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit."
-                  )
-                ]),
-                _vm._v(" "),
-                _c("p", [
-                  _c(
-                    "a",
-                    {
-                      staticClass: "btn btn-lg btn-primary",
-                      attrs: { href: "#", role: "button" }
-                    },
-                    [_vm._v("Browse gallery")]
-                  )
-                ])
-              ])
-            ])
-          ])
+        _c("a", { staticClass: "navbar-brand", attrs: { href: "#" } }, [
+          _vm._v("Сусамовтахан")
         ]),
         _vm._v(" "),
         _c(
-          "a",
+          "button",
           {
-            staticClass: "carousel-control-prev",
-            attrs: { href: "#myCarousel", role: "button", "data-slide": "prev" }
+            staticClass: "navbar-toggler",
+            attrs: {
+              type: "button",
+              "data-toggle": "collapse",
+              "data-target": "#navbarSupportedContent",
+              "aria-controls": "navbarSupportedContent",
+              "aria-expanded": "false",
+              "aria-label": "Toggle navigation"
+            }
           },
-          [
-            _c("span", {
-              staticClass: "carousel-control-prev-icon",
-              attrs: { "aria-hidden": "true" }
-            }),
-            _vm._v(" "),
-            _c("span", { staticClass: "sr-only" }, [_vm._v("Previous")])
-          ]
+          [_c("span", { staticClass: "navbar-toggler-icon" })]
         ),
         _vm._v(" "),
         _c(
-          "a",
+          "div",
           {
-            staticClass: "carousel-control-next",
-            attrs: { href: "#myCarousel", role: "button", "data-slide": "next" }
+            staticClass: "collapse navbar-collapse",
+            attrs: { id: "navbarSupportedContent" }
           },
           [
-            _c("span", {
-              staticClass: "carousel-control-next-icon",
-              attrs: { "aria-hidden": "true" }
-            }),
-            _vm._v(" "),
-            _c("span", { staticClass: "sr-only" }, [_vm._v("Next")])
+            _c("ul", { staticClass: "navbar-nav ml-auto" }, [
+              _c("li", { staticClass: "nav-item active" }, [
+                _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
+                  _vm._v("Поръчай")
+                ])
+              ]),
+              _vm._v(" "),
+              _c("li", { staticClass: "nav-item" }, [
+                _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
+                  _vm._v("За Нас")
+                ])
+              ]),
+              _vm._v(" "),
+              _c("li", { staticClass: "nav-item dropdown" }, [
+                _c(
+                  "a",
+                  {
+                    staticClass: "nav-link dropdown-toggle",
+                    attrs: {
+                      href: "#",
+                      id: "navbarDropdown",
+                      role: "button",
+                      "data-toggle": "dropdown",
+                      "aria-haspopup": "true",
+                      "aria-expanded": "false"
+                    }
+                  },
+                  [
+                    _vm._v(
+                      "\n                        Продукция\n                    "
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "dropdown-menu",
+                    attrs: { "aria-labelledby": "navbarDropdown" }
+                  },
+                  [
+                    _c(
+                      "a",
+                      { staticClass: "dropdown-item", attrs: { href: "#" } },
+                      [_vm._v("Сусамов тахан")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "a",
+                      { staticClass: "dropdown-item", attrs: { href: "#" } },
+                      [_vm._v("Брашно от Лимец")]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "dropdown-divider" }),
+                    _vm._v(" "),
+                    _c(
+                      "a",
+                      { staticClass: "dropdown-item", attrs: { href: "#" } },
+                      [_vm._v("Сусамово масло")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "a",
+                      { staticClass: "dropdown-item", attrs: { href: "#" } },
+                      [_vm._v("Пчелен мед")]
+                    )
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("li", { staticClass: "nav-item" }, [
+                _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
+                  _vm._v("Технология")
+                ])
+              ]),
+              _vm._v(" "),
+              _c("li", { staticClass: "nav-item" }, [
+                _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
+                  _vm._v("Галерия")
+                ])
+              ]),
+              _vm._v(" "),
+              _c("li", { staticClass: "nav-item" }, [
+                _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
+                  _vm._v("Видео")
+                ])
+              ])
+            ])
           ]
         )
       ]
     )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "rounded-circle" }, [
-      _c("img", {
-        staticClass: "img-fluid",
-        attrs: {
-          src: __webpack_require__(57),
-          alt: "Generic placeholder image"
-        }
-      })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("p", [
-      _c(
-        "a",
-        {
-          staticClass: "btn btn-secondary",
-          attrs: { href: "#", role: "button" }
-        },
-        [_vm._v("Научи повече »")]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row featurette" }, [
-      _c("div", { staticClass: "col-md-7" }, [
-        _c("h2", { staticClass: "featurette-heading" }, [
-          _vm._v("First featurette heading. "),
-          _c("span", { staticClass: "text-muted" }, [
-            _vm._v("It'll blow your mind.")
-          ])
-        ]),
-        _vm._v(" "),
-        _c("p", { staticClass: "lead" }, [
-          _vm._v(
-            "Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis\n                    euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus,\n                    tellus ac cursus commodo."
-          )
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-md-5" }, [
-        _c("img", {
-          staticClass: "featurette-image img-fluid mx-auto",
-          attrs: {
-            "data-src": "holder.js/500x500/auto",
-            alt: "Generic placeholder image"
-          }
-        })
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row featurette" }, [
-      _c("div", { staticClass: "col-md-7 order-md-2" }, [
-        _c("h2", { staticClass: "featurette-heading" }, [
-          _vm._v("Oh yeah, it's that good. "),
-          _c("span", { staticClass: "text-muted" }, [
-            _vm._v("See for yourself.")
-          ])
-        ]),
-        _vm._v(" "),
-        _c("p", { staticClass: "lead" }, [
-          _vm._v(
-            "Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis\n                    euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus,\n                    tellus ac cursus commodo."
-          )
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-md-5 order-md-1" }, [
-        _c("img", {
-          staticClass: "featurette-image img-fluid mx-auto",
-          attrs: {
-            "data-src": "holder.js/500x500/auto",
-            alt: "Generic placeholder image"
-          }
-        })
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row featurette" }, [
-      _c("div", { staticClass: "col-md-7" }, [
-        _c("h2", { staticClass: "featurette-heading" }, [
-          _vm._v("And lastly, this one. "),
-          _c("span", { staticClass: "text-muted" }, [_vm._v("Checkmate.")])
-        ]),
-        _vm._v(" "),
-        _c("p", { staticClass: "lead" }, [
-          _vm._v(
-            "Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis\n                    euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus,\n                    tellus ac cursus commodo."
-          )
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-md-5" }, [
-        _c("img", {
-          staticClass: "featurette-image img-fluid mx-auto",
-          attrs: {
-            "data-src": "holder.js/500x500/auto",
-            alt: "Generic placeholder image"
-          }
-        })
-      ])
-    ])
   }
 ]
 render._withStripped = true
@@ -51163,27 +51156,15 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-31bb2d2c", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-332fccf4", module.exports)
   }
 }
 
 /***/ }),
-/* 63 */
+/* 57 */
 /***/ (function(module, exports) {
 
-module.exports = "/images/first.png?2f45ec8fc4f812caec4bca643b0023ce";
-
-/***/ }),
-/* 64 */
-/***/ (function(module, exports) {
-
-module.exports = "/images/second.jpg?ee3e3441ddac23f4ea822e5b0e6c94c9";
-
-/***/ }),
-/* 65 */
-/***/ (function(module, exports) {
-
-module.exports = "/images/third.jpg?a81f26a5cb2146b4063960e663ce3f05";
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);
