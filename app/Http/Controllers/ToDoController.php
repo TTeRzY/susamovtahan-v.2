@@ -19,21 +19,15 @@ class ToDoController extends Controller
 
     public function store(Request $request)
     {
+
         $task = new Task;
 
-        if ($request->hasFile('product_image')) {
-            if($request->file('product_image')->isValid()) {
-                try {
-                    $file = $request->file('product_image');
-                    $name = rand(11111, 99999) . '.' . $file->getClientOriginalExtension();
-                    $task->product_image = $name;
-                    $request->file('product_image')->move("uploads", $name);
-                } catch (Illuminate\Filesystem\FileNotFoundException $e) {
-
-                }
-            }
+        if($request->file('product_image')->isValid()) {
+            $file = $request->file('product_image');
+            $name =rand(11111, 99999) . '.' . $file->getClientOriginalExtension();
+            $task->product_image = $name;
+            $request->file('product_image')->move("uploads", $name);
         }
-
 
         $task->product_title = $request->input('product_title');
         $task->product_info = $request->input('product_info');
@@ -53,10 +47,17 @@ class ToDoController extends Controller
 
     public function update($id, Request $request)
     {
-        if($request->input('task'))
+        if($request->input('product_title') && $request->input('product_info'))
         {
             $task = Task::find($id);
-            $task->product_info = $request->input('task');
+            if($request->file('product_image')->isValid()) {
+                $file = $request->file('product_image');
+                $name =rand(11111, 99999) . '.' . $file->getClientOriginalExtension();
+                $task->product_image = $name;
+                $request->file('product_image')->move("uploads", $name);
+            }
+            $task->product_title = $request->input('product_title');
+            $task->product_info = $request->input('product_info');
             $task->save();
         }
 

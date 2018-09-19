@@ -15,7 +15,24 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 Route::middleware(['auth'])->group(function () {
+
+    Route::get('/admin/tehnologia', function () {
+        return view('admin.tehnologia');
+    });
+    Route::get('/admin/gallery', function () {
+        return view('admin.gallery');
+    });
+    Route::get('/admin/videos', function () {
+        return view('admin.videos');
+    });
+    Route::get('/admin/about', function () {
+        return view('admin.about');
+    });
+    Route::get('/admin/contacts', function () {
+        return view('admin.contacts');
+    });
 
     Route::get('/admin', 'ToDoController@index');
     Route::post('/store', 'ToDoController@store')->name('store');

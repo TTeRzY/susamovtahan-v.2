@@ -1,17 +1,25 @@
 @extends('layouts.master')
 
 @section('content')
-    <form method="POST" action="{{ route('update',['id'=>$task->id]) }}" class="col s12">
-        <div class="row">
-            <div class="input-field col s12">
-                <input name="task" value="{{ $task->product_info }}" id="task2" type="text2" class="validate">
-                <label for="task2">Edit task</label>
+    <div class="home-page-admin">
+        <h1>Edit Product</h1>
+        <form enctype="multipart/form-data" method="POST" action="{{ route('update',['id'=>$task->id]) }}" class="col-lg-12">
+            <div class="row">
+                <div class="form-group col-lg-12">
+                    <input name="product_image" value="{{ $task->product_image }}" id="product_image" type="file" class="validate">
+                </div>
+                <div class="form-group col-lg-12">
+                    <label for="product_title">Edit title</label>
+                    <input name="product_title" value="{{ $task->product_title }}" id="product_title" type="text" class="form-control validate">
+                </div>
+                <div class="form-group col-lg-12">
+                    <label for="product_info">Edit info</label>
+                    <input name="product_info" value="{{ $task->product_info }}" id="product_info" type="text" class="form-control validate">
+                </div>
             </div>
-        </div>
 
-        @include('partials.coworkers')
-
-        <button type="submit" class="waves-effect waves-light btn">Edit task</button>
-        @csrf
-    </form>
+            <button type="submit" class="waves-effect waves-light btn">Edit task</button>
+            @csrf
+        </form>
+    </div>
 @endsection

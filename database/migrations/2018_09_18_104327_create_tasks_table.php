@@ -19,7 +19,7 @@ class CreateTasksTable extends Migration
             $table->integer('admin_id')->nullable();
             $table->boolean('status')->default(false);
             $table->text('product_image')->nullable();
-            $table->string('product_info')->default('');
+            $table->longText('product_info', 250)->nullable();
             $table->longText('product_title')->nullable();
             $table->timestamps();
         });
