@@ -37,8 +37,10 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin', 'ToDoController@index');
     Route::post('/store', 'ToDoController@store')->name('store');
     Route::get('/edit/{id}', 'ToDoController@edit')->name('edit');
+    Route::get('/editCarousel/{id}', 'ToDoController@editCarousel')->name('editCarousel');
     Route::post('/update/{id}', 'ToDoController@update')->name('update');
     Route::get('/delete/{id}', 'ToDoController@delete')->name('delete');
+
 });
 
 

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCarouselInfoTable extends Migration
+class HomeSectionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,15 @@ class CreateCarouselInfoTable extends Migration
      */
     public function up()
     {
-        Schema::create('carousel_info', function (Blueprint $table) {
+        Schema::create('home_sections', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
-            $table->text('carousel_image')->nullable();
-            $table->longText('carousel_title', 250)->nullable();
-            $table->longText('carousel_text', 250)->nullable();
+            $table->text('section_image')->nullable();
+            $table->longText('section_title', 250)->nullable();
+            $table->longText('section_info', 250)->nullable();
             $table->timestamps();
         });
     }
-
     /**
      * Reverse the migrations.
      *
@@ -30,6 +29,6 @@ class CreateCarouselInfoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('carousel_info');
+        //
     }
 }

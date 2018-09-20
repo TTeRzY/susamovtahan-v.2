@@ -21,3 +21,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::resource('/tasks', 'ShowProductController', [
     'except' => ['edit', 'show', 'store']
 ]);
+
+Route::resource('/carousels', 'ShowCarouselsController', [
+    'except' => ['edit', 'show', 'store']
+]);
+
+Route::resource('/sections', 'SectionsController', [
+    'except' => ['edit', 'show', 'store']
+]);

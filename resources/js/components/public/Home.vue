@@ -7,37 +7,15 @@
                 <li data-target="#myCarousel" data-slide-to="2"></li>
             </ol>
             <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="first-slide img-fluid" src="../../../assets/img/first.png" alt="First slide">
+                <div class="carousel-item" v-for="(item,index) in carousels" :class="{'active': index === 0}">
+                    <img class="first-slide img-fluid" :src="'/uploads/' + item.carousel_image" alt="First slide">
                     <div class="container">
                         <div class="carousel-caption">
-                            <h1>Example headline.</h1>
+                            <h1>{{ item.carousel_title }}</h1>
                             <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta
                                 gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
                             <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a>
                             </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img class="second-slide img-fluid" src="../../../assets/img/second.jpg" alt="Second slide">
-                    <div class="container">
-                        <div class="carousel-caption">
-                            <h1>Another example headline.</h1>
-                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta
-                                gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                            <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img class="third-slide img-fluid" src="../../../assets/img/third.jpg" alt="Third slide">
-                    <div class="container">
-                        <div class="carousel-caption">
-                            <h1>One more for good measure.</h1>
-                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta
-                                gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                            <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
                         </div>
                     </div>
                 </div>
@@ -58,6 +36,9 @@
         <!-- Wrap the rest of the page in another container to center all the content. -->
 
         <div class="container marketing">
+            <div class="products-title">
+                <h2 class="text-center">Нашите продукти</h2>
+            </div>
 
             <!-- Three columns of text below the carousel -->
             <div class="row producs-holder">
@@ -76,56 +57,37 @@
 
             <hr class="featurette-divider">
 
-            <div class="row featurette">
-                <div class="col-md-7">
-                    <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span>
-                    </h2>
-                    <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis
-                        euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus,
-                        tellus ac cursus commodo.</p>
+            <div class="row featurette-holder" v-for="sec in sections">
+                <div class="row featurette">
+                    <div class="col-md-7">
+                        <h2 class="featurette-heading">
+                            <span class="text-muted">{{ sec.section_title}}</span>
+                        </h2>
+                        <p class="lead">
+                            {{ sec.section_info}}
+                        </p>
+                    </div>
+                    <div class="col-md-5">
+                        <img class="featurette-image img-fluid mx-auto" :src="'/uploads/' + sec.section_image"
+                             alt="Generic placeholder image">
+                    </div>
                 </div>
-                <div class="col-md-5">
-                    <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto"
-                         alt="Generic placeholder image">
-                </div>
+
             </div>
 
-            <hr class="featurette-divider">
 
-            <div class="row featurette">
-                <div class="col-md-7 order-md-2">
-                    <h2 class="featurette-heading">Oh yeah, it's that good. <span
-                            class="text-muted">See for yourself.</span></h2>
-                    <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis
-                        euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus,
-                        tellus ac cursus commodo.</p>
-                </div>
-                <div class="col-md-5 order-md-1">
-                    <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto"
-                         alt="Generic placeholder image">
-                </div>
-            </div>
 
-            <hr class="featurette-divider">
-
-            <div class="row featurette">
-                <div class="col-md-7">
-                    <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-                    <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis
-                        euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus,
-                        tellus ac cursus commodo.</p>
-                </div>
-                <div class="col-md-5">
-                    <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto"
-                         alt="Generic placeholder image">
-                </div>
-            </div>
-
-            <hr class="featurette-divider">
 
             <!-- /END THE FEATURETTES -->
 
         </div><!-- /.container -->
+
+        <div class="parallax-background">
+            <div class="mbr-overlay" style="opacity: 0.2; background-color: rgb(0, 0, 0);">
+            </div>
+            <h2 class="text-center">Lorem Ipsum?</h2>
+            <p class="text-center">Please provide any document. </p>
+        </div>
     </div>
 </template>
 
@@ -135,20 +97,41 @@
     name: "home",
     data() {
       return {
-        products: []
+        products: [],
+        carousels: [],
+        sections:[]
       }
     },
     created () {
       // fetch the data when the view is created and the data is
       // already being observed
-      this.read;
+      this.readProducts;
+      this.readCarouselInfo;
+      this.readSections;
     },
     computed: {
-      read() {
+      readProducts() {
         axios.get('api/tasks').then((res) => {
-          console.log(res);
           for(let item in res.data){
             this.products.push(res.data[item]);
+          }
+        }).catch((err) => {
+          console.log(err.response.data.message);
+        });
+      },
+      readCarouselInfo(){
+        axios.get('api/carousels').then((res) => {
+          for(let item in res.data){
+            this.carousels.push(res.data[item]);
+          }
+        }).catch((err) => {
+          console.log(err.response.data.message);
+        });
+      },
+      readSections(){
+        axios.get('api/sections').then((res) => {
+          for(let item in res.data){
+            this.sections.push(res.data[item]);
           }
         }).catch((err) => {
           console.log(err.response.data.message);
@@ -159,6 +142,7 @@
 </script>
 
 <style scoped>
+
     .home-content {
         width: 100%;
     }
@@ -183,7 +167,6 @@
         top: 0;
         left: 0;
         min-width: 100%;
-        height: 32rem;
     }
     /* MARKETING CONTENT
     -------------------------------------------------- */
@@ -244,7 +227,12 @@
         width: 140px;
         height: 140px;
         margin: auto;
-        box-shadow: 0 2px 3px #ddd;
+        box-shadow: 0 2px 4px #ddd;
         position: relative;
+    }
+
+    .products-title h2{
+        font-size: 60px;
+        padding: 27px 0 80px;
     }
 </style>

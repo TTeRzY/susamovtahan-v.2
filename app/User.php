@@ -32,4 +32,15 @@ class User extends Authenticatable
     {
         return $this->hasMany(\App\Task::class);
     }
+
+    public function carousels()
+    {
+        return $this->hasMany(\App\Carousel::class);
+    }
+
+    public function sections()
+    {
+        return $this->hasMany(\App\Sections::class);
+    }
+
 }

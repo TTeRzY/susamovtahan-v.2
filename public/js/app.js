@@ -24980,7 +24980,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]);
 
 var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
-  mode: 'history',
   routes: __WEBPACK_IMPORTED_MODULE_2__routes__["a" /* routes */]
 });
 
@@ -27908,9 +27907,12 @@ if (inBrowser && window.Vue) {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return routes; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_public_Home__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_public_Home___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_public_Home__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_public_Technology__ = __webpack_require__(60);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_public_Technology___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_public_Technology__);
 
 
-var routes = [{ path: '', component: __WEBPACK_IMPORTED_MODULE_0__components_public_Home___default.a }];
+
+var routes = [{ path: '', component: __WEBPACK_IMPORTED_MODULE_0__components_public_Home___default.a }, { path: '/technology', component: __WEBPACK_IMPORTED_MODULE_1__components_public_Technology___default.a }];
 
 /***/ }),
 /* 20 */
@@ -27998,7 +28000,7 @@ exports = module.exports = __webpack_require__(23)(false);
 
 
 // module
-exports.push([module.i, "\n.home-content[data-v-31bb2d2c] {\n    width: 100%;\n}\n/* CUSTOMIZE THE CAROUSEL\n-------------------------------------------------- */\n/* Carousel base class */\n.carousel[data-v-31bb2d2c] {\n    margin-bottom: 4rem;\n}\n/* Since positioning the image, we need to help out the caption */\n.carousel-caption[data-v-31bb2d2c] {\n    bottom: 3rem;\n    z-index: 10;\n}\n/* Declare heights because of positioning of img element */\n.carousel-item[data-v-31bb2d2c] {\n    height: 32rem;\n    background-color: #777;\n}\n.carousel-item > img[data-v-31bb2d2c] {\n    position: absolute;\n    top: 0;\n    left: 0;\n    min-width: 100%;\n    height: 32rem;\n}\n/* MARKETING CONTENT\n-------------------------------------------------- */\n/* Center align the text within the three columns below the carousel */\n.marketing .col-lg-3[data-v-31bb2d2c] {\n    margin-bottom: 1.5rem;\n    text-align: center;\n}\n.marketing h2[data-v-31bb2d2c] {\n    font-weight: 400;\n}\n.marketing .col-lg-3 p[data-v-31bb2d2c] {\n    margin-right: .75rem;\n    margin-left: .75rem;\n}\n/* Featurettes\n------------------------- */\n.featurette-divider[data-v-31bb2d2c] {\n    margin: 5rem 0; /* Space out the Bootstrap <hr> more */\n}\n/* Thin out the marketing headings */\n.featurette-heading[data-v-31bb2d2c] {\n    font-weight: 300;\n    line-height: 1;\n    letter-spacing: -.05rem;\n}\n/* RESPONSIVE CSS\n-------------------------------------------------- */\n@media (min-width: 40em) {\n    /* Bump up size of carousel content */\n.carousel-caption p[data-v-31bb2d2c] {\n        margin-bottom: 1.25rem;\n        font-size: 1.25rem;\n        line-height: 1.4;\n}\n.featurette-heading[data-v-31bb2d2c] {\n        font-size: 50px;\n}\n}\n@media (min-width: 62em) {\n.featurette-heading[data-v-31bb2d2c] {\n        margin-top: 7rem;\n}\n}\n.rounded-circle img[data-v-31bb2d2c] {\n    margin: auto;\n    display: block;\n    max-height: 80px;\n    position: absolute;\n    left: 50%;\n    top: 50%;\n    -webkit-transform: translate(-50%, -50%);\n            transform: translate(-50%, -50%);\n}\n.rounded-circle[data-v-31bb2d2c] {\n    border-radius: 50% !important;\n    display: block;\n    background: #fff;\n    width: 140px;\n    height: 140px;\n    margin: auto;\n    -webkit-box-shadow: 0 2px 3px #ddd;\n            box-shadow: 0 2px 3px #ddd;\n    position: relative;\n}\n", ""]);
+exports.push([module.i, "\n.home-content[data-v-31bb2d2c] {\n    width: 100%;\n}\n/* CUSTOMIZE THE CAROUSEL\n-------------------------------------------------- */\n/* Carousel base class */\n.carousel[data-v-31bb2d2c] {\n    margin-bottom: 4rem;\n}\n/* Since positioning the image, we need to help out the caption */\n.carousel-caption[data-v-31bb2d2c] {\n    bottom: 3rem;\n    z-index: 10;\n}\n/* Declare heights because of positioning of img element */\n.carousel-item[data-v-31bb2d2c] {\n    height: 32rem;\n    background-color: #777;\n}\n.carousel-item > img[data-v-31bb2d2c] {\n    position: absolute;\n    top: 0;\n    left: 0;\n    min-width: 100%;\n}\n/* MARKETING CONTENT\n-------------------------------------------------- */\n/* Center align the text within the three columns below the carousel */\n.marketing .col-lg-3[data-v-31bb2d2c] {\n    margin-bottom: 1.5rem;\n    text-align: center;\n}\n.marketing h2[data-v-31bb2d2c] {\n    font-weight: 400;\n}\n.marketing .col-lg-3 p[data-v-31bb2d2c] {\n    margin-right: .75rem;\n    margin-left: .75rem;\n}\n/* Featurettes\n------------------------- */\n.featurette-divider[data-v-31bb2d2c] {\n    margin: 5rem 0; /* Space out the Bootstrap <hr> more */\n}\n/* Thin out the marketing headings */\n.featurette-heading[data-v-31bb2d2c] {\n    font-weight: 300;\n    line-height: 1;\n    letter-spacing: -.05rem;\n}\n/* RESPONSIVE CSS\n-------------------------------------------------- */\n@media (min-width: 40em) {\n    /* Bump up size of carousel content */\n.carousel-caption p[data-v-31bb2d2c] {\n        margin-bottom: 1.25rem;\n        font-size: 1.25rem;\n        line-height: 1.4;\n}\n.featurette-heading[data-v-31bb2d2c] {\n        font-size: 50px;\n}\n}\n@media (min-width: 62em) {\n.featurette-heading[data-v-31bb2d2c] {\n        margin-top: 7rem;\n}\n}\n.rounded-circle img[data-v-31bb2d2c] {\n    margin: auto;\n    display: block;\n    max-height: 80px;\n    position: absolute;\n    left: 50%;\n    top: 50%;\n    -webkit-transform: translate(-50%, -50%);\n            transform: translate(-50%, -50%);\n}\n.rounded-circle[data-v-31bb2d2c] {\n    border-radius: 50% !important;\n    display: block;\n    background: #fff;\n    width: 140px;\n    height: 140px;\n    margin: auto;\n    -webkit-box-shadow: 0 2px 4px #ddd;\n            box-shadow: 0 2px 4px #ddd;\n    position: relative;\n}\n.products-title h2[data-v-31bb2d2c]{\n    font-size: 60px;\n    padding: 27px 0 80px;\n}\n", ""]);
 
 // exports
 
@@ -28447,67 +28449,54 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "home",
   data: function data() {
     return {
-      products: []
+      products: [],
+      carousels: [],
+      sections: []
     };
   },
   created: function created() {
     // fetch the data when the view is created and the data is
     // already being observed
-    this.read;
+    this.readProducts;
+    this.readCarouselInfo;
+    this.readSections;
   },
 
   computed: {
-    read: function read() {
+    readProducts: function readProducts() {
       var _this = this;
 
       __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('api/tasks').then(function (res) {
-        console.log(res);
         for (var item in res.data) {
           _this.products.push(res.data[item]);
+        }
+      }).catch(function (err) {
+        console.log(err.response.data.message);
+      });
+    },
+    readCarouselInfo: function readCarouselInfo() {
+      var _this2 = this;
+
+      __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('api/carousels').then(function (res) {
+        for (var item in res.data) {
+          _this2.carousels.push(res.data[item]);
+        }
+      }).catch(function (err) {
+        console.log(err.response.data.message);
+      });
+    },
+    readSections: function readSections() {
+      var _this3 = this;
+
+      __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('api/sections').then(function (res) {
+        for (var item in res.data) {
+          _this3.sections.push(res.data[item]);
         }
       }).catch(function (err) {
         console.log(err.response.data.message);
@@ -29407,47 +29396,123 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "home-content" }, [
-    _vm._m(0),
+    _c(
+      "div",
+      {
+        staticClass: "carousel slide",
+        attrs: { id: "myCarousel", "data-ride": "carousel" }
+      },
+      [
+        _vm._m(0),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "carousel-inner" },
+          _vm._l(_vm.carousels, function(item, index) {
+            return _c(
+              "div",
+              { staticClass: "carousel-item", class: { active: index === 0 } },
+              [
+                _c("img", {
+                  staticClass: "first-slide img-fluid",
+                  attrs: {
+                    src: "/uploads/" + item.carousel_image,
+                    alt: "First slide"
+                  }
+                }),
+                _vm._v(" "),
+                _c("div", { staticClass: "container" }, [
+                  _c("div", { staticClass: "carousel-caption" }, [
+                    _c("h1", [_vm._v(_vm._s(item.carousel_title))]),
+                    _vm._v(" "),
+                    _c("p", [
+                      _vm._v(
+                        "Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta\n                            gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit."
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _vm._m(1, true)
+                  ])
+                ])
+              ]
+            )
+          })
+        ),
+        _vm._v(" "),
+        _vm._m(2),
+        _vm._v(" "),
+        _vm._m(3)
+      ]
+    ),
     _vm._v(" "),
-    _c("div", { staticClass: "container marketing" }, [
-      _c(
-        "div",
-        { staticClass: "row producs-holder" },
-        _vm._l(_vm.products, function(item) {
-          return _c("div", { staticClass: "col-lg-3" }, [
-            _c("div", { staticClass: "rounded-circle" }, [
-              _c("img", {
-                staticClass: "img-fluid",
-                attrs: {
-                  src: "/uploads/" + item.product_image,
-                  alt: "Generic placeholder image"
-                }
-              })
-            ]),
-            _vm._v(" "),
-            _c("h2", [_vm._v(_vm._s(item.product_title))]),
-            _vm._v(" "),
-            _c("p", [_vm._v(_vm._s(item.product_info))]),
-            _vm._v(" "),
-            _vm._m(1, true)
+    _c(
+      "div",
+      { staticClass: "container marketing" },
+      [
+        _vm._m(4),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "row producs-holder" },
+          _vm._l(_vm.products, function(item) {
+            return _c("div", { staticClass: "col-lg-3" }, [
+              _c("div", { staticClass: "rounded-circle" }, [
+                _c("img", {
+                  staticClass: "img-fluid",
+                  attrs: {
+                    src: "/uploads/" + item.product_image,
+                    alt: "Generic placeholder image"
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("h2", [_vm._v(_vm._s(item.product_title))]),
+              _vm._v(" "),
+              _c("p", [_vm._v(_vm._s(item.product_info))]),
+              _vm._v(" "),
+              _vm._m(5, true)
+            ])
+          })
+        ),
+        _vm._v(" "),
+        _c("hr", { staticClass: "featurette-divider" }),
+        _vm._v(" "),
+        _vm._l(_vm.sections, function(sec) {
+          return _c("div", { staticClass: "row featurette-holder" }, [
+            _c("div", { staticClass: "row featurette" }, [
+              _c("div", { staticClass: "col-md-7" }, [
+                _c("h2", { staticClass: "featurette-heading" }, [
+                  _c("span", { staticClass: "text-muted" }, [
+                    _vm._v(_vm._s(sec.section_title))
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "lead" }, [
+                  _vm._v(
+                    "\n                        " +
+                      _vm._s(sec.section_info) +
+                      "\n                    "
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-5" }, [
+                _c("img", {
+                  staticClass: "featurette-image img-fluid mx-auto",
+                  attrs: {
+                    src: "/uploads/" + sec.section_image,
+                    alt: "Generic placeholder image"
+                  }
+                })
+              ])
+            ])
           ])
         })
-      ),
-      _vm._v(" "),
-      _c("hr", { staticClass: "featurette-divider" }),
-      _vm._v(" "),
-      _vm._m(2),
-      _vm._v(" "),
-      _c("hr", { staticClass: "featurette-divider" }),
-      _vm._v(" "),
-      _vm._m(3),
-      _vm._v(" "),
-      _c("hr", { staticClass: "featurette-divider" }),
-      _vm._v(" "),
-      _vm._m(4),
-      _vm._v(" "),
-      _c("hr", { staticClass: "featurette-divider" })
-    ])
+      ],
+      2
+    ),
+    _vm._v(" "),
+    _vm._m(6)
   ])
 }
 var staticRenderFns = [
@@ -29455,162 +29520,83 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
+    return _c("ol", { staticClass: "carousel-indicators" }, [
+      _c("li", {
+        staticClass: "active",
+        attrs: { "data-target": "#myCarousel", "data-slide-to": "0" }
+      }),
+      _vm._v(" "),
+      _c("li", {
+        attrs: { "data-target": "#myCarousel", "data-slide-to": "1" }
+      }),
+      _vm._v(" "),
+      _c("li", {
+        attrs: { "data-target": "#myCarousel", "data-slide-to": "2" }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", [
+      _c(
+        "a",
+        {
+          staticClass: "btn btn-lg btn-primary",
+          attrs: { href: "#", role: "button" }
+        },
+        [_vm._v("Sign up today")]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
     return _c(
-      "div",
+      "a",
       {
-        staticClass: "carousel slide",
-        attrs: { id: "myCarousel", "data-ride": "carousel" }
+        staticClass: "carousel-control-prev",
+        attrs: { href: "#myCarousel", role: "button", "data-slide": "prev" }
       },
       [
-        _c("ol", { staticClass: "carousel-indicators" }, [
-          _c("li", {
-            staticClass: "active",
-            attrs: { "data-target": "#myCarousel", "data-slide-to": "0" }
-          }),
-          _vm._v(" "),
-          _c("li", {
-            attrs: { "data-target": "#myCarousel", "data-slide-to": "1" }
-          }),
-          _vm._v(" "),
-          _c("li", {
-            attrs: { "data-target": "#myCarousel", "data-slide-to": "2" }
-          })
-        ]),
+        _c("span", {
+          staticClass: "carousel-control-prev-icon",
+          attrs: { "aria-hidden": "true" }
+        }),
         _vm._v(" "),
-        _c("div", { staticClass: "carousel-inner" }, [
-          _c("div", { staticClass: "carousel-item active" }, [
-            _c("img", {
-              staticClass: "first-slide img-fluid",
-              attrs: {
-                src: __webpack_require__(46),
-                alt: "First slide"
-              }
-            }),
-            _vm._v(" "),
-            _c("div", { staticClass: "container" }, [
-              _c("div", { staticClass: "carousel-caption" }, [
-                _c("h1", [_vm._v("Example headline.")]),
-                _vm._v(" "),
-                _c("p", [
-                  _vm._v(
-                    "Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta\n                            gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit."
-                  )
-                ]),
-                _vm._v(" "),
-                _c("p", [
-                  _c(
-                    "a",
-                    {
-                      staticClass: "btn btn-lg btn-primary",
-                      attrs: { href: "#", role: "button" }
-                    },
-                    [_vm._v("Sign up today")]
-                  )
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "carousel-item" }, [
-            _c("img", {
-              staticClass: "second-slide img-fluid",
-              attrs: {
-                src: __webpack_require__(47),
-                alt: "Second slide"
-              }
-            }),
-            _vm._v(" "),
-            _c("div", { staticClass: "container" }, [
-              _c("div", { staticClass: "carousel-caption" }, [
-                _c("h1", [_vm._v("Another example headline.")]),
-                _vm._v(" "),
-                _c("p", [
-                  _vm._v(
-                    "Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta\n                            gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit."
-                  )
-                ]),
-                _vm._v(" "),
-                _c("p", [
-                  _c(
-                    "a",
-                    {
-                      staticClass: "btn btn-lg btn-primary",
-                      attrs: { href: "#", role: "button" }
-                    },
-                    [_vm._v("Learn more")]
-                  )
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "carousel-item" }, [
-            _c("img", {
-              staticClass: "third-slide img-fluid",
-              attrs: {
-                src: __webpack_require__(48),
-                alt: "Third slide"
-              }
-            }),
-            _vm._v(" "),
-            _c("div", { staticClass: "container" }, [
-              _c("div", { staticClass: "carousel-caption" }, [
-                _c("h1", [_vm._v("One more for good measure.")]),
-                _vm._v(" "),
-                _c("p", [
-                  _vm._v(
-                    "Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta\n                            gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit."
-                  )
-                ]),
-                _vm._v(" "),
-                _c("p", [
-                  _c(
-                    "a",
-                    {
-                      staticClass: "btn btn-lg btn-primary",
-                      attrs: { href: "#", role: "button" }
-                    },
-                    [_vm._v("Browse gallery")]
-                  )
-                ])
-              ])
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c(
-          "a",
-          {
-            staticClass: "carousel-control-prev",
-            attrs: { href: "#myCarousel", role: "button", "data-slide": "prev" }
-          },
-          [
-            _c("span", {
-              staticClass: "carousel-control-prev-icon",
-              attrs: { "aria-hidden": "true" }
-            }),
-            _vm._v(" "),
-            _c("span", { staticClass: "sr-only" }, [_vm._v("Previous")])
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "a",
-          {
-            staticClass: "carousel-control-next",
-            attrs: { href: "#myCarousel", role: "button", "data-slide": "next" }
-          },
-          [
-            _c("span", {
-              staticClass: "carousel-control-next-icon",
-              attrs: { "aria-hidden": "true" }
-            }),
-            _vm._v(" "),
-            _c("span", { staticClass: "sr-only" }, [_vm._v("Next")])
-          ]
-        )
+        _c("span", { staticClass: "sr-only" }, [_vm._v("Previous")])
       ]
     )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      {
+        staticClass: "carousel-control-next",
+        attrs: { href: "#myCarousel", role: "button", "data-slide": "next" }
+      },
+      [
+        _c("span", {
+          staticClass: "carousel-control-next-icon",
+          attrs: { "aria-hidden": "true" }
+        }),
+        _vm._v(" "),
+        _c("span", { staticClass: "sr-only" }, [_vm._v("Next")])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "products-title" }, [
+      _c("h2", { staticClass: "text-center" }, [_vm._v("Нашите продукти")])
+    ])
   },
   function() {
     var _vm = this
@@ -29631,90 +29617,16 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row featurette" }, [
-      _c("div", { staticClass: "col-md-7" }, [
-        _c("h2", { staticClass: "featurette-heading" }, [
-          _vm._v("First featurette heading. "),
-          _c("span", { staticClass: "text-muted" }, [
-            _vm._v("It'll blow your mind.")
-          ])
-        ]),
-        _vm._v(" "),
-        _c("p", { staticClass: "lead" }, [
-          _vm._v(
-            "Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis\n                    euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus,\n                    tellus ac cursus commodo."
-          )
-        ])
-      ]),
+    return _c("div", { staticClass: "parallax-background" }, [
+      _c("div", {
+        staticClass: "mbr-overlay",
+        staticStyle: { opacity: "0.2", "background-color": "rgb(0, 0, 0)" }
+      }),
       _vm._v(" "),
-      _c("div", { staticClass: "col-md-5" }, [
-        _c("img", {
-          staticClass: "featurette-image img-fluid mx-auto",
-          attrs: {
-            "data-src": "holder.js/500x500/auto",
-            alt: "Generic placeholder image"
-          }
-        })
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row featurette" }, [
-      _c("div", { staticClass: "col-md-7 order-md-2" }, [
-        _c("h2", { staticClass: "featurette-heading" }, [
-          _vm._v("Oh yeah, it's that good. "),
-          _c("span", { staticClass: "text-muted" }, [
-            _vm._v("See for yourself.")
-          ])
-        ]),
-        _vm._v(" "),
-        _c("p", { staticClass: "lead" }, [
-          _vm._v(
-            "Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis\n                    euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus,\n                    tellus ac cursus commodo."
-          )
-        ])
-      ]),
+      _c("h2", { staticClass: "text-center" }, [_vm._v("Lorem Ipsum?")]),
       _vm._v(" "),
-      _c("div", { staticClass: "col-md-5 order-md-1" }, [
-        _c("img", {
-          staticClass: "featurette-image img-fluid mx-auto",
-          attrs: {
-            "data-src": "holder.js/500x500/auto",
-            alt: "Generic placeholder image"
-          }
-        })
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row featurette" }, [
-      _c("div", { staticClass: "col-md-7" }, [
-        _c("h2", { staticClass: "featurette-heading" }, [
-          _vm._v("And lastly, this one. "),
-          _c("span", { staticClass: "text-muted" }, [_vm._v("Checkmate.")])
-        ]),
-        _vm._v(" "),
-        _c("p", { staticClass: "lead" }, [
-          _vm._v(
-            "Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis\n                    euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus,\n                    tellus ac cursus commodo."
-          )
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-md-5" }, [
-        _c("img", {
-          staticClass: "featurette-image img-fluid mx-auto",
-          attrs: {
-            "data-src": "holder.js/500x500/auto",
-            alt: "Generic placeholder image"
-          }
-        })
+      _c("p", { staticClass: "text-center" }, [
+        _vm._v("Please provide any document. ")
       ])
     ])
   }
@@ -29729,24 +29641,9 @@ if (false) {
 }
 
 /***/ }),
-/* 46 */
-/***/ (function(module, exports) {
-
-module.exports = "/images/first.png?2f45ec8fc4f812caec4bca643b0023ce";
-
-/***/ }),
-/* 47 */
-/***/ (function(module, exports) {
-
-module.exports = "/images/second.jpg?ee3e3441ddac23f4ea822e5b0e6c94c9";
-
-/***/ }),
-/* 48 */
-/***/ (function(module, exports) {
-
-module.exports = "/images/third.jpg?a81f26a5cb2146b4063960e663ce3f05";
-
-/***/ }),
+/* 46 */,
+/* 47 */,
+/* 48 */,
 /* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -51001,6 +50898,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
@@ -51013,7 +50915,90 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _vm._m(0),
+    _c(
+      "nav",
+      { staticClass: "navbar navbar-expand-lg navbar-light bg-light" },
+      [
+        _c("router-link", { staticClass: "navbar-brand", attrs: { to: "/" } }, [
+          _c("a", { staticClass: "nav-link" }, [_vm._v("Сусамов Тахан")])
+        ]),
+        _vm._v(" "),
+        _vm._m(0),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "collapse navbar-collapse",
+            attrs: { id: "navbarSupportedContent" }
+          },
+          [
+            _c(
+              "ul",
+              { staticClass: "navbar-nav ml-auto" },
+              [
+                _c(
+                  "router-link-active",
+                  {
+                    staticClass: "nav-item",
+                    attrs: { tag: "li", to: "/order" }
+                  },
+                  [_c("a", { staticClass: "nav-link" }, [_vm._v("Поръчай")])]
+                ),
+                _vm._v(" "),
+                _c(
+                  "router-link",
+                  {
+                    staticClass: "nav-item",
+                    attrs: { tag: "li", to: "/about" }
+                  },
+                  [_c("a", { staticClass: "nav-link" }, [_vm._v("За Нас")])]
+                ),
+                _vm._v(" "),
+                _vm._m(1),
+                _vm._v(" "),
+                _c(
+                  "router-link",
+                  {
+                    staticClass: "nav-item",
+                    attrs: { tag: "li", to: "/contacts" }
+                  },
+                  [_c("a", { staticClass: "nav-link" }, [_vm._v("Контакти")])]
+                ),
+                _vm._v(" "),
+                _c(
+                  "router-link",
+                  {
+                    staticClass: "nav-item",
+                    attrs: { tag: "li", to: "/technology" }
+                  },
+                  [_c("a", { staticClass: "nav-link" }, [_vm._v("Технология")])]
+                ),
+                _vm._v(" "),
+                _c(
+                  "router-link",
+                  {
+                    staticClass: "nav-item",
+                    attrs: { tag: "li", to: "/gallery" }
+                  },
+                  [_c("a", { staticClass: "nav-link" }, [_vm._v("Галерия")])]
+                ),
+                _vm._v(" "),
+                _c(
+                  "router-link",
+                  {
+                    staticClass: "nav-item",
+                    attrs: { tag: "li", to: "/videos" }
+                  },
+                  [_c("a", { staticClass: "nav-link" }, [_vm._v("Видео")])]
+                )
+              ],
+              1
+            )
+          ]
+        )
+      ],
+      1
+    ),
     _vm._v(" "),
     _c("div", { staticClass: "container-fluid" }, [
       _c("div", { staticClass: "row" }, [_c("router-view")], 1)
@@ -51026,128 +51011,69 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c(
-      "nav",
-      { staticClass: "navbar navbar-expand-lg navbar-light bg-light" },
-      [
-        _c("a", { staticClass: "navbar-brand", attrs: { href: "#" } }, [
-          _vm._v("Сусамовтахан")
-        ]),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            staticClass: "navbar-toggler",
-            attrs: {
-              type: "button",
-              "data-toggle": "collapse",
-              "data-target": "#navbarSupportedContent",
-              "aria-controls": "navbarSupportedContent",
-              "aria-expanded": "false",
-              "aria-label": "Toggle navigation"
-            }
-          },
-          [_c("span", { staticClass: "navbar-toggler-icon" })]
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticClass: "collapse navbar-collapse",
-            attrs: { id: "navbarSupportedContent" }
-          },
-          [
-            _c("ul", { staticClass: "navbar-nav ml-auto" }, [
-              _c("li", { staticClass: "nav-item active" }, [
-                _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
-                  _vm._v("Поръчай")
-                ])
-              ]),
-              _vm._v(" "),
-              _c("li", { staticClass: "nav-item" }, [
-                _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
-                  _vm._v("За Нас")
-                ])
-              ]),
-              _vm._v(" "),
-              _c("li", { staticClass: "nav-item dropdown" }, [
-                _c(
-                  "a",
-                  {
-                    staticClass: "nav-link dropdown-toggle",
-                    attrs: {
-                      href: "#",
-                      id: "navbarDropdown",
-                      role: "button",
-                      "data-toggle": "dropdown",
-                      "aria-haspopup": "true",
-                      "aria-expanded": "false"
-                    }
-                  },
-                  [
-                    _vm._v(
-                      "\n                        Продукция\n                    "
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass: "dropdown-menu",
-                    attrs: { "aria-labelledby": "navbarDropdown" }
-                  },
-                  [
-                    _c(
-                      "a",
-                      { staticClass: "dropdown-item", attrs: { href: "#" } },
-                      [_vm._v("Сусамов тахан")]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "a",
-                      { staticClass: "dropdown-item", attrs: { href: "#" } },
-                      [_vm._v("Брашно от Лимец")]
-                    ),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "dropdown-divider" }),
-                    _vm._v(" "),
-                    _c(
-                      "a",
-                      { staticClass: "dropdown-item", attrs: { href: "#" } },
-                      [_vm._v("Сусамово масло")]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "a",
-                      { staticClass: "dropdown-item", attrs: { href: "#" } },
-                      [_vm._v("Пчелен мед")]
-                    )
-                  ]
-                )
-              ]),
-              _vm._v(" "),
-              _c("li", { staticClass: "nav-item" }, [
-                _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
-                  _vm._v("Технология")
-                ])
-              ]),
-              _vm._v(" "),
-              _c("li", { staticClass: "nav-item" }, [
-                _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
-                  _vm._v("Галерия")
-                ])
-              ]),
-              _vm._v(" "),
-              _c("li", { staticClass: "nav-item" }, [
-                _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
-                  _vm._v("Видео")
-                ])
-              ])
-            ])
-          ]
-        )
-      ]
+      "button",
+      {
+        staticClass: "navbar-toggler",
+        attrs: {
+          type: "button",
+          "data-toggle": "collapse",
+          "data-target": "#navbarSupportedContent",
+          "aria-controls": "navbarSupportedContent",
+          "aria-expanded": "false",
+          "aria-label": "Toggle navigation"
+        }
+      },
+      [_c("span", { staticClass: "navbar-toggler-icon" })]
     )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "nav-item dropdown" }, [
+      _c(
+        "a",
+        {
+          staticClass: "nav-link dropdown-toggle",
+          attrs: {
+            href: "#",
+            id: "navbarDropdown",
+            role: "button",
+            "data-toggle": "dropdown",
+            "aria-haspopup": "true",
+            "aria-expanded": "false"
+          }
+        },
+        [_vm._v("\n                        Продукция\n                    ")]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass: "dropdown-menu",
+          attrs: { "aria-labelledby": "navbarDropdown" }
+        },
+        [
+          _c("a", { staticClass: "dropdown-item", attrs: { href: "#" } }, [
+            _vm._v("Сусамов тахан")
+          ]),
+          _vm._v(" "),
+          _c("a", { staticClass: "dropdown-item", attrs: { href: "#" } }, [
+            _vm._v("Брашно от Лимец")
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "dropdown-divider" }),
+          _vm._v(" "),
+          _c("a", { staticClass: "dropdown-item", attrs: { href: "#" } }, [
+            _vm._v("Сусамово масло")
+          ]),
+          _vm._v(" "),
+          _c("a", { staticClass: "dropdown-item", attrs: { href: "#" } }, [
+            _vm._v("Пчелен мед")
+          ])
+        ]
+      )
+    ])
   }
 ]
 render._withStripped = true
@@ -51164,6 +51090,135 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 57 */,
+/* 58 */,
+/* 59 */,
+/* 60 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(61)
+}
+var normalizeComponent = __webpack_require__(5)
+/* script */
+var __vue_script__ = __webpack_require__(63)
+/* template */
+var __vue_template__ = __webpack_require__(64)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-91460e52"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/components/public/Technology.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-91460e52", Component.options)
+  } else {
+    hotAPI.reload("data-v-91460e52", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 61 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(62);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(24)("03c1ae6c", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-91460e52\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Technology.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-91460e52\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Technology.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 62 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(23)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 63 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "technology"
+});
+
+/***/ }),
+/* 64 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div")
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-91460e52", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);
