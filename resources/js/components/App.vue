@@ -16,18 +16,9 @@
                     <router-link class="nav-item" tag="li" to="/about">
                         <a class="nav-link">За Нас</a>
                     </router-link>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Продукция
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Сусамов тахан</a>
-                            <a class="dropdown-item" href="#">Брашно от Лимец</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Сусамово масло</a>
-                            <a class="dropdown-item" href="#">Пчелен мед</a>
-                        </div>
-                    </li>
+                    <router-link class="nav-item" tag="li" to="/products">
+                        <a class="nav-link">Продукти</a>
+                    </router-link>
                     <router-link class="nav-item" tag="li" to="/contacts">
                         <a class="nav-link">Контакти</a>
                     </router-link>
