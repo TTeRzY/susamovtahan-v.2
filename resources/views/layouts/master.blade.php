@@ -101,7 +101,7 @@
             </ul>
         </div>
     </div>
-    <div class="container">
+    <div class="col-lg-9 offset-lg-3">
         @yield('content')
     </div>
 </div>
