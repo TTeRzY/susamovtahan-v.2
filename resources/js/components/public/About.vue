@@ -43,17 +43,12 @@
         </section>
 
         <section class="section section_quote section_gray">
-            <div class="container section_quote__container">
+            <div class="container">
                 <div class="row">
                     <div class="col col-md-8 ml-md-auto mr-md-auto">
-                        <blockquote class="section_quote__blockquote">
-                            <p class="text-center">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae ab nobis cupiditate odit repudiandae maiores in et autem voluptate cum.
-                            </p>
-                            <footer class="text-center">
-                                George Bernard Shaw
-                            </footer>
-                        </blockquote>
+                        <p class="text-center">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae ab nobis cupiditate odit repudiandae maiores in et autem voluptate cum.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -117,8 +112,12 @@
     }
     .section_gray {
 
-        background-color: #f0f0f0;
+        background-color: #e0f2e9;
+    }
 
+    .section_gray p{
+        color: #707070;
+        font-size: 26px;
     }
 
     .section_info__img > img {

@@ -10474,7 +10474,47 @@ a.text-dark:focus {
 body {
   margin: 0;
   padding: 0;
-  background: transparent;
+}
+
+body #app {
+  background: #eefbff;
+}
+
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6,
+body .h1,
+body .h2,
+body .h3,
+body .h4,
+body .h5,
+body .h6 {
+  color: #58595b;
+  font-weight: 700;
+}
+
+body .nav-item {
+  color: #58595b;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+body .btn-send {
+  background: #e16f7c;
+  border: 1px solid #e16f7c;
+  color: #ffffff;
+  padding: 10px 30px;
+  -webkit-transition: 0.7s ease;
+  transition: 0.7s ease;
+}
+
+body .btn-send:hover {
+  -webkit-transition: 0.7s ease;
+  transition: 0.7s ease;
+  opacity: 0.8;
 }
 
 .sidebar {
@@ -10512,12 +10552,30 @@ body {
   color: #fff;
 }
 
+.nav-link {
+  color: #58595b !important;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.nav-link:hover {
+  opacity: 0.8;
+}
+
 .home-form {
   margin-top: 80px;
 }
 
 .home-page-table img {
   max-height: 60px;
+}
+
+.navbar-expand-lg {
+  padding: 30px;
+  background-color: #e0f2e9;
+  -webkit-box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.3);
+          box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.3);
 }
 
 .nav-side-menu {

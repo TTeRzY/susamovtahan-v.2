@@ -1,6 +1,7 @@
 import Home from './components/public/Home';
 import Technology from './components/public/Technology';
 import About from './components/public/About';
+import Contacts from './components/public/Contacts';
 import Products from './components/Products/Products';
 import SusamovTahan from './components/Products/SusamovTahan';
 import SusamovoMaslo from './components/Products/SusamovoMaslo';
@@ -11,6 +12,7 @@ export const routes = [
   { path: '', component: Home },
   { path: '/technology', component: Technology},
   { path: '/about', component: About },
+  { path: '/contacts', component: Contacts },
   { path: '/products', component: Products,
     children: [
       { path:'', component:SusamovTahan},

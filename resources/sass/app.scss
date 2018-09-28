@@ -25,6 +25,16 @@
   color: #fff;
 }
 
+.nav-link{
+  color: #58595b !important;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.nav-link:hover{
+  opacity: 0.8;
+}
 
 .home-form{
   margin-top: 80px;
@@ -34,6 +44,11 @@
   max-height: 60px;
 }
 
+.navbar-expand-lg{
+  padding: 30px;
+  background-color: #e0f2e9;
+  box-shadow: 2px 3px 4px rgba(0,0,0,0.3);
+}
 
 .nav-side-menu {
   overflow: auto;

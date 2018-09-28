@@ -1,6 +1,6 @@
 <template>
     <div>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg">
             <router-link class="navbar-brand" to="/">
                 <a class="nav-link">Сусамов Тахан</a>
             </router-link>
