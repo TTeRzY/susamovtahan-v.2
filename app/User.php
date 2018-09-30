@@ -29,17 +29,22 @@ class User extends Authenticatable
 
     public function tasks()
     {
-        return $this->hasMany(\App\Task::class);
+        return $this->hasMany(Task::class);
     }
 
     public function carousels()
     {
-        return $this->hasMany(\App\Carousel::class);
+        return $this->hasMany(Carousel::class);
     }
 
     public function sections()
     {
-        return $this->hasMany(\App\Sections::class);
+        return $this->hasMany(Sections::class);
+    }
+
+    public function technologies()
+    {
+        return $this->hasMany(Technology::class);
     }
 
 }

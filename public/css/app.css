@@ -10476,47 +10476,6 @@ body {
   padding: 0;
 }
 
-body #app {
-  background: #eefbff;
-}
-
-body h1,
-body h2,
-body h3,
-body h4,
-body h5,
-body h6,
-body .h1,
-body .h2,
-body .h3,
-body .h4,
-body .h5,
-body .h6 {
-  color: #58595b;
-  font-weight: 700;
-}
-
-body .nav-item {
-  color: #58595b;
-  font-weight: 400;
-  text-decoration: none;
-}
-
-body .btn-send {
-  background: #e16f7c;
-  border: 1px solid #e16f7c;
-  color: #ffffff;
-  padding: 10px 30px;
-  -webkit-transition: 0.7s ease;
-  transition: 0.7s ease;
-}
-
-body .btn-send:hover {
-  -webkit-transition: 0.7s ease;
-  transition: 0.7s ease;
-  opacity: 0.8;
-}
-
 .sidebar {
   position: fixed;
   top: 0;
@@ -10573,19 +10532,17 @@ body .btn-send:hover {
 
 .navbar-expand-lg {
   padding: 30px;
-  background-color: #e0f2e9;
   -webkit-box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.3);
           box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.3);
 }
 
 .nav-side-menu {
   overflow: auto;
-  font-family: verdana;
   font-size: 12px;
   font-weight: 200;
   background-color: #2e353d;
   position: fixed;
-  top: 0px;
+  top: 0;
   width: 300px;
   height: 100%;
   color: #e1ffff;
@@ -10606,28 +10563,14 @@ body .btn-send:hover {
 .nav-side-menu ul,
 .nav-side-menu li {
   list-style: none;
-  padding: 0px;
-  margin: 0px;
+  padding: 0;
+  margin: 0;
   line-height: 35px;
   cursor: pointer;
-  /*
-    .collapsed{
-       .arrow:before{
-                 font-family: FontAwesome;
-                 content: "\f053";
-                 display: inline-block;
-                 padding-left:10px;
-                 padding-right: 10px;
-                 vertical-align: middle;
-                 float:right;
-            }
-     }
-*/
 }
 
 .nav-side-menu ul :not(collapsed) .arrow:before,
 .nav-side-menu li :not(collapsed) .arrow:before {
-  font-family: FontAwesome;
   content: "\F078";
   display: inline-block;
   padding-left: 10px;
@@ -10658,7 +10601,7 @@ body .btn-send:hover {
   border: none;
   line-height: 28px;
   border-bottom: 1px solid #23282e;
-  margin-left: 0px;
+  margin-left: 0;
 }
 
 .nav-side-menu ul .sub-menu li:hover,
@@ -10668,7 +10611,6 @@ body .btn-send:hover {
 
 .nav-side-menu ul .sub-menu li:before,
 .nav-side-menu li .sub-menu li:before {
-  font-family: FontAwesome;
   content: "\F105";
   display: inline-block;
   padding-left: 10px;
@@ -10677,7 +10619,7 @@ body .btn-send:hover {
 }
 
 .nav-side-menu li {
-  padding-left: 0px;
+  padding-left: 0;
   border-left: 3px solid #2e353d;
   border-bottom: 1px solid #23282e;
 }

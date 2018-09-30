@@ -18,9 +18,13 @@ Route::get('/', function () {
 
 Route::middleware(['auth'])->group(function () {
 
-    Route::get('/admin/tehnologia', function () {
-        return view('admin.tehnologia');
-    });
+    Route::get('/admin/tehnologia', 'AddTechnologiesController@index');
+    Route::post('/admin/tehnologia/store', 'AddTechnologiesController@store')->name('tehnologia.store');
+    Route::get('/admin/tehnologia/edit/{id}', 'AddTechnologiesController@edit')->name('tehnologia.edit');
+    Route::post('/admin/tehnologia/update/{id}', 'AddTechnologiesController@update')->name('tehnologia.update');
+    Route::get('/admin/tehnologia/delete/{id}', 'AddTechnologiesController@delete')->name('tehnologia.delete');
+
+
     Route::get('/admin/gallery', function () {
         return view('admin.gallery');
     });

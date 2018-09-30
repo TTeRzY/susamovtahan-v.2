@@ -158,10 +158,10 @@
         margin: auto;
         width: 88px;
         height: 88px;
-        border: 8px solid #e16f7c;
+        border: 8px solid #ddd;
         line-height: 88px;
         border-radius: 50%;
-        background-color: #e16f7c;
+        background-color: #ddd;
         vertical-align: middle;
     }
     .box > .icon:hover > .image {

@@ -145,11 +145,4 @@
         height: 100%;
 
     }
-
-    .section_header{
-        padding: 12rem 0;
-        background: url("../../../assets/img/harvest_susame.jpg") fixed;
-        background-size: cover;
-        background-position: 0 150%;
-    }
 </style>
