@@ -22,7 +22,7 @@
                     <td>{{ $item->carousel_title }}</td>
                     <td>{{ $item->carousel_text }}</td>
                     <td><a href="{{ route('editCarousel', $item->id) }}" title="edit"><i class="small material-icons">edit</i></a></td>
-                    <td><a onclick="return confirm('Delete?')" href="{{ route('delete', $item->id) }}" title="delete"><i class="small material-icons">delete_forever</i></a></td>
+                    <td><a onclick="return confirm('Delete?')" href="{{ route('tehnologia.delete', $item->id) }}" title="delete"><i class="small material-icons">delete_forever</i></a></td>
                 </tr>
                 @endforeach
                 </tbody>

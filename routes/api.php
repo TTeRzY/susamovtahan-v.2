@@ -29,3 +29,11 @@ Route::resource('/carousels', 'ShowCarouselsController', [
 Route::resource('/sections', 'SectionsController', [
     'except' => ['edit', 'show', 'store']
 ]);
+
+Route::resource('/technology', 'ShowTechnologiesController', [
+    'except' => ['edit', 'show', 'store']
+]);
+
+Route::resource('/gallery', 'ShowGalleryController', [
+    'except' => ['edit', 'show', 'store']
+]);

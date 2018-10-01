@@ -10627,6 +10627,8 @@ body {
 .nav-side-menu li a {
   text-decoration: none;
   color: #e1ffff;
+  display: block;
+  width: 100%;
 }
 
 .nav-side-menu li a i {
@@ -10725,7 +10727,6 @@ body {
   z-index: 0;
   position: relative;
   background-size: cover;
-  background: url(/images/img8.jpg?e484bbb1615bc22f672e6022717ac716) no-repeat fixed 50% 50%;
 }
 
 .parallax-background h2 {
@@ -10750,5 +10751,10 @@ body {
   right: 0;
   top: 0;
   z-index: 0;
+}
+
+.edit-technologies img,
+.technology_image img {
+  max-height: 60px;
 }
 

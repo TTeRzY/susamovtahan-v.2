@@ -29960,7 +29960,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n.vertical-line[data-v-91460e52]{\n    font-size: 50px;\n    line-height: 1;\n}\n.vertical-line span[data-v-91460e52]{\n    content: '';\n    display: block;\n    width: 2px;\n    color: #000000;\n    height: 160px;\n    background: #000000;\n    margin: 10px auto;\n}\nimg[data-v-91460e52]{\n    width: 250px;\n    height: 250px;\n}\n", ""]);
+exports.push([module.i, "\n.technology-page[data-v-91460e52]{\n    width: 100%;\n}\n.technology-page .jumbotron[data-v-91460e52]{\n    min-height: 350px\n}\n.vertical-line[data-v-91460e52]{\n    font-size: 50px;\n    line-height: 1;\n}\n.vertical-line span[data-v-91460e52]{\n    content: '';\n    display: block;\n    width: 2px;\n    color: #000000;\n    height: 160px;\n    background: #000000;\n    margin: 10px auto;\n}\nimg[data-v-91460e52]{\n    width: 250px;\n    height: 250px;\n}\n", ""]);
 
 // exports
 
@@ -29971,71 +29971,8 @@ exports.push([module.i, "\n.vertical-line[data-v-91460e52]{\n    font-size: 50px
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 //
 //
 //
@@ -30061,8 +29998,33 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "technology"
+  name: "technology",
+  data: function data() {
+    return {
+      technologies: []
+    };
+  },
+  created: function created() {
+    // fetch the data when the view is created and the data is
+    // already being observed
+    this.readTechnology;
+  },
+
+  computed: {
+    readTechnology: function readTechnology() {
+      var _this = this;
+
+      __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('api/technology').then(function (res) {
+        for (var item in res.data) {
+          _this.technologies.push(res.data[item]);
+        }
+      }).catch(function (err) {
+        console.log(err.response.data.message);
+      });
+    }
+  }
 });
 
 /***/ }),
@@ -30073,174 +30035,70 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c(
+    "div",
+    { staticClass: "technology-page" },
+    [
+      _vm._m(0),
+      _vm._v(" "),
+      _vm._l(_vm.technologies, function(item) {
+        return _c(
+          "div",
+          { staticClass: "col-lg-10 ml-auto mr-auto text-center mb-4" },
+          [
+            _c("img", {
+              staticClass: "rounded-circle img-fluid d-block mx-auto",
+              attrs: { src: "/uploads/" + item.technology_image, alt: "" }
+            }),
+            _vm._v(" "),
+            _vm._m(1, true),
+            _vm._v(" "),
+            _c("h3", [
+              _vm._v(
+                "\r\n            " +
+                  _vm._s(item.technology_title) +
+                  "\r\n        "
+              )
+            ]),
+            _vm._v(" "),
+            _c("p", [
+              _vm._v(
+                "\r\n            " +
+                  _vm._s(item.technology_info) +
+                  "\r\n        "
+              )
+            ])
+          ]
+        )
+      })
+    ],
+    2
+  )
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("div", [
-        _c("div", { staticClass: "jumbotron jumbotron-fluid" }, [
-          _c("div", { staticClass: "container" }, [
-            _c("h1", { staticClass: "display-4" }, [
-              _vm._v("Технология на производството")
-            ]),
-            _vm._v(" "),
-            _c("p", { staticClass: "lead" }, [
-              _vm._v("Описание на технологията на производство....")
-            ])
-          ])
+    return _c("div", { staticClass: "jumbotron jumbotron-fluid" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("h1", { staticClass: "display-4 text-center" }, [
+          _vm._v("Технология на производството")
         ]),
         _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "col-lg-10 ml-auto mr-auto text-center mb-4" },
-          [
-            _c("img", {
-              staticClass: "rounded-circle img-fluid d-block mx-auto",
-              attrs: {
-                src: "http://susamovtahan.bg/pictures/image-sawing.png",
-                alt: ""
-              }
-            }),
-            _vm._v(" "),
-            _c("h3", [
-              _vm._v("\r\n                Засяване на сусама\r\n            ")
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "vertical-line" }, [
-              _vm._v("\r\n                .\r\n                "),
-              _c("span")
-            ]),
-            _vm._v(" "),
-            _c("p", [
-              _vm._v(
-                "\r\n                Сусама е растение което обича топлия южен средиземноморски климат и песъчливи почви.\r\n                Едногодишно растение, храстовидно достигащо до метър височина.\r\n                Засяването става втората половина на май месец, но може да варира седмица две,като определящ фактор е времето.\r\n                Целта е да има достатъчно влага в почвата, нужна за покълване на семето. Затова и сеячите старателно следят\r\n                късните пролетни дъждове. Сеенето става на ръка(при по малки площи) като се хвърля около 350-400гр.\r\n                семе на декар, по-големите производители са механизирали сеенето като затова използват сеялки.\r\n            "
-              )
-            ])
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "col-lg-10 ml-auto mr-auto text-center mb-4" },
-          [
-            _c("img", {
-              staticClass: "rounded-circle img-fluid d-block mx-auto",
-              attrs: {
-                src: "http://susamovtahan.bg/pictures/tovarene-susam.png",
-                alt: ""
-              }
-            }),
-            _vm._v(" "),
-            _c("div", { staticClass: "vertical-line" }, [
-              _vm._v("\r\n                .\r\n                "),
-              _c("span")
-            ]),
-            _vm._v(" "),
-            _c("h3", [
-              _vm._v(
-                "\r\n                Прибиране на реколтата\r\n            "
-              )
-            ]),
-            _vm._v(" "),
-            _c("p", [
-              _vm._v(
-                "\r\n                Прибирането на реколтата става септември месец, след като се провери дали е достигнал пълна зрялост, което е от изключителна важност,за качествените показатели на сусамовото семе. Най-долните листа пожълтяват и окапват, а най горните шушулки леко се разтварят. Някой от по-неопитните производители избързват от страх да не би сусама да изпопада на нивата, но правят огромна грешка понеже точно в тези последни дни на узряване сусамът си набавя всички нужни и ценни полезни вещества, необходими при следващите процеси на преработка.\r\n            "
-              )
-            ])
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "col-lg-10 ml-auto mr-auto text-center mb-4" },
-          [
-            _c("img", {
-              staticClass: "rounded-circle img-fluid d-block mx-auto",
-              attrs: {
-                src: "http://susamovtahan.bg/pictures/izmivane-susam.png",
-                alt: ""
-              }
-            }),
-            _vm._v(" "),
-            _c("div", { staticClass: "vertical-line" }, [
-              _vm._v("\r\n                .\r\n                "),
-              _c("span")
-            ]),
-            _vm._v(" "),
-            _c("h3", [
-              _vm._v("\r\n                Измиване на сусама\r\n            ")
-            ]),
-            _vm._v(" "),
-            _c("p", [
-              _vm._v(
-                "\r\n                След като сусамовото семе пристигне в работилницата, се изсипва в каца със солена вода. Солената вода е с по-висока плътност, което кара семенцата да изплуват на повърхността, камъчетата и песъчинките да паднат на дъното. След това сусама се изгребва и се поставя в решета където да се изцеди. Оттам сусама се прехвърля в друга каца, която се пълни с чиста вода, така сусама се обезсолява а на повърхността изплуват не охранените, повредени семенца.В крайна сметка получаваме добре пречистено,здраво охранено сусамово семе.\r\n            "
-              )
-            ])
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "col-lg-10 ml-auto mr-auto text-center mb-4" },
-          [
-            _c("img", {
-              staticClass: "rounded-circle img-fluid d-block mx-auto",
-              attrs: {
-                src: "http://susamovtahan.bg/pictures/izpichane-pesht.png",
-                alt: ""
-              }
-            }),
-            _vm._v(" "),
-            _c("div", { staticClass: "vertical-line" }, [
-              _vm._v("\r\n                .\r\n                "),
-              _c("span")
-            ]),
-            _vm._v(" "),
-            _c("h3", [
-              _vm._v("\r\n                Изпичане на сусама\r\n            ")
-            ]),
-            _vm._v(" "),
-            _c("p", [
-              _vm._v(
-                "\r\n                След като окапе и последната капка вода, сусама се мята в голяма пещ и се разстила. Пеща е куполовидна, разделена е на две части с преграда, в по голямата е зърното,а в по-малката огъня. Печенето на сусама трае няколко часа,като през цялoто време процеса преминава в сушене на зърното, а печенето е броени минути, ”в това е и мaйсторлъка на занаята” казва Николай (вуйчото-майстор пекар). Целта е да излезе влагата от семето и същевременно да се запазят всички ценни съставки в него.\r\n            "
-              )
-            ])
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "col-lg-10 ml-auto mr-auto text-center mb-4" },
-          [
-            _c("img", {
-              staticClass: "rounded-circle img-fluid d-block mx-auto",
-              attrs: {
-                src: "http://susamovtahan.bg/pictures/smilane-susam.png",
-                alt: ""
-              }
-            }),
-            _vm._v(" "),
-            _c("div", { staticClass: "vertical-line" }, [
-              _vm._v("\r\n                .\r\n                "),
-              _c("span")
-            ]),
-            _vm._v(" "),
-            _c("h3", [
-              _vm._v("\r\n                Смилане на сусама\r\n            ")
-            ]),
-            _vm._v(" "),
-            _c("p", [
-              _vm._v(
-                "\r\n                Готовия сусам се изкарва от пеща и се изсипва в конусовиден кош, от който пада директно в мелницата. Мелницата представлява два конусовидни камъка с големи размери, размерите са за сметка на оборотите(ниски обороти), по този начин се избягва загряването при мелене. Важно при обработката на маслодайни семена е да няма загряване, защото се губят ценните съставки на семето. Камъните са специално пригодени(наковани) за мелене на сусам и периодично се коват според етапа на износване. Падащият сусам под натиска на тежките камъни потича по улей изкован в самия камък и се събира в съд от който се разфасова в буркани. Сусамовият тахан е с дълъг срок на годност, сусамовото олио което се садържа в него практически не гранясва, с времето се утаява и е небходимо да се разбърка преди консумация.\r\n            "
-              )
-            ])
-          ]
-        )
+        _c("p", { staticClass: "lead text-center" }, [
+          _vm._v("Описание на технологията на производство....")
+        ])
       ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "vertical-line" }, [
+      _vm._v("\r\n            .\r\n            "),
+      _c("span")
     ])
   }
 ]
@@ -30556,7 +30414,7 @@ var staticRenderFns = [
               _c("div", { staticClass: "col" }, [
                 _c("h2", { staticClass: "section__heading text-center" }, [
                   _vm._v(
-                    "\n                        Behind the scenes\n                    "
+                    "\n                        Вкусният тахан е истинско лекарство\n                    "
                   )
                 ])
               ])
@@ -30573,7 +30431,7 @@ var staticRenderFns = [
                 _c("div", { staticClass: "section_info__body" }, [
                   _c("p", { staticClass: "lead text-heading" }, [
                     _vm._v(
-                      "\n                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident sequi ratione, accusamus quo mollitia architecto, explicabo obcaecati.\n                        "
+                      "\n                            Представата ни за тахана най-често включва хумус, халва, сос за салати или продуктза веган сладкиши. Той обаче също така би могъл да бъде животоспасяващо лекарство.Едно ново проучване показва, че таханът може да намали риска от сърдечно-съдовиболести с 39% само за шест седмици.Kогато хората в западния свят решат да вземат предпазни мерки срещу сърдечнизаболявания, обикновено започват да пият аспирин или други лекарства, вместо дапроменят начина си на хранене и да започнат да се движат повече.\n                            Йордан Каракехайов ЕООД                            "
                     )
                   ]),
                   _vm._v(" "),
@@ -32168,68 +32026,8 @@ exports.push([module.i, "\nh2[data-v-06488e97]{\n    font-size: 60px;\n    paddi
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 //
 //
 //
@@ -32266,9 +32064,33 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
-    name: "Gallery",
-    methods: {}
+  name: "gallery",
+  data: function data() {
+    return {
+      gallery: []
+    };
+  },
+  created: function created() {
+    // fetch the data when the view is created and the data is
+    // already being observed
+    this.readGallery;
+  },
+
+  computed: {
+    readGallery: function readGallery() {
+      var _this = this;
+
+      __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('api/gallery').then(function (res) {
+        for (var item in res.data) {
+          _this.gallery.push(res.data[item]);
+        }
+      }).catch(function (err) {
+        console.log(err.response.data.message);
+      });
+    }
+  }
 });
 
 /***/ }),
@@ -32279,306 +32101,76 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "container-fluid" }, [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("div", { staticClass: "col-lg-12 album py-5 bg-light" }, [
+      _c("div", { staticClass: "container" }, [
+        _c(
+          "div",
+          { staticClass: "row" },
+          _vm._l(_vm.gallery, function(item) {
+            return _c("div", { staticClass: "col-md-4" }, [
+              _c("div", { staticClass: "card mb-4 shadow-sm" }, [
+                _c("img", {
+                  staticClass: "card-img-top",
+                  staticStyle: {
+                    height: "225px",
+                    width: "100%",
+                    display: "block"
+                  },
+                  attrs: {
+                    src: "/uploads/" + item.gallery_image,
+                    "data-holder-rendered": "true"
+                  }
+                }),
+                _vm._v(" "),
+                _c("div", { staticClass: "card-body" }, [
+                  _c("p", { staticClass: "card-text" }, [
+                    _vm._v(
+                      "\n                                " +
+                        _vm._s(item.gallery_info) +
+                        "\n                            "
+                    )
+                  ])
+                ])
+              ])
+            ])
+          })
+        )
+      ])
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container-fluid" }, [
-      _c("div", { staticClass: "jumbotron jumbotron-fluid text-center" }, [
-        _c("div", { staticClass: "container" }, [
-          _c("h1", { staticClass: "jumbotron-heading" }, [
-            _vm._v("Album example")
-          ]),
+    return _c("div", { staticClass: "jumbotron jumbotron-fluid text-center" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("h1", { staticClass: "jumbotron-heading" }, [
+          _vm._v("Album example")
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "lead text-muted" }, [
+          _vm._v(
+            "Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely."
+          )
+        ]),
+        _vm._v(" "),
+        _c("p", [
+          _c(
+            "a",
+            { staticClass: "btn btn-primary my-2", attrs: { href: "#" } },
+            [_vm._v("Main call to action")]
+          ),
           _vm._v(" "),
-          _c("p", { staticClass: "lead text-muted" }, [
-            _vm._v(
-              "Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely."
-            )
-          ]),
-          _vm._v(" "),
-          _c("p", [
-            _c(
-              "a",
-              { staticClass: "btn btn-primary my-2", attrs: { href: "#" } },
-              [_vm._v("Main call to action")]
-            ),
-            _vm._v(" "),
-            _c(
-              "a",
-              { staticClass: "btn btn-secondary my-2", attrs: { href: "#" } },
-              [_vm._v("Secondary action")]
-            )
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-lg-12 album py-5 bg-light" }, [
-        _c("div", { staticClass: "container" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-md-4" }, [
-              _c("div", { staticClass: "card mb-4 shadow-sm" }, [
-                _c("img", {
-                  staticClass: "card-img-top",
-                  staticStyle: {
-                    height: "225px",
-                    width: "100%",
-                    display: "block"
-                  },
-                  attrs: {
-                    "data-src":
-                      "holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail",
-                    alt: "Thumbnail [100%x225]",
-                    src:
-                      "data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22348%22%20height%3D%22225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20348%20225%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_16621d3e4df%20text%20%7B%20fill%3A%23eceeef%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A17pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_16621d3e4df%22%3E%3Crect%20width%3D%22348%22%20height%3D%22225%22%20fill%3D%22%2355595c%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22116.45000076293945%22%20y%3D%22120.3%22%3EThumbnail%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E",
-                    "data-holder-rendered": "true"
-                  }
-                }),
-                _vm._v(" "),
-                _c("div", { staticClass: "card-body" }, [
-                  _c("p", { staticClass: "card-text" }, [
-                    _vm._v(
-                      "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."
-                    )
-                  ])
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-md-4" }, [
-              _c("div", { staticClass: "card mb-4 shadow-sm" }, [
-                _c("img", {
-                  staticClass: "card-img-top",
-                  staticStyle: {
-                    height: "225px",
-                    width: "100%",
-                    display: "block"
-                  },
-                  attrs: {
-                    "data-src":
-                      "holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail",
-                    alt: "Thumbnail [100%x225]",
-                    src:
-                      "data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22348%22%20height%3D%22225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20348%20225%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_16621d3e4e5%20text%20%7B%20fill%3A%23eceeef%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A17pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_16621d3e4e5%22%3E%3Crect%20width%3D%22348%22%20height%3D%22225%22%20fill%3D%22%2355595c%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22116.45000076293945%22%20y%3D%22120.3%22%3EThumbnail%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E",
-                    "data-holder-rendered": "true"
-                  }
-                }),
-                _vm._v(" "),
-                _c("div", { staticClass: "card-body" }, [
-                  _c("p", { staticClass: "card-text" }, [
-                    _vm._v(
-                      "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."
-                    )
-                  ])
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-md-4" }, [
-              _c("div", { staticClass: "card mb-4 shadow-sm" }, [
-                _c("img", {
-                  staticClass: "card-img-top",
-                  staticStyle: {
-                    height: "225px",
-                    width: "100%",
-                    display: "block"
-                  },
-                  attrs: {
-                    "data-src":
-                      "holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail",
-                    alt: "Thumbnail [100%x225]",
-                    src:
-                      "data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22348%22%20height%3D%22225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20348%20225%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_16621d3e4eb%20text%20%7B%20fill%3A%23eceeef%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A17pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_16621d3e4eb%22%3E%3Crect%20width%3D%22348%22%20height%3D%22225%22%20fill%3D%22%2355595c%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22116.45000076293945%22%20y%3D%22120.3%22%3EThumbnail%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E",
-                    "data-holder-rendered": "true"
-                  }
-                }),
-                _vm._v(" "),
-                _c("div", { staticClass: "card-body" }, [
-                  _c("p", { staticClass: "card-text" }, [
-                    _vm._v(
-                      "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."
-                    )
-                  ])
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-md-4" }, [
-              _c("div", { staticClass: "card mb-4 shadow-sm" }, [
-                _c("img", {
-                  staticClass: "card-img-top",
-                  staticStyle: {
-                    height: "225px",
-                    width: "100%",
-                    display: "block"
-                  },
-                  attrs: {
-                    "data-src":
-                      "holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail",
-                    alt: "Thumbnail [100%x225]",
-                    src:
-                      "data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22348%22%20height%3D%22225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20348%20225%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_16621d3e4f0%20text%20%7B%20fill%3A%23eceeef%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A17pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_16621d3e4f0%22%3E%3Crect%20width%3D%22348%22%20height%3D%22225%22%20fill%3D%22%2355595c%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22116.45000076293945%22%20y%3D%22120.3%22%3EThumbnail%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E",
-                    "data-holder-rendered": "true"
-                  }
-                }),
-                _vm._v(" "),
-                _c("div", { staticClass: "card-body" }, [
-                  _c("p", { staticClass: "card-text" }, [
-                    _vm._v(
-                      "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."
-                    )
-                  ])
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-md-4" }, [
-              _c("div", { staticClass: "card mb-4 shadow-sm" }, [
-                _c("img", {
-                  staticClass: "card-img-top",
-                  staticStyle: {
-                    height: "225px",
-                    width: "100%",
-                    display: "block"
-                  },
-                  attrs: {
-                    "data-src":
-                      "holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail",
-                    alt: "Thumbnail [100%x225]",
-                    src:
-                      "data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22348%22%20height%3D%22225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20348%20225%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_16621d3e4f5%20text%20%7B%20fill%3A%23eceeef%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A17pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_16621d3e4f5%22%3E%3Crect%20width%3D%22348%22%20height%3D%22225%22%20fill%3D%22%2355595c%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22116.45000076293945%22%20y%3D%22120.3%22%3EThumbnail%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E",
-                    "data-holder-rendered": "true"
-                  }
-                }),
-                _vm._v(" "),
-                _c("div", { staticClass: "card-body" }, [
-                  _c("p", { staticClass: "card-text" }, [
-                    _vm._v(
-                      "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."
-                    )
-                  ])
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-md-4" }, [
-              _c("div", { staticClass: "card mb-4 shadow-sm" }, [
-                _c("img", {
-                  staticClass: "card-img-top",
-                  staticStyle: {
-                    height: "225px",
-                    width: "100%",
-                    display: "block"
-                  },
-                  attrs: {
-                    "data-src":
-                      "holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail",
-                    alt: "Thumbnail [100%x225]",
-                    src:
-                      "data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22348%22%20height%3D%22225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20348%20225%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_16621d3e4f9%20text%20%7B%20fill%3A%23eceeef%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A17pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_16621d3e4f9%22%3E%3Crect%20width%3D%22348%22%20height%3D%22225%22%20fill%3D%22%2355595c%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22116.45000076293945%22%20y%3D%22120.3%22%3EThumbnail%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E",
-                    "data-holder-rendered": "true"
-                  }
-                }),
-                _vm._v(" "),
-                _c("div", { staticClass: "card-body" }, [
-                  _c("p", { staticClass: "card-text" }, [
-                    _vm._v(
-                      "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."
-                    )
-                  ])
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-md-4" }, [
-              _c("div", { staticClass: "card mb-4 shadow-sm" }, [
-                _c("img", {
-                  staticClass: "card-img-top",
-                  staticStyle: {
-                    height: "225px",
-                    width: "100%",
-                    display: "block"
-                  },
-                  attrs: {
-                    "data-src":
-                      "holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail",
-                    alt: "Thumbnail [100%x225]",
-                    src:
-                      "data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22348%22%20height%3D%22225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20348%20225%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_16621d3e4fb%20text%20%7B%20fill%3A%23eceeef%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A17pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_16621d3e4fb%22%3E%3Crect%20width%3D%22348%22%20height%3D%22225%22%20fill%3D%22%2355595c%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22116.45000076293945%22%20y%3D%22120.3%22%3EThumbnail%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E",
-                    "data-holder-rendered": "true"
-                  }
-                }),
-                _vm._v(" "),
-                _c("div", { staticClass: "card-body" }, [
-                  _c("p", { staticClass: "card-text" }, [
-                    _vm._v(
-                      "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."
-                    )
-                  ])
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-md-4" }, [
-              _c("div", { staticClass: "card mb-4 shadow-sm" }, [
-                _c("img", {
-                  staticClass: "card-img-top",
-                  staticStyle: {
-                    height: "225px",
-                    width: "100%",
-                    display: "block"
-                  },
-                  attrs: {
-                    "data-src":
-                      "holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail",
-                    alt: "Thumbnail [100%x225]",
-                    src:
-                      "data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22348%22%20height%3D%22225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20348%20225%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_16621d3e4ff%20text%20%7B%20fill%3A%23eceeef%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A17pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_16621d3e4ff%22%3E%3Crect%20width%3D%22348%22%20height%3D%22225%22%20fill%3D%22%2355595c%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22116.45000076293945%22%20y%3D%22120.3%22%3EThumbnail%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E",
-                    "data-holder-rendered": "true"
-                  }
-                }),
-                _vm._v(" "),
-                _c("div", { staticClass: "card-body" }, [
-                  _c("p", { staticClass: "card-text" }, [
-                    _vm._v(
-                      "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."
-                    )
-                  ])
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-md-4" }, [
-              _c("div", { staticClass: "card mb-4 shadow-sm" }, [
-                _c("img", {
-                  staticClass: "card-img-top",
-                  staticStyle: {
-                    height: "225px",
-                    width: "100%",
-                    display: "block"
-                  },
-                  attrs: {
-                    "data-src":
-                      "holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail",
-                    alt: "Thumbnail [100%x225]",
-                    src:
-                      "data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22348%22%20height%3D%22225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20348%20225%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_16621d3e501%20text%20%7B%20fill%3A%23eceeef%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A17pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_16621d3e501%22%3E%3Crect%20width%3D%22348%22%20height%3D%22225%22%20fill%3D%22%2355595c%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22116.45000076293945%22%20y%3D%22120.3%22%3EThumbnail%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E",
-                    "data-holder-rendered": "true"
-                  }
-                }),
-                _vm._v(" "),
-                _c("div", { staticClass: "card-body" }, [
-                  _c("p", { staticClass: "card-text" }, [
-                    _vm._v(
-                      "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."
-                    )
-                  ])
-                ])
-              ])
-            ])
-          ])
+          _c(
+            "a",
+            { staticClass: "btn btn-secondary my-2", attrs: { href: "#" } },
+            [_vm._v("Secondary action")]
+          )
         ])
       ])
     ])

@@ -47,4 +47,9 @@ class User extends Authenticatable
         return $this->hasMany(Technology::class);
     }
 
+    public function gallery()
+    {
+        return $this->hasMany(Gallery::class);
+    }
+
 }

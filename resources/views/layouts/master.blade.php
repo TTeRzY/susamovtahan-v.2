@@ -61,21 +61,21 @@
         <div class="menu-list">
 
             <ul id="menu-content" class="menu-content collapse out">
-                <li class="active">
+                <li>
                     <a href="{{ url('/admin') }}">
                          Начало
                     </a>
                 </li>
 
                 <li>
-                    <a href="{{ url('/admin/tehnologia') }}"> Технология <span></span></a>
+                    <a href="{{ url('/admin/tehnologia') }}"><span> Технология </span></a>
                 </li>
 
                 <li>
-                    <a href="{{ url('/admin/gallery') }}">Галерия <span></span></a>
+                    <a href="{{ url('/admin/gallery/') }}"><span>Галерия </span></a>
                 </li>
                 <li>
-                    <a href="{{ url('/admin/videos') }}"> Видео <span></span></a>
+                    <a href="{{ url('/admin/videos') }}"><span> Видео </span></a>
                 </li>
 
                 <li>

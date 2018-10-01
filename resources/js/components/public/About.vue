@@ -59,7 +59,7 @@
                 <div class="row">
                     <div class="col">
                         <h2 class="section__heading text-center">
-                            Behind the scenes
+                            Вкусният тахан е истинско лекарство
                         </h2>
                     </div>
                 </div>
@@ -76,8 +76,8 @@
 
                         <div class="section_info__body">
                             <p class="lead text-heading">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident sequi ratione, accusamus quo mollitia architecto, explicabo obcaecati.
-                            </p>
+                                Представата ни за тахана най-често включва хумус, халва, сос за салати или продуктза веган сладкиши. Той обаче също така би могъл да бъде животоспасяващо лекарство.Едно ново проучване показва, че таханът може да намали риска от сърдечно-съдовиболести с 39% само за шест седмици.Kогато хората в западния свят решат да вземат предпазни мерки срещу сърдечнизаболявания, обикновено започват да пият аспирин или други лекарства, вместо дапроменят начина си на хранене и да започнат да се движат повече.
+                                Йордан Каракехайов ЕООД                            </p>
                             <p>
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum enim saepe aperiam eius, quam blanditiis necessitatibus dolorem dignissimos pariatur quas velit nihil tempora, libero unde molestiae! Illum, inventore. Iusto, autem!
                             </p>

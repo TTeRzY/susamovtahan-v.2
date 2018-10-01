@@ -17,28 +17,28 @@
             @foreach($technologies as $item)
                 <tr>
                     <th scope="row">{{ $item->id }}</th>
-                    <td><img class="img-fluid" src="" alt=""></td>
+                    <td class="technology_image"><img class="img-fluid" src="{{ URL::to('/') }}/uploads/{{ $item->technology_image }}" alt=""></td>
                     <td>{{ $item->technology_title }}</td>
                     <td>{{ $item->technology_info }}</td>
-                    <td><a href="" title="edit"><i class="small material-icons">edit</i></a></td>
-                    <td><a onclick="return confirm('Delete?')" href="" title="delete"><i class="small material-icons">delete_forever</i></a></td>
+                    <td><a href="{{ route('tehnologia.edit', $item->id) }}" title="edit"><i class="small material-icons">edit</i></a></td>
+                    <td><a onclick="return confirm('Delete?')" href="{{ route('tehnologia.delete', $item->id) }}" title="delete"><i class="small material-icons">delete_forever</i></a></td>
                 </tr>
                 @endforeach
             </tbody>
         </table>
         <form name="technology_form" enctype="multipart/form-data" method="POST" action="{{ route('tehnologia.store') }}" class="col-md-12 home-form">
-            <input type="hidden" value="carousel_form" name="technology_form">
+            <input type="hidden" value="technology_form" name="technology_form">
             <div class="row">
                 <div class="form-group col-md-12">
-                    <input name="tech_image" id="tech_image" type="file" class="form-control-file validate">
+                    <input name="technology_image" id="technology_image" type="file" class="form-control-file validate">
                 </div>
                 <div class="form-group col-md-12">
-                    <label for="tech_title">Име на технология</label>
-                    <input name="tech_title" id="tech_title" type="text" class="form-control validate">
+                    <label for="technology_title">Име на технология</label>
+                    <input name="technology_title" id="technology_title" type="text" class="form-control validate">
                 </div>
                 <div class="form-group col-md-12">
-                    <label for="tech_text">Информация</label>
-                    <input name="tech_text" id="tech_text" type="text" class="form-control validate">
+                    <label for="technology_info">Информация</label>
+                    <input name="technology_info" id="technology_info" type="text" class="form-control validate">
                 </div>
             </div>
             <button type="submit" class="waves-effect waves-light btn">Добави технология</button>
