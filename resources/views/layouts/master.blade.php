@@ -68,7 +68,7 @@
                 </li>
 
                 <li>
-                    <a href="{{ url('/admin/tehnologia') }}"><span> Технология </span></a>
+                    <a href="{{ url('/admin/technology') }}"><span> Технология </span></a>
                 </li>
 
                 <li>

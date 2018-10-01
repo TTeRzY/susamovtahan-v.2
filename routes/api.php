@@ -37,3 +37,7 @@ Route::resource('/technology', 'ShowTechnologiesController', [
 Route::resource('/gallery', 'ShowGalleryController', [
     'except' => ['edit', 'show', 'store']
 ]);
+
+Route::resource('/videos', 'ShowVideosController', [
+    'except' => ['edit', 'show', 'store']
+]);

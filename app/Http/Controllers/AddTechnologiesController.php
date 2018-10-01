@@ -11,7 +11,7 @@ class AddTechnologiesController extends Controller
     //
     public function index() {
         $technologies = Technology::all();
-        return view('admin.tehnologia', compact('technologies'));
+        return view('admin.technology.index', compact('technologies'));
     }
 
     public function store(Request $request){
@@ -33,7 +33,7 @@ class AddTechnologiesController extends Controller
     {
         $technology = Technology::find($id);
 
-        return view('admin.editTechnologies', compact('technology'));
+        return view('admin.technology.editTechnologies', compact('technology'));
 
     }
 
@@ -56,7 +56,7 @@ class AddTechnologiesController extends Controller
             $technology->save();
         }
 
-        return redirect('/admin/tehnologia');
+        return redirect('/admin/technology');
     }
 
 

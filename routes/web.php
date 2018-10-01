@@ -27,11 +27,11 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/delete/{id}', 'ToDoController@delete')->name('delete');
 
     //Technologies Controller
-    Route::get('/admin/tehnologia', 'AddTechnologiesController@index');
-    Route::post('/admin/tehnologia/store', 'AddTechnologiesController@store')->name('tehnologia.store');
-    Route::get('/admin/tehnologia/edit/{id}', 'AddTechnologiesController@edit')->name('tehnologia.edit');
-    Route::post('/admin/tehnologia/update/{id}', 'AddTechnologiesController@update')->name('tehnologia.update');
-    Route::get('/admin/tehnologia/delete/{id}', 'AddTechnologiesController@delete')->name('tehnologia.delete');
+    Route::get('/admin/technology', 'AddTechnologiesController@index');
+    Route::post('/admin/technology/store', 'AddTechnologiesController@store')->name('technology.store');
+    Route::get('/admin/technology/edit/{id}', 'AddTechnologiesController@edit')->name('technology.edit');
+    Route::post('/admin/technology/update/{id}', 'AddTechnologiesController@update')->name('technology.update');
+    Route::get('/admin/technology/delete/{id}', 'AddTechnologiesController@delete')->name('technology.delete');
 
     //Gallery Controller
     Route::get('/admin/gallery/', 'AddGalleryController@index');
@@ -40,9 +40,13 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/admin/gallery/update/{id}', 'AddGalleryController@update')->name('gallery.update');
     Route::get('/admin/gallery/delete/{id}', 'AddGalleryController@delete')->name('gallery.delete');
 
-    Route::get('/admin/videos', function () {
-        return view('admin.videos');
-    });
+    //Videos Controller
+    Route::get('/admin/videos/', 'AddVideosController@index');
+    Route::post('/admin/videos/store', 'AddVideosController@store')->name('videos.store');
+    Route::get('/admin/videos/edit/{id}', 'AddVideosController@edit')->name('videos.edit');
+    Route::post('/admin/videos/update/{id}', 'AddVideosController@update')->name('videos.update');
+    Route::get('/admin/videos/delete/{id}', 'AddVideosController@delete')->name('videos.delete');
+
     Route::get('/admin/about', function () {
         return view('admin.about');
     });
