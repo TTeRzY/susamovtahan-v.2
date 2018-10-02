@@ -10476,6 +10476,10 @@ body {
   padding: 0;
 }
 
+.nav-side-menu ul .sub-menu li::before {
+  display: none !important;
+}
+
 .sidebar {
   position: fixed;
   top: 0;

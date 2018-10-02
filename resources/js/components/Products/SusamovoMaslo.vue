@@ -1,42 +1,60 @@
 <template>
     <div>
-        <div class="card mt-4">
-            <img class="card-img-top img-fluid" src="http://placehold.it/900x400" alt="">
-            <div class="card-body">
-                <h3 class="card-title">Сусамово масло</h3>
-                <h4>$24.99</h4>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente dicta fugit fugiat hic aliquam itaque facere, soluta. Totam id dolores, sint aperiam sequi pariatur praesentium animi perspiciatis molestias iure, ducimus!</p>
-                <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
-                4.0 stars
+        <div v-for="item in susamovoMaslo">
+            <div class="card mt-4">
+                <img class="card-img-top img-fluid" :src="'/uploads/' + item.sesame_oil_image" alt="">
+                <div class="card-body">
+                    <h3 class="card-title">{{ item.sesame_oil_title}}</h3>
+                    <h4>{{ item.sesame_oil_price}} лв.</h4>
+                    <p class="card-text">
+                        {{ item.sesame_oil_info}}
+                    </p>
+                </div>
             </div>
-        </div>
-        <!-- /.card -->
+            <!-- /.card -->
 
-        <div class="card card-outline-secondary my-4">
-            <div class="card-header">
-                Product Reviews
+            <div class="card card-outline-secondary my-4">
+                <div class="card-header">
+                    Повече информация за Сусамовото масло
+                </div>
+                <div class="card-body">
+                    <p>
+                        {{ item.sesame_oil_more_info}}
+                    </p>
+
+                </div>
             </div>
-            <div class="card-body">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
-                <small class="text-muted">Posted by Anonymous on 3/1/17</small>
-                <hr>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
-                <small class="text-muted">Posted by Anonymous on 3/1/17</small>
-                <hr>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
-                <small class="text-muted">Posted by Anonymous on 3/1/17</small>
-                <hr>
-                <a href="#" class="btn btn-success">Leave a Review</a>
-            </div>
+            <!-- /.card -->
         </div>
-        <!-- /.card -->
     </div>
 </template>
 
 <script>
-  export default {
-    name: "susamo-maslo"
-  }
+    import axios from 'axios';
+    export default {
+        name: "susamovo-maslo",
+        data() {
+            return {
+                susamovoMaslo: []
+            }
+        },
+        created () {
+            // fetch the data when the view is created and the data is
+            // already being observed
+            this.readSusamovoMaslo;
+        },
+        computed: {
+            readSusamovoMaslo() {
+                axios.get('api/products/sesame_oil').then((res) => {
+                    for(let item in res.data){
+                        this.susamovoMaslo.push(res.data[item]);
+                    }
+                }).catch((err) => {
+                    console.log(err.response.data.message);
+                });
+            }
+        }
+    }
 </script>
 
 <style scoped>

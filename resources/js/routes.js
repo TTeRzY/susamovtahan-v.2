@@ -18,7 +18,7 @@ export const routes = [
     { path: '/gallery', component: Gallery },
     { path: '/videos', component: Videos },
     {
-        path: '/products', component: Products,
+        path: '/products/', component: Products,
         children: [
             { path: '', component: SusamovTahan },
             { path: '/products/susamovo-maslo', component: SusamovoMaslo },

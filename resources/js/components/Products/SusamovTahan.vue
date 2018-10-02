@@ -1,42 +1,82 @@
 <template>
     <div>
-        <div class="card mt-4">
-            <img class="card-img-top img-fluid" src="http://placehold.it/900x400" alt="">
-            <div class="card-body">
-                <h3 class="card-title">Сусамов тахан</h3>
-                <h4>$24.99</h4>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente dicta fugit fugiat hic aliquam itaque facere, soluta. Totam id dolores, sint aperiam sequi pariatur praesentium animi perspiciatis molestias iure, ducimus!</p>
-                <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
-                4.0 stars
+        <div v-for="item in tahan">
+            <div class="card mt-4">
+                <img class="card-img-top img-fluid" :src="'/uploads/' + item.tahan_image" alt="">
+                <div class="card-body">
+                    <h3 class="card-title">{{ item.tahan_title}}</h3>
+                    <h4>{{ item.tahan_price}} лв.</h4>
+                    <p class="card-text">
+                        {{ item.tahan_info}}
+                    </p>
+                    <!--<span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
+                    4.0 stars
+                    -->
+                </div>
             </div>
-        </div>
-        <!-- /.card -->
+            <!-- /.card -->
 
-        <div class="card card-outline-secondary my-4">
-            <div class="card-header">
-                Product Reviews
+            <div class="card card-outline-secondary my-4">
+                <div class="card-header">
+                    Повече информация за продукта
+                </div>
+                <div class="card-body">
+                    <p>{{ item.tahan_more_info}}</p>
+                </div>
             </div>
-            <div class="card-body">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
-                <small class="text-muted">Posted by Anonymous on 3/1/17</small>
-                <hr>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
-                <small class="text-muted">Posted by Anonymous on 3/1/17</small>
-                <hr>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
-                <small class="text-muted">Posted by Anonymous on 3/1/17</small>
-                <hr>
-                <a href="#" class="btn btn-success">Leave a Review</a>
+            <!-- /.card -->
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="reviewModal" tabindex="-1" role="dialog" aria-labelledby="reviewModal" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Изпретете отзив</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        ...
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Затвори</button>
+                        <button type="button" class="btn btn-primary">Изпрати</button>
+                    </div>
+                </div>
             </div>
         </div>
-        <!-- /.card -->
+
     </div>
 </template>
 
 <script>
-  export default {
-    name: "susamov-tahan"
-  }
+    import axios from 'axios';
+    export default {
+        name: "susamov-tahan",
+        data() {
+            return {
+                tahan: []
+            }
+        },
+        created () {
+            // fetch the data when the view is created and the data is
+            // already being observed
+            this.readTahan;
+        },
+        computed: {
+            readTahan() {
+                axios.get('api/products/tahan').then((res) => {
+                    for(let item in res.data){
+                        this.tahan.push(res.data[item]);
+                    }
+                }).catch((err) => {
+                    console.log(err.response.data.message);
+                });
+            }
+        }
+    }
 </script>
 
 <style scoped>

@@ -56,5 +56,24 @@ class User extends Authenticatable
     {
         return $this->hasMany(Videos::class);
     }
+    public function tahan()
+    {
+        return $this->hasMany(Tahan::class);
+    }
+
+    public function sesame_oil()
+    {
+        return $this->hasMany(SesameOil::class);
+    }
+
+    public function limets()
+    {
+        return $this->hasMany(Limets::class);
+    }
+
+    public function honey()
+    {
+        return $this->hasMany(Honey::class);
+    }
 
 }

@@ -41,3 +41,19 @@ Route::resource('/gallery', 'ShowGalleryController', [
 Route::resource('/videos', 'ShowVideosController', [
     'except' => ['edit', 'show', 'store']
 ]);
+
+Route::resource('/products/tahan', 'ShowTahanController', [
+    'except' => ['edit', 'show', 'store']
+]);
+
+Route::resource('/products/sesame_oil', 'ShowSesameOilController', [
+    'except' => ['edit', 'show', 'store']
+]);
+
+Route::resource('/products/limets', 'ShowLimetsController', [
+    'except' => ['edit', 'show', 'store']
+]);
+
+Route::resource('/products/honey', 'ShowHoneyController', [
+    'except' => ['edit', 'show', 'store']
+]);

@@ -54,6 +54,36 @@ Route::middleware(['auth'])->group(function () {
         return view('admin.contacts');
     });
 
+    //Tahan Controller
+    Route::get('/admin/products/tahan', 'TahanController@index');
+    Route::post('/admin/products/tahan/store', 'TahanController@store')->name('tahan.store');
+    Route::get('/admin/products/tahan/edit/{id}', 'TahanController@edit')->name('tahan.edit');
+    Route::post('/admin/products/tahan/update/{id}', 'TahanController@update')->name('tahan.update');
+    Route::get('/admin/products/tahan/delete/{id}', 'TahanController@delete')->name('tahan.delete');
+
+    //SesameOil Controller
+    Route::get('/admin/products/sesame_oil', 'SesameOilController@index');
+    Route::post('/admin/products/sesame_oil/store', 'SesameOilController@store')->name('sesame_oil.store');
+    Route::get('/admin/products/sesame_oil/edit/{id}', 'SesameOilController@edit')->name('sesame_oil.edit');
+    Route::post('/admin/products/sesame_oil/update/{id}', 'SesameOilController@update')->name('sesame_oil.update');
+    Route::get('/admin/products/sesame_oil/delete/{id}', 'SesameOilController@delete')->name('sesame_oil.delete');
+
+    //Limets Controller
+    Route::get('/admin/products/limets', 'LimetsController@index');
+    Route::post('/admin/products/limets/store', 'LimetsController@store')->name('limets.store');
+    Route::get('/admin/products/limets/edit/{id}', 'LimetsController@edit')->name('limets.edit');
+    Route::post('/admin/products/limets/update/{id}', 'LimetsController@update')->name('limets.update');
+    Route::get('/admin/products/limets/delete/{id}', 'LimetsController@delete')->name('limets.delete');
+
+    //Honey Controller
+    Route::get('/admin/products/honey', 'HoneyController@index');
+    Route::post('/admin/products/honey/store', 'HoneyController@store')->name('honey.store');
+    Route::get('/admin/products/honey/edit/{id}', 'HoneyController@edit')->name('honey.edit');
+    Route::post('/admin/products/honey/update/{id}', 'HoneyController@update')->name('honey.update');
+    Route::get('/admin/products/honey/delete/{id}', 'HoneyController@delete')->name('honey.delete');
+
+
+
 });
 
 
