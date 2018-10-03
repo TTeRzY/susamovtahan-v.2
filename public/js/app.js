@@ -30200,7 +30200,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n.about-page[data-v-31b02c92]{\n    width: 100%;\n}\n.section[data-v-31b02c92]{\n    padding:  6rem 0;\n}\n.section_gray[data-v-31b02c92] {\n\n    background-color: #e0f2e9;\n}\n.section_gray p[data-v-31b02c92]{\n    color: #707070;\n    font-size: 26px;\n}\n.section_info__img > img[data-v-31b02c92] {\n\n    position: absolute;\n    top: 0;\n    right: -1rem;\n    width: auto;\n    max-width: none !important;\n    height: 100% !important;\n    max-height: 100%;\n}\n.section_info_opposite .section_info__img > img[data-v-31b02c92] {\n\n    right: auto;\n    left: -1rem;\n}\n.section_info__img[data-v-31b02c92] {\n\n    position: relative;\n    height: 100%;\n}\n", ""]);
+exports.push([module.i, "\n.about-page[data-v-31b02c92]{\n    width: 100%;\n}\n.section[data-v-31b02c92]{\n    padding:  6rem 0;\n}\n.section_gray p[data-v-31b02c92]{\n    color: #707070;\n    font-size: 26px;\n}\n\n", ""]);
 
 // exports
 
@@ -30211,58 +30211,8 @@ exports.push([module.i, "\n.about-page[data-v-31b02c92]{\n    width: 100%;\n}\n.
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 //
 //
 //
@@ -30310,8 +30260,33 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "about"
+  name: "about",
+  data: function data() {
+    return {
+      about: []
+    };
+  },
+  created: function created() {
+    // fetch the data when the view is created and the data is
+    // already being observed
+    this.readAbout;
+  },
+
+  computed: {
+    readAbout: function readAbout() {
+      var _this = this;
+
+      __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('api/about').then(function (res) {
+        for (var item in res.data) {
+          _this.about.push(res.data[item]);
+        }
+      }).catch(function (err) {
+        console.log(err.response.data.message);
+      });
+    }
+  }
 });
 
 /***/ }),
@@ -30322,147 +30297,86 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "about-page" }, [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("div", { staticClass: "container" }, [
+      _c(
+        "div",
+        { staticClass: "about-page-body" },
+        _vm._l(_vm.about, function(item, index) {
+          return index % 2 === 0
+            ? _c("div", { staticClass: "row about-page-body-content" }, [
+                _c("div", { staticClass: "col-lg-7 about-page-body-text" }, [
+                  _c("h2", [_vm._v(_vm._s(item.about_title))]),
+                  _vm._v(" "),
+                  _c("img", { attrs: { src: "", alt: "" } }),
+                  _vm._v(" "),
+                  _c("p", [
+                    _vm._v(
+                      "\n                       " +
+                        _vm._s(item.about_info) +
+                        "\n                    "
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-lg-5 about-page-body-image" }, [
+                  _c("img", {
+                    attrs: { src: "/uploads/" + item.about_image, alt: "" }
+                  })
+                ])
+              ])
+            : _c("div", { staticClass: "row about-page-body-content" }, [
+                _c("div", { staticClass: "col-lg-5 about-page-body-image" }, [
+                  _c("img", {
+                    attrs: { src: "/uploads/" + item.about_image, alt: "" }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-lg-7 about-page-body-text" }, [
+                  _c("h2", [_vm._v(_vm._s(item.about_title))]),
+                  _vm._v(" "),
+                  _c("img", { attrs: { src: "", alt: "" } }),
+                  _vm._v(" "),
+                  _c("p", [
+                    _vm._v(
+                      "\n                        " +
+                        _vm._s(item.about_info) +
+                        "\n                    "
+                    )
+                  ])
+                ])
+              ])
+        })
+      )
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "about-page" }, [
-      _c("section", { staticClass: "section section_header" }, [
-        _c("div", { staticClass: "container" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col" }, [
-              _c(
-                "h1",
-                {
-                  staticClass:
-                    "section__heading section_header__heading text-center"
-                },
-                [
-                  _vm._v(
-                    "\n                        About Us\n                    "
-                  )
-                ]
-              )
-            ])
+    return _c("section", { staticClass: "section section_header" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col" }, [
+            _c(
+              "h1",
+              {
+                staticClass:
+                  "section__heading section_header__heading text-center"
+              },
+              [
+                _vm._v(
+                  "\n                        About Us\n                    "
+                )
+              ]
+            )
           ])
         ])
-      ]),
-      _vm._v(" "),
-      _c("section", { staticClass: "section section_discover" }, [
-        _c("div", { staticClass: "container" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-md-2 align-self-start" }, [
-              _c("p", { staticClass: "section_discover__description" }, [
-                _vm._v(
-                  "\n                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.\n                    "
-                )
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-md-4 align-self-start" }, [
-              _c("div", { staticClass: "section_discover__img" })
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-md-6 align-self-center" }, [
-              _c("h2", [
-                _c("em", [_vm._v("Lorem ipsum")]),
-                _vm._v(" dolor sit amet")
-              ]),
-              _vm._v(" "),
-              _c("p", [
-                _vm._v(
-                  "\n                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias veritatis nisi, consequatur, laborum libero a neque ducimus. Porro rem illum quo nostrum quisquam asperiores, blanditiis, consectetur. Possimus facilis velit, voluptatibus!\n                    "
-                )
-              ]),
-              _vm._v(" "),
-              _c("p", [
-                _vm._v(
-                  "\n                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis deleniti non, voluptate architecto, harum suscipit dignissimos eaque voluptatibus nobis natus error iure exercitationem. Officia facilis, maiores atque delectus commodi rerum.\n                    "
-                )
-              ]),
-              _vm._v(" "),
-              _c("p", [
-                _vm._v(
-                  "\n                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur qui, itaque, accusantium accusamus eum voluptate ducimus eligendi laboriosam alias mollitia omnis harum et ut quaerat, minus repellendus sint. Inventore, iure.\n                    "
-                )
-              ])
-            ])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("section", { staticClass: "section section_quote section_gray" }, [
-        _c("div", { staticClass: "container" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col col-md-8 ml-md-auto mr-md-auto" }, [
-              _c("p", { staticClass: "text-center" }, [
-                _vm._v(
-                  "\n                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae ab nobis cupiditate odit repudiandae maiores in et autem voluptate cum.\n                    "
-                )
-              ])
-            ])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c(
-        "section",
-        { staticClass: "section section_info section_info_opposite" },
-        [
-          _c("div", { staticClass: "container" }, [
-            _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col" }, [
-                _c("h2", { staticClass: "section__heading text-center" }, [
-                  _vm._v(
-                    "\n                        Вкусният тахан е истинско лекарство\n                    "
-                  )
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "row align-items-justify" }, [
-              _c("div", { staticClass: "col-md-6 order-md-3" }, [
-                _c("div", { staticClass: "section_info__img" })
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-md-1 order-md-2" }),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-md-5 order-md-1" }, [
-                _c("div", { staticClass: "section_info__body" }, [
-                  _c("p", { staticClass: "lead text-heading" }, [
-                    _vm._v(
-                      "\n                            Представата ни за тахана най-често включва хумус, халва, сос за салати или продуктза веган сладкиши. Той обаче също така би могъл да бъде животоспасяващо лекарство.Едно ново проучване показва, че таханът може да намали риска от сърдечно-съдовиболести с 39% само за шест седмици.Kогато хората в западния свят решат да вземат предпазни мерки срещу сърдечнизаболявания, обикновено започват да пият аспирин или други лекарства, вместо дапроменят начина си на хранене и да започнат да се движат повече.\n                            Йордан Каракехайов ЕООД                            "
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("p", [
-                    _vm._v(
-                      "\n                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum enim saepe aperiam eius, quam blanditiis necessitatibus dolorem dignissimos pariatur quas velit nihil tempora, libero unde molestiae! Illum, inventore. Iusto, autem!\n                        "
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("br"),
-                  _vm._v(" "),
-                  _c("p", [
-                    _c(
-                      "a",
-                      { staticClass: "btn btn-primary", attrs: { href: "#" } },
-                      [
-                        _vm._v(
-                          "\n                                Contact Us\n                            "
-                        )
-                      ]
-                    )
-                  ])
-                ])
-              ])
-            ])
-          ])
-        ]
-      )
+      ])
     ])
   }
 ]
@@ -30561,7 +30475,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n.contacts-header[data-v-d547ed44]{\n    padding-top: 60px;\n    padding-bottom: 40px;\n    text-align: center;\n    width: 100%;\n}\n.contacts-header h1[data-v-d547ed44]{\n    text-transform: uppercase;\n}\n.form-control[data-v-d547ed44]\n{\n    border-radius: 0;\n    border:1px solid #EDEDED;\n}\n.form-control[data-v-d547ed44]:focus\n{\n    border:1px solid #00bfff;\n}\n.textarea-contact[data-v-d547ed44]\n{\n    resize:none;\n}\n.second-portion[data-v-d547ed44]\n{\n    margin-top:50px;\n}\n.box > .icon[data-v-d547ed44] {\n    text-align: center;\n    position: relative;\n}\n.box > .icon > .image[data-v-d547ed44] {\n    position: relative;\n    z-index: 2;\n    margin: auto;\n    width: 88px;\n    height: 88px;\n    border: 8px solid #ddd;\n    line-height: 88px;\n    border-radius: 50%;\n    background-color: #ddd;\n    vertical-align: middle;\n}\n.box > .icon:hover > .image[data-v-d547ed44] {\n    opacity: 0.8;\n}\n.box > .icon > .image > i[data-v-d547ed44] {\n    font-size: 36px !important;\n    color: #fff !important;\n}\n.box > .icon:hover > .image > i[data-v-d547ed44] {\n    color: white !important;\n}\n.box > .icon > .info[data-v-d547ed44] {\n    margin-top: -24px;\n    background: #fff;\n    border: 1px solid rgba(0, 0, 0, 0.03);\n    padding: 15px 0 10px 0;\n    min-height:163px;\n    -webkit-box-shadow: 02px 3px 3px rgba(0,0,0,0.3);\n            box-shadow: 02px 3px 3px rgba(0,0,0,0.3);\n}\n.box > .icon:hover > .info[data-v-d547ed44] {\n    background: rgba(0, 0, 0, 0.04);\n    border-color: #e0e0e0;\n    color: white;\n}\n.box > .icon > .info > h3.title[data-v-d547ed44] {\n    padding-top: 15px;\n    font-family: \"Robot\",sans-serif !important;\n    font-size: 16px;\n    color: #6c757d !important;\n    font-weight: 700;\n}\n.box > .icon > .info > p[data-v-d547ed44] {\n    font-family: \"Robot\",sans-serif !important;\n    font-size: 13px;\n    color: #6c757d !important;\n    font-weight: 700;\n    line-height: 1.5em;\n    margin: 20px;\n}\n.box > .icon:hover > .info > h3.title[data-v-d547ed44], .box > .icon:hover > .info > p[data-v-d547ed44], .box > .icon:hover > .info > .more > a[data-v-d547ed44] {\n    color: #707070;\n}\n.box > .icon > .info > .more a[data-v-d547ed44] {\n    font-family: \"Robot\",sans-serif !important;\n    font-size: 12px;\n    color: #222;\n    line-height: 12px;\n    text-transform: uppercase;\n    text-decoration: none;\n}\n.box > .icon:hover > .info > .more > a[data-v-d547ed44] { color: #fff; padding: 6px 8px; background-color: #63B76C;\n}\n.box .space[data-v-d547ed44] {\n    height: 30px;\n}\n@media only screen and (max-width: 768px)\n{\n.contact-form[data-v-d547ed44]\n    {\n        margin-top:25px;\n}\n.btn-send[data-v-d547ed44]\n    {\n        width: 100%;\n        padding:10px;\n}\n.second-portion[data-v-d547ed44]\n    {\n        margin-top:25px;\n}\n}\n", ""]);
+exports.push([module.i, "\n.contacts-header[data-v-d547ed44]{\n    padding-top: 60px;\n    padding-bottom: 40px;\n    text-align: center;\n    width: 100%;\n}\n.contacts-header h1[data-v-d547ed44]{\n    text-transform: uppercase;\n}\n.form-control[data-v-d547ed44]\n{\n    border-radius: 0;\n    border:1px solid #EDEDED;\n}\n.form-control[data-v-d547ed44]:focus\n{\n    border:1px solid #00bfff;\n}\n.textarea-contact[data-v-d547ed44]\n{\n    resize:none;\n}\n.second-portion[data-v-d547ed44]\n{\n    margin-top:50px;\n}\n.box > .icon[data-v-d547ed44] {\n    text-align: center;\n    position: relative;\n}\n.box > .icon > .image[data-v-d547ed44] {\n    position: relative;\n    z-index: 2;\n    margin: auto;\n    width: 88px;\n    height: 88px;\n    border: 8px solid #ddd;\n    line-height: 48px;\n    border-radius: 50%;\n    background-color: #ddd;\n    vertical-align: middle;\n}\n.box > .icon > .image img[data-v-d547ed44]{\n    max-height: 45px;\n}\n.box > .icon:hover > .image[data-v-d547ed44] {\n    opacity: 0.8;\n}\n.box > .icon > .image > i[data-v-d547ed44] {\n    font-size: 36px !important;\n    color: #fff !important;\n}\n.box > .icon:hover > .image > i[data-v-d547ed44] {\n    color: white !important;\n}\n.box > .icon > .info[data-v-d547ed44] {\n    margin-top: -24px;\n    background: #fff;\n    border: 1px solid rgba(0, 0, 0, 0.03);\n    padding: 15px 0 10px 0;\n    min-height:163px;\n    -webkit-box-shadow: 02px 3px 3px rgba(0,0,0,0.3);\n            box-shadow: 02px 3px 3px rgba(0,0,0,0.3);\n}\n.box > .icon:hover > .info[data-v-d547ed44] {\n    background: rgba(0, 0, 0, 0.04);\n    border-color: #e0e0e0;\n    color: white;\n}\n.box > .icon > .info > h3.title[data-v-d547ed44] {\n    padding-top: 15px;\n    font-family: \"Robot\",sans-serif !important;\n    font-size: 16px;\n    color: #6c757d !important;\n    font-weight: 700;\n}\n.box > .icon > .info > p[data-v-d547ed44] {\n    font-family: \"Robot\",sans-serif !important;\n    font-size: 13px;\n    color: #6c757d !important;\n    font-weight: 700;\n    line-height: 1.5em;\n    margin: 20px;\n}\n.box > .icon:hover > .info > h3.title[data-v-d547ed44], .box > .icon:hover > .info > p[data-v-d547ed44], .box > .icon:hover > .info > .more > a[data-v-d547ed44] {\n    color: #707070;\n}\n.box > .icon > .info > .more a[data-v-d547ed44] {\n    font-family: \"Robot\",sans-serif !important;\n    font-size: 12px;\n    color: #222;\n    line-height: 12px;\n    text-transform: uppercase;\n    text-decoration: none;\n}\n.box > .icon:hover > .info > .more > a[data-v-d547ed44] { color: #fff; padding: 6px 8px; background-color: #63B76C;\n}\n.box .space[data-v-d547ed44] {\n    height: 30px;\n}\n@media only screen and (max-width: 768px)\n{\n.contact-form[data-v-d547ed44]\n    {\n        margin-top:25px;\n}\n.btn-send[data-v-d547ed44]\n    {\n        width: 100%;\n        padding:10px;\n}\n.second-portion[data-v-d547ed44]\n    {\n        margin-top:25px;\n}\n}\n", ""]);
 
 // exports
 
@@ -30572,49 +30486,8 @@ exports.push([module.i, "\n.contacts-header[data-v-d547ed44]{\n    padding-top: 
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 //
 //
 //
@@ -30682,8 +30555,33 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "contacts"
+  name: "contacts",
+  data: function data() {
+    return {
+      contactsCard: []
+    };
+  },
+  created: function created() {
+    // fetch the data when the view is created and the data is
+    // already being observed
+    this.readContacts;
+  },
+
+  computed: {
+    readContacts: function readContacts() {
+      var _this = this;
+
+      __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('api/contacts').then(function (res) {
+        for (var item in res.data) {
+          _this.contactsCard.push(res.data[item]);
+        }
+      }).catch(function (err) {
+        console.log(err.response.data.message);
+      });
+    }
+  }
 });
 
 /***/ }),
@@ -30694,212 +30592,150 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "container" }, [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("div", { staticClass: "container second-portion" }, [
+      _c(
+        "div",
+        { staticClass: "row" },
+        _vm._l(_vm.contactsCard, function(item) {
+          return _c("div", { staticClass: "col-lg-4" }, [
+            _c("div", { staticClass: "box" }, [
+              _c("div", { staticClass: "icon" }, [
+                _c("div", { staticClass: "image" }, [
+                  _c("img", {
+                    staticClass: "img-fluid",
+                    attrs: { src: "/uploads/" + item.contacts_image, alt: "" }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "info" }, [
+                  _c("h3", { staticClass: "title" }, [
+                    _vm._v(_vm._s(item.contacts_title))
+                  ]),
+                  _vm._v(" "),
+                  _c("p", [
+                    _vm._v(
+                      "\n                                " +
+                        _vm._s(item.contacts_paragraph) +
+                        "\n                            "
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("p", [
+                    _vm._v(
+                      "\n                                " +
+                        _vm._s(item.contacts_info) +
+                        "\n                            "
+                    )
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "space" })
+            ])
+          ])
+        })
+      )
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "contacts-header" }, [
-          _c("h1", [_vm._v(" Свържете се с нас ")])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-lg-12", attrs: { id: "parent" } }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-lg-6" }, [
-              _c("iframe", {
-                staticStyle: { border: "0", width: "100%", height: "320px" },
-                attrs: {
-                  src:
-                    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11949.098406309664!2d26.1168047!3d41.5206679!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa03ec42de417e45a!2z0JnQvtGA0LTQsNC9INCa0LDRgNCw0LrQtdGF0LDQudC-0LIg0JXQntCe0JQ!5e0!3m2!1sen!2sbg!4v1538132805176",
-                  frameborder: "0",
-                  allowfullscreen: ""
-                }
-              })
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-lg-6" }, [
-              _c(
-                "form",
-                {
-                  staticClass: "contact-form",
-                  attrs: { action: "", method: "post" }
-                },
-                [
-                  _c("div", { staticClass: "form-group" }, [
-                    _c("input", {
-                      staticClass: "form-control",
-                      attrs: {
-                        type: "text",
-                        id: "name",
-                        name: "nm",
-                        placeholder: "Name",
-                        required: "",
-                        autofocus: ""
-                      }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "form-group form_left" }, [
-                    _c("input", {
-                      staticClass: "form-control",
-                      attrs: {
-                        type: "email",
-                        id: "email",
-                        name: "em",
-                        placeholder: "Email",
-                        required: ""
-                      }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "form-group" }, [
-                    _c("input", {
-                      staticClass: "form-control",
-                      attrs: {
-                        type: "text",
-                        id: "phone",
-                        onkeypress:
-                          "return event.charCode >= 48 && event.charCode <= 57",
-                        maxlength: "10",
-                        placeholder: "Mobile No.",
-                        required: ""
-                      }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "form-group" }, [
-                    _c("textarea", {
-                      staticClass: "form-control textarea-contact",
-                      attrs: {
-                        rows: "5",
-                        id: "comment",
-                        name: "FB",
-                        placeholder: "Type Your Message/Feedback here...",
-                        required: ""
-                      }
-                    }),
-                    _vm._v(" "),
-                    _c("br"),
-                    _vm._v(" "),
-                    _c("button", { staticClass: "btn btn-send" }, [
-                      _c("span", { staticClass: "glyphicon glyphicon-send" }),
-                      _vm._v(" Send ")
-                    ])
-                  ])
-                ]
-              )
-            ])
-          ])
-        ])
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "contacts-header" }, [
+        _c("h1", [_vm._v(" Свържете се с нас ")])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "container second-portion" }, [
+      _c("div", { staticClass: "col-lg-12", attrs: { id: "parent" } }, [
         _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-xs-12 col-sm-6 col-lg-4" }, [
-            _c("div", { staticClass: "box" }, [
-              _c("div", { staticClass: "icon" }, [
-                _c("div", { staticClass: "image" }, [
-                  _c("i", { staticClass: "material-icons" }, [
-                    _vm._v(
-                      "\n                            email\n                        "
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "info" }, [
-                  _c("h3", { staticClass: "title" }, [
-                    _vm._v("ИМЕЙЛ & УЕБСАЙТ")
-                  ]),
-                  _vm._v(" "),
-                  _c("p", [
-                    _vm._v(
-                      "\n                                  gondhiyahardik6610@gmail.com\n                            "
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("p", [
-                    _vm._v(
-                      "\n                              www.hardikgondhiya.com\n                            "
-                    )
-                  ])
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "space" })
-            ])
+          _c("div", { staticClass: "col-lg-6" }, [
+            _c("iframe", {
+              staticStyle: { border: "0", width: "100%", height: "320px" },
+              attrs: {
+                src:
+                  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11949.098406309664!2d26.1168047!3d41.5206679!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa03ec42de417e45a!2z0JnQvtGA0LTQsNC9INCa0LDRgNCw0LrQtdGF0LDQudC-0LIg0JXQntCe0JQ!5e0!3m2!1sen!2sbg!4v1538132805176",
+                frameborder: "0",
+                allowfullscreen: ""
+              }
+            })
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "col-xs-12 col-sm-6 col-lg-4" }, [
-            _c("div", { staticClass: "box" }, [
-              _c("div", { staticClass: "icon" }, [
-                _c("div", { staticClass: "image" }, [
-                  _c("i", { staticClass: "material-icons" }, [
-                    _vm._v(
-                      "\n                            contact_phone\n                        "
-                    )
-                  ])
+          _c("div", { staticClass: "col-lg-6" }, [
+            _c(
+              "form",
+              {
+                staticClass: "contact-form",
+                attrs: { action: "", method: "post" }
+              },
+              [
+                _c("div", { staticClass: "form-group" }, [
+                  _c("input", {
+                    staticClass: "form-control",
+                    attrs: {
+                      type: "text",
+                      id: "name",
+                      name: "nm",
+                      placeholder: "Name",
+                      required: "",
+                      autofocus: ""
+                    }
+                  })
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "info" }, [
-                  _c("h3", { staticClass: "title" }, [_vm._v("CONTACT")]),
-                  _vm._v(" "),
-                  _c("p", [
-                    _c("i", {
-                      staticClass: "fa fa-mobile",
-                      attrs: { "aria-hidden": "true" }
-                    }),
-                    _vm._v(
-                      "   (+91)-9624XXXXX\n                                "
-                    ),
-                    _c("br"),
-                    _vm._v(" "),
-                    _c("br"),
-                    _vm._v(" "),
-                    _c("i", {
-                      staticClass: "fa fa-mobile",
-                      attrs: { "aria-hidden": "true" }
-                    }),
-                    _vm._v("    (+91)-756706XXXX\n                            ")
-                  ])
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "space" })
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-xs-12 col-sm-6 col-lg-4" }, [
-            _c("div", { staticClass: "box" }, [
-              _c("div", { staticClass: "icon" }, [
-                _c("div", { staticClass: "image" }, [
-                  _c("i", { staticClass: "material-icons" }, [
-                    _vm._v(
-                      "\n                            home\n                        "
-                    )
-                  ])
+                _c("div", { staticClass: "form-group form_left" }, [
+                  _c("input", {
+                    staticClass: "form-control",
+                    attrs: {
+                      type: "email",
+                      id: "email",
+                      name: "em",
+                      placeholder: "Email",
+                      required: ""
+                    }
+                  })
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "info" }, [
-                  _c("h3", { staticClass: "title" }, [_vm._v("ADDRESS")]),
+                _c("div", { staticClass: "form-group" }, [
+                  _c("input", {
+                    staticClass: "form-control",
+                    attrs: {
+                      type: "text",
+                      id: "phone",
+                      onkeypress:
+                        "return event.charCode >= 48 && event.charCode <= 57",
+                      maxlength: "10",
+                      placeholder: "Mobile No.",
+                      required: ""
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group" }, [
+                  _c("textarea", {
+                    staticClass: "form-control textarea-contact",
+                    attrs: {
+                      rows: "5",
+                      id: "comment",
+                      name: "FB",
+                      placeholder: "Type Your Message/Feedback here...",
+                      required: ""
+                    }
+                  }),
                   _vm._v(" "),
-                  _c("p", [
-                    _c("i", {
-                      staticClass: "fa fa-map-marker",
-                      attrs: { "aria-hidden": "true" }
-                    }),
-                    _vm._v(
-                      '   15/3 Junction Plot\n                                "Shree Krishna Krupa", Rajkot - 360001.\n                            '
-                    )
+                  _c("br"),
+                  _vm._v(" "),
+                  _c("button", { staticClass: "btn btn-send" }, [
+                    _c("span", { staticClass: "glyphicon glyphicon-send" }),
+                    _vm._v(" Send ")
                   ])
                 ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "space" })
-            ])
+              ]
+            )
           ])
         ])
       ])

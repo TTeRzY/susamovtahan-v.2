@@ -13,92 +13,62 @@
                 </div>
             </div>
         </section>
-        <section class="section section_discover">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-2 align-self-start">
-                        <p class="section_discover__description">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        <div class="container">
+            <div class="about-page-body">
+                <div class="row about-page-body-content" v-for="(item,index) in about" v-if="index % 2 === 0">
+                    <div class="col-lg-7 about-page-body-text">
+                        <h2>{{ item.about_title }}</h2>
+                        <img src="" alt="">
+                        <p>
+                           {{ item.about_info }}
                         </p>
                     </div>
-                    <div class="col-md-4 align-self-start">
-                        <div class="section_discover__img">
-
-                        </div>
+                    <div class="col-lg-5 about-page-body-image">
+                        <img :src="'/uploads/' + item.about_image" alt="">
                     </div>
-                    <div class="col-md-6 align-self-center">
-                        <h2><em>Lorem ipsum</em> dolor sit amet</h2>
+                </div>
+                <div class="row about-page-body-content" v-else>
+                    <div class="col-lg-5 about-page-body-image">
+                        <img :src="'/uploads/' + item.about_image" alt="">
+                    </div>
+                    <div class="col-lg-7 about-page-body-text">
+                        <h2>{{ item.about_title }}</h2>
+                        <img src="" alt="">
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias veritatis nisi, consequatur, laborum libero a neque ducimus. Porro rem illum quo nostrum quisquam asperiores, blanditiis, consectetur. Possimus facilis velit, voluptatibus!
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis deleniti non, voluptate architecto, harum suscipit dignissimos eaque voluptatibus nobis natus error iure exercitationem. Officia facilis, maiores atque delectus commodi rerum.
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur qui, itaque, accusantium accusamus eum voluptate ducimus eligendi laboriosam alias mollitia omnis harum et ut quaerat, minus repellendus sint. Inventore, iure.
+                            {{ item.about_info }}
                         </p>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <section class="section section_quote section_gray">
-            <div class="container">
-                <div class="row">
-                    <div class="col col-md-8 ml-md-auto mr-md-auto">
-                        <p class="text-center">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae ab nobis cupiditate odit repudiandae maiores in et autem voluptate cum.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section section_info section_info_opposite">
-            <div class="container">
-                <div class="row">
-                    <div class="col">
-                        <h2 class="section__heading text-center">
-                            Вкусният тахан е истинско лекарство
-                        </h2>
-                    </div>
-                </div>
-                <div class="row align-items-justify">
-                    <div class="col-md-6 order-md-3">
-
-                        <div class="section_info__img">
-
-                        </div>
-
-                    </div>
-                    <div class="col-md-1 order-md-2"></div>
-                    <div class="col-md-5 order-md-1">
-
-                        <div class="section_info__body">
-                            <p class="lead text-heading">
-                                Представата ни за тахана най-често включва хумус, халва, сос за салати или продуктза веган сладкиши. Той обаче също така би могъл да бъде животоспасяващо лекарство.Едно ново проучване показва, че таханът може да намали риска от сърдечно-съдовиболести с 39% само за шест седмици.Kогато хората в западния свят решат да вземат предпазни мерки срещу сърдечнизаболявания, обикновено започват да пият аспирин или други лекарства, вместо дапроменят начина си на хранене и да започнат да се движат повече.
-                                Йордан Каракехайов ЕООД                            </p>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum enim saepe aperiam eius, quam blanditiis necessitatibus dolorem dignissimos pariatur quas velit nihil tempora, libero unde molestiae! Illum, inventore. Iusto, autem!
-                            </p>
-                            <br>
-                            <p>
-                                <a href="#" class="btn btn-primary">
-                                    Contact Us
-                                </a>
-                            </p>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </section>
+        </div>
     </div>
 </template>
 
 <script>
+  import axios from 'axios';
   export default {
-    name: "about"
+    name: "about",
+    data() {
+      return {
+        about: []
+      }
+    },
+    created () {
+      // fetch the data when the view is created and the data is
+      // already being observed
+      this.readAbout;
+    },
+    computed: {
+      readAbout() {
+        axios.get('api/about').then((res) => {
+          for(let item in res.data){
+            this.about.push(res.data[item]);
+          }
+        }).catch((err) => {
+          console.log(err.response.data.message);
+        });
+      }
+    }
   }
 </script>
 
@@ -110,39 +80,10 @@
     .section{
         padding:  6rem 0;
     }
-    .section_gray {
-
-        background-color: #e0f2e9;
-    }
 
     .section_gray p{
         color: #707070;
         font-size: 26px;
     }
 
-    .section_info__img > img {
-
-        position: absolute;
-        top: 0;
-        right: -1rem;
-        width: auto;
-        max-width: none !important;
-        height: 100% !important;
-        max-height: 100%;
-
-    }
-
-    .section_info_opposite .section_info__img > img {
-
-        right: auto;
-        left: -1rem;
-
-    }
-
-    .section_info__img {
-
-        position: relative;
-        height: 100%;
-
-    }
 </style>

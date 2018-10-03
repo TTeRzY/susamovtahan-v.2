@@ -39,20 +39,19 @@
 
         <div class="container second-portion">
             <div class="row">
-                <!-- Boxes de Acoes -->
-                <div class="col-xs-12 col-sm-6 col-lg-4">
+                <div class="col-lg-4" v-for="item in contactsCard">
                     <div class="box">
                         <div class="icon">
-                            <div class="image"><i class="material-icons">
-                                email
-                            </i></div>
+                            <div class="image">
+                                <img class="img-fluid" :src="'/uploads/' + item.contacts_image" alt="">
+                            </div>
                             <div class="info">
-                                <h3 class="title">ИМЕЙЛ & УЕБСАЙТ</h3>
+                                <h3 class="title">{{ item.contacts_title}}</h3>
                                 <p>
-                                    &nbsp gondhiyahardik6610@gmail.com
+                                    {{ item.contacts_paragraph}}
                                 </p>
                                 <p>
-                                &nbsp www.hardikgondhiya.com
+                                    {{ item.contacts_info}}
                                 </p>
 
                             </div>
@@ -60,56 +59,36 @@
                         <div class="space"></div>
                     </div>
                 </div>
-
-                <div class="col-xs-12 col-sm-6 col-lg-4">
-                    <div class="box">
-                        <div class="icon">
-                            <div class="image"><i class="material-icons">
-                                contact_phone
-                            </i></div>
-                            <div class="info">
-                                <h3 class="title">CONTACT</h3>
-                                <p>
-                                    <i class="fa fa-mobile" aria-hidden="true"></i> &nbsp (+91)-9624XXXXX
-                                    <br>
-                                    <br>
-                                    <i class="fa fa-mobile" aria-hidden="true"></i> &nbsp  (+91)-756706XXXX
-                                </p>
-                            </div>
-                        </div>
-                        <div class="space"></div>
-                    </div>
-                </div>
-
-                <div class="col-xs-12 col-sm-6 col-lg-4">
-                    <div class="box">
-                        <div class="icon">
-                            <div class="image"><i class="material-icons">
-                                home
-                            </i></div>
-                            <div class="info">
-                                <h3 class="title">ADDRESS</h3>
-                                <p>
-                                    <i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp 15/3 Junction Plot
-                                    "Shree Krishna Krupa", Rajkot - 360001.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="space"></div>
-                    </div>
-                </div>
-                <!-- /Boxes de Acoes -->
-
-                <!--My Portfolio  dont Copy this -->
-
             </div>
         </div>
     </div>
 </template>
 
 <script>
+  import axios from 'axios';
   export default {
-    name: "contacts"
+    name: "contacts",
+    data() {
+      return {
+        contactsCard: []
+      }
+    },
+    created () {
+      // fetch the data when the view is created and the data is
+      // already being observed
+      this.readContacts;
+    },
+    computed: {
+      readContacts() {
+        axios.get('api/contacts').then((res) => {
+          for(let item in res.data){
+            this.contactsCard.push(res.data[item]);
+          }
+        }).catch((err) => {
+          console.log(err.response.data.message);
+        });
+      }
+    }
   }
 </script>
 
@@ -159,10 +138,14 @@
         width: 88px;
         height: 88px;
         border: 8px solid #ddd;
-        line-height: 88px;
+        line-height: 48px;
         border-radius: 50%;
         background-color: #ddd;
         vertical-align: middle;
+    }
+
+    .box > .icon > .image img{
+        max-height: 45px;
     }
     .box > .icon:hover > .image {
         opacity: 0.8;

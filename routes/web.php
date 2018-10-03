@@ -26,6 +26,21 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/update/{id}', 'ToDoController@update')->name('update');
     Route::get('/delete/{id}', 'ToDoController@delete')->name('delete');
 
+    //About Controller
+    Route::get('/admin/about', 'AddAboutController@index');
+    Route::post('/admin/about/store', 'AddAboutController@store')->name('about.store');
+    Route::get('/admin/about/edit/{id}', 'AddAboutController@edit')->name('about.edit');
+    Route::post('/admin/about/update/{id}', 'AddAboutController@update')->name('about.update');
+    Route::get('/admin/about/delete/{id}', 'AddAboutController@delete')->name('about.delete');
+
+    //Contacts Controller
+    Route::get('/admin/contacts', 'AddContactsController@index');
+    Route::post('/admin/contacts/store', 'AddContactsController@store')->name('contacts.store');
+    Route::get('/admin/contacts/edit/{id}', 'AddContactsController@edit')->name('contacts.edit');
+    Route::post('/admin/contacts/update/{id}', 'AddContactsController@update')->name('contacts.update');
+    Route::get('/admin/contacts/delete/{id}', 'AddContactsController@delete')->name('contacts.delete');
+
+
     //Technologies Controller
     Route::get('/admin/technology', 'AddTechnologiesController@index');
     Route::post('/admin/technology/store', 'AddTechnologiesController@store')->name('technology.store');
@@ -46,13 +61,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin/videos/edit/{id}', 'AddVideosController@edit')->name('videos.edit');
     Route::post('/admin/videos/update/{id}', 'AddVideosController@update')->name('videos.update');
     Route::get('/admin/videos/delete/{id}', 'AddVideosController@delete')->name('videos.delete');
-
-    Route::get('/admin/about', function () {
-        return view('admin.about');
-    });
-    Route::get('/admin/contacts', function () {
-        return view('admin.contacts');
-    });
 
     //Tahan Controller
     Route::get('/admin/products/tahan', 'TahanController@index');
@@ -81,7 +89,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin/products/honey/edit/{id}', 'HoneyController@edit')->name('honey.edit');
     Route::post('/admin/products/honey/update/{id}', 'HoneyController@update')->name('honey.update');
     Route::get('/admin/products/honey/delete/{id}', 'HoneyController@delete')->name('honey.delete');
-
 
 
 });

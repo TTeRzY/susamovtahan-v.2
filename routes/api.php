@@ -42,6 +42,14 @@ Route::resource('/videos', 'ShowVideosController', [
     'except' => ['edit', 'show', 'store']
 ]);
 
+Route::resource('/about', 'ShowAboutController', [
+    'except' => ['edit', 'show', 'store']
+]);
+
+Route::resource('/contacts', 'ShowContactsController', [
+    'except' => ['edit', 'show', 'store']
+]);
+
 Route::resource('/products/tahan', 'ShowTahanController', [
     'except' => ['edit', 'show', 'store']
 ]);
