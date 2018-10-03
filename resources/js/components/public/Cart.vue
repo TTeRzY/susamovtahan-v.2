@@ -23,7 +23,7 @@
                 <form name="order_form">
                     <div class="row cart-items-content">
                         <div class="delete-product">
-                            <a href="javascript:;" data-remove-from-cart="356">
+                            <a href="#">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17.037 21.905">
                                     <g id="rubbish-bin-delete-button" transform="translate(-50 5.762)">
                                         <g id="delete" transform="translate(50 -5.762)">

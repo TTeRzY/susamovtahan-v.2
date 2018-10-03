@@ -10,9 +10,9 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
-                    <router-link-active class="nav-item" tag="li" to="/order">
+                    <router-link class="nav-item" tag="li" to="/order">
                         <a class="nav-link">Поръчай</a>
-                    </router-link-active>
+                    </router-link>
                     <router-link class="nav-item" tag="li" to="/about">
                         <a class="nav-link">За Нас</a>
                     </router-link>
