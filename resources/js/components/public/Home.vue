@@ -1,93 +1,89 @@
 <template>
-    <div class="home-content">
-        <div id="myCarousel" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#myCarousel" data-slide-to="1"></li>
-                <li data-target="#myCarousel" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="carousel-item" v-for="(item,index) in carousels" :class="{'active': index === 0}">
-                    <img class="first-slide img-fluid" :src="'/uploads/' + item.carousel_image" alt="First slide">
-                    <div class="container">
-                        <div class="carousel-caption">
-                            <h1>{{ item.carousel_title }}</h1>
-                            <p>
-                                {{ item.carousel_text }}
-                            </p>
-                            <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a>
-                            </p>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="home-content">
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item" v-for="(item,index) in carousels" :class="{'active': index === 0}">
+                            <img class="d-block w-100" :src="'/uploads/' + item.carousel_image" alt="Carousel">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h1>{{ item.carousel_title }}</h1>
+                                <p>
+                                    {{ item.carousel_text }}
+                                </p>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-        </div>
-
-
-        <!-- Marketing messaging and featurettes
-        ================================================== -->
-        <!-- Wrap the rest of the page in another container to center all the content. -->
-
-        <div class="container marketing">
-            <div class="products-title">
-                <h2 class="text-center">Нашите продукти</h2>
-            </div>
-
-            <!-- Three columns of text below the carousel -->
-            <div class="row producs-holder">
-                <div class="col-lg-3" v-for="item in products">
-                    <div class="rounded-circle">
-                        <img class="img-fluid" :src="'/uploads/' + item.product_image" alt="Generic placeholder image">
-                    </div>
-                    <h2>{{ item.product_title}}</h2>
-                    <p>{{ item.product_info }}</p>
-                    <p><a class="btn btn-secondary" href="#" role="button">Научи повече &raquo;</a></p>
-                </div><!-- /.col-lg-3 -->
-            </div><!-- /.row -->
-
-
-            <!-- START THE FEATURETTES -->
-
-            <hr class="featurette-divider">
-
-            <div class="row featurette-holder" v-for="sec in sections">
-                <div class="row featurette">
-                    <div class="col-md-7">
-                        <h2 class="featurette-heading">
-                            <span class="text-muted">{{ sec.section_title}}</span>
-                        </h2>
-                        <p class="lead">
-                            {{ sec.section_info}}
-                        </p>
-                    </div>
-                    <div class="col-md-5">
-                        <img class="featurette-image img-fluid mx-auto" :src="'/uploads/' + sec.section_image"
-                             alt="Generic placeholder image">
-                    </div>
+                    <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
                 </div>
 
+
+                <!-- Marketing messaging and featurettes
+                ================================================== -->
+                <!-- Wrap the rest of the page in another container to center all the content. -->
+
+                <div class="container marketing">
+                    <div class="products-title">
+                        <h2 class="text-center">Нашите продукти</h2>
+                    </div>
+
+                    <!-- Three columns of text below the carousel -->
+                    <div class="row producs-holder">
+                        <div class="col-lg-3" v-for="item in products">
+                            <div class="rounded-circle">
+                                <img class="img-fluid" :src="'/uploads/' + item.product_image" alt="Generic placeholder image">
+                            </div>
+                            <h2>{{ item.product_title}}</h2>
+                            <p>{{ item.product_info }}</p>
+                            <p><a class="btn btn-secondary" href="../Products/" role="button">Научи повече &raquo;</a></p>
+                        </div><!-- /.col-lg-3 -->
+                    </div><!-- /.row -->
+
+
+                    <!-- START THE FEATURETTES -->
+
+                    <hr class="featurette-divider">
+
+                    <div class="row featurette-holder" v-for="(sec, index) in sections" v-if="index === 0">
+                        <div class="row featurette">
+                            <div class="col-md-7">
+                                <h2 class="featurette-heading">
+                                    <span class="text-muted">{{ sec.section_title}}</span>
+                                </h2>
+                                <p class="lead">
+                                    {{ sec.section_info}}
+                                </p>
+                            </div>
+                            <div class="col-md-5">
+                                <img class="featurette-image img-fluid mx-auto" :src="'/uploads/' + sec.section_image"
+                                     alt="Generic placeholder image">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /END THE FEATURETTES -->
+                </div><!-- /.container -->
+
+
+                <div class="parallax-background">
+                    <div class="mbr-overlay" style="opacity: 0.2; background-color: rgb(0, 0, 0);">
+                    </div>
+                    <h2 class="text-center">Lorem Ipsum?</h2>
+                    <p class="text-center">Please provide any document. </p>
+                </div>
+
             </div>
-
-
-
-
-            <!-- /END THE FEATURETTES -->
-
-        </div><!-- /.container -->
-
-        <div class="parallax-background">
-            <div class="mbr-overlay" style="opacity: 0.2; background-color: rgb(0, 0, 0);">
-            </div>
-            <h2 class="text-center">Lorem Ipsum?</h2>
-            <p class="text-center">Please provide any document. </p>
         </div>
     </div>
 </template>
@@ -113,6 +109,7 @@
     computed: {
       readProducts() {
         axios.get('api/tasks').then((res) => {
+          console.log(res.data);
           for(let item in res.data){
             this.products.push(res.data[item]);
           }
@@ -144,56 +141,6 @@
 
 <style scoped>
 
-    .home-content {
-        width: 100%;
-    }
-    /* CUSTOMIZE THE CAROUSEL
-    -------------------------------------------------- */
-    /* Carousel base class */
-    .carousel {
-        margin-bottom: 4rem;
-    }
-    /* Since positioning the image, we need to help out the caption */
-    .carousel-caption {
-        bottom: 3rem;
-        z-index: 10;
-    }
-    /* Declare heights because of positioning of img element */
-    .carousel-item {
-        height: 32rem;
-        background-color: #777;
-    }
-    .carousel-item > img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        min-width: 100%;
-    }
-    /* MARKETING CONTENT
-    -------------------------------------------------- */
-    /* Center align the text within the three columns below the carousel */
-    .marketing .col-lg-3 {
-        margin-bottom: 1.5rem;
-        text-align: center;
-    }
-    .marketing h2 {
-        font-weight: 400;
-    }
-    .marketing .col-lg-3 p {
-        margin-right: .75rem;
-        margin-left: .75rem;
-    }
-    /* Featurettes
-    ------------------------- */
-    .featurette-divider {
-        margin: 5rem 0; /* Space out the Bootstrap <hr> more */
-    }
-    /* Thin out the marketing headings */
-    .featurette-heading {
-        font-weight: 300;
-        line-height: 1;
-        letter-spacing: -.05rem;
-    }
     /* RESPONSIVE CSS
     -------------------------------------------------- */
     @media (min-width: 40em) {

@@ -62,6 +62,8 @@ class AddVideosController extends Controller
 
     public function delete($id){
         $videos = Videos::find($id);
+        $image_path = public_path().'/uploads/videos/'.$videos->video_content;
+        unlink($image_path);
         $videos->delete();
         return redirect()->back();
     }

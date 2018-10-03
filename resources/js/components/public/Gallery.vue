@@ -1,19 +1,14 @@
 <template>
-    <div class="container-fluid">
+    <div class="gallery-page">
         <div class="jumbotron jumbotron-fluid text-center">
             <div class="container">
-                <h1 class="jumbotron-heading">Album example</h1>
+                <h1 class="jumbotron-heading">Галерия</h1>
                 <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
-                <p>
-                    <a href="#" class="btn btn-primary my-2">Main call to action</a>
-                    <a href="#" class="btn btn-secondary my-2">Secondary action</a>
-                </p>
             </div>
         </div>
 
-        <div class="col-lg-12 album py-5 bg-light">
+        <div class="col-lg-12 album ">
             <div class="container">
-
                 <div class="row">
                     <div class="col-md-4" v-for="item in gallery">
                         <div class="card mb-4 shadow-sm">
@@ -62,6 +57,9 @@
 </script>
 
 <style scoped>
+    .gallery-page{
+        width: 100%;
+    }
     h2{
         font-size: 60px;
         padding: 45px 0;

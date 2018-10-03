@@ -61,7 +61,10 @@ class AddAboutController extends Controller
 
 
     public function delete($id){
-        $about = About::find($id);
+        $about = About::findOrFail($id);
+        //Delete File from public folder
+        $image_path = public_path().'/uploads/'.$about->about_image;
+        unlink($image_path);
         $about->delete();
         return redirect()->back();
     }

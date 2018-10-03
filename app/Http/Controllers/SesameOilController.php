@@ -68,6 +68,8 @@ class SesameOilController extends Controller
 
     public function delete($id){
         $sesame_oil = SesameOil::find($id);
+        $image_path = public_path().'/uploads/'.$sesame_oil->sesame_oil_image;
+        unlink($image_path);
         $sesame_oil->delete();
         return redirect()->back();
     }

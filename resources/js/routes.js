@@ -2,6 +2,7 @@ import Home from './components/public/Home';
 import Technology from './components/public/Technology';
 import About from './components/public/About';
 import Contacts from './components/public/Contacts';
+import Cart from './components/public/Cart';
 import Products from './components/Products/Products';
 import Gallery from './components/public/Gallery';
 import Videos from './components/public/Videos';
@@ -15,6 +16,7 @@ export const routes = [
     { path: '/technology', component: Technology },
     { path: '/about', component: About },
     { path: '/contacts', component: Contacts },
+    { path: '/cart', component: Cart },
     { path: '/gallery', component: Gallery },
     { path: '/videos', component: Videos },
     {

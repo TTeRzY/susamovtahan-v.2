@@ -59,6 +59,8 @@ class AddGalleryController extends Controller
 
     public function delete($id){
         $gallery = Gallery::find($id);
+        $image_path = public_path().'/uploads/'.$gallery->gallery_image;
+        unlink($image_path);
         $gallery->delete();
         return redirect()->back();
     }

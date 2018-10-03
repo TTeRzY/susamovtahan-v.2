@@ -62,6 +62,8 @@ class AddTechnologiesController extends Controller
 
     public function delete($id){
         $technologies = Technology::find($id);
+        $image_path = public_path().'/uploads/'.$technologies->technology_image;
+        unlink($image_path);
         $technologies->delete();
         return redirect()->back();
     }

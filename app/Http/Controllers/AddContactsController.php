@@ -65,6 +65,8 @@ class AddContactsController extends Controller
 
     public function delete($id){
         $contacts = Contacts::find($id);
+        $image_path = public_path().'/uploads/'.$contacts->contacts_image;
+        unlink($image_path);
         $contacts->delete();
         return redirect()->back();
     }

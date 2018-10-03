@@ -15,21 +15,21 @@
                         <form action="" class="contact-form" method="post">
 
                             <div class="form-group">
-                                <input type="text" class="form-control" id="name" name="nm" placeholder="Name" required="" autofocus="">
+                                <input type="text" class="form-control" id="name" name="nm" placeholder="Имена" required="" autofocus="">
                             </div>
 
 
                             <div class="form-group form_left">
-                                <input type="email" class="form-control" id="email" name="em" placeholder="Email" required="">
+                                <input type="email" class="form-control" id="email" name="em" placeholder="Имейл" required="">
                             </div>
 
                             <div class="form-group">
-                                <input type="text" class="form-control" id="phone" onkeypress="return event.charCode >= 48 && event.charCode <= 57" maxlength="10" placeholder="Mobile No." required="">
+                                <input type="text" class="form-control" id="phone" placeholder="Телефон" required="">
                             </div>
                             <div class="form-group">
-                                <textarea class="form-control textarea-contact" rows="5" id="comment" name="FB" placeholder="Type Your Message/Feedback here..." required=""></textarea>
+                                <textarea class="form-control textarea-contact" rows="5" id="comment" name="FB" placeholder="Вашето съобщение..." required=""></textarea>
                                 <br>
-                                <button class="btn btn-send"> <span class="glyphicon glyphicon-send"></span> Send </button>
+                                <button class="btn primary-button"> <span class="glyphicon glyphicon-send"></span> Изпрати </button>
                             </div>
                         </form>
                     </div>

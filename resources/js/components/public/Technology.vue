@@ -6,18 +6,20 @@
             <p class="lead text-center">Описание на технологията на производство....</p>
         </div>
     </div>
-    <div class="col-lg-10 ml-auto mr-auto text-center mb-4" v-for="item in technologies">
+    <div class="col-lg-10 ml-auto mr-auto text-center technology-section" v-for="item in technologies">
         <img class="rounded-circle img-fluid d-block mx-auto" :src="'/uploads/' + item.technology_image" alt="">
         <div class="vertical-line">
             .
             <span></span>
         </div>
-        <h3>
-            {{ item.technology_title }}
-        </h3>
-        <p>
-            {{ item.technology_info }}
-        </p>
+        <div class="info-container">
+            <h3>
+                {{ item.technology_title }}
+            </h3>
+            <p>
+                {{ item.technology_info }}
+            </p>
+        </div>
     </div>
 </div>
 </template>
@@ -75,5 +77,13 @@
     img{
         width: 250px;
         height: 250px;
+    }
+
+    .technology-section{
+        margin-bottom: 12rem;
+    }
+
+    .info-container{
+        background-color: #f3ffbd;
     }
 </style>

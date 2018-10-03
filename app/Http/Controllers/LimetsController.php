@@ -68,6 +68,8 @@ class LimetsController extends Controller
 
     public function delete($id){
         $limets = Limets::find($id);
+        $image_path = public_path().'/uploads/'.$limets->limets_image;
+        unlink($image_path);
         $limets->delete();
         return redirect()->back();
     }

@@ -68,6 +68,8 @@ class HoneyController extends Controller
 
     public function delete($id){
         $honey = Honey::find($id);
+        $image_path = public_path().'/uploads/'.$honey->honey_image;
+        unlink($image_path);
         $honey->delete();
         return redirect()->back();
     }

@@ -68,6 +68,8 @@ class TahanController extends Controller
 
     public function delete($id){
         $tahan = Tahan::find($id);
+        $image_path = public_path().'/uploads/'.$tahan->tahan_image;
+        unlink($image_path);
         $tahan->delete();
         return redirect()->back();
     }

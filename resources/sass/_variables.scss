@@ -2,19 +2,49 @@
 // Body
 $body-bg: #f8fafc;
 
-// Typography
-$font-family-sans-serif: "Nunito", sans-serif;
-$font-size-base: 0.9rem;
-$line-height-base: 1.6;
+$header: #70c1b3;
+$footer: #70c1b3;
+$btn-color: #247ba0;
 
-// Colors
-$blue: #3490dc;
-$indigo: #6574cd;
-$purple: #9561e2;
-$pink: #f66D9b;
-$red: #e3342f;
-$orange: #f6993f;
-$yellow: #ffed4a;
-$green: #38c172;
-$teal: #4dc0b5;
-$cyan: #6cb2eb;
+
+//Primary Colors Scheme
+$very-pale-yellow: #F3FFBD;
+$sea-foam-green: #b2dbbf;
+$green-sheen: #70c1b3;
+$lapis-lazuli: #247ba0;
+
+
+$white : #ffffff;
+
+//Background Colors Scheme
+
+$background-silver-light: #FCFCFC;
+$background-silver-light-v1: #F3F3F3;
+$background-silver-light-v2: #F9F9F9;
+$background-silver-darker: #F5F5F5;
+
+//Silver Colors
+$dark-silver-ver1: #636363;
+$dark-silver-ver2: #454343;
+$light-silver-ver1: #B1B1B1;
+$light-silver-ver2: #D2D2D2;
+$light-silver-ver3: #A8A8A8;
+$light-silver-ver4: #C8C8C8;
+// Orange Colors
+
+$orange-color-ver1: #FF861E;
+
+
+//Font Families
+
+$Raleway: 'Raleway', sans-serif;
+$Lato: 'Lato', sans-serif;
+$Montserrat: 'Montserrat', sans-serif;
+
+//Font Weights
+
+$regular: 400;
+$medium: 500;
+$semiBold: 600;
+$bold: 700;
+$black: 900;
