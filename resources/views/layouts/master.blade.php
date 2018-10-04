@@ -68,6 +68,10 @@
                 </li>
 
                 <li>
+                    <a href="{{ url('/admin/order') }}"><span> Поръчай </span></a>
+                </li>
+
+                <li>
                     <a href="{{ url('/admin/technology') }}"><span> Технология </span></a>
                 </li>
 

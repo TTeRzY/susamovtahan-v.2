@@ -19,9 +19,9 @@
                         -->
                 </div>
             </div>
-            <div class="cart-items-holder col-lg-12">
+            <div class="cart-items-holder col-lg-12" >
                 <form name="order_form">
-                    <div class="row cart-items-content">
+                    <div class="row cart-items-content" v-for="item in cartProducts">
                         <div class="delete-product">
                             <a href="#">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17.037 21.905">
@@ -39,17 +39,17 @@
                             <a href="#">
 
                                 <img class="img-fluid"
-                                     src="../../../assets/img/tahan720.png" alt="">
+                                     :src="'/uploads/' + item.image" alt="">
                             </a>
                         </div>
                         <div class="cart-product-name">
                             <a href="#">
-                                P3520
+                               {{ item.name }}
                             </a>
                         </div>
                         <div class="cart-product-price">
                             <p>
-                                120<sup>00</sup>лв.
+                                {{ item.id }}<sup>00</sup>лв.
                             </p>
                         </div>
                         <div class="add-more-items" data-product-id="356">
@@ -158,8 +158,23 @@
 </template>
 
 <script>
+
+    import EventBus from '../../eventBus.js';
   export default {
-    name: "cart"
+    name: "cart",
+      data () {
+        return {
+            cartProducts: []
+        }
+      },
+      mounted() {
+          // You should use arrow function if you want to get parameteres outside mounted function!
+          EventBus.$on('itemsInCart', (data) => {
+              console.log(data);
+
+              this.cartProducts.push(data);
+          });
+      }
   }
 </script>
 

@@ -32,6 +32,13 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/deleteCarousel/{id}', 'ToDoController@deleteCarousel')->name('deleteCarousel');
 
     //About Controller
+    Route::get('/admin/order', 'OrderController@index');
+    Route::post('/admin/order/store', 'OrderController@store')->name('order.store');
+    Route::get('/admin/order/edit/{id}', 'OrderController@edit')->name('order.edit');
+    Route::post('/admin/order/update/{id}', 'OrderController@update')->name('order.update');
+    Route::get('/admin/order/delete/{id}', 'OrderController@delete')->name('order.delete');
+
+    //About Controller
     Route::get('/admin/about', 'AddAboutController@index');
     Route::post('/admin/about/store', 'AddAboutController@store')->name('about.store');
     Route::get('/admin/about/edit/{id}', 'AddAboutController@edit')->name('about.edit');

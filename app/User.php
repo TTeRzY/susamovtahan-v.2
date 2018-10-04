@@ -67,6 +67,7 @@ class User extends Authenticatable
         return $this->hasMany(Contacts::class);
     }
 
+
     public function tahan()
     {
         return $this->hasMany(Tahan::class);
@@ -85,6 +86,11 @@ class User extends Authenticatable
     public function honey()
     {
         return $this->hasMany(Honey::class);
+    }
+
+    public function order()
+    {
+        return $this->hasMany(Order::class);
     }
 
 }

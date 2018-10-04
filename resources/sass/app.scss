@@ -823,6 +823,12 @@ svg {
   margin: 15px auto;
   order: unset;
 
+  a{
+    color: #C8C8C8;;
+    font-weight: 700;
+    font-size: 14px;
+  }
+
 }
 
 .plus-minus {
@@ -906,4 +912,10 @@ svg {
   height: 8px;
   background-color: $very-pale-yellow;
 
+}
+
+.card-img-top{
+  width: initial;
+  display: block;
+  margin: 15px auto;
 }

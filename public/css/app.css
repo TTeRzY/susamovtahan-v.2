@@ -10476,6 +10476,10 @@ body {
   padding: 0;
 }
 
+body a {
+  text-decoration: none !important;
+}
+
 .nav-side-menu ul .sub-menu li::before {
   display: none !important;
 }
@@ -11393,6 +11397,12 @@ svg {
           order: unset;
 }
 
+.badge-img a {
+  color: #C8C8C8;
+  font-weight: 700;
+  font-size: 14px;
+}
+
 .plus-minus {
   display: block;
   -webkit-box-ordinal-group: 3;
@@ -11477,5 +11487,11 @@ svg {
   width: 100%;
   height: 8px;
   background-color: #F3FFBD;
+}
+
+.card-img-top {
+  width: initial;
+  display: block;
+  margin: 15px auto;
 }
 
