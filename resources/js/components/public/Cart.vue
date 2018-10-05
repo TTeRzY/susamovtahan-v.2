@@ -21,9 +21,9 @@
             </div>
             <div class="cart-items-holder col-lg-12" >
                 <form name="order_form">
-                    <div class="row cart-items-content" v-for="item in cartProducts">
+                    <div class="row cart-items-content" v-for="(item, index) in cartProducts" :key="item.id">
                         <div class="delete-product">
-                            <a href="#">
+                            <a href="#" @click.prevent="deleteProductFromCart(index)" >
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17.037 21.905">
                                     <g id="rubbish-bin-delete-button" transform="translate(-50 5.762)">
                                         <g id="delete" transform="translate(50 -5.762)">
@@ -43,20 +43,22 @@
                             </a>
                         </div>
                         <div class="cart-product-name">
-                            <a href="#">
-                               {{ item.name }}
+                            <a href="#" v-model="orderInfo.productName = item.name">
+                                {{ item.name }}
                             </a>
                         </div>
                         <div class="cart-product-price">
-                            <p>
-                                {{ item.id }}<sup>00</sup>лв.
+                            <p v-model="orderInfo.productPrice = item.price">
+                                {{ item.price }}<sup>00</sup>лв.
                             </p>
                         </div>
                         <div class="add-more-items" data-product-id="356">
-                            <input min="1" max="9" step="1" value="1" type="number">
+                            <div v-model="orderInfo.productQuantity = counter">{{ counter }}</div>
+
+                            {{ orderInfo.productQuantity}}
                             <div class="quantity-nav">
-                                <div class="quantity-button quantity-up">+</div>
-                                <div class="quantity-button quantity-down">-</div>
+                                <div class="quantity-button quantity-up" @click="plus(index)">+</div>
+                                <div class="quantity-button quantity-down" @click="minus(index)">-</div>
                             </div>
                         </div>
                         <div class="total-price">
@@ -65,10 +67,13 @@
                         </div>
                     </div>
                     <div class="row more-options">
-                        <a href="#">
-                            <img src="http://angeloff.fedox.net/impacto/data/images/arrow-pointing-to-right.png"
-                                 alt="Left Arrow">
-                            ПРОДЪЛЖЕТЕ ДА ПАЗАРУВАТЕ </a>
+                        <router-link class="nav-item" to="/order">
+                            <a href="#">
+                                <img src="http://angeloff.fedox.net/impacto/data/images/arrow-pointing-to-right.png"
+                                     alt="Left Arrow">
+                                ПРОДЪЛЖЕТЕ ДА ПАЗАРУВАТЕ </a>
+                        </router-link>
+
                     </div>
                     <div class="col-lg-12 form-error"></div>
                     <div class="row order-details">
@@ -80,21 +85,45 @@
                                             <h5>Инфорамция за поръчка</h5>
 
                                             <div class="form-group">
-                                                <input class="form-control" name="names" placeholder="Вашите имена" onblur="this.placeholder='Вашите имена'" onfocus="this.placeholder=''" required="" type="text">
+                                                <input class="form-control"
+                                                       name="names"
+                                                       placeholder="Вашите имена"
+                                                       required=""
+                                                       type="text"
+                                                       v-model="orderInfo.name">
                                             </div>
                                             <div class="form-group">
-                                                <input class="form-control" name="phone" placeholder="Телефон" onblur="this.placeholder='Телефон'" onfocus="this.placeholder=''" required="" type="text">
+                                                <input class="form-control"
+                                                       name="phone"
+                                                       placeholder="Телефон"
+                                                       required
+                                                       type="text"
+                                                       v-model="orderInfo.phone">
                                             </div>
                                             <div class="form-group">
-                                                <input class="form-control" name="email" placeholder="Имейл" onblur="this.placeholder='Имейл'" onfocus="this.placeholder=''" required="" type="text">
+                                                <input class="form-control"
+                                                       name="email"
+                                                       placeholder="Имейл"
+                                                       required
+                                                       type="text"
+                                                       v-model="orderInfo.email">
                                             </div>
                                             <div class="form-group">
-                                                <input class="form-control" name="email" placeholder="Град" onblur="this.placeholder='Град'" onfocus="this.placeholder=''" required="" type="text">
+                                                <input class="form-control"
+                                                       name="email"
+                                                       placeholder="Град"
+                                                       required
+                                                       type="text"
+                                                       v-model="orderInfo.city">
                                             </div>
                                             <div class="form-group">
-                                                <input class="form-control" name="email" placeholder="Адрес за доставка" onblur="this.placeholder='Адрес за доставка'" onfocus="this.placeholder=''" required="" type="text">
+                                                <input class="form-control"
+                                                       name="email"
+                                                       placeholder="Адрес за доставка"
+                                                       required
+                                                       type="text"
+                                                       v-model="orderInfo.address">
                                             </div>
-
 
                                         </div>
                                     </div>
@@ -135,7 +164,7 @@
                                     </h2>
                                     <p>Всички цени са с ДДС</p>
                                 </div>
-                                <a href="#" class="btn send-order-btn">
+                                <a href="#" class="btn send-order-btn" @click.prevent="sendOrder">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23.854 22.917">
                                         <g id="Group_1132" data-name="Group 1132" transform="translate(-2725 -529)">
                                             <g id="Group_956" data-name="Group 956" transform="translate(2725 529)">
@@ -146,6 +175,7 @@
                                         </g>
                                     </svg>
                                     ИЗПРАТЕТЕ ПОРЪЧКАТА </a>
+                                {{ orderInfo.productQuantity }}
                             </div>
                         </div>
                     </div>
@@ -159,25 +189,65 @@
 
 <script>
 
-    import EventBus from '../../eventBus.js';
-  export default {
+    import EventBus from "../../eventBus";
+
+    export default {
     name: "cart",
       data () {
         return {
-            cartProducts: []
+            counter: 0,
+            cartProducts: [],
+            orderInfo:{
+                productName: '',
+                productPrice: '',
+                productQuantity: '',
+                name: '',
+                phone: '',
+                email: '',
+                city: '',
+                address: '',
+                message: ''
+
+            }
         }
-      },
+      }
+    ,
       mounted() {
           // You should use arrow function if you want to get parameteres outside mounted function!
-          EventBus.$on('itemsInCart', (data) => {
-              console.log(data);
+          let readJSON = JSON.parse(localStorage.getItem('storageProducts'));
+          this.cartProducts = (readJSON);
+      },
+        methods: {
+            plus(index) {
 
-              this.cartProducts.push(data);
-          });
-      }
+            },
+            sendOrder(data){
+              console.log(data);
+            },
+            deleteProductFromCart(index){
+                this.cartProducts.splice(index, 1)
+                //localStorage.removeItem('storageProducts');
+                //for(let i=0; i< this.cartProducts.length; i++){
+                //    if(this.cartProducts[i].hasOwnProperty(data)){
+                //        this.cartProducts[i].reduce(index)
+                ///    }
+                //}
+
+                let emptyCart = this.cartProducts
+                EventBus.$emit('clearCart', emptyCart)
+
+                if(emptyCart.length === 0){
+                    localStorage.removeItem('storageProducts')
+                }
+            }
+        }
   }
 </script>
 
 <style scoped>
-
+    .delete-product a{
+        display: block;
+        z-index: 9999;
+        position: relative;
+    }
 </style>
