@@ -19,6 +19,7 @@ class CreateOrderTable extends Migration
             $table->text('image')->nullable();
             $table->longText('name', 250)->nullable();
             $table->text('price')->nullable();
+            $table->text('unique_name')->nullable();
             $table->timestamps();
         });
     }

@@ -19,11 +19,13 @@
                         -->
                 </div>
             </div>
-            <div class="cart-items-holder col-lg-12" >
+            <div class="cart-items-holder col-lg-12">
                 <form name="order_form">
-                    <div class="row cart-items-content" v-for="(item, index) in cartProducts" :key="item.id">
+                    <div
+                            class="row cart-items-content"
+                            v-for="(item, index) in cartProducts">
                         <div class="delete-product">
-                            <a href="#" @click.prevent="deleteProductFromCart(index)" >
+                            <a href="#" @click.prevent="deleteProductFromCart(index)">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17.037 21.905">
                                     <g id="rubbish-bin-delete-button" transform="translate(-50 5.762)">
                                         <g id="delete" transform="translate(50 -5.762)">
@@ -43,22 +45,26 @@
                             </a>
                         </div>
                         <div class="cart-product-name">
-                            <a href="#" v-model="orderInfo.productName = item.name">
+                            <a href="#">
                                 {{ item.name }}
                             </a>
                         </div>
                         <div class="cart-product-price">
-                            <p v-model="orderInfo.productPrice = item.price">
+                            <p>
                                 {{ item.price }}<sup>00</sup>лв.
                             </p>
                         </div>
-                        <div class="add-more-items" data-product-id="356">
-                            <div v-model="orderInfo.productQuantity = counter">{{ counter }}</div>
 
-                            {{ orderInfo.productQuantity}}
+                        <div class="add-more-items">
+                            <input type="number"
+                                   v-model="orderInfo.products[index]['quantity'] = item.count">
                             <div class="quantity-nav">
-                                <div class="quantity-button quantity-up" @click="plus(index)">+</div>
-                                <div class="quantity-button quantity-down" @click="minus(index)">-</div>
+                                <div class="quantity-button quantity-up"
+                                     @click="plus(item)">+
+                                </div>
+                                <div class="quantity-button quantity-down"
+                                     @click="minus(item, index)">-
+                                </div>
                             </div>
                         </div>
                         <div class="total-price">
@@ -137,7 +143,11 @@
                                         <div class="col-lg-12">
                                             <h5>ИНФОРМАЦИЯ</h5>
 
-                                            <textarea name="message" id="message" placeholder="Вашето съобщение..."></textarea>
+                                            <textarea
+                                                    name="message"
+                                                    id="message"
+                                                    placeholder="Вашето съобщение..."
+                                                    v-model="orderInfo.message"></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -164,7 +174,7 @@
                                     </h2>
                                     <p>Всички цени са с ДДС</p>
                                 </div>
-                                <a href="#" class="btn send-order-btn" @click.prevent="sendOrder">
+                                <a href="#" class="btn send-order-btn" @click.prevent="sendOrder(orderInfo)">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23.854 22.917">
                                         <g id="Group_1132" data-name="Group 1132" transform="translate(-2725 -529)">
                                             <g id="Group_956" data-name="Group 956" transform="translate(2725 529)">
@@ -175,14 +185,12 @@
                                         </g>
                                     </svg>
                                     ИЗПРАТЕТЕ ПОРЪЧКАТА </a>
-                                {{ orderInfo.productQuantity }}
                             </div>
                         </div>
                     </div>
                 </form>
             </div>
-
-
+            {{ orderInfo }}
         </div>
     </div>
 </template>
@@ -192,40 +200,73 @@
     import EventBus from "../../eventBus";
 
     export default {
-    name: "cart",
-      data () {
-        return {
-            counter: 0,
-            cartProducts: [],
-            orderInfo:{
-                productName: '',
-                productPrice: '',
-                productQuantity: '',
-                name: '',
-                phone: '',
-                email: '',
-                city: '',
-                address: '',
-                message: ''
+        name: "cart",
+        data() {
+            return {
+                counter: 0,
+                cartProducts: [],
+                orderInfo: {
+                    products: [],
+                    name: '',
+                    phone: '',
+                    email: '',
+                    city: '',
+                    address: '',
+                    message: ''
 
+                }
             }
-        }
-      }
-    ,
-      mounted() {
-          // You should use arrow function if you want to get parameteres outside mounted function!
-          let readJSON = JSON.parse(localStorage.getItem('storageProducts'));
-          this.cartProducts = (readJSON);
-      },
-        methods: {
-            plus(index) {
+        },
+        mounted: function () {
+            // You should use arrow function if you want to get parameters outside mounted function!
+            let readJSON = JSON.parse(localStorage.getItem('storageProducts'));
 
+            /*let filterProducts = readJSON;
+             filterProducts = filterProducts.filter((product, index, self) =>
+                 index === self.findIndex((item) => (
+                     item.id === product.id
+                 ))
+             );
+             */
+            if(readJSON.length){
+                const result = [...readJSON.reduce((r, e) => {
+                    let k = `${e.id}|${e.name}`;
+                    if (!r.has(k)) r.set(k, {...e, count: 1});
+                    else r.get(k).count++;
+                    return r;
+                }, new Map).values()];
+
+                this.cartProducts = result;
+
+                for (let i = 0; i < this.cartProducts.length; i++) {
+                    this.orderInfo.products.push(this.cartProducts[i]);
+                }
+            }
+
+
+
+
+        },
+        methods: {
+            plus(data) {
+                data.count++;
+
+                EventBus.$emit('orderProducts', data);
             },
-            sendOrder(data){
-              console.log(data);
+            minus(data, index) {
+                data.count--;
+                if(data.count < 0 ){
+                    data.count = 0;
+                }
+                EventBus.$emit('removeItems', (data,index));
             },
-            deleteProductFromCart(index){
+            sendOrder(data) {
+                console.log(data);
+                console.log(data.products)
+            },
+            deleteProductFromCart(index) {
                 this.cartProducts.splice(index, 1)
+                this.orderInfo.products.splice(index, 1)
                 //localStorage.removeItem('storageProducts');
                 //for(let i=0; i< this.cartProducts.length; i++){
                 //    if(this.cartProducts[i].hasOwnProperty(data)){
@@ -236,16 +277,16 @@
                 let emptyCart = this.cartProducts
                 EventBus.$emit('clearCart', emptyCart)
 
-                if(emptyCart.length === 0){
+                if (emptyCart.length === 0) {
                     localStorage.removeItem('storageProducts')
                 }
             }
         }
-  }
+    }
 </script>
 
 <style scoped>
-    .delete-product a{
+    .delete-product a {
         display: block;
         z-index: 9999;
         position: relative;

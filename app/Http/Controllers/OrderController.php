@@ -24,6 +24,7 @@ class OrderController extends Controller
         $request->file('image')->move("uploads", $name);
         $order->name = $request->input('name');
         $order->price = $request->input('price');
+        $order->unique_name = $request->input('unique_name');
         Auth::user()->order()->save($order);
 
         return redirect()->back();

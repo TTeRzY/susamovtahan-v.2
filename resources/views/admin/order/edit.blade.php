@@ -21,6 +21,7 @@
                     <label for="price">Цена</label>
                     <input name="price" value="{{ $order->price }}" id="price" type="text" class="form-control validate">
                 </div>
+
             </div>
 
             <button type="submit" class="waves-effect waves-light btn">Промени</button>

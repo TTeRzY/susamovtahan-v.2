@@ -661,6 +661,11 @@ input[type="number"] {
   font-weight: 500;
 }
 
+.send-order-btn{
+  display: block;
+  z-index: 9;
+}
+
 .head-text a, .send-order-btn, .more-options a{
   padding-right: 30px;
   color: $lapis-lazuli;
@@ -687,6 +692,8 @@ input[type="number"] {
 
 .cart{
   position: relative;
+  display: block;
+  z-index: 9;
 }
 svg {
   width: 32px;
@@ -918,4 +925,6 @@ svg {
   width: initial;
   display: block;
   margin: 15px auto;
+  max-height: 110px;
+  max-width: 100%;
 }

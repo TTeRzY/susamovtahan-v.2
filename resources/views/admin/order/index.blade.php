@@ -39,6 +39,10 @@
                         <label for="price">Цена</label>
                         <input name="price" id="price" type="text" class="form-control validate">
                     </div>
+                    <div class="form-group col-md-12">
+                        <label for="unique_name">Уникално име</label>
+                        <input name="unique_name" id="unique_name" type="text" class="form-control validate">
+                    </div>
                 </div>
                 <button type="submit" class="waves-effect waves-light btn">Добави</button>
                 @csrf

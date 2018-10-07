@@ -11204,6 +11204,11 @@ input[type="number"] {
   font-weight: 500;
 }
 
+.send-order-btn {
+  display: block;
+  z-index: 9;
+}
+
 .head-text a,
 .send-order-btn,
 .more-options a {
@@ -11236,6 +11241,8 @@ input[type="number"] {
 
 .cart {
   position: relative;
+  display: block;
+  z-index: 9;
 }
 
 svg {
@@ -11493,5 +11500,7 @@ svg {
   width: initial;
   display: block;
   margin: 15px auto;
+  max-height: 110px;
+  max-width: 100%;
 }
 
