@@ -219,7 +219,7 @@
         },
         mounted: function () {
             // You should use arrow function if you want to get parameters outside mounted function!
-            let readJSON = JSON.parse(localStorage.getItem('storageProducts'));
+            let readJSON = this.localStorage.cartProducts;
 
             /*let filterProducts = readJSON;
              filterProducts = filterProducts.filter((product, index, self) =>
@@ -242,10 +242,6 @@
                     this.orderInfo.products.push(this.cartProducts[i]);
                 }
             }
-
-
-
-
         },
         methods: {
             plus(data) {
@@ -278,7 +274,7 @@
                 EventBus.$emit('clearCart', emptyCart)
 
                 if (emptyCart.length === 0) {
-                    localStorage.removeItem('storageProducts')
+                    this.localStorage.cartProducts = []
                 }
             }
         }

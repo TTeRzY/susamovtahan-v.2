@@ -34,7 +34,7 @@
                     </router-link>
                     <router-link class="nav-item cart" tag="li" to="/cart" >
                         <a class="nav-link" href="#" >
-                            <svg @click="saveOrderToStorage"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23.854 22.917">
+                            <svg   xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23.854 22.917">
                                 <g id="Group_1132" transform="translate(-2725 -529)">
                                     <g id="Group_956" transform="translate(2725 529)">
                                         <path id="Path_228" class="cls-1"
@@ -133,14 +133,20 @@
     export default {
         data () {
             return{
-                cartItems: []
+                cartItems: [],
             }
         },
         mounted() {
-            // You should use arrow function if you want to get parameters outside mounted function!
-            EventBus.$on('orderProducts', (data) => {
-                this.cartItems.push(data);
-            });
+            //EventBus.$on('orderProducts', (data) => {
+            //this.cartItems.push(data);
+            //});
+            //check for Navigation Timing API support
+            //if (performance.navigation.type === 1) {
+            //    console.info( "This page is reloaded" );
+            //    localStorage.removeItem('productInCart');
+            //}
+
+            this.cartItems = this.localStorage.cartProducts;
 
             EventBus.$on('clearCart', (data) => {
                 this.cartItems = data;
@@ -152,9 +158,9 @@
 
         },
         methods: {
-            saveOrderToStorage(){
-                localStorage.setItem('storageProducts', JSON.stringify(this.cartItems));
-            }
+            //saveOrderToStorage(){
+            //    localStorage.setItem('storageProducts', JSON.stringify(this.cartItems));
+            //}
         }
     }
 </script>

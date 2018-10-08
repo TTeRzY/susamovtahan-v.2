@@ -69,7 +69,7 @@
                 products: []
             }
         },
-        created () {
+        created() {
             // fetch the data when the view is created and the data is
             // already being observed
             this.readOrder;
@@ -77,7 +77,7 @@
         computed: {
             readOrder() {
                 axios.get('api/order').then((res) => {
-                    for(let item in res.data){
+                    for (let item in res.data) {
                         this.products.push(res.data[item]);
                     }
                 }).catch((err) => {
@@ -87,8 +87,9 @@
         },
         methods: {
             addToCart(data) {
-                const cart = data;
-                EventBus.$emit('orderProducts', cart);
+                //const cart = data;
+                // EventBus.$emit('orderProducts', cart);
+                this.localStorage.cartProducts.push(data);
             }
         }
     }

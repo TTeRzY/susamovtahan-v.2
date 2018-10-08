@@ -1,6 +1,11 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import { routes } from './routes';
+import reactiveStorage from "vue-reactive-storage";
+
+Vue.use(reactiveStorage, {
+    cartProducts: []
+});
 
 Vue.use(VueRouter);
 
@@ -19,8 +24,6 @@ const router = new VueRouter({
 
 require('./bootstrap');
 
-window.$ = require('jquery')
-window.JQuery = require('jquery')
 
 window.Vue = require('vue');
 
