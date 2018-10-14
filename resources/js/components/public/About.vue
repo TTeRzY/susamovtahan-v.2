@@ -6,7 +6,7 @@
                     <div class="col">
 
                         <h1 class="section__heading section_header__heading text-center">
-                            About Us
+                            Нашата история
                         </h1>
 
                     </div>

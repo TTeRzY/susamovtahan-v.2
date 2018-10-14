@@ -50,8 +50,8 @@
                             </a>
                         </div>
                         <div class="cart-product-price">
-                            <p>
-                                {{ item.price }}<sup>00</sup>лв.
+                            <p v-model.number="orderInfo.products[index]['price'] = item.price">
+                                {{ item.price }} <sup>00</sup> лв.
                             </p>
                         </div>
 
@@ -68,8 +68,8 @@
                             </div>
                         </div>
                         <div class="total-price">
-                            <p>
-                                120<sup>00</sup> лв. </p>
+                            <p v-model="orderInfo.totalOrderPrice[index] = item.price * item.count">
+                                {{ parseFloat(item.price) * parseFloat(item.count) }} лв. </p>
                         </div>
                     </div>
                     <div class="row more-options">
@@ -158,19 +158,10 @@
                                 <div class="top-text">
                                     <h5>МОЯТА ПОРЪЧКА</h5>
                                 </div>
-                                <div class="order">
-                                    <p>поръчка
-                                        <span data-price-total="">120<sup>00</sup> лв.</span>
-                                    </p>
-                                </div>
-                                <div class="delivery-cost">
-                                    <p>
-                                        доставка <span data-price-delivery="">0<sup>00</sup>лв.</span>
-                                    </p>
-                                </div>
                                 <div class="total-order-big">
                                     <h2>
-                                        ОБЩО <span data-price-grandtotal="">120<sup>00</sup>лв.</span>
+                                        ОБЩО <span data-price-grandtotal="">
+                                        {{ totalPrice }}<sup>00</sup>лв.</span>
                                     </h2>
                                     <p>Всички цени са с ДДС</p>
                                 </div>
@@ -203,7 +194,16 @@
         name: "cart",
         data() {
             return {
+                get totalPrice() {
+                    let sum = null;
+                    for( let i = 0; i < this.localStorage.cartProducts.length; i++){
+                        sum += parseFloat (this.localStorage.cartProducts[i].price)
+                    }
+
+                    return sum;
+                },
                 counter: 0,
+                total: null,
                 cartProducts: [],
                 orderInfo: {
                     products: [],
@@ -212,22 +212,13 @@
                     email: '',
                     city: '',
                     address: '',
-                    message: ''
-
+                    message: '',
+                    totalOrderPrice: []
                 }
             }
         },
         mounted: function () {
-            // You should use arrow function if you want to get parameters outside mounted function!
             let readJSON = this.localStorage.cartProducts;
-
-            /*let filterProducts = readJSON;
-             filterProducts = filterProducts.filter((product, index, self) =>
-                 index === self.findIndex((item) => (
-                     item.id === product.id
-                 ))
-             );
-             */
             if(readJSON.length){
                 const result = [...readJSON.reduce((r, e) => {
                     let k = `${e.id}|${e.name}`;
@@ -241,37 +232,32 @@
                 for (let i = 0; i < this.cartProducts.length; i++) {
                     this.orderInfo.products.push(this.cartProducts[i]);
                 }
+
             }
         },
         methods: {
             plus(data) {
                 data.count++;
 
-                EventBus.$emit('orderProducts', data);
+                this.localStorage.cartProducts.push(data);
             },
             minus(data, index) {
                 data.count--;
                 if(data.count < 0 ){
                     data.count = 0;
                 }
-                EventBus.$emit('removeItems', (data,index));
+                this.localStorage.cartProducts.splice(index,1);
             },
             sendOrder(data) {
                 console.log(data);
                 console.log(data.products)
             },
             deleteProductFromCart(index) {
-                this.cartProducts.splice(index, 1)
-                this.orderInfo.products.splice(index, 1)
-                //localStorage.removeItem('storageProducts');
-                //for(let i=0; i< this.cartProducts.length; i++){
-                //    if(this.cartProducts[i].hasOwnProperty(data)){
-                //        this.cartProducts[i].reduce(index)
-                ///    }
-                //}
+                this.cartProducts.splice(index, 1);
+                this.orderInfo.products.splice(index, 1);
 
-                let emptyCart = this.cartProducts
-                EventBus.$emit('clearCart', emptyCart)
+                let emptyCart = this.cartProducts;
+                EventBus.$emit('clearCart', emptyCart);
 
                 if (emptyCart.length === 0) {
                     this.localStorage.cartProducts = []

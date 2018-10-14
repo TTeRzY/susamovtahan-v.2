@@ -26,7 +26,7 @@
                 @endforeach
                 </tbody>
             </table>
-            <form name="about_form" enctype="multipart/form-data" method="POST" action="{{ route('gallery.store') }}" class="col-md-12 home-form">
+            <form name="about_form" enctype="multipart/form-data" method="POST" action="{{ route('about.store') }}" class="col-md-12 home-form">
                 <input type="hidden" value="about_form" name="about_form">
                 <div class="row">
                     <div class="form-group col-md-12">
