@@ -49,7 +49,7 @@
                 </ul>
             </div>
         </nav>
-        <div class="container-fluid">
+        <div class="container-fluid pages_template">
             <div class="row">
                 <router-view></router-view>
             </div>

@@ -187,17 +187,16 @@
 </template>
 
 <script>
-
-    import EventBus from "../../eventBus";
-
     export default {
         name: "cart",
         data() {
             return {
                 get totalPrice() {
                     let sum = null;
-                    for( let i = 0; i < this.localStorage.cartProducts.length; i++){
-                        sum += parseFloat (this.localStorage.cartProducts[i].price)
+                    if(this.orderInfo.totalOrderPrice.length){
+                        for( let i = 0; i < this.orderInfo.totalOrderPrice.length; i++){
+                            sum += this.orderInfo.totalOrderPrice[i]
+                        }
                     }
 
                     return sum;
@@ -228,6 +227,7 @@
                 }, new Map).values()];
 
                 this.cartProducts = result;
+                console.log(this.cartProducts)
 
                 for (let i = 0; i < this.cartProducts.length; i++) {
                     this.orderInfo.products.push(this.cartProducts[i]);
@@ -238,15 +238,17 @@
         methods: {
             plus(data) {
                 data.count++;
-
                 this.localStorage.cartProducts.push(data);
             },
             minus(data, index) {
-                data.count--;
-                if(data.count < 0 ){
+                if(data.count <= 0 ){
                     data.count = 0;
                 }
-                this.localStorage.cartProducts.splice(index,1);
+                else{
+                    data.count--;
+                        this.localStorage.cartProducts.splice(index,1);
+                }
+
             },
             sendOrder(data) {
                 console.log(data);
@@ -255,13 +257,6 @@
             deleteProductFromCart(index) {
                 this.cartProducts.splice(index, 1);
                 this.orderInfo.products.splice(index, 1);
-
-                let emptyCart = this.cartProducts;
-                EventBus.$emit('clearCart', emptyCart);
-
-                if (emptyCart.length === 0) {
-                    this.localStorage.cartProducts = []
-                }
             }
         }
     }

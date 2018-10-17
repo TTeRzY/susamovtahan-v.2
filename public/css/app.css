@@ -10884,11 +10884,11 @@ footer .footer-bottom a img {
 }
 
 .home-content .carousel-item {
-  max-height: 860px;
+  max-height: 650px;
 }
 
 .home-content .carousel-caption {
-  bottom: 40%;
+  bottom: 30%;
 }
 
 .primary-button {
@@ -11286,5 +11286,9 @@ svg {
   color: #ffffff;
   font-size: 18px;
   font-weight: 500;
+}
+
+.pages_template {
+  background: #fafafa;
 }
 

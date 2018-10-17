@@ -30869,7 +30869,6 @@ exports.push([module.i, "\n.delete-product a[data-v-0480e72b] {\n    display: bl
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__eventBus__ = __webpack_require__(8);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
@@ -31063,17 +31062,16 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 //
 //
 
-
-
-
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: "cart",
     data: function data() {
         return {
             get totalPrice() {
                 var sum = null;
-                for (var i = 0; i < this.localStorage.cartProducts.length; i++) {
-                    sum += parseFloat(this.localStorage.cartProducts[i].price);
+                if (this.orderInfo.totalOrderPrice.length) {
+                    for (var i = 0; i < this.orderInfo.totalOrderPrice.length; i++) {
+                        sum += this.orderInfo.totalOrderPrice[i];
+                    }
                 }
 
                 return sum;
@@ -31098,12 +31096,13 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
         var readJSON = this.localStorage.cartProducts;
         if (readJSON.length) {
             var result = [].concat(_toConsumableArray(readJSON.reduce(function (r, e) {
-                var k = e.id + "|" + e.name;
+                var k = e.id + '|' + e.name;
                 if (!r.has(k)) r.set(k, _extends({}, e, { count: 1 }));else r.get(k).count++;
                 return r;
             }, new Map()).values()));
 
             this.cartProducts = result;
+            console.log(this.cartProducts);
 
             for (var i = 0; i < this.cartProducts.length; i++) {
                 this.orderInfo.products.push(this.cartProducts[i]);
@@ -31113,15 +31112,15 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
     methods: {
         plus: function plus(data) {
             data.count++;
-
             this.localStorage.cartProducts.push(data);
         },
         minus: function minus(data, index) {
-            data.count--;
-            if (data.count < 0) {
+            if (data.count <= 0) {
                 data.count = 0;
+            } else {
+                data.count--;
+                this.localStorage.cartProducts.splice(index, 1);
             }
-            this.localStorage.cartProducts.splice(index, 1);
         },
         sendOrder: function sendOrder(data) {
             console.log(data);
@@ -31130,13 +31129,6 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
         deleteProductFromCart: function deleteProductFromCart(index) {
             this.cartProducts.splice(index, 1);
             this.orderInfo.products.splice(index, 1);
-
-            var emptyCart = this.cartProducts;
-            __WEBPACK_IMPORTED_MODULE_0__eventBus__["a" /* default */].$emit('clearCart', emptyCart);
-
-            if (emptyCart.length === 0) {
-                this.localStorage.cartProducts = [];
-            }
         }
     }
 });
@@ -55537,7 +55529,7 @@ var render = function() {
       1
     ),
     _vm._v(" "),
-    _c("div", { staticClass: "container-fluid" }, [
+    _c("div", { staticClass: "container-fluid pages_template" }, [
       _c("div", { staticClass: "row" }, [_c("router-view")], 1)
     ]),
     _vm._v(" "),
