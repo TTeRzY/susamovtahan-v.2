@@ -495,7 +495,7 @@ module.exports = __webpack_require__(32);
 "use strict";
 
 
-var bind = __webpack_require__(10);
+var bind = __webpack_require__(9);
 var isBuffer = __webpack_require__(33);
 
 /*global toString:true*/
@@ -11815,10 +11815,10 @@ function getDefaultAdapter() {
   var adapter;
   if (typeof XMLHttpRequest !== 'undefined') {
     // For browsers use XHR adapter
-    adapter = __webpack_require__(11);
+    adapter = __webpack_require__(10);
   } else if (typeof process !== 'undefined') {
     // For node use HTTP adapter
-    adapter = __webpack_require__(11);
+    adapter = __webpack_require__(10);
   }
   return adapter;
 }
@@ -11893,23 +11893,10 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 
 module.exports = defaults;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(9)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8)))
 
 /***/ }),
 /* 8 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-
-
-var EventBus = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a();
-
-/* harmony default export */ __webpack_exports__["a"] = (EventBus);
-
-/***/ }),
-/* 9 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -12099,7 +12086,7 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 10 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12117,7 +12104,7 @@ module.exports = function bind(fn, thisArg) {
 
 
 /***/ }),
-/* 11 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12128,7 +12115,7 @@ var settle = __webpack_require__(36);
 var buildURL = __webpack_require__(38);
 var parseHeaders = __webpack_require__(39);
 var isURLSameOrigin = __webpack_require__(40);
-var createError = __webpack_require__(12);
+var createError = __webpack_require__(11);
 var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(41);
 
 module.exports = function xhrAdapter(config) {
@@ -12304,7 +12291,7 @@ module.exports = function xhrAdapter(config) {
 
 
 /***/ }),
-/* 12 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12329,7 +12316,7 @@ module.exports = function createError(message, config, code, request, response) 
 
 
 /***/ }),
-/* 13 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12341,7 +12328,7 @@ module.exports = function isCancel(value) {
 
 
 /***/ }),
-/* 14 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12365,6 +12352,19 @@ Cancel.prototype.__CANCEL__ = true;
 
 module.exports = Cancel;
 
+
+/***/ }),
+/* 14 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
+
+
+var EventBus = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a();
+
+/* unused harmony default export */ var _unused_webpack_default_export = (EventBus);
 
 /***/ }),
 /* 15 */
@@ -25801,7 +25801,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5), __webpack_require__(9)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5), __webpack_require__(8)))
 
 /***/ }),
 /* 25 */
@@ -28771,7 +28771,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 var utils = __webpack_require__(4);
-var bind = __webpack_require__(10);
+var bind = __webpack_require__(9);
 var Axios = __webpack_require__(34);
 var defaults = __webpack_require__(7);
 
@@ -28806,9 +28806,9 @@ axios.create = function create(instanceConfig) {
 };
 
 // Expose Cancel & CancelToken
-axios.Cancel = __webpack_require__(14);
+axios.Cancel = __webpack_require__(13);
 axios.CancelToken = __webpack_require__(48);
-axios.isCancel = __webpack_require__(13);
+axios.isCancel = __webpack_require__(12);
 
 // Expose all/spread
 axios.all = function all(promises) {
@@ -28961,7 +28961,7 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
 "use strict";
 
 
-var createError = __webpack_require__(12);
+var createError = __webpack_require__(11);
 
 /**
  * Resolve or reject a Promise based on response status.
@@ -29394,7 +29394,7 @@ module.exports = InterceptorManager;
 
 var utils = __webpack_require__(4);
 var transformData = __webpack_require__(45);
-var isCancel = __webpack_require__(13);
+var isCancel = __webpack_require__(12);
 var defaults = __webpack_require__(7);
 var isAbsoluteURL = __webpack_require__(46);
 var combineURLs = __webpack_require__(47);
@@ -29554,7 +29554,7 @@ module.exports = function combineURLs(baseURL, relativeURL) {
 "use strict";
 
 
-var Cancel = __webpack_require__(14);
+var Cancel = __webpack_require__(13);
 
 /**
  * A `CancelToken` is an object that can be used to request cancellation of an operation.
@@ -30869,11 +30869,6 @@ exports.push([module.i, "\n.delete-product a[data-v-0480e72b] {\n    display: bl
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
-
-//
 //
 //
 //
@@ -31094,25 +31089,19 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 
     mounted: function mounted() {
         var readJSON = this.localStorage.cartProducts;
-        if (readJSON.length) {
-            var result = [].concat(_toConsumableArray(readJSON.reduce(function (r, e) {
-                var k = e.id + '|' + e.name;
-                if (!r.has(k)) r.set(k, _extends({}, e, { count: 1 }));else r.get(k).count++;
-                return r;
-            }, new Map()).values()));
-
-            this.cartProducts = result;
-            console.log(this.cartProducts);
-
-            for (var i = 0; i < this.cartProducts.length; i++) {
-                this.orderInfo.products.push(this.cartProducts[i]);
-            }
-        }
+        console.log(readJSON);
+        this.cartProducts = readJSON;
     },
     methods: {
         plus: function plus(data) {
-            data.count++;
-            this.localStorage.cartProducts.push(data);
+            var arr = this.localStorage.cartProducts;
+            for (var i = 0; i < arr.length; i++) {
+                if (data.id === arr[i].id) {
+                    data.count++;
+                    arr.splice(i, 1);
+                    arr.push(data);
+                }
+            }
         },
         minus: function minus(data, index) {
             if (data.count <= 0) {
@@ -31232,33 +31221,15 @@ var render = function() {
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "cart-product-price" }, [
-                  _c(
-                    "p",
-                    {
-                      model: {
-                        value: (_vm.orderInfo.products[index]["price"] =
-                          item.price),
-                        callback: function($$v) {
-                          _vm.$set(
-                            (_vm.orderInfo.products[index]["price"] = item),
-                            "price",
-                            _vm._n($$v)
-                          )
-                        },
-                        expression:
-                          "orderInfo.products[index]['price'] = item.price"
-                      }
-                    },
-                    [
-                      _vm._v(
-                        "\n                            " +
-                          _vm._s(item.price) +
-                          " "
-                      ),
-                      _c("sup", [_vm._v("00")]),
-                      _vm._v(" лв.\n                        ")
-                    ]
-                  )
+                  _c("p", [
+                    _vm._v(
+                      "\n                            " +
+                        _vm._s(item.price) +
+                        " "
+                    ),
+                    _c("sup", [_vm._v("00")]),
+                    _vm._v(" лв.\n                        ")
+                  ])
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "add-more-items" }, [
@@ -31266,28 +31237,23 @@ var render = function() {
                     directives: [
                       {
                         name: "model",
-                        rawName: "v-model",
-                        value: (_vm.orderInfo.products[index]["quantity"] =
-                          item.count),
-                        expression:
-                          "orderInfo.products[index]['quantity'] = item.count"
+                        rawName: "v-model.number",
+                        value: item.count,
+                        expression: "item.count",
+                        modifiers: { number: true }
                       }
                     ],
                     attrs: { type: "number" },
-                    domProps: {
-                      value: (_vm.orderInfo.products[index]["quantity"] =
-                        item.count)
-                    },
+                    domProps: { value: item.count },
                     on: {
                       input: function($event) {
                         if ($event.target.composing) {
                           return
                         }
-                        _vm.$set(
-                          (_vm.orderInfo.products[index]["quantity"] = item),
-                          "count",
-                          $event.target.value
-                        )
+                        _vm.$set(item, "count", _vm._n($event.target.value))
+                      },
+                      blur: function($event) {
+                        _vm.$forceUpdate()
                       }
                     }
                   }),
@@ -31322,34 +31288,15 @@ var render = function() {
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "total-price" }, [
-                  _c(
-                    "p",
-                    {
-                      model: {
-                        value: (_vm.orderInfo.totalOrderPrice[index] =
-                          item.price * item.count),
-                        callback: function($$v) {
-                          _vm.$set(
-                            (_vm.orderInfo.totalOrderPrice[index] =
-                              item.price * item),
-                            "count",
-                            $$v
-                          )
-                        },
-                        expression:
-                          "orderInfo.totalOrderPrice[index] = item.price * item.count"
-                      }
-                    },
-                    [
-                      _vm._v(
-                        "\n                            " +
-                          _vm._s(
-                            parseFloat(item.price) * parseFloat(item.count)
-                          ) +
-                          " лв. "
-                      )
-                    ]
-                  )
+                  _c("p", [
+                    _vm._v(
+                      "\n                            " +
+                        _vm._s(
+                          parseFloat(item.price) * parseFloat(item.count)
+                        ) +
+                        " лв. "
+                    )
+                  ])
                 ])
               ])
             }),
@@ -31808,7 +31755,7 @@ exports = module.exports = __webpack_require__(0)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/*Products Card*/\n.card[data-v-6a32c7d3] {\n    margin-bottom: 30px;\n    width: 17.20rem;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n    padding: 0;\n    -webkit-box-align: unset;\n        -ms-flex-align: unset;\n            align-items: unset;\n    -webkit-box-pack: unset;\n        -ms-flex-pack: unset;\n            justify-content: unset;\n    margin-left: 15px;\n    margin-right: 15px;\n    background: -webkit-gradient(linear, left bottom, left top, color-stop(16%, #FAFAFA), color-stop(0%, #ffffff));\n    background: linear-gradient(to top, #FAFAFA 16%, #ffffff 0%);\n    border-radius: 15px;\n    -webkit-box-shadow: 0 4px 12px -5px rgba(0,0,0,0.3);\n            box-shadow: 0 4px 12px -5px rgba(0,0,0,0.3);\n}\n.top-card-content[data-v-6a32c7d3] {\n\n    display: -webkit-box;\n\n    display: -ms-flexbox;\n\n    display: flex;\n    -webkit-box-pack: justify;\n        -ms-flex-pack: justify;\n            justify-content: space-between;\n    -webkit-box-ordinal-group: 3;\n        -ms-flex-order: 2;\n            order: 2;\n    width: 60%;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n    padding: 0;\n    margin-left: 15px;\n}\n.card-body .add-section[data-v-6a32c7d3] {\n\n    display: -webkit-box;\n\n    display: -ms-flexbox;\n\n    display: flex;\n    -webkit-box-pack: space-evenly;\n        -ms-flex-pack: space-evenly;\n            justify-content: space-evenly;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n}\n.add-section .number-of-badges[data-v-6a32c7d3] {\n\n    border: none;\n    color: #000000;\n    font-size: 18px;\n    font-weight: 700;\n    text-align: center;\n}\n.add-section .subtraction svg[data-v-6a32c7d3], .add-section .addition svg[data-v-6a32c7d3] {\n\n    height: 35px;\n}\n.add-section .subtraction svg .cls-1[data-v-6a32c7d3], .add-section .addition svg .cls-1[data-v-6a32c7d3] {\n\n    fill: #F3FFBD;\n    -webkit-transition: ease-in-out 0.5s;\n    transition: ease-in-out 0.5s;\n}\n.add-section .subtraction svg .cls-2[data-v-6a32c7d3], .add-section .addition svg .cls-2[data-v-6a32c7d3] {\n\n    fill: #000000;\n    -webkit-transition: ease-in-out 0.5s;\n    transition: ease-in-out 0.5s;\n}\n.id-body a[data-v-6a32c7d3], .price-body a[data-v-6a32c7d3] {\n    font-weight: 700;\n    font-size: 18px;\n    color: #C8C8C8;\n    text-transform: uppercase;\n}\n.add-section .number-of-badges[data-v-6a32c7d3] {\n\n    font-size: 25px;\n}\n.top-card-content[data-v-6a32c7d3] {\n\n    -webkit-box-ordinal-group: 1;\n\n        -ms-flex-order: 0;\n\n            order: 0;\n    width: 100%;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row;\n    padding: 1.25rem;\n    margin-left: 0;\n}\n.badge-img[data-v-6a32c7d3] {\n\n    max-width: 70%;\n    margin: 15px auto;\n    -webkit-box-ordinal-group: unset;\n        -ms-flex-order: unset;\n            order: unset;\na{\n    color: #C8C8C8;;\n    font-weight: 700;\n    font-size: 14px;\n}\n}\n.plus-minus[data-v-6a32c7d3] {\n\n    display: block;\n    -webkit-box-ordinal-group: 3;\n        -ms-flex-order: 2;\n            order: 2;\n}\n.holder-add-to-cart[data-v-6a32c7d3] {\n\n    height: 100%;\n    -webkit-box-ordinal-group: 4;\n        -ms-flex-order: 3;\n            order: 3;\n    border-left: 1px solid #E6E6E6;\n    padding: 30px 10px;\n    background-color: #FAFAFA;\n    border-bottom-right-radius: 23px;\n    border-top-right-radius: 23px;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n}\n.holder-add-to-cart[data-v-6a32c7d3] {\n\n    border-left: none;\n    background-color: transparent;\n    border-bottom-right-radius: 0;\n    border-top-right-radius: 0;\n}\n.card-btn-holder[data-v-6a32c7d3] {\n\n    width: 80%;\n    margin: auto;\n}\n.medium-button[data-v-6a32c7d3] {\n\n    border: 3px solid #E6E6E6;\n    border-radius: 40px;\n    width: 100%;\n    color: #000000;\n    font-weight: 700;\n    padding: 15px;\n    background-color: #ffffff;\n    position: relative;\n    -webkit-transition: ease-in-out 0.5s;\n    transition: ease-in-out 0.5s;\n    display: -ms-flex;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\nsvg{\n    margin-right: 15px;\n}\n}\n.buy-me[data-v-6a32c7d3] {\n\n    position: relative;\n    z-index: 1;\n    color: #000000;\n    font-weight: 700;\n}\n.buy-me[data-v-6a32c7d3]::after {\n\n    display: inline-block;\n    position: absolute;\n    left: 0;\n    bottom: 1px;\n    z-index: -1;\n    content: \"\";\n    width: 100%;\n    height: 8px;\n    background-color: $very-pale-yellow;\n}\n.card-img-top[data-v-6a32c7d3] {\n    width: initial;\n    display: block;\n    margin: 15px auto;\n    max-height: 110px;\n    max-width: 100%;\n}\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -31819,7 +31766,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__eventBus_js__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__eventBus_js__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_axios__);
 //
@@ -31882,43 +31829,82 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    name: "order",
-    cart: [],
-    data: function data() {
-        return {
-            products: []
-        };
-    },
-    created: function created() {
-        // fetch the data when the view is created and the data is
-        // already being observed
-        this.readOrder;
-    },
+  name: "order",
+  cart: [],
+  data: function data() {
+    return {
+      products: [],
+      addedItemsInCart: []
+    };
+  },
+  created: function created() {
+    // fetch the data when the view is created and the data is
+    // already being observed
+    this.readOrder;
+  },
 
-    computed: {
-        readOrder: function readOrder() {
-            var _this = this;
+  computed: {
+    readOrder: function readOrder() {
+      var _this = this;
 
-            __WEBPACK_IMPORTED_MODULE_1_axios___default.a.get('api/order').then(function (res) {
-                for (var item in res.data) {
-                    _this.products.push(res.data[item]);
-                }
-            }).catch(function (err) {
-                console.log(err.response.data.message);
-            });
+      __WEBPACK_IMPORTED_MODULE_1_axios___default.a.get('api/order').then(function (res) {
+        for (var item in res.data) {
+          _this.products.push(res.data[item]);
         }
-    },
-    methods: {
-        addToCart: function addToCart(data) {
-            //const cart = data;
-            // EventBus.$emit('orderProducts', cart);
-            this.localStorage.cartProducts.push(data);
-        }
+      }).catch(function (err) {
+        console.log(err.response.data.message);
+      });
     }
+  },
+  methods: {
+    addToCart: function addToCart(data) {
+      var arr = this.addedItemsInCart;
+      arr = this.localStorage.cartProducts;
+
+      var isExist = arr.some(function (field) {
+        return field.id === data.id;
+      });
+
+      if (!isExist) {
+        data.count = 1;
+        arr.push(data);
+        console.log('exist');
+      } else {
+        console.log('exist');
+        console.log(arr);
+        for (var i = 0; i < arr.length; i++) {
+          if (arr[i].id === data.id) {
+            console.log(arr[i].count);
+            arr[i].count++;
+          }
+        }
+      }
+    }
+  },
+  watch: {
+    addedItemsInCart: function addedItemsInCart(data) {
+      console.log('watch', data);
+    },
+
+    deep: true,
+    immediate: true
+  }
 });
 
 /***/ }),
@@ -31929,7 +31915,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
+  return _c("div", { staticClass: "container order-container" }, [
     _c("h2", { staticClass: "text-center mb-5 mt-5" }, [
       _vm._v("Изберете продукти")
     ]),
@@ -55185,7 +55171,7 @@ exports = module.exports = __webpack_require__(0)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -55196,7 +55182,6 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__eventBus_js__ = __webpack_require__(8);
 //
 //
 //
@@ -55326,42 +55311,26 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-
-
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
-            cartItems: []
+            itemsInCart: [],
+            cartItems: null
         };
     },
     mounted: function mounted() {
-        var _this = this;
-
-        //EventBus.$on('orderProducts', (data) => {
-        //this.cartItems.push(data);
-        //});
-        //check for Navigation Timing API support
-        //if (performance.navigation.type === 1) {
-        //    console.info( "This page is reloaded" );
-        //    localStorage.removeItem('productInCart');
-        //}
-
-        this.cartItems = this.localStorage.cartProducts;
-
-        __WEBPACK_IMPORTED_MODULE_0__eventBus_js__["a" /* default */].$on('clearCart', function (data) {
-            _this.cartItems = data;
-        });
-
-        __WEBPACK_IMPORTED_MODULE_0__eventBus_js__["a" /* default */].$on('removeItems', function (data, index) {
-            _this.cartItems.splice(index, 1);
-        });
+        this.itemsInCart = this.localStorage.cartProducts;
     },
 
-    methods: {
-        //saveOrderToStorage(){
-        //    localStorage.setItem('storageProducts', JSON.stringify(this.cartItems));
-        //}
+    watch: {
+        itemsInCart: function itemsInCart(data) {
+            var result = 0;
+            for (var i = 0; i < data.length; i++) {
+                result += data[i].count;
+            }
+            this.cartItems = result;
+        }
     }
 });
 
@@ -55509,14 +55478,9 @@ var render = function() {
                         ]
                       ),
                       _vm._v(" "),
-                      _c(
-                        "span",
-                        {
-                          staticClass: "added-items",
-                          attrs: { "data-cart-items": "" }
-                        },
-                        [_vm._v(_vm._s(_vm.cartItems.length))]
-                      )
+                      _c("span", { staticClass: "added-items" }, [
+                        _vm._v(_vm._s(_vm.cartItems))
+                      ])
                     ])
                   ]
                 )

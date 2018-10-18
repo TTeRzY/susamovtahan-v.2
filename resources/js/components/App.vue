@@ -43,7 +43,7 @@
                                     </g>
                                 </g>
                             </svg>
-                            <span class="added-items" data-cart-items="">{{ cartItems.length }}</span>
+                            <span class="added-items">{{ cartItems }}</span>
                         </a>
                     </router-link>
                 </ul>
@@ -128,40 +128,25 @@
 </template>
 
 <script>
-    import EventBus from '../eventBus.js';
-
     export default {
         data () {
             return{
-                cartItems: [],
+                itemsInCart: [],
+                cartItems: null,
             }
         },
         mounted() {
-            //EventBus.$on('orderProducts', (data) => {
-            //this.cartItems.push(data);
-            //});
-            //check for Navigation Timing API support
-            //if (performance.navigation.type === 1) {
-            //    console.info( "This page is reloaded" );
-            //    localStorage.removeItem('productInCart');
-            //}
-
-            this.cartItems = this.localStorage.cartProducts;
-
-            EventBus.$on('clearCart', (data) => {
-                this.cartItems = data;
-            });
-
-            EventBus.$on('removeItems', (data,index) => {
-                this.cartItems.splice(index, 1);
-            });
-
+              this.itemsInCart = this.localStorage.cartProducts;
         },
-        methods: {
-            //saveOrderToStorage(){
-            //    localStorage.setItem('storageProducts', JSON.stringify(this.cartItems));
-            //}
-        }
+      watch: {
+          itemsInCart(data) {
+                let result = 0;
+              for(let i = 0; i < data.length; i++){
+                result += data[i].count;
+              }
+            this.cartItems = result
+          }
+      }
     }
 </script>
 

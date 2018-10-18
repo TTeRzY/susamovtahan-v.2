@@ -50,14 +50,13 @@
                             </a>
                         </div>
                         <div class="cart-product-price">
-                            <p v-model.number="orderInfo.products[index]['price'] = item.price">
+                            <p>
                                 {{ item.price }} <sup>00</sup> лв.
                             </p>
                         </div>
 
                         <div class="add-more-items">
-                            <input type="number"
-                                   v-model="orderInfo.products[index]['quantity'] = item.count">
+                            <input type="number" v-model.number="item.count">
                             <div class="quantity-nav">
                                 <div class="quantity-button quantity-up"
                                      @click="plus(item)">+
@@ -68,7 +67,7 @@
                             </div>
                         </div>
                         <div class="total-price">
-                            <p v-model="orderInfo.totalOrderPrice[index] = item.price * item.count">
+                            <p>
                                 {{ parseFloat(item.price) * parseFloat(item.count) }} лв. </p>
                         </div>
                     </div>
@@ -218,27 +217,20 @@
         },
         mounted: function () {
             let readJSON = this.localStorage.cartProducts;
-            if(readJSON.length){
-                const result = [...readJSON.reduce((r, e) => {
-                    let k = `${e.id}|${e.name}`;
-                    if (!r.has(k)) r.set(k, {...e, count: 1});
-                    else r.get(k).count++;
-                    return r;
-                }, new Map).values()];
+            console.log(readJSON)
+            this.cartProducts = readJSON;
 
-                this.cartProducts = result;
-                console.log(this.cartProducts)
-
-                for (let i = 0; i < this.cartProducts.length; i++) {
-                    this.orderInfo.products.push(this.cartProducts[i]);
-                }
-
-            }
         },
         methods: {
             plus(data) {
-                data.count++;
-                this.localStorage.cartProducts.push(data);
+              let arr = this.localStorage.cartProducts;
+              for(let i = 0; i < arr.length; i++){
+                if(data.id === arr[i].id){
+                  data.count++;
+                  arr.splice(i,1);
+                  arr.push(data);
+                }
+              }
             },
             minus(data, index) {
                 if(data.count <= 0 ){
