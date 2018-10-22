@@ -1,6 +1,11 @@
 @import "variables";
 
 body{
+  button:focus {outline:0 !important;}
+  .btn:focus {outline:0 !important;}
+  .btn.focus, .btn:focus{
+    box-shadow: none !important;
+  }
   background-color: #FCFCFC !important;
   margin: 0;
   padding: 0;

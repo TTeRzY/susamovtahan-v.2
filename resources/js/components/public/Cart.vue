@@ -52,7 +52,7 @@
                         </div>
                         <div class="cart-product-price">
                             <p>
-                                {{ item.price }} <sup>00</sup> лв.
+                                {{ parseFloat(item.price).toFixed(2) }} лв.
                             </p>
                         </div>
 
@@ -68,8 +68,8 @@
                             </div>
                         </div>
                         <div class="total-price">
-                            <p>
-                                {{ parseFloat(item.price) * parseFloat(item.count) }} лв. </p>
+                            <p v-model="orderInfo.products[index]['total'] = item.price * item.count">
+                                {{ parseFloat(item.price).toFixed(2) * parseFloat(item.count).toFixed(2) }} лв. </p>
                         </div>
                     </div>
                     <div class="row more-options">
@@ -110,9 +110,9 @@
                                                 <input class="form-control"
                                                        name="email"
                                                        placeholder="Имейл"
-                                                       required
-                                                       type="text"
-                                                       v-model="orderInfo.email">
+                                                       type="email"
+                                                       v-model="orderInfo.email"
+                                                       required>
                                             </div>
                                             <div class="form-group">
                                                 <input class="form-control"
@@ -161,7 +161,7 @@
                                 <div class="total-order-big">
                                     <h2 v-model="orderInfo.totalPrice = totalPrice">
                                         ОБЩО <span data-price-grandtotal="">
-                                        {{ totalPrice }}<sup>00</sup>лв.</span>
+                                        {{ parseFloat(totalPrice).toFixed(2) }} лв.</span>
                                     </h2>
                                     <p>Всички цени са с ДДС</p>
                                 </div>
@@ -181,112 +181,141 @@
                     </div>
                 </form>
             </div>
+            <div class="col-lg-12" >
+                <p v-if="errors.length" class="alert alert-danger">
+                    <span v-for="error in errors">Моля попълнете следните полета:  <u>{{ error }}</u></span>
+                </p>
+                <p class="alert alert-success" v-if="success.length">
+                    <span v-for="item in success"> {{ item }}</span>
+                </p>
+            </div>
         </div>
         {{orderInfo}}
     </div>
 </template>
 
 <script>
-    import Vue from 'vue';
-    import axios from 'axios';
-    export default {
-        name: "cart",
-        data() {
-            return {
-                get totalPrice() {
-                    let sum = null;
-                    if(this.localStorage.cartProducts.length){
-                        for( let i = 0; i < this.localStorage.cartProducts.length; i++){
-                            sum += (this.localStorage.cartProducts[i].price * this.localStorage.cartProducts[i].count)
-                        }
-                    }
+  import Vue from 'vue';
+  import axios from 'axios';
 
-                    return sum;
-                },
-                counter: 0,
-                total: null,
-                cartProducts: [],
-                orderInfo: {
-                    products: [],
-                    name: '',
-                    phone: '',
-                    email: '',
-                    city: '',
-                    address: '',
-                    message: '',
-                    totalPrice: null
-                }
+  export default {
+    name: "cart",
+    data() {
+      return {
+        get totalPrice() {
+          let sum = null;
+          if (this.localStorage.cartProducts.length) {
+            for (let i = 0; i < this.localStorage.cartProducts.length; i++) {
+              sum += (this.localStorage.cartProducts[i].price * this.localStorage.cartProducts[i].count)
             }
+          }
+
+          return sum;
         },
-        mounted: function () {
-            let readJSON = this.localStorage.cartProducts;
-            this.cartProducts = readJSON;
-
+        counter: 0,
+        total: null,
+        cartProducts: [],
+        orderInfo: {
+          products: [],
+          name: '',
+          phone: '',
+          email: '',
+          city: '',
+          address: '',
+          message: '',
+          totalPrice: null
         },
-        methods: {
-            plus(data, index) {
-                let found = false;
-                let setCartProducts = this.localStorage.cartProducts;
-                for (let i = 0; i < setCartProducts.length; i++) {
+        errors: [],
+        success: []
+      }
+    },
+    mounted: function () {
+      let readJSON = this.localStorage.cartProducts;
+      this.cartProducts = readJSON;
 
-                    if (setCartProducts[i].id === data.id) {
-                        let newProduct = setCartProducts[i];
-                        newProduct.count = newProduct.count + 1;
-                        Vue.set(setCartProducts, index, newProduct);
+    },
+    methods: {
+      validEmail: function (email) {
+        let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(email);
+      },
+      plus(data, index) {
+        let found = false;
+        let setCartProducts = this.localStorage.cartProducts;
+        for (let i = 0; i < setCartProducts.length; i++) {
 
-                        found = true;
-                        break;
-                    }
-                }
-            },
-            minus(data, index) {
-                let found = false;
-                let setCartProducts = this.localStorage.cartProducts;
-                for (let i = 0; i < setCartProducts.length; i++) {
+          if (setCartProducts[i].id === data.id) {
+            let newProduct = setCartProducts[i];
+            newProduct.count = newProduct.count + 1;
+            Vue.set(setCartProducts, index, newProduct);
 
-                    if(data.count < 1){
-                        if (setCartProducts[i].id === data.id) {
-                            setCartProducts[i].count = 0;
-                        }
-                    }else{
-                        if (setCartProducts[i].id === data.id) {
-                            let newProduct = setCartProducts[i];
-                            newProduct.count = newProduct.count - 1;
-                            Vue.set(setCartProducts, index, newProduct);
-
-                            found = true;
-                            break;
-                        }
-                    }
-                }
-            },
-            sendOrder(data) {
-                axios.post('admin/clientsOrders/store', data, {headers: this.headers}).then((res) => {
-                    console.log(res);
-                }).catch((err) => {
-                    console.log(err.response.status);
-                })
-            },
-            deleteProductFromCart(data,index){
-                let setCartProducts = this.localStorage.cartProducts;
-                let getOrder = this.orderInfo.products;
-
-                for (let i = 0; i < getOrder.length; i++) {
-
-                    if (data.id === getOrder[i].id) {
-                        getOrder.splice(index,1);
-                    }
-                }
-
-                for (let i = 0; i < setCartProducts.length; i++) {
-
-                    if (data.id === setCartProducts[i].id) {
-                        setCartProducts.splice(index,1);
-                    }
-                }
-            }
+            found = true;
+            break;
+          }
         }
+      },
+      minus(data, index) {
+        let found = false;
+        let setCartProducts = this.localStorage.cartProducts;
+        for (let i = 0; i < setCartProducts.length; i++) {
+
+          if (data.count < 1) {
+            if (setCartProducts[i].id === data.id) {
+              setCartProducts[i].count = 0;
+            }
+          } else {
+            if (setCartProducts[i].id === data.id) {
+              let newProduct = setCartProducts[i];
+              newProduct.count = newProduct.count - 1;
+              Vue.set(setCartProducts, index, newProduct);
+
+              found = true;
+              break;
+            }
+          }
+        }
+      },
+      sendOrder(data) {
+        console.log()
+        if (data.products.length) {
+          this.errors = [];
+          if (data.name && data.phone && data.city && data.address && data.message) {
+            if(!this.validEmail(data.email)){
+              this.errors.push('Моля попълнете коректен имейл адрес!');
+            }else{
+              this.errors = [];
+              this.success.push('Вашата поръчка е изпратена успешно, очаквайте имейл за потвърждение.');
+              axios.post('admin/clientsOrders/store', data, {headers: this.headers}).then((res) => {
+                this.$router.push("/order")
+              }).catch((err) => {
+                console.log(err.response.status);
+              })
+            }
+          } else {
+            this.errors.push('Моля попълнете всички полета!');
+          }
+        }
+      },
+      deleteProductFromCart(data, index) {
+        let setCartProducts = this.localStorage.cartProducts;
+        let getOrder = this.orderInfo.products;
+
+        for (let i = 0; i < getOrder.length; i++) {
+
+          if (data.id === getOrder[i].id) {
+            getOrder.splice(index, 1);
+          }
+        }
+
+        for (let i = 0; i < setCartProducts.length; i++) {
+
+          if (data.id === setCartProducts[i].id) {
+            setCartProducts.splice(index, 1);
+          }
+        }
+      }
     }
+  }
 </script>
 
 <style scoped>

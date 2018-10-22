@@ -10478,6 +10478,20 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
+body button:focus {
+  outline: 0 !important;
+}
+
+body .btn:focus {
+  outline: 0 !important;
+}
+
+body .btn.focus,
+body .btn:focus {
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+
 body a {
   text-decoration: none !important;
 }
@@ -11174,6 +11188,7 @@ input[type="number"] {
   border-radius: 5px;
   width: 100%;
   height: 262px;
+  padding: 15px;
 }
 
 .order-details {
@@ -11225,6 +11240,14 @@ input[type="number"] {
   z-index: 9;
 }
 
+:focus {
+  outline: none;
+}
+
+::-moz-focus-inner {
+  border: 0;
+}
+
 .head-text a,
 .send-order-btn,
 .more-options a {
@@ -11232,6 +11255,7 @@ input[type="number"] {
   color: #247ba0;
   font-size: 18px;
   font-weight: 700;
+  outline: none !important;
 }
 
 .head-text a svg,
@@ -11826,5 +11850,9 @@ svg {
   z-index: 9999;
   -webkit-transition: ease 0.8s;
   transition: ease 0.8s;
+}
+
+.email-table-template {
+  background-color: red;
 }
 

@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('layouts.app');
 });
 
 
@@ -105,7 +105,6 @@ Route::middleware(['auth'])->group(function () {
     //Orders Controller
     Route::get('/admin/clientsOrders/', 'ShowClientsOrdersController@index');
     Route::post('/admin/clientsOrders/store', 'ClientsController@store')->name('clientsOrders.store');
-
 
 });
 

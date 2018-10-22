@@ -31078,106 +31078,137 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    name: "cart",
-    data: function data() {
-        return {
-            get totalPrice() {
-                var sum = null;
-                if (this.localStorage.cartProducts.length) {
-                    for (var i = 0; i < this.localStorage.cartProducts.length; i++) {
-                        sum += this.localStorage.cartProducts[i].price * this.localStorage.cartProducts[i].count;
-                    }
-                }
-
-                return sum;
-            },
-            counter: 0,
-            total: null,
-            cartProducts: [],
-            orderInfo: {
-                products: [],
-                name: '',
-                phone: '',
-                email: '',
-                city: '',
-                address: '',
-                message: '',
-                totalPrice: null
-            }
-        };
-    },
-
-    mounted: function mounted() {
-        var readJSON = this.localStorage.cartProducts;
-        this.cartProducts = readJSON;
-    },
-    methods: {
-        plus: function plus(data, index) {
-            var found = false;
-            var setCartProducts = this.localStorage.cartProducts;
-            for (var i = 0; i < setCartProducts.length; i++) {
-
-                if (setCartProducts[i].id === data.id) {
-                    var newProduct = setCartProducts[i];
-                    newProduct.count = newProduct.count + 1;
-                    __WEBPACK_IMPORTED_MODULE_0_vue___default.a.set(setCartProducts, index, newProduct);
-
-                    found = true;
-                    break;
-                }
-            }
-        },
-        minus: function minus(data, index) {
-            var found = false;
-            var setCartProducts = this.localStorage.cartProducts;
-            for (var i = 0; i < setCartProducts.length; i++) {
-
-                if (data.count < 1) {
-                    if (setCartProducts[i].id === data.id) {
-                        setCartProducts[i].count = 0;
-                    }
-                } else {
-                    if (setCartProducts[i].id === data.id) {
-                        var newProduct = setCartProducts[i];
-                        newProduct.count = newProduct.count - 1;
-                        __WEBPACK_IMPORTED_MODULE_0_vue___default.a.set(setCartProducts, index, newProduct);
-
-                        found = true;
-                        break;
-                    }
-                }
-            }
-        },
-        sendOrder: function sendOrder(data) {
-            __WEBPACK_IMPORTED_MODULE_1_axios___default.a.post('admin/clientsOrders/store', data, { headers: this.headers }).then(function (res) {
-                console.log(res);
-            }).catch(function (err) {
-                console.log(err.response.status);
-            });
-        },
-        deleteProductFromCart: function deleteProductFromCart(data, index) {
-            var setCartProducts = this.localStorage.cartProducts;
-            var getOrder = this.orderInfo.products;
-
-            for (var i = 0; i < getOrder.length; i++) {
-
-                if (data.id === getOrder[i].id) {
-                    getOrder.splice(index, 1);
-                }
-            }
-
-            for (var _i = 0; _i < setCartProducts.length; _i++) {
-
-                if (data.id === setCartProducts[_i].id) {
-                    setCartProducts.splice(index, 1);
-                }
-            }
+  name: "cart",
+  data: function data() {
+    return {
+      get totalPrice() {
+        var sum = null;
+        if (this.localStorage.cartProducts.length) {
+          for (var i = 0; i < this.localStorage.cartProducts.length; i++) {
+            sum += this.localStorage.cartProducts[i].price * this.localStorage.cartProducts[i].count;
+          }
         }
+
+        return sum;
+      },
+      counter: 0,
+      total: null,
+      cartProducts: [],
+      orderInfo: {
+        products: [],
+        name: '',
+        phone: '',
+        email: '',
+        city: '',
+        address: '',
+        message: '',
+        totalPrice: null
+      },
+      errors: [],
+      success: []
+    };
+  },
+
+  mounted: function mounted() {
+    var readJSON = this.localStorage.cartProducts;
+    this.cartProducts = readJSON;
+  },
+  methods: {
+    validEmail: function validEmail(email) {
+      var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(email);
+    },
+    plus: function plus(data, index) {
+      var found = false;
+      var setCartProducts = this.localStorage.cartProducts;
+      for (var i = 0; i < setCartProducts.length; i++) {
+
+        if (setCartProducts[i].id === data.id) {
+          var newProduct = setCartProducts[i];
+          newProduct.count = newProduct.count + 1;
+          __WEBPACK_IMPORTED_MODULE_0_vue___default.a.set(setCartProducts, index, newProduct);
+
+          found = true;
+          break;
+        }
+      }
+    },
+    minus: function minus(data, index) {
+      var found = false;
+      var setCartProducts = this.localStorage.cartProducts;
+      for (var i = 0; i < setCartProducts.length; i++) {
+
+        if (data.count < 1) {
+          if (setCartProducts[i].id === data.id) {
+            setCartProducts[i].count = 0;
+          }
+        } else {
+          if (setCartProducts[i].id === data.id) {
+            var newProduct = setCartProducts[i];
+            newProduct.count = newProduct.count - 1;
+            __WEBPACK_IMPORTED_MODULE_0_vue___default.a.set(setCartProducts, index, newProduct);
+
+            found = true;
+            break;
+          }
+        }
+      }
+    },
+    sendOrder: function sendOrder(data) {
+      var _this = this;
+
+      console.log();
+      if (data.products.length) {
+        this.errors = [];
+        if (data.name && data.phone && data.city && data.address && data.message) {
+          if (!this.validEmail(data.email)) {
+            this.errors.push('Моля попълнете коректен имейл адрес!');
+          } else {
+            this.errors = [];
+            this.success.push('Вашата поръчка е изпратена успешно, очаквайте имейл за потвърждение.');
+            __WEBPACK_IMPORTED_MODULE_1_axios___default.a.post('admin/clientsOrders/store', data, { headers: this.headers }).then(function (res) {
+              _this.$router.push("/order");
+            }).catch(function (err) {
+              console.log(err.response.status);
+            });
+          }
+        } else {
+          this.errors.push('Моля попълнете всички полета!');
+        }
+      }
+    },
+    deleteProductFromCart: function deleteProductFromCart(data, index) {
+      var setCartProducts = this.localStorage.cartProducts;
+      var getOrder = this.orderInfo.products;
+
+      for (var i = 0; i < getOrder.length; i++) {
+
+        if (data.id === getOrder[i].id) {
+          getOrder.splice(index, 1);
+        }
+      }
+
+      for (var _i = 0; _i < setCartProducts.length; _i++) {
+
+        if (data.id === setCartProducts[_i].id) {
+          setCartProducts.splice(index, 1);
+        }
+      }
     }
+  }
 });
 
 /***/ }),
@@ -31294,11 +31325,9 @@ var render = function() {
                     _c("p", [
                       _vm._v(
                         "\n                            " +
-                          _vm._s(item.price) +
-                          " "
-                      ),
-                      _c("sup", [_vm._v("00")]),
-                      _vm._v(" лв.\n                        ")
+                          _vm._s(parseFloat(item.price).toFixed(2)) +
+                          " лв.\n                        "
+                      )
                     ])
                   ]),
                   _vm._v(" "),
@@ -31358,15 +31387,35 @@ var render = function() {
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "total-price" }, [
-                    _c("p", [
-                      _vm._v(
-                        "\n                            " +
-                          _vm._s(
-                            parseFloat(item.price) * parseFloat(item.count)
-                          ) +
-                          " лв. "
-                      )
-                    ])
+                    _c(
+                      "p",
+                      {
+                        model: {
+                          value: (_vm.orderInfo.products[index]["total"] =
+                            item.price * item.count),
+                          callback: function($$v) {
+                            _vm.$set(
+                              (_vm.orderInfo.products[index]["total"] =
+                                item.price * item),
+                              "count",
+                              $$v
+                            )
+                          },
+                          expression:
+                            "orderInfo.products[index]['total'] = item.price * item.count"
+                        }
+                      },
+                      [
+                        _vm._v(
+                          "\n                            " +
+                            _vm._s(
+                              parseFloat(item.price).toFixed(2) *
+                                parseFloat(item.count).toFixed(2)
+                            ) +
+                            " лв. "
+                        )
+                      ]
+                    )
                   ])
                 ]
               )
@@ -31488,8 +31537,8 @@ var render = function() {
                             attrs: {
                               name: "email",
                               placeholder: "Имейл",
-                              required: "",
-                              type: "text"
+                              type: "email",
+                              required: ""
                             },
                             domProps: { value: _vm.orderInfo.email },
                             on: {
@@ -31644,10 +31693,9 @@ var render = function() {
                         _c("span", { attrs: { "data-price-grandtotal": "" } }, [
                           _vm._v(
                             "\n                                    " +
-                              _vm._s(_vm.totalPrice)
-                          ),
-                          _c("sup", [_vm._v("00")]),
-                          _vm._v("лв.")
+                              _vm._s(parseFloat(_vm.totalPrice).toFixed(2)) +
+                              " лв."
+                          )
                         ])
                       ]
                     ),
@@ -31724,6 +31772,31 @@ var render = function() {
           ],
           2
         )
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-lg-12" }, [
+        _vm.errors.length
+          ? _c(
+              "p",
+              { staticClass: "alert alert-danger" },
+              _vm._l(_vm.errors, function(error) {
+                return _c("span", [
+                  _vm._v("Моля попълнете следните полета:  "),
+                  _c("u", [_vm._v(_vm._s(error))])
+                ])
+              })
+            )
+          : _vm._e(),
+        _vm._v(" "),
+        _vm.success.length
+          ? _c(
+              "p",
+              { staticClass: "alert alert-success" },
+              _vm._l(_vm.success, function(item) {
+                return _c("span", [_vm._v(" " + _vm._s(item))])
+              })
+            )
+          : _vm._e()
       ])
     ]),
     _vm._v("\n    " + _vm._s(_vm.orderInfo) + "\n")
