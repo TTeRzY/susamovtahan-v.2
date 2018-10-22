@@ -4,11 +4,20 @@
             <div class="card mt-4">
                 <img class="card-img-top img-fluid" :src="'/uploads/' + item.limets_image" alt="">
                 <div class="card-body">
-                    <h3 class="card-title">{{ item.limets_title }}</h3>
-                    <h4>{{ item.limets_price }} лв.</h4>
-                    <p class="card-text">
-                        {{ item.limets_info }}
-                    </p>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <h3 class="card-title">{{ item.limets_title }}</h3>
+                            <h4>{{ item.limets_price }} лв.</h4>
+                            <p class="card-text">
+                                {{ item.limets_info }}
+                            </p>
+                        </div>
+                        <div class="col-lg-6">
+                            <router-link to="/order">
+                                <a class="btn buy-btn" role="button">ПОРЪЧАЙ</a>
+                            </router-link>
+                        </div>
+                    </div>
                 </div>
             </div>
             <!-- /.card -->
@@ -57,5 +66,7 @@
 </script>
 
 <style scoped>
-
+    .card img{
+        max-height: 400px;
+    }
 </style>

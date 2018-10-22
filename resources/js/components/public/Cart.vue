@@ -20,12 +20,13 @@
                 </div>
             </div>
             <div class="cart-items-holder col-lg-12">
-                <form name="order_form">
+                <form name="order_form" method="POST">
                     <div
                             class="row cart-items-content"
-                            v-for="(item, index) in cartProducts">
+                            v-for="(item, index) in cartProducts"
+                            v-model="orderInfo.products[index] = item">
                         <div class="delete-product">
-                            <a href="#" @click.prevent="deleteProductFromCart(index)">
+                            <a href="#" @click.prevent="deleteProductFromCart(item,index)">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17.037 21.905">
                                     <g id="rubbish-bin-delete-button" transform="translate(-50 5.762)">
                                         <g id="delete" transform="translate(50 -5.762)">
@@ -59,7 +60,7 @@
                             <input type="number" v-model.number="item.count">
                             <div class="quantity-nav">
                                 <div class="quantity-button quantity-up"
-                                     @click="plus(item)">+
+                                     @click="plus(item,index)">+
                                 </div>
                                 <div class="quantity-button quantity-down"
                                      @click="minus(item, index)">-
@@ -158,7 +159,7 @@
                                     <h5>МОЯТА ПОРЪЧКА</h5>
                                 </div>
                                 <div class="total-order-big">
-                                    <h2>
+                                    <h2 v-model="orderInfo.totalPrice = totalPrice">
                                         ОБЩО <span data-price-grandtotal="">
                                         {{ totalPrice }}<sup>00</sup>лв.</span>
                                     </h2>
@@ -180,21 +181,23 @@
                     </div>
                 </form>
             </div>
-            {{ orderInfo }}
         </div>
+        {{orderInfo}}
     </div>
 </template>
 
 <script>
+    import Vue from 'vue';
+    import axios from 'axios';
     export default {
         name: "cart",
         data() {
             return {
                 get totalPrice() {
                     let sum = null;
-                    if(this.orderInfo.totalOrderPrice.length){
-                        for( let i = 0; i < this.orderInfo.totalOrderPrice.length; i++){
-                            sum += this.orderInfo.totalOrderPrice[i]
+                    if(this.localStorage.cartProducts.length){
+                        for( let i = 0; i < this.localStorage.cartProducts.length; i++){
+                            sum += (this.localStorage.cartProducts[i].price * this.localStorage.cartProducts[i].count)
                         }
                     }
 
@@ -211,44 +214,76 @@
                     city: '',
                     address: '',
                     message: '',
-                    totalOrderPrice: []
+                    totalPrice: null
                 }
             }
         },
         mounted: function () {
             let readJSON = this.localStorage.cartProducts;
-            console.log(readJSON)
             this.cartProducts = readJSON;
 
         },
         methods: {
-            plus(data) {
-              let arr = this.localStorage.cartProducts;
-              for(let i = 0; i < arr.length; i++){
-                if(data.id === arr[i].id){
-                  data.count++;
-                  arr.splice(i,1);
-                  arr.push(data);
+            plus(data, index) {
+                let found = false;
+                let setCartProducts = this.localStorage.cartProducts;
+                for (let i = 0; i < setCartProducts.length; i++) {
+
+                    if (setCartProducts[i].id === data.id) {
+                        let newProduct = setCartProducts[i];
+                        newProduct.count = newProduct.count + 1;
+                        Vue.set(setCartProducts, index, newProduct);
+
+                        found = true;
+                        break;
+                    }
                 }
-              }
             },
             minus(data, index) {
-                if(data.count <= 0 ){
-                    data.count = 0;
-                }
-                else{
-                    data.count--;
-                        this.localStorage.cartProducts.splice(index,1);
-                }
+                let found = false;
+                let setCartProducts = this.localStorage.cartProducts;
+                for (let i = 0; i < setCartProducts.length; i++) {
 
+                    if(data.count < 1){
+                        if (setCartProducts[i].id === data.id) {
+                            setCartProducts[i].count = 0;
+                        }
+                    }else{
+                        if (setCartProducts[i].id === data.id) {
+                            let newProduct = setCartProducts[i];
+                            newProduct.count = newProduct.count - 1;
+                            Vue.set(setCartProducts, index, newProduct);
+
+                            found = true;
+                            break;
+                        }
+                    }
+                }
             },
             sendOrder(data) {
-                console.log(data);
-                console.log(data.products)
+                axios.post('admin/clientsOrders/store', data, {headers: this.headers}).then((res) => {
+                    console.log(res);
+                }).catch((err) => {
+                    console.log(err.response.status);
+                })
             },
-            deleteProductFromCart(index) {
-                this.cartProducts.splice(index, 1);
-                this.orderInfo.products.splice(index, 1);
+            deleteProductFromCart(data,index){
+                let setCartProducts = this.localStorage.cartProducts;
+                let getOrder = this.orderInfo.products;
+
+                for (let i = 0; i < getOrder.length; i++) {
+
+                    if (data.id === getOrder[i].id) {
+                        getOrder.splice(index,1);
+                    }
+                }
+
+                for (let i = 0; i < setCartProducts.length; i++) {
+
+                    if (data.id === setCartProducts[i].id) {
+                        setCartProducts.splice(index,1);
+                    }
+                }
             }
         }
     }
@@ -257,7 +292,7 @@
 <style scoped>
     .delete-product a {
         display: block;
-        z-index: 9999;
+        z-index: 9;
         position: relative;
     }
 </style>

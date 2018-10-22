@@ -66,6 +66,9 @@
                          Начало
                     </a>
                 </li>
+                <li>
+                    <a href="{{ url('/admin/clientsOrders/') }}"><span> Заявки </span></a>
+                </li>
 
                 <li>
                     <a href="{{ url('/admin/order') }}"><span> Поръчай </span></a>

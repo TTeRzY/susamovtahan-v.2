@@ -1,10 +1,25 @@
+@import "variables";
+
 body{
+  background-color: #FCFCFC !important;
   margin: 0;
   padding: 0;
+  font-family: $Montserrat;
 
   a{
     text-decoration: none !important;
   }
+
+  p{
+    font-size: 15px;
+    font-weight: $regular;
+  }
+
+}
+
+h1,h2,h3,h4,h5,h6{
+  font-family: $Raleway;
+  font-weight: $bold;
 }
 
 .nav-side-menu ul .sub-menu li::before{

@@ -1,27 +1,45 @@
 <template>
-<div class="technology-page">
-    <div class="jumbotron jumbotron-fluid">
+    <div class="technology-page">
+        <section class="section section_header">
+            <div class="container">
+                <div class="row">
+                    <div class="col products-title">
+
+                        <h2 class="text-center mb-5 mt-5">
+                            <span> Технология на производството</span>
+                        </h2>
+                        <p class="lead text-center">Описание на технологията на производство....</p>
+                    </div>
+                </div>
+            </div>
+        </section>
         <div class="container">
-            <h1 class="display-4 text-center">Технология на производството</h1>
-            <p class="lead text-center">Описание на технологията на производство....</p>
+            <div class="about-page-body">
+                <div class="row technology-page-body-content" v-for="(item,index) in technologies" v-if="index % 2 === 0">
+                    <div class="col-lg-7 about-page-body-text">
+                        <h2>{{ item.technology_title }}</h2>
+                        <p>
+                            {{ item.technology_info }}
+                        </p>
+                    </div>
+                    <div class="col-lg-5 about-page-body-image">
+                        <img :src="'/uploads/' + item.technology_image" alt="">
+                    </div>
+                </div>
+                <div class="row technology-page-body-content" v-else>
+                    <div class="col-lg-5 about-page-body-image">
+                        <img :src="'/uploads/' + item.technology_image" alt="">
+                    </div>
+                    <div class="col-lg-7 about-page-body-text">
+                        <h2>{{ item.technology_title }}</h2>
+                        <p>
+                            {{ item.technology_info }}
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="col-lg-10 ml-auto mr-auto text-center technology-section" v-for="item in technologies">
-        <img class="rounded-circle img-fluid d-block mx-auto" :src="'/uploads/' + item.technology_image" alt="">
-        <div class="vertical-line">
-            .
-            <span></span>
-        </div>
-        <div class="info-container">
-            <h3>
-                {{ item.technology_title }}
-            </h3>
-            <p>
-                {{ item.technology_info }}
-            </p>
-        </div>
-    </div>
-</div>
 </template>
 
 <script>
@@ -61,7 +79,7 @@
         min-height: 350px
     }
     .vertical-line{
-        font-size: 50px;
+        font-size: 30px;
         line-height: 1;
     }
     .vertical-line span{
@@ -81,9 +99,5 @@
 
     .technology-section{
         margin-bottom: 12rem;
-    }
-
-    .info-container{
-        background-color: #f3ffbd;
     }
 </style>

@@ -1,8 +1,8 @@
 <template>
     <div>
-        <nav class="navbar navbar-expand-lg">
+        <nav class="navbar navbar-expand-lg vue-navbar" @scroll="handleScroll">
             <router-link class="navbar-brand" to="/">
-                <a class="nav-link">Сусамов Тахан</a>
+                <a class="nav-link">Сусамов Тахан - "Йордан Каракехайов"</a>
             </router-link>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,9 +32,9 @@
                     <router-link class="nav-item" tag="li" to="/videos">
                         <a class="nav-link">Видео</a>
                     </router-link>
-                    <router-link class="nav-item cart" tag="li" to="/cart" >
-                        <a class="nav-link" href="#" >
-                            <svg   xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23.854 22.917">
+                    <router-link class="nav-item cart" tag="li" to="/cart">
+                        <a class="nav-link" href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23.854 22.917">
                                 <g id="Group_1132" transform="translate(-2725 -529)">
                                     <g id="Group_956" transform="translate(2725 529)">
                                         <path id="Path_228" class="cls-1"
@@ -69,15 +69,15 @@
                                 <ul>
                                     <li><span>Адрес:</span></li>
                                     <li>
-                                        София, ж.к. Хаджи Димитър,
-                                        ул. Спас Гинев 30
+                                        гр. Ивайловград
                                     </li>
+                                    <li>ул. Витоша 31</li>
                                 </ul>
                             </div>
                             <div class="col-lg-6">
                                 <ul>
-                                    <li><span>Телефон</span>: 0888 307069</li>
-                                    <li><span>Email</span>: office@quickup.bg</li>
+                                    <li><span>Телефон</span>: 0898-36-84-01</li>
+                                    <li><span>Email</span>: susamov.tahan@gmail.com</li>
                                 </ul>
                             </div>
                         </div>
@@ -118,7 +118,7 @@
                     <div class="col-lg-4 developer-name">
 
                         <a href="https://github.com/TTeRzY" target="_blank">
-                            <u>Designed by &copy;Terziyski</u>
+                            <u>Created by &copy;Terziyski</u>
                         </a>
                     </div>
                 </div>
@@ -129,24 +129,41 @@
 
 <script>
     export default {
-        data () {
-            return{
+        data() {
+            return {
                 itemsInCart: [],
-                cartItems: null,
+                cartItems: null
+            }
+        },
+        methods: {
+            handleScroll (event) {
+                //let header = document.querySelector(".vue-navbar");
+                //if (window.scrollY > 100 && !header.className.includes('vue-navbar sticky')) {
+                //    header.classList.add('sticky');
+                //} else if (window.scrollY < 100) {
+                ///    header.classList.remove('sticky');
+                //}
             }
         },
         mounted() {
-              this.itemsInCart = this.localStorage.cartProducts;
+            this.itemsInCart = this.localStorage.cartProducts;
         },
-      watch: {
-          itemsInCart(data) {
+        watch: {
+            itemsInCart(data) {
                 let result = 0;
-              for(let i = 0; i < data.length; i++){
-                result += data[i].count;
-              }
-            this.cartItems = result
-          }
-      }
+                for (let i = 0; i < data.length; i++) {
+                    result += data[i].count;
+                }
+                this.cartItems = result
+            }
+        },
+        created () {
+            window.addEventListener('scroll', this.handleScroll);
+
+        },
+        destroyed () {
+            window.removeEventListener('scroll', this.handleScroll);
+        }
     }
 </script>
 

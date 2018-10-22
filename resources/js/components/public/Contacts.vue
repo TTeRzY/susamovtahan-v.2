@@ -3,7 +3,11 @@
 
         <div class="row">
             <div class="contacts-header">
-                <h1> Свържете се с нас </h1>
+               <div class="products-title">
+                   <h2>
+                       <span>Свържете се с нас</span>
+                   </h2>
+               </div>
             </div>
             <div class="col-lg-12" id="parent">
                 <div class="row">
@@ -94,130 +98,4 @@
 
 <style scoped>
 
-
-    .contacts-header{
-        padding-top: 60px;
-        padding-bottom: 40px;
-        text-align: center;
-        width: 100%;
-    }
-
-    .contacts-header h1{
-        text-transform: uppercase;
-    }
-
-    .form-control
-    {
-        border-radius: 0;
-        border:1px solid #EDEDED;
-    }
-
-    .form-control:focus
-    {
-        border:1px solid #00bfff;
-    }
-
-    .textarea-contact
-    {
-        resize:none;
-    }
-
-    .second-portion
-    {
-        margin-top:50px;
-    }
-
-    .box > .icon {
-        text-align: center;
-        position: relative;
-    }
-    .box > .icon > .image {
-        position: relative;
-        z-index: 2;
-        margin: auto;
-        width: 88px;
-        height: 88px;
-        border: 8px solid #ddd;
-        line-height: 48px;
-        border-radius: 50%;
-        background-color: #ddd;
-        vertical-align: middle;
-    }
-
-    .box > .icon > .image img{
-        max-height: 45px;
-    }
-    .box > .icon:hover > .image {
-        opacity: 0.8;
-    }
-    .box > .icon > .image > i {
-        font-size: 36px !important;
-        color: #fff !important;
-    }
-    .box > .icon:hover > .image > i {
-        color: white !important;
-    }
-    .box > .icon > .info {
-        margin-top: -24px;
-        background: #fff;
-        border: 1px solid rgba(0, 0, 0, 0.03);
-        padding: 15px 0 10px 0;
-        min-height:163px;
-        box-shadow: 02px 3px 3px rgba(0,0,0,0.3);
-
-    }
-    .box > .icon:hover > .info {
-        background: rgba(0, 0, 0, 0.04);
-        border-color: #e0e0e0;
-        color: white;
-    }
-    .box > .icon > .info > h3.title {
-        padding-top: 15px;
-        font-family: "Robot",sans-serif !important;
-        font-size: 16px;
-        color: #6c757d !important;
-        font-weight: 700;
-    }
-    .box > .icon > .info > p {
-        font-family: "Robot",sans-serif !important;
-        font-size: 13px;
-        color: #6c757d !important;
-        font-weight: 700;
-        line-height: 1.5em;
-        margin: 20px;
-    }
-    .box > .icon:hover > .info > h3.title, .box > .icon:hover > .info > p, .box > .icon:hover > .info > .more > a {
-        color: #707070;
-    }
-    .box > .icon > .info > .more a {
-        font-family: "Robot",sans-serif !important;
-        font-size: 12px;
-        color: #222;
-        line-height: 12px;
-        text-transform: uppercase;
-        text-decoration: none;
-    }
-    .box > .icon:hover > .info > .more > a { color: #fff; padding: 6px 8px; background-color: #63B76C; }
-    .box .space {
-        height: 30px;
-    }
-
-    @media only screen and (max-width: 768px)
-    {
-        .contact-form
-        {
-            margin-top:25px;
-        }
-
-        .btn-send
-        {
-            width: 100%;
-            padding:10px;
-        }
-
-        .second-portion
-        {
-            margin-top:25px;
-        }
-    }
 </style>

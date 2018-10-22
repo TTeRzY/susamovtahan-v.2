@@ -4,8 +4,8 @@
 
         <div class="row">
 
-            <div class="col-lg-3">
-                <h1 class="my-4">Shop Name</h1>
+            <div class="col-lg-4 products-page-holder">
+                <h1 class="my-4">Нашите продукти</h1>
                 <div class="list-group">
                     <a href="#" class="list-group-item">
                         <router-link class="nav-item" to="/products">
@@ -31,9 +31,11 @@
             </div>
             <!-- /.col-lg-3 -->
 
-            <div class="col-lg-9">
+            <div class="col-lg-8">
               <keep-alive>
-                  <router-view ></router-view>
+                  <transition name="fade">
+                        <router-view ></router-view>
+                  </transition>
               </keep-alive>
             </div>
             <!-- /.col-lg-9 -->
@@ -67,5 +69,10 @@
 </script>
 
 <style scoped>
-
+    .fade-enter-active, .fade-leave-active {
+        transition: opacity .5s;
+    }
+    .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+        opacity: 0;
+    }
 </style>

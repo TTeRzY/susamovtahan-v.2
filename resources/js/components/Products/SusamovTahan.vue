@@ -4,14 +4,23 @@
             <div class="card mt-4">
                 <img class="card-img-top img-fluid" :src="'/uploads/' + item.tahan_image" alt="">
                 <div class="card-body">
-                    <h3 class="card-title">{{ item.tahan_title}}</h3>
-                    <h4>{{ item.tahan_price}} лв.</h4>
-                    <p class="card-text">
-                        {{ item.tahan_info}}
-                    </p>
-                    <!--<span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
-                    4.0 stars
-                    -->
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <h3 class="card-title">{{ item.tahan_title}}</h3>
+                            <h4>{{ item.tahan_price}} лв.</h4>
+                            <p class="card-text">
+                                {{ item.tahan_info}}
+                            </p>
+                            <!--<span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
+                            4.0 stars
+                            -->
+                        </div>
+                        <div class="col-lg-6">
+                            <router-link to="/order">
+                                <a class="btn buy-btn" role="button">ПОРЪЧАЙ</a>
+                            </router-link>
+                        </div>
+                    </div>
                 </div>
             </div>
             <!-- /.card -->
@@ -80,5 +89,7 @@
 </script>
 
 <style scoped>
-
+    .card img{
+        max-height: 400px;
+    }
 </style>

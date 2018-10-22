@@ -36,22 +36,33 @@
 
                 <div class="container marketing">
                     <div class="products-title">
-                        <h2 class="text-center">Нашите продукти</h2>
+                        <h2 class="text-center"><span>Нашите продукти</span></h2>
                     </div>
 
                     <!-- Three columns of text below the carousel -->
-                    <div class="row producs-holder">
-                        <div class="col-lg-3" v-for="item in products">
+                    <div class="row products-holder justify-content-around">
+                        <div class="col-lg-5" v-for="item in products">
+                            <div class="silver-background-box"></div>
                             <div class="rounded-circle">
                                 <img class="img-fluid" :src="'/uploads/' + item.product_image" alt="Generic placeholder image">
                             </div>
                             <h2>{{ item.product_title}}</h2>
                             <p>{{ item.product_info }}</p>
-                            <p><a class="btn btn-secondary" href="../Products/" role="button">Научи повече &raquo;</a></p>
+                            <router-link to="/products/">
+                                <a class="btn btn-secondary" role="button">Научи повече &raquo;</a>
+                            </router-link>
                         </div><!-- /.col-lg-3 -->
                     </div><!-- /.row -->
+                </div>
 
 
+                    <div class="parallax-background">
+                        <div class="mbr-overlay" style="opacity: 0.2; background-color: rgb(0, 0, 0);">
+                        </div>
+                        <h2 class="text-center">„Йордан Каракехайов”ЕООД</h2>
+                        <p class="text-center">Първата частна Tаханджийница, която използва автентична технология на производство.</p>
+                    </div>
+            <div class="container marketing">
                     <!-- START THE FEATURETTES -->
 
                     <hr class="featurette-divider">
@@ -75,13 +86,6 @@
                     <!-- /END THE FEATURETTES -->
                 </div><!-- /.container -->
 
-
-                <div class="parallax-background">
-                    <div class="mbr-overlay" style="opacity: 0.2; background-color: rgb(0, 0, 0);">
-                    </div>
-                    <h2 class="text-center">Lorem Ipsum?</h2>
-                    <p class="text-center">Please provide any document. </p>
-                </div>
 
             </div>
         </div>
@@ -141,46 +145,4 @@
 
 <style scoped>
 
-    /* RESPONSIVE CSS
-    -------------------------------------------------- */
-    @media (min-width: 40em) {
-        /* Bump up size of carousel content */
-        .carousel-caption p {
-            margin-bottom: 1.25rem;
-            font-size: 1.25rem;
-            line-height: 1.4;
-        }
-        .featurette-heading {
-            font-size: 50px;
-        }
-    }
-    @media (min-width: 62em) {
-        .featurette-heading {
-            margin-top: 7rem;
-        }
-    }
-    .rounded-circle img {
-        margin: auto;
-        display: block;
-        max-height: 80px;
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-    }
-    .rounded-circle {
-        border-radius: 50% !important;
-        display: block;
-        background: #fff;
-        width: 140px;
-        height: 140px;
-        margin: auto;
-        box-shadow: 0 2px 4px #ddd;
-        position: relative;
-    }
-
-    .products-title h2{
-        font-size: 60px;
-        padding: 27px 0 80px;
-    }
 </style>

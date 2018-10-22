@@ -1,6 +1,8 @@
 <template>
     <div class="container order-container">
-        <h2 class="text-center mb-5 mt-5">Изберете продукти</h2>
+        <div class="products-title">
+            <h2 class="text-center mb-5 mt-5"><span>Изберете продукти</span></h2>
+        </div>
         <div class="row justify-content-center">
 
             <div class="card" v-for="(item, index) in products">
@@ -70,67 +72,59 @@
 </template>
 
 <script>
-  import EventBus from '../../eventBus.js';
-  import axios from 'axios';
+    import Vue from 'vue';
+    import axios from 'axios';
 
-  export default {
-    name: "order",
-    cart: [],
-    data() {
-      return {
-        products: [],
-        addedItemsInCart: []
-      }
-    },
-    created() {
-      // fetch the data when the view is created and the data is
-      // already being observed
-      this.readOrder;
-    },
-    computed: {
-      readOrder() {
-        axios.get('api/order').then((res) => {
-          for (let item in res.data) {
-            this.products.push(res.data[item]);
-          }
-        }).catch((err) => {
-          console.log(err.response.data.message);
-        });
-      }
-    },
-    methods: {
-      addToCart(data) {
-        let arr = this.addedItemsInCart;
-        arr = this.localStorage.cartProducts;
-
-        let isExist = arr.some((field) => {
-          return field.id === data.id;
-        });
-
-        if (!isExist) {
-          data.count = 1;
-          arr.push(data);
-          console.log('exist')
-        } else {
-          console.log('exist');
-          console.log(arr)
-          for (let i = 0; i < arr.length; i++) {
-            if (arr[i].id === data.id) {
-              console.log(arr[i].count)
-              arr[i].count++;
+    export default {
+        name: "order",
+        cart: [],
+        data() {
+            return {
+                products: [],
+                addedItemsInCart: []
             }
-          }
+        },
+        created() {
+            // fetch the data when the view is created and the data is
+            // already being observed
+            this.readOrder;
+        },
+        computed: {
+            readOrder() {
+                axios.get('api/order').then((res) => {
+                    for (let item in res.data) {
+                        this.products.push(res.data[item]);
+                    }
+                }).catch((err) => {
+                    console.log(err.response.data.message);
+                });
+            }
+        },
+        methods: {
+            addToCart(product,index) {
+                let found = false;
+                let setCartProducts = this.localStorage.cartProducts;
+
+                for (let i = 0; i < setCartProducts.length; i++) {
+
+                    if (setCartProducts[i].id === product.id) {
+                        let newProduct = setCartProducts[i];
+                        newProduct.count++;
+                        Vue.set(setCartProducts, i, newProduct);
+                        //console.log("DUPLICATE",  vue.cart[i].product + "'s quantity is now: " + vue.cart[i].quantity);
+                        found = true;
+                        break;
+                    }
+                }
+
+
+                if(!found) {
+                    product.count = 1;
+                    setCartProducts.push(product);
+                }
+            },
         }
-      }
-    },
-    watch: {
-      addedItemsInCart(data){
-        console.log('watch',data)
-      },
-      deep: true,
-      immediate: true
     }
-  }
 </script>
 
 <style scoped>

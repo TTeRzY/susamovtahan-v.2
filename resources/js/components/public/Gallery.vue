@@ -1,12 +1,13 @@
 <template>
     <div class="gallery-page">
-        <div class="jumbotron jumbotron-fluid text-center">
-            <div class="container">
-                <h1 class="jumbotron-heading">Галерия</h1>
-                <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
+        <div class="container">
+            <div class="products-title">
+                <h2 class="text-center mb-5 mt-5"><span>Галерия</span></h2>
+                <p class="lead text-muted text-center">
+                    Галерията съдържа снимки показващи целият процес по производството на Сусамов Тахан.
+                </p>
             </div>
         </div>
-
         <div class="col-lg-12 album ">
             <div class="container">
                 <div class="row">

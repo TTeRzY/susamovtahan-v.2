@@ -3,11 +3,11 @@
         <section class="section section_header">
             <div class="container">
                 <div class="row">
-                    <div class="col">
+                    <div class="col products-title">
 
-                        <h1 class="section__heading section_header__heading text-center">
-                            Нашата история
-                        </h1>
+                        <h2 class="text-center mb-5 mt-5">
+                           <span> Нашата история</span>
+                        </h2>
 
                     </div>
                 </div>
@@ -76,9 +76,6 @@
 
     .about-page{
         width: 100%;
-    }
-    .section{
-        padding:  6rem 0;
     }
 
     .section_gray p{

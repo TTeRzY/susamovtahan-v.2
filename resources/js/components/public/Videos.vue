@@ -1,20 +1,43 @@
 <template>
     <div class="videos-page">
-        <h1 class="text-lg-center">Секция Видео</h1>
+        <div class="products-title">
+            <h2 class="text-center mb-5 mt-5">
+                <span>
+                   Секция Видео
+                </span>
+            </h2>
+        </div>
         <!-- Heading Row -->
         <div class="container">
-            <div class="row my-4" v-for="item in videos">
-                <div class="col-lg-8">
-                    <video controls="" width="100%" height="auto">
-                        <source :src="'/uploads/videos/' + item.video_content" type="video/mp4">
-                    </video>
-                </div>
-                <!-- /.col-lg-8 -->
-                <div class="col-lg-4">
-                    <h2>{{ item.video_title }}</h2>
-                    <p>
-                        {{ item.video_info}}
-                    </p>
+            <div class="row my-4" v-for="(item,index) in videos">
+               <div class="row news-holder" v-if="index % 2 === 0">
+                   <div class="col-lg-8">
+                       <video controls="" width="100%" height="auto">
+                           <source :src="'/uploads/videos/' + item.video_content" type="video/mp4">
+                       </video>
+                   </div>
+                   <!-- /.col-lg-8 -->
+                   <div class="col-lg-4">
+                       <h2>{{ item.video_title }}</h2>
+                       <p>
+                           {{ item.video_info}}
+                       </p>
+                   </div>
+               </div>
+                <div class="row" v-else>
+                    <!-- /.col-lg-8 -->
+                    <div class="col-lg-4">
+                        <h2>{{ item.video_title }}</h2>
+                        <p>
+                            {{ item.video_info}}
+                        </p>
+                    </div>
+                    <div class="col-lg-8">
+                        <video controls="" width="100%" height="auto">
+                            <source :src="'/uploads/videos/' + item.video_content" type="video/mp4">
+                        </video>
+                    </div>
+
                 </div>
                 <!-- /.col-md-4 -->
             </div>

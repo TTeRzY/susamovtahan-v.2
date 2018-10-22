@@ -69,3 +69,7 @@ Route::resource('/products/honey', 'ShowHoneyController', [
 Route::resource('/order', 'ShowOrderController', [
     'except' => ['edit', 'show', 'store']
 ]);
+
+Route::resource('/clientsOrders', 'ClientsController', [
+    'except' => ['edit', 'show', 'store']
+]);
