@@ -77,13 +77,5 @@
 </script>
 
 <style scoped>
-    .videos-page{
-        width: 100%;
-    }
-    .videos-page h1{
-        padding: 60px 0;
-        font-size: 60px;
-        color: #363636;
-        font-weight: 900;
-    }
+
 </style>

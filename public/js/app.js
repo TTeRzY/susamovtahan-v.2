@@ -30367,6 +30367,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "col-lg-5 about-page-body-image" }, [
                   _c("img", {
+                    staticClass: "img-fluid",
                     attrs: { src: "/uploads/" + item.about_image, alt: "" }
                   })
                 ])
@@ -30374,6 +30375,7 @@ var render = function() {
             : _c("div", { staticClass: "row about-page-body-content" }, [
                 _c("div", { staticClass: "col-lg-5 about-page-body-image" }, [
                   _c("img", {
+                    staticClass: "img-fluid",
                     attrs: { src: "/uploads/" + item.about_image, alt: "" }
                   })
                 ]),
@@ -30890,7 +30892,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_axios__);
-//
 //
 //
 //
@@ -31798,8 +31799,7 @@ var render = function() {
             )
           : _vm._e()
       ])
-    ]),
-    _vm._v("\n    " + _vm._s(_vm.orderInfo) + "\n")
+    ])
   ])
 }
 var staticRenderFns = [
@@ -33507,7 +33507,7 @@ exports = module.exports = __webpack_require__(0)(false);
 
 
 // module
-exports.push([module.i, "\n.gallery-page[data-v-06488e97]{\n    width: 100%;\n}\nh2[data-v-06488e97]{\n    font-size: 60px;\n    padding: 45px 0;\n    color: #707070;\n}\n.row[data-v-06488e97]{\n    margin: 15px;\n}\n", ""]);
+exports.push([module.i, "\n.gallery-page[data-v-06488e97]{\n    width: 100%;\n}\nh2[data-v-06488e97]{\n    padding: 45px 0;\n    color: #707070;\n}\n.row[data-v-06488e97]{\n    margin: 15px;\n}\n", ""]);
 
 // exports
 
@@ -33745,7 +33745,7 @@ exports = module.exports = __webpack_require__(0)(false);
 
 
 // module
-exports.push([module.i, "\n.videos-page[data-v-524d7aa3]{\n    width: 100%;\n}\n.videos-page h1[data-v-524d7aa3]{\n    padding: 60px 0;\n    font-size: 60px;\n    color: #363636;\n    font-weight: 900;\n}\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -55728,7 +55728,7 @@ var render = function() {
       [
         _c("router-link", { staticClass: "navbar-brand", attrs: { to: "/" } }, [
           _c("a", { staticClass: "nav-link" }, [
-            _vm._v('Сусамов Тахан - "Йордан Каракехайов"')
+            _vm._v('"Йордан Каракехайов ЕООД"')
           ])
         ]),
         _vm._v(" "),
@@ -56005,7 +56005,11 @@ var staticRenderFns = [
           "aria-label": "Toggle navigation"
         }
       },
-      [_c("span", { staticClass: "navbar-toggler-icon" })]
+      [
+        _c("img", {
+          attrs: { src: __webpack_require__(123), alt: "" }
+        })
+      ]
     )
   },
   function() {
@@ -56081,6 +56085,17 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 118 */,
+/* 119 */,
+/* 120 */,
+/* 121 */,
+/* 122 */,
+/* 123 */
+/***/ (function(module, exports) {
+
+module.exports = "/images/hamMenu.png?2a76554bc1ec96e3026d71c84870da63";
 
 /***/ })
 /******/ ]);

@@ -1,6 +1,11 @@
 @import "variables";
 
 body{
+  ul{
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style-type: none;
+  }
   button:focus {outline:0 !important;}
   .btn:focus {outline:0 !important;}
   .btn.focus, .btn:focus{

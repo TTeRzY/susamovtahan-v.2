@@ -126,6 +126,7 @@
     </div>
     <div class="col-lg-9 offset-lg-3">
         @yield('content')
+        <app></app>
     </div>
 </div>
 </div>

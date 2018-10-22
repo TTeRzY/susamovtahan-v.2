@@ -62,7 +62,6 @@
         width: 100%;
     }
     h2{
-        font-size: 60px;
         padding: 45px 0;
         color: #707070;
     }

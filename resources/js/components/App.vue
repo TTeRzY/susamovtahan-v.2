@@ -2,11 +2,11 @@
     <div>
         <nav class="navbar navbar-expand-lg vue-navbar" @scroll="handleScroll">
             <router-link class="navbar-brand" to="/">
-                <a class="nav-link">Сусамов Тахан - "Йордан Каракехайов"</a>
+                <a class="nav-link">"Йордан Каракехайов ЕООД"</a>
             </router-link>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <img src="../../assets/img/hamMenu.png" alt="">
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">

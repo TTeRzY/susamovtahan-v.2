@@ -190,7 +190,6 @@
                 </p>
             </div>
         </div>
-        {{orderInfo}}
     </div>
 </template>
 
