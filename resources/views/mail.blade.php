@@ -13,22 +13,37 @@
 
         <style>
             .email-template{
-                background-color: #FCFCFC;
-                padding: 30px;
+                padding: 30px 0;
+            }
+
+            .email-template-header{
+                padding: 15px 0;
+            }
+
+            .email-template-body{
+                padding: 15px 0;
             }
             table {
                 border-collapse: collapse;
                 width: 100%;
                 border: 1px solid #ddd;
-                background-color: #70c1b3;
             }
 
             tr{
-             border: 1px solid #ddd;
+                border: 1px solid #ddd;
             }
 
-            th, td {
-                color: #ffffff;
+            th{
+                font-size: 18px;
+                font-weight: 700;
+                color: #000000;
+                text-align: left;
+                padding: 8px;
+                border: 1px solid #ddd;
+            }
+            td {
+                font-size: 15px;
+                color: #000000;
                 text-align: left;
                 padding: 8px;
                 border: 1px solid #ddd;
@@ -38,8 +53,15 @@
                 background-color: #f2f2f2;
             }
 
-            h4{
-                text-align: right;
+            ul{
+                list-style-type: none;
+                margin:0;
+                padding:0;
+            }
+            ul li{
+                font-size: 15px;
+                padding: 15px 0;
+                margin-left: 0;
             }
         </style>
         <!-- Fonts -->
@@ -47,41 +69,53 @@
     </head>
  <body>
  <div class="email-template">
-<h1>Здравейте, {{ $name }}.</h1>
-<h3>Благодарим Ви , че пазарувахте от Нас.</p>
-<h5>Разгледайте вашата поръчка : </h2>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Снимка</th>
-      <th scope="col">Продукт</th>
-      <th scope="col">Цена за бр.</th>
-      <th scope="col">Поръчано количество</th>
-      <th scope="col">Общо</th>
-    </tr>
-  </thead>
-  <tbody>
-  @foreach($products as $key=>$product)
-    <tr>
-      <th scope="row">{{ $key }}</th>
-      <td>{{ $product['name'] }}</td>
-      <td><img src="{{ URL::to('/') }}/uploads/{{ $product['image'] }}" alt=""></td>
-      <td>{{ $product['price'] }}</td>
-      <td>{{ $product['count'] }}</td>
-      <td>{{ $product['total'] }} лв.</td>
-    </tr>
-    @endforeach
-    <tr>
-      <th scope="row"></th>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td><h3>ОБЩО: {{ floatval($totalPrice) }} лв.</h3></td>
-    </tr>
-  </tbody>
-</table>
+<div class="email-template-header">
+    <h4>Здравейте, {{ $name }}. <br/> Вашата поръчка беше успешно регистрирана в нашата система със следните детайли: </h4>
 </div>
+<div class="email-template-body">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Снимка</th>
+                <th scope="col">Продукт</th>
+                <th scope="col">Цена за бр.</th>
+                <th scope="col">Поръчано количество</th>
+                <th scope="col">Общо</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach($products as $key=>$product)
+                <tr>
+                    <th scope="row">{{ $key+1 }}</th>
+                    <td>{{ $product['name'] }}</td>
+                    <td><img src="{{ URL::to('/') }}/uploads/{{ $product['image'] }}" alt=""></td>
+                    <td>{{ $product['price'] }}</td>
+                    <td>{{ $product['count'] }}</td>
+                    <td>{{ $product['total'] }} лв.</td>
+                </tr>
+            @endforeach
+            <tr>
+                <th scope="row"></th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><h3>ОБЩО: {{ floatval($totalPrice) }} лв.</h3></td>
+            </tr>
+            </tbody>
+        </table>
+    <p>При възникнали въпроси с вашата поръчка не се колебайте да се свържете с нас.</p>
+
+    <p>
+        Поздрави,
+        <br/>
+        екипът на Susamovtahan.bg!
+    </p>
+
+</div>
+
+ </div>
 </body>
 </html>
 

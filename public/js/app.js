@@ -25474,7 +25474,7 @@ return jQuery;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(21);
-module.exports = __webpack_require__(117);
+module.exports = __webpack_require__(118);
 
 
 /***/ }),
@@ -31171,7 +31171,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     sendOrder: function sendOrder(data) {
       var _this = this;
 
-      console.log();
       if (data.products.length) {
         this.errors = [];
         if (data.name && data.phone && data.city && data.address && data.message) {
@@ -31181,6 +31180,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.errors = [];
             this.success.push('Вашата поръчка е изпратена успешно, очаквайте имейл за потвърждение.');
             __WEBPACK_IMPORTED_MODULE_1_axios___default.a.post('admin/clientsOrders/store', data, { headers: this.headers }).then(function (res) {
+              _this.localStorage.cartProducts.splice(0, _this.localStorage.cartProducts.length);
               _this.$router.push("/order");
             }).catch(function (err) {
               console.log(err.response.status);
@@ -55530,7 +55530,7 @@ exports = module.exports = __webpack_require__(0)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -55670,16 +55670,64 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
+            active: false,
             itemsInCart: [],
             cartItems: null
         };
     },
 
     methods: {
+        toggleMobileMenu: function toggleMobileMenu() {},
         handleScroll: function handleScroll(event) {
             //let header = document.querySelector(".vue-navbar");
             //if (window.scrollY > 100 && !header.className.includes('vue-navbar sticky')) {
@@ -55719,6 +55767,92 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
+    _c("div", { staticClass: "mobile-navbar", class: { show: _vm.active } }, [
+      _c("div", [
+        _c("a", { staticClass: "close-button", attrs: { href: "#" } }, [
+          _c("img", {
+            attrs: { src: __webpack_require__(124) },
+            on: {
+              click: function($event) {
+                _vm.active = !_vm.active
+              }
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c(
+          "ul",
+          { staticClass: "navbar-nav ml-auto" },
+          [
+            _c(
+              "router-link",
+              { staticClass: "navbar-brand", attrs: { to: "/" } },
+              [
+                _c("a", { staticClass: "nav-link" }, [
+                  _vm._v('"Йордан Каракехайов ЕООД"')
+                ])
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "router-link",
+              { staticClass: "nav-item", attrs: { tag: "li", to: "/order" } },
+              [_c("a", { staticClass: "nav-link" }, [_vm._v("Поръчай")])]
+            ),
+            _vm._v(" "),
+            _c(
+              "router-link",
+              { staticClass: "nav-item", attrs: { tag: "li", to: "/about" } },
+              [_c("a", { staticClass: "nav-link" }, [_vm._v("За Нас")])]
+            ),
+            _vm._v(" "),
+            _c(
+              "router-link",
+              {
+                staticClass: "nav-item",
+                attrs: { tag: "li", to: "/products" }
+              },
+              [_c("a", { staticClass: "nav-link" }, [_vm._v("Продукти")])]
+            ),
+            _vm._v(" "),
+            _c(
+              "router-link",
+              {
+                staticClass: "nav-item",
+                attrs: { tag: "li", to: "/contacts" }
+              },
+              [_c("a", { staticClass: "nav-link" }, [_vm._v("Контакти")])]
+            ),
+            _vm._v(" "),
+            _c(
+              "router-link",
+              {
+                staticClass: "nav-item",
+                attrs: { tag: "li", to: "/technology" }
+              },
+              [_c("a", { staticClass: "nav-link" }, [_vm._v("Технология")])]
+            ),
+            _vm._v(" "),
+            _c(
+              "router-link",
+              { staticClass: "nav-item", attrs: { tag: "li", to: "/gallery" } },
+              [_c("a", { staticClass: "nav-link" }, [_vm._v("Галерия")])]
+            ),
+            _vm._v(" "),
+            _c(
+              "router-link",
+              {
+                staticClass: "nav-item video-item",
+                attrs: { tag: "li", to: "/videos" }
+              },
+              [_c("a", { staticClass: "nav-link" }, [_vm._v("Видео")])]
+            )
+          ],
+          1
+        )
+      ])
+    ]),
+    _vm._v(" "),
     _c(
       "nav",
       {
@@ -55732,144 +55866,210 @@ var render = function() {
           ])
         ]),
         _vm._v(" "),
-        _vm._m(0),
-        _vm._v(" "),
         _c(
-          "div",
+          "router-link",
           {
-            staticClass: "collapse navbar-collapse",
-            attrs: { id: "navbarSupportedContent" }
+            staticClass: "nav-item cart d-block d-lg-none",
+            attrs: { tag: "li", to: "/cart" }
           },
           [
-            _c(
-              "ul",
-              { staticClass: "navbar-nav ml-auto" },
-              [
-                _c(
-                  "router-link",
-                  {
-                    staticClass: "nav-item",
-                    attrs: { tag: "li", to: "/order" }
-                  },
-                  [_c("a", { staticClass: "nav-link" }, [_vm._v("Поръчай")])]
-                ),
-                _vm._v(" "),
-                _c(
-                  "router-link",
-                  {
-                    staticClass: "nav-item",
-                    attrs: { tag: "li", to: "/about" }
-                  },
-                  [_c("a", { staticClass: "nav-link" }, [_vm._v("За Нас")])]
-                ),
-                _vm._v(" "),
-                _c(
-                  "router-link",
-                  {
-                    staticClass: "nav-item",
-                    attrs: { tag: "li", to: "/products" }
-                  },
-                  [_c("a", { staticClass: "nav-link" }, [_vm._v("Продукти")])]
-                ),
-                _vm._v(" "),
-                _c(
-                  "router-link",
-                  {
-                    staticClass: "nav-item",
-                    attrs: { tag: "li", to: "/contacts" }
-                  },
-                  [_c("a", { staticClass: "nav-link" }, [_vm._v("Контакти")])]
-                ),
-                _vm._v(" "),
-                _c(
-                  "router-link",
-                  {
-                    staticClass: "nav-item",
-                    attrs: { tag: "li", to: "/technology" }
-                  },
-                  [_c("a", { staticClass: "nav-link" }, [_vm._v("Технология")])]
-                ),
-                _vm._v(" "),
-                _c(
-                  "router-link",
-                  {
-                    staticClass: "nav-item",
-                    attrs: { tag: "li", to: "/gallery" }
-                  },
-                  [_c("a", { staticClass: "nav-link" }, [_vm._v("Галерия")])]
-                ),
-                _vm._v(" "),
-                _c(
-                  "router-link",
-                  {
-                    staticClass: "nav-item",
-                    attrs: { tag: "li", to: "/videos" }
-                  },
-                  [_c("a", { staticClass: "nav-link" }, [_vm._v("Видео")])]
-                ),
-                _vm._v(" "),
-                _c(
-                  "router-link",
-                  {
-                    staticClass: "nav-item cart",
-                    attrs: { tag: "li", to: "/cart" }
-                  },
-                  [
-                    _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
+            _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
+              _c(
+                "svg",
+                {
+                  attrs: {
+                    xmlns: "http://www.w3.org/2000/svg",
+                    viewBox: "0 0 23.854 22.917"
+                  }
+                },
+                [
+                  _c(
+                    "g",
+                    {
+                      attrs: {
+                        id: "Group_1132",
+                        transform: "translate(-2725 -529)"
+                      }
+                    },
+                    [
                       _c(
-                        "svg",
+                        "g",
                         {
                           attrs: {
-                            xmlns: "http://www.w3.org/2000/svg",
-                            viewBox: "0 0 23.854 22.917"
+                            id: "Group_956",
+                            transform: "translate(2725 529)"
                           }
                         },
                         [
-                          _c(
-                            "g",
-                            {
-                              attrs: {
-                                id: "Group_1132",
-                                transform: "translate(-2725 -529)"
-                              }
-                            },
-                            [
-                              _c(
-                                "g",
-                                {
-                                  attrs: {
-                                    id: "Group_956",
-                                    transform: "translate(2725 529)"
-                                  }
-                                },
-                                [
-                                  _c("path", {
-                                    staticClass: "cls-1",
-                                    attrs: {
-                                      id: "Path_228",
-                                      d:
-                                        "M23.6,17.494a1.184,1.184,0,0,1,.237.947l-1,5.737a1.082,1.082,0,0,1-.408.737,1.237,1.237,0,0,1-.8.289H7.048l-.289,1.632H20.653a1.21,1.21,0,0,1,.868.355,1.239,1.239,0,0,1,0,1.763,1.21,1.21,0,0,1-.868.355H5.285a1.222,1.222,0,0,1-.947-.447,1.278,1.278,0,0,1-.289-1.026l.658-3.579-1-10.052L.864,13.31A1.164,1.164,0,0,1,.141,12.7a1.308,1.308,0,0,1-.092-.947,1.157,1.157,0,0,1,.618-.724,1.286,1.286,0,0,1,.934-.092L5.232,12.1a1.115,1.115,0,0,1,.566.395,1.376,1.376,0,0,1,.276.658l.211,2,16.473,1.842A1.171,1.171,0,0,1,23.6,17.494ZM7.154,29.994a1.887,1.887,0,0,1,1.895,1.895A1.871,1.871,0,0,1,8.5,33.244a1.875,1.875,0,0,1-2.684,0,1.871,1.871,0,0,1-.553-1.355,1.887,1.887,0,0,1,1.895-1.895Zm11.237,0a1.887,1.887,0,0,1,1.895,1.895,1.871,1.871,0,0,1-.553,1.355,1.875,1.875,0,0,1-2.684,0,1.871,1.871,0,0,1-.553-1.355,1.887,1.887,0,0,1,1.895-1.895Z",
-                                      transform: "translate(0 -10.893)"
-                                    }
-                                  })
-                                ]
-                              )
-                            ]
-                          )
+                          _c("path", {
+                            staticClass: "cls-1",
+                            attrs: {
+                              id: "Path_228",
+                              d:
+                                "M23.6,17.494a1.184,1.184,0,0,1,.237.947l-1,5.737a1.082,1.082,0,0,1-.408.737,1.237,1.237,0,0,1-.8.289H7.048l-.289,1.632H20.653a1.21,1.21,0,0,1,.868.355,1.239,1.239,0,0,1,0,1.763,1.21,1.21,0,0,1-.868.355H5.285a1.222,1.222,0,0,1-.947-.447,1.278,1.278,0,0,1-.289-1.026l.658-3.579-1-10.052L.864,13.31A1.164,1.164,0,0,1,.141,12.7a1.308,1.308,0,0,1-.092-.947,1.157,1.157,0,0,1,.618-.724,1.286,1.286,0,0,1,.934-.092L5.232,12.1a1.115,1.115,0,0,1,.566.395,1.376,1.376,0,0,1,.276.658l.211,2,16.473,1.842A1.171,1.171,0,0,1,23.6,17.494ZM7.154,29.994a1.887,1.887,0,0,1,1.895,1.895A1.871,1.871,0,0,1,8.5,33.244a1.875,1.875,0,0,1-2.684,0,1.871,1.871,0,0,1-.553-1.355,1.887,1.887,0,0,1,1.895-1.895Zm11.237,0a1.887,1.887,0,0,1,1.895,1.895,1.871,1.871,0,0,1-.553,1.355,1.875,1.875,0,0,1-2.684,0,1.871,1.871,0,0,1-.553-1.355,1.887,1.887,0,0,1,1.895-1.895Z",
+                              transform: "translate(0 -10.893)"
+                            }
+                          })
                         ]
-                      ),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "added-items" }, [
-                        _vm._v(_vm._s(_vm.cartItems))
-                      ])
-                    ])
-                  ]
-                )
-              ],
-              1
-            )
+                      )
+                    ]
+                  )
+                ]
+              ),
+              _vm._v(" "),
+              _c("span", { staticClass: "added-items" }, [
+                _vm._v(_vm._s(_vm.cartItems))
+              ])
+            ])
           ]
-        )
+        ),
+        _vm._v(" "),
+        _c(
+          "button",
+          {
+            staticClass: "navbar-toggler",
+            attrs: {
+              type: "button",
+              "aria-controls": "mobileNavbar",
+              "aria-expanded": "false",
+              "aria-label": "Toggle navigation"
+            },
+            on: {
+              click: function($event) {
+                _vm.active = !_vm.active
+              }
+            }
+          },
+          [
+            _c("img", {
+              attrs: { src: __webpack_require__(117), alt: "" }
+            })
+          ]
+        ),
+        _vm._v(" "),
+        _c("div", { staticClass: "d-none d-md-block" }, [
+          _c(
+            "ul",
+            { staticClass: "navbar-nav ml-auto" },
+            [
+              _c(
+                "router-link",
+                { staticClass: "nav-item", attrs: { tag: "li", to: "/order" } },
+                [_c("a", { staticClass: "nav-link" }, [_vm._v("Поръчай")])]
+              ),
+              _vm._v(" "),
+              _c(
+                "router-link",
+                { staticClass: "nav-item", attrs: { tag: "li", to: "/about" } },
+                [_c("a", { staticClass: "nav-link" }, [_vm._v("За Нас")])]
+              ),
+              _vm._v(" "),
+              _c(
+                "router-link",
+                {
+                  staticClass: "nav-item",
+                  attrs: { tag: "li", to: "/products" }
+                },
+                [_c("a", { staticClass: "nav-link" }, [_vm._v("Продукти")])]
+              ),
+              _vm._v(" "),
+              _c(
+                "router-link",
+                {
+                  staticClass: "nav-item",
+                  attrs: { tag: "li", to: "/contacts" }
+                },
+                [_c("a", { staticClass: "nav-link" }, [_vm._v("Контакти")])]
+              ),
+              _vm._v(" "),
+              _c(
+                "router-link",
+                {
+                  staticClass: "nav-item",
+                  attrs: { tag: "li", to: "/technology" }
+                },
+                [_c("a", { staticClass: "nav-link" }, [_vm._v("Технология")])]
+              ),
+              _vm._v(" "),
+              _c(
+                "router-link",
+                {
+                  staticClass: "nav-item",
+                  attrs: { tag: "li", to: "/gallery" }
+                },
+                [_c("a", { staticClass: "nav-link" }, [_vm._v("Галерия")])]
+              ),
+              _vm._v(" "),
+              _c(
+                "router-link",
+                {
+                  staticClass: "nav-item",
+                  attrs: { tag: "li", to: "/videos" }
+                },
+                [_c("a", { staticClass: "nav-link" }, [_vm._v("Видео")])]
+              ),
+              _vm._v(" "),
+              _c(
+                "router-link",
+                {
+                  staticClass: "nav-item cart d-none d-lg-block",
+                  attrs: { tag: "li", to: "/cart" }
+                },
+                [
+                  _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
+                    _c(
+                      "svg",
+                      {
+                        attrs: {
+                          xmlns: "http://www.w3.org/2000/svg",
+                          viewBox: "0 0 23.854 22.917"
+                        }
+                      },
+                      [
+                        _c(
+                          "g",
+                          {
+                            attrs: {
+                              id: "Group_1132",
+                              transform: "translate(-2725 -529)"
+                            }
+                          },
+                          [
+                            _c(
+                              "g",
+                              {
+                                attrs: {
+                                  id: "Group_956",
+                                  transform: "translate(2725 529)"
+                                }
+                              },
+                              [
+                                _c("path", {
+                                  staticClass: "cls-1",
+                                  attrs: {
+                                    id: "Path_228",
+                                    d:
+                                      "M23.6,17.494a1.184,1.184,0,0,1,.237.947l-1,5.737a1.082,1.082,0,0,1-.408.737,1.237,1.237,0,0,1-.8.289H7.048l-.289,1.632H20.653a1.21,1.21,0,0,1,.868.355,1.239,1.239,0,0,1,0,1.763,1.21,1.21,0,0,1-.868.355H5.285a1.222,1.222,0,0,1-.947-.447,1.278,1.278,0,0,1-.289-1.026l.658-3.579-1-10.052L.864,13.31A1.164,1.164,0,0,1,.141,12.7a1.308,1.308,0,0,1-.092-.947,1.157,1.157,0,0,1,.618-.724,1.286,1.286,0,0,1,.934-.092L5.232,12.1a1.115,1.115,0,0,1,.566.395,1.376,1.376,0,0,1,.276.658l.211,2,16.473,1.842A1.171,1.171,0,0,1,23.6,17.494ZM7.154,29.994a1.887,1.887,0,0,1,1.895,1.895A1.871,1.871,0,0,1,8.5,33.244a1.875,1.875,0,0,1-2.684,0,1.871,1.871,0,0,1-.553-1.355,1.887,1.887,0,0,1,1.895-1.895Zm11.237,0a1.887,1.887,0,0,1,1.895,1.895,1.871,1.871,0,0,1-.553,1.355,1.875,1.875,0,0,1-2.684,0,1.871,1.871,0,0,1-.553-1.355,1.887,1.887,0,0,1,1.895-1.895Z",
+                                    transform: "translate(0 -10.893)"
+                                  }
+                                })
+                              ]
+                            )
+                          ]
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "added-items" }, [
+                      _vm._v(_vm._s(_vm.cartItems))
+                    ])
+                  ])
+                ]
+              )
+            ],
+            1
+          )
+        ])
       ],
       1
     ),
@@ -55880,7 +56080,7 @@ var render = function() {
     _vm._v(" "),
     _c("footer", [
       _c("div", { staticClass: "container" }, [
-        _vm._m(1),
+        _vm._m(0),
         _vm._v(" "),
         _c(
           "div",
@@ -55980,7 +56180,7 @@ var render = function() {
               ])
             ]),
             _vm._v(" "),
-            _vm._m(2)
+            _vm._m(1)
           ]
         )
       ])
@@ -55988,30 +56188,6 @@ var render = function() {
   ])
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "button",
-      {
-        staticClass: "navbar-toggler",
-        attrs: {
-          type: "button",
-          "data-toggle": "collapse",
-          "data-target": "#navbarSupportedContent",
-          "aria-controls": "navbarSupportedContent",
-          "aria-expanded": "false",
-          "aria-label": "Toggle navigation"
-        }
-      },
-      [
-        _c("img", {
-          attrs: { src: __webpack_require__(123), alt: "" }
-        })
-      ]
-    )
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -56084,18 +56260,24 @@ if (false) {
 /* 117 */
 /***/ (function(module, exports) {
 
+module.exports = "/images/hamMenu.png?2a76554bc1ec96e3026d71c84870da63";
+
+/***/ }),
+/* 118 */
+/***/ (function(module, exports) {
+
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 118 */,
 /* 119 */,
 /* 120 */,
 /* 121 */,
 /* 122 */,
-/* 123 */
+/* 123 */,
+/* 124 */
 /***/ (function(module, exports) {
 
-module.exports = "/images/hamMenu.png?2a76554bc1ec96e3026d71c84870da63";
+module.exports = "/images/CloseButton.png?a501922704564da9e7d8ded06d9d37b8";
 
 /***/ })
 /******/ ]);

@@ -7,9 +7,16 @@ use App\ClientsOrders;
 use Mail;
 
 use App\Http\Requests;
-use App\Http\Controllers\Controller;
+
+
 class ClientsController extends Controller
 {
+    public function index(){
+        $clientsOrders = ClientsOrders::all();
+
+        return view('admin.clientsOrders.index', compact('clientsOrders'));
+    }
+
     public function store(Request $request)
     {
 
@@ -17,22 +24,22 @@ class ClientsController extends Controller
         $clients_orders = new ClientsOrders();
         $json_products = json_encode($request->products);
         $clients_orders->products = $json_products;
-        $clients_orders->name = $request->name;
-        $clients_orders->phone = $request->phone;
-        $clients_orders->email = $request->email;
-        $clients_orders->city = $request->city;
-        $clients_orders->address = $request->address;
-        $clients_orders->message = $request->message;
+        $clients_orders->name = htmlspecialchars($request->name);
+        $clients_orders->phone = htmlspecialchars($request->phone);
+        $clients_orders->email = htmlspecialchars($request->email);
+        $clients_orders->city = htmlspecialchars($request->city);
+        $clients_orders->address = htmlspecialchars($request->address);
+        $clients_orders->message = htmlspecialchars($request->message);
         $clients_orders->totalPrice = $request->totalPrice;
 
         $clients_orders->save();
 
-        $name = $request->name;
-        $phone = $request->phone;
-        $email = $request->email;
-        $city = $request->city;
-        $address = $request->address;
-        $bodyMessage = $request->message;
+        $name = htmlspecialchars($request->name);
+        $phone = htmlspecialchars($request->phone);
+        $email = htmlspecialchars($request->email);
+        $city = htmlspecialchars($request->city);
+        $address = htmlspecialchars($request->address);
+        $bodyMessage = htmlspecialchars($request->message);
         $products = $request->products;
         $totalPrice = $request->totalPrice;
 

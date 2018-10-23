@@ -275,7 +275,6 @@
         }
       },
       sendOrder(data) {
-        console.log()
         if (data.products.length) {
           this.errors = [];
           if (data.name && data.phone && data.city && data.address && data.message) {
@@ -285,6 +284,7 @@
               this.errors = [];
               this.success.push('Вашата поръчка е изпратена успешно, очаквайте имейл за потвърждение.');
               axios.post('admin/clientsOrders/store', data, {headers: this.headers}).then((res) => {
+                this.localStorage.cartProducts.splice(0, this.localStorage.cartProducts.length);
                 this.$router.push("/order")
               }).catch((err) => {
                 console.log(err.response.status);

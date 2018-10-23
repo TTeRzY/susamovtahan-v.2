@@ -28,10 +28,13 @@
 .nav-link{
   color: #ffffff !important;
   font-weight: 700;
-  font-size: 16px;
+  font-size: 14px;
   cursor: pointer;
   svg{
     fill: $white;
+  }
+  @media #{$tablets} {
+    font-size: 18px;
   }
 }
 
@@ -61,29 +64,44 @@
   font-size: 12px;
   font-weight: 200;
   background-color: #2e353d;
-  position: fixed;
+  position: relative;
   top: 0;
   width: 300px;
-  height: 100%;
+  height: auto;
   color: #e1ffff;
-}
-.nav-side-menu .brand {
-  background-color: #23282e;
-  line-height: 50px;
-  display: block;
-  text-align: center;
-  font-size: 14px;
-}
-.nav-side-menu .toggle-btn {
-  display: none;
-}
-.nav-side-menu ul,
-.nav-side-menu li {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  line-height: 35px;
-  cursor: pointer;
+  z-index: 9999;
+  padding-left: 0;
+  padding-right: 0;
+
+  .brand {
+    background-color: #23282e;
+    line-height: 20px;
+    text-align: center;
+    font-size: 14px;
+    display: -ms-flex;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 15px;
+    p{
+      margin-bottom: 0;
+    }
+  }
+
+  .toggle-btn {
+    display: none;
+  }
+
+  ul{
+    li {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      line-height: 35px;
+      cursor: pointer;
+    }
+  }
 }
 .nav-side-menu ul :not(collapsed) .arrow:before,
 .nav-side-menu li :not(collapsed) .arrow:before {
@@ -170,12 +188,6 @@
     color: #000;
     width: 40px;
     text-align: center;
-  }
-  .brand {
-    text-align: left !important;
-    font-size: 22px;
-    padding-left: 20px;
-    line-height: 50px !important;
   }
 }
 @media (min-width: 767px) {
@@ -374,8 +386,11 @@ footer{
     }
     .nav-link{
       color: $white;
-      font-size: 18px;
+      font-size: 14px;
       font-weight: $bold;
+      @media #{$tablets} {
+        font-size: 18px;
+      }
     }
 
 
@@ -753,11 +768,6 @@ input[type="number"] {
   }
 }
 
-.cart{
-  position: relative;
-  display: block;
-  z-index: 9;
-}
 svg {
   width: 20px;
   height: 20px;
@@ -769,27 +779,34 @@ svg {
   }
 }
 
-.cart a span {
-  border-radius: 50%;
-  background-color: #fbb13c;
-  width: 17px;
-  height: 17px;
-  font-size: 11px;
-  font-weight: 500;
-  position: absolute;
-  right: -8px;
-  bottom: 5px;
-  text-align: center;
-  color: #ffffff;
-  padding-bottom: 0;
-  margin-bottom: 0;
-  @media only screen and(min-width: 1366px) {
-      width: 21px;
-      padding-top: 1px;
-      height: 21px;
-      font-size: 12px;
-      right: 0;
-      bottom: 0;
+.cart {
+  position: relative;
+  display: block;
+  z-index: 9;
+  a {
+    span {
+      border-radius: 50%;
+      background-color: #fbb13c;
+      width: 17px;
+      height: 17px;
+      font-size: 11px;
+      font-weight: 500;
+      position: absolute;
+      right: 5px;
+      bottom: 5px;
+      text-align: center;
+      color: #ffffff;
+      padding-bottom: 0;
+      margin-bottom: 0;
+      @media only screen and(min-width: 1366px) {
+        width: 21px;
+        padding-top: 1px;
+        height: 21px;
+        font-size: 12px;
+        right: 0;
+        bottom: 0;
+      }
+    }
   }
 }
 .developer-name{
@@ -1315,3 +1332,70 @@ svg {
 
 :focus {outline:none;}
 ::-moz-focus-inner {border:0;}
+
+.orders-table{
+  width: 100%;
+  overflow-x:auto;
+
+  img{
+    max-height: 80px;
+  }
+  .table{
+    th{
+      vertical-align: middle;
+      background: $white;
+      font-size: 13px;
+    }
+    td{
+      vertical-align: middle;
+      border: 1px solid #ddd;
+      background: $white;
+      font-size: 12px;
+    }
+  }
+
+  @media #{$laptops} {
+    overflow-x:hidden;
+  }
+
+}
+
+.mobile-navbar{
+  background-color: $green-sheen;
+  text-align: center;
+  padding: 80px 30px 60px;
+  position: absolute;
+  z-index: 999;
+  width: 100%;
+  overflow: hidden;
+  transition: ease 0.7s;
+  transform: translate(0, -100%);
+  -webkit-transform: translate(0, -100%);
+  .navbar-brand{
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    margin-right: 0;
+    border-bottom: 1px solid $white;
+  }
+
+  .nav-link{
+    font-size: 17px;
+  }
+
+  .video-item{
+    border-bottom: 1px solid $white;
+    padding-bottom: 15px;
+  }
+  &.show{
+    transition: ease 0.7s;
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+
+  .close-button{
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    z-index: 999;
+  }
+}

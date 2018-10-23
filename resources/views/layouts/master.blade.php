@@ -14,49 +14,14 @@
 </head>
 <body>
 <div class="container-fluid">
-   <div class="row">
-       <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
-           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-               <span class="navbar-toggler-icon"></span>
-           </button>
 
-           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-               <!-- Left Side Of Navbar -->
-               <ul class="navbar-nav mr-auto">
-
-               </ul>
-
-               <!-- Right Side Of Navbar -->
-               <ul class="navbar-nav ml-auto">
-                   <!-- Authentication Links -->
-                   @guest
-                       <li class="nav-item">
-                           <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                       </li>
-                       <li class="nav-item">
-                           <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                       </li>
-                   @else
-                       <li class="nav-item dropdown">
-                           <a class="dropdown-item" href="{{ route('logout') }}"
-                              onclick="event.preventDefault();
-                                                 document.getElementById('logout-form').submit();">
-                               {{ __('Logout') }}
-                           </a>
-
-                           <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                               @csrf
-                           </form>
-                       </li>
-                   @endguest
-               </ul>
-           </div>
-       </nav>
-   </div>
 <div class="row admin-container">
-    <div class="nav-side-menu">
-        <div class="brand">Welcome, <b>{{ Auth::user()->name }}</b></div>
-        <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+    <div class="col-sm-2 col-lg-1 nav-side-menu">
+        <div class="brand">
+            <p>Добре дошъл, <b>{{ Auth::user()->name }}</b></p>
+            <a href="#"  data-toggle="collapse" data-target="#menu-content" class="d-inline d-sm-none"><img src="{{URL::asset('images/hamMenu.png')}}" alt="HamMenu Icon"></a>
+
+        </div>
 
         <div class="menu-list">
 
@@ -120,11 +85,54 @@
                             Брашно от Лимец
                         </a>
                     </li>
+
                 </ul>
+                @guest
+                    <li class="d-block d-sm-none">
+                        <a href="{{ route('login') }}">{{ __('Login') }}</a>
+                    </li>
+                @else
+                    <li class="d-block d-sm-none">
+                        <a href="{{ route('logout') }}"
+                           onclick="event.preventDefault();
+                                                 document.getElementById('logout-form').submit();">
+                            {{ __('Изход') }}
+                        </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    </li>
+                @endguest
             </ul>
         </div>
     </div>
-    <div class="col-lg-9 offset-lg-3">
+    <div class="col-sm-10 col-lg-11">
+        <div class="row d-none d-sm-block">
+            <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
+                <!-- Right Side Of Navbar -->
+                <ul class="navbar-nav ml-auto">
+                    <!-- Authentication Links -->
+                    @guest
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        </li>
+                    @else
+                        <li class="nav-item dropdown">
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();">
+                                {{ __('Изход') }}
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        </li>
+                    @endguest
+                </ul>
+            </nav>
+        </div>
         @yield('content')
         <app></app>
     </div>
