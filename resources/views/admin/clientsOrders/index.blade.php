@@ -47,6 +47,10 @@
                 @endforeach
                 </tbody>
             </table>
+            <div class="col-lg-12">
+                <p class="text-right">Общо покупки  : <b>{{ $totalOrdersInMoney }}  лв.</b></p>
+            </div>
+
         </div>
     </div>
 @endsection

@@ -55530,7 +55530,7 @@ exports = module.exports = __webpack_require__(0)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -55541,8 +55541,6 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
 //
 //
 //
@@ -55947,129 +55945,121 @@ var render = function() {
           ]
         ),
         _vm._v(" "),
-        _c("div", { staticClass: "d-none d-md-block" }, [
-          _c(
-            "ul",
-            { staticClass: "navbar-nav ml-auto" },
-            [
-              _c(
-                "router-link",
-                { staticClass: "nav-item", attrs: { tag: "li", to: "/order" } },
-                [_c("a", { staticClass: "nav-link" }, [_vm._v("Поръчай")])]
-              ),
-              _vm._v(" "),
-              _c(
-                "router-link",
-                { staticClass: "nav-item", attrs: { tag: "li", to: "/about" } },
-                [_c("a", { staticClass: "nav-link" }, [_vm._v("За Нас")])]
-              ),
-              _vm._v(" "),
-              _c(
-                "router-link",
-                {
-                  staticClass: "nav-item",
-                  attrs: { tag: "li", to: "/products" }
-                },
-                [_c("a", { staticClass: "nav-link" }, [_vm._v("Продукти")])]
-              ),
-              _vm._v(" "),
-              _c(
-                "router-link",
-                {
-                  staticClass: "nav-item",
-                  attrs: { tag: "li", to: "/contacts" }
-                },
-                [_c("a", { staticClass: "nav-link" }, [_vm._v("Контакти")])]
-              ),
-              _vm._v(" "),
-              _c(
-                "router-link",
-                {
-                  staticClass: "nav-item",
-                  attrs: { tag: "li", to: "/technology" }
-                },
-                [_c("a", { staticClass: "nav-link" }, [_vm._v("Технология")])]
-              ),
-              _vm._v(" "),
-              _c(
-                "router-link",
-                {
-                  staticClass: "nav-item",
-                  attrs: { tag: "li", to: "/gallery" }
-                },
-                [_c("a", { staticClass: "nav-link" }, [_vm._v("Галерия")])]
-              ),
-              _vm._v(" "),
-              _c(
-                "router-link",
-                {
-                  staticClass: "nav-item",
-                  attrs: { tag: "li", to: "/videos" }
-                },
-                [_c("a", { staticClass: "nav-link" }, [_vm._v("Видео")])]
-              ),
-              _vm._v(" "),
-              _c(
-                "router-link",
-                {
-                  staticClass: "nav-item cart d-none d-lg-block",
-                  attrs: { tag: "li", to: "/cart" }
-                },
-                [
-                  _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
-                    _c(
-                      "svg",
-                      {
-                        attrs: {
-                          xmlns: "http://www.w3.org/2000/svg",
-                          viewBox: "0 0 23.854 22.917"
-                        }
-                      },
-                      [
-                        _c(
-                          "g",
-                          {
-                            attrs: {
-                              id: "Group_1132",
-                              transform: "translate(-2725 -529)"
-                            }
-                          },
-                          [
-                            _c(
-                              "g",
-                              {
+        _c(
+          "ul",
+          { staticClass: "navbar-nav ml-auto d-none d-md-flex" },
+          [
+            _c(
+              "router-link",
+              { staticClass: "nav-item", attrs: { tag: "li", to: "/order" } },
+              [_c("a", { staticClass: "nav-link" }, [_vm._v("Поръчай")])]
+            ),
+            _vm._v(" "),
+            _c(
+              "router-link",
+              { staticClass: "nav-item", attrs: { tag: "li", to: "/about" } },
+              [_c("a", { staticClass: "nav-link" }, [_vm._v("За Нас")])]
+            ),
+            _vm._v(" "),
+            _c(
+              "router-link",
+              {
+                staticClass: "nav-item",
+                attrs: { tag: "li", to: "/products" }
+              },
+              [_c("a", { staticClass: "nav-link" }, [_vm._v("Продукти")])]
+            ),
+            _vm._v(" "),
+            _c(
+              "router-link",
+              {
+                staticClass: "nav-item",
+                attrs: { tag: "li", to: "/contacts" }
+              },
+              [_c("a", { staticClass: "nav-link" }, [_vm._v("Контакти")])]
+            ),
+            _vm._v(" "),
+            _c(
+              "router-link",
+              {
+                staticClass: "nav-item",
+                attrs: { tag: "li", to: "/technology" }
+              },
+              [_c("a", { staticClass: "nav-link" }, [_vm._v("Технология")])]
+            ),
+            _vm._v(" "),
+            _c(
+              "router-link",
+              { staticClass: "nav-item", attrs: { tag: "li", to: "/gallery" } },
+              [_c("a", { staticClass: "nav-link" }, [_vm._v("Галерия")])]
+            ),
+            _vm._v(" "),
+            _c(
+              "router-link",
+              { staticClass: "nav-item", attrs: { tag: "li", to: "/videos" } },
+              [_c("a", { staticClass: "nav-link" }, [_vm._v("Видео")])]
+            ),
+            _vm._v(" "),
+            _c(
+              "router-link",
+              {
+                staticClass: "nav-item cart d-none d-lg-block",
+                attrs: { tag: "li", to: "/cart" }
+              },
+              [
+                _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
+                  _c(
+                    "svg",
+                    {
+                      attrs: {
+                        xmlns: "http://www.w3.org/2000/svg",
+                        viewBox: "0 0 23.854 22.917"
+                      }
+                    },
+                    [
+                      _c(
+                        "g",
+                        {
+                          attrs: {
+                            id: "Group_1132",
+                            transform: "translate(-2725 -529)"
+                          }
+                        },
+                        [
+                          _c(
+                            "g",
+                            {
+                              attrs: {
+                                id: "Group_956",
+                                transform: "translate(2725 529)"
+                              }
+                            },
+                            [
+                              _c("path", {
+                                staticClass: "cls-1",
                                 attrs: {
-                                  id: "Group_956",
-                                  transform: "translate(2725 529)"
+                                  id: "Path_228",
+                                  d:
+                                    "M23.6,17.494a1.184,1.184,0,0,1,.237.947l-1,5.737a1.082,1.082,0,0,1-.408.737,1.237,1.237,0,0,1-.8.289H7.048l-.289,1.632H20.653a1.21,1.21,0,0,1,.868.355,1.239,1.239,0,0,1,0,1.763,1.21,1.21,0,0,1-.868.355H5.285a1.222,1.222,0,0,1-.947-.447,1.278,1.278,0,0,1-.289-1.026l.658-3.579-1-10.052L.864,13.31A1.164,1.164,0,0,1,.141,12.7a1.308,1.308,0,0,1-.092-.947,1.157,1.157,0,0,1,.618-.724,1.286,1.286,0,0,1,.934-.092L5.232,12.1a1.115,1.115,0,0,1,.566.395,1.376,1.376,0,0,1,.276.658l.211,2,16.473,1.842A1.171,1.171,0,0,1,23.6,17.494ZM7.154,29.994a1.887,1.887,0,0,1,1.895,1.895A1.871,1.871,0,0,1,8.5,33.244a1.875,1.875,0,0,1-2.684,0,1.871,1.871,0,0,1-.553-1.355,1.887,1.887,0,0,1,1.895-1.895Zm11.237,0a1.887,1.887,0,0,1,1.895,1.895,1.871,1.871,0,0,1-.553,1.355,1.875,1.875,0,0,1-2.684,0,1.871,1.871,0,0,1-.553-1.355,1.887,1.887,0,0,1,1.895-1.895Z",
+                                  transform: "translate(0 -10.893)"
                                 }
-                              },
-                              [
-                                _c("path", {
-                                  staticClass: "cls-1",
-                                  attrs: {
-                                    id: "Path_228",
-                                    d:
-                                      "M23.6,17.494a1.184,1.184,0,0,1,.237.947l-1,5.737a1.082,1.082,0,0,1-.408.737,1.237,1.237,0,0,1-.8.289H7.048l-.289,1.632H20.653a1.21,1.21,0,0,1,.868.355,1.239,1.239,0,0,1,0,1.763,1.21,1.21,0,0,1-.868.355H5.285a1.222,1.222,0,0,1-.947-.447,1.278,1.278,0,0,1-.289-1.026l.658-3.579-1-10.052L.864,13.31A1.164,1.164,0,0,1,.141,12.7a1.308,1.308,0,0,1-.092-.947,1.157,1.157,0,0,1,.618-.724,1.286,1.286,0,0,1,.934-.092L5.232,12.1a1.115,1.115,0,0,1,.566.395,1.376,1.376,0,0,1,.276.658l.211,2,16.473,1.842A1.171,1.171,0,0,1,23.6,17.494ZM7.154,29.994a1.887,1.887,0,0,1,1.895,1.895A1.871,1.871,0,0,1,8.5,33.244a1.875,1.875,0,0,1-2.684,0,1.871,1.871,0,0,1-.553-1.355,1.887,1.887,0,0,1,1.895-1.895Zm11.237,0a1.887,1.887,0,0,1,1.895,1.895,1.871,1.871,0,0,1-.553,1.355,1.875,1.875,0,0,1-2.684,0,1.871,1.871,0,0,1-.553-1.355,1.887,1.887,0,0,1,1.895-1.895Z",
-                                    transform: "translate(0 -10.893)"
-                                  }
-                                })
-                              ]
-                            )
-                          ]
-                        )
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c("span", { staticClass: "added-items" }, [
-                      _vm._v(_vm._s(_vm.cartItems))
-                    ])
+                              })
+                            ]
+                          )
+                        ]
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "added-items" }, [
+                    _vm._v(_vm._s(_vm.cartItems))
                   ])
-                ]
-              )
-            ],
-            1
-          )
-        ])
+                ])
+              ]
+            )
+          ],
+          1
+        )
       ],
       1
     ),

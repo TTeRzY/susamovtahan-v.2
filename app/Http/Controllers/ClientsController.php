@@ -14,7 +14,14 @@ class ClientsController extends Controller
     public function index(){
         $clientsOrders = ClientsOrders::all();
 
-        return view('admin.clientsOrders.index', compact('clientsOrders'));
+        $totalOrdersInMoney = 0;
+
+        foreach ($clientsOrders as $item){
+            $totalOrdersInMoney += $item->totalPrice;
+        }
+
+
+        return view('admin.clientsOrders.index', compact('clientsOrders', 'totalOrdersInMoney'));
     }
 
     public function store(Request $request)

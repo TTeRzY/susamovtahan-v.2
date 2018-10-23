@@ -55,8 +55,7 @@
                 <img src="../../assets/img/hamMenu.png" alt="">
             </button>
 
-            <div class="d-none d-md-block">
-                <ul class="navbar-nav ml-auto">
+                <ul class="navbar-nav ml-auto d-none d-md-flex">
                     <router-link class="nav-item" tag="li" to="/order">
                         <a class="nav-link">Поръчай</a>
                     </router-link>
@@ -93,7 +92,6 @@
                         </a>
                     </router-link>
                 </ul>
-            </div>
         </nav>
         <div class="container-fluid pages_template">
             <div class="row">
