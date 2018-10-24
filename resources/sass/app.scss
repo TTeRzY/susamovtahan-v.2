@@ -198,7 +198,10 @@
 
 
 .home-page-admin{
-  padding-top: 30px;
+  padding: 15px;
+  @media #{$tablets} {
+    padding: 80px;
+  }
 }
 
 .home-page-admin h1{

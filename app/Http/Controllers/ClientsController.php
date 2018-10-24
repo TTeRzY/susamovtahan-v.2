@@ -29,8 +29,10 @@ class ClientsController extends Controller
 
 
         $clients_orders = new ClientsOrders();
+
         $json_products = json_encode($request->products);
         $clients_orders->products = $json_products;
+
         $clients_orders->name = htmlspecialchars($request->name);
         $clients_orders->phone = htmlspecialchars($request->phone);
         $clients_orders->email = htmlspecialchars($request->email);

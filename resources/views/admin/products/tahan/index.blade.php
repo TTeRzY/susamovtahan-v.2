@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-    <div class="col-lg-10">
+    <div class="col-lg-10 home-page-admin">
         <div class="carousel-info">
             <h2>Продукт Сусамов Тахан</h2>
             <table class="table">

@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-    <div class="col-lg-10">
+    <div class="col-lg-10 home-page-admin">
         <div class="carousel-info">
             <h2>Добавяне на снимки в галерията</h2>
             <table class="table">
@@ -10,6 +10,8 @@
                     <th scope="col">#</th>
                     <th scope="col">Снимка</th>
                     <th scope="col">Информация за снимката</th>
+                    <th scope="col">Редактирай</th>
+                    <th scope="col">Изтрий</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -28,11 +30,11 @@
                 <input type="hidden" value="gallery_form" name="gallery_form">
                 <div class="row">
                     <div class="form-group col-md-12">
-                        <input name="gallery_image" id="gallery_image" type="file" class="form-control-file validate">
+                        <input name="gallery_image" id="gallery_image" type="file" class="form-control-file validate" required>
                     </div>
                     <div class="form-group col-md-12">
                         <label for="gallery_info">Информация</label>
-                        <input name="gallery_info" id="gallery_info" type="text" class="form-control validate">
+                        <input name="gallery_info" id="gallery_info" type="text" class="form-control validate" required>
                     </div>
                 </div>
                 <button type="submit" class="waves-effect waves-light btn">Добави снимка</button>

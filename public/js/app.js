@@ -25474,7 +25474,7 @@ return jQuery;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(21);
-module.exports = __webpack_require__(118);
+module.exports = __webpack_require__(119);
 
 
 /***/ }),
@@ -30036,7 +30036,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -30138,10 +30137,6 @@ var staticRenderFns = [
           _c("div", { staticClass: "col products-title" }, [
             _c("h2", { staticClass: "text-center mb-5 mt-5" }, [
               _c("span", [_vm._v(" Технология на производството")])
-            ]),
-            _vm._v(" "),
-            _c("p", { staticClass: "lead text-center" }, [
-              _vm._v("Описание на технологията на производство....")
             ])
           ])
         ])
@@ -30512,7 +30507,7 @@ exports = module.exports = __webpack_require__(0)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -30595,13 +30590,47 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "contacts",
   data: function data() {
     return {
-      contactsCard: []
+      contactsCard: [],
+      messageRequest: {
+        names: '',
+        email: '',
+        phone: '',
+        message: ''
+      },
+      errors: [],
+      success: []
     };
   },
   created: function created() {
@@ -30622,6 +30651,32 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         console.log(err.response.data.message);
       });
     }
+  },
+  methods: {
+    validEmail: function validEmail(email) {
+      var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(email);
+    },
+    sendMessage: function sendMessage(data) {
+      var _this2 = this;
+
+      this.errors = [];
+      if (data.names && data.phone && data.message) {
+        if (!this.validEmail(data.email)) {
+          this.errors.push('Моля попълнете коректен имейл адрес!');
+        } else {
+          this.errors = [];
+          this.success.push('Вашето съобщение е изпратено успешно!');
+          __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post('admin/messages/store', data, { headers: this.headers }).then(function (res) {
+            _this2.$router.push("/contacts");
+          }).catch(function (err) {
+            console.log(err.response.status);
+          });
+        }
+      } else {
+        this.errors.push('Моля попълнете всички полета!');
+      }
+    }
   }
 });
 
@@ -30634,7 +30689,206 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm._m(0),
+    _c("div", { staticClass: "row" }, [
+      _vm._m(0),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-lg-12", attrs: { id: "parent" } }, [
+        _c("div", { staticClass: "row" }, [
+          _vm._m(1),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-lg-6" }, [
+            _c(
+              "form",
+              {
+                staticClass: "contact-form",
+                attrs: { action: "", method: "post" }
+              },
+              [
+                _c("div", { staticClass: "form-group" }, [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.messageRequest.names,
+                        expression: "messageRequest.names"
+                      }
+                    ],
+                    staticClass: "form-control",
+                    attrs: {
+                      type: "text",
+                      id: "name",
+                      name: "nm",
+                      placeholder: "Имена",
+                      required: "",
+                      autofocus: ""
+                    },
+                    domProps: { value: _vm.messageRequest.names },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.messageRequest,
+                          "names",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group form_left" }, [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.messageRequest.email,
+                        expression: "messageRequest.email"
+                      }
+                    ],
+                    staticClass: "form-control",
+                    attrs: {
+                      type: "email",
+                      id: "email",
+                      name: "em",
+                      placeholder: "Имейл",
+                      required: ""
+                    },
+                    domProps: { value: _vm.messageRequest.email },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.messageRequest,
+                          "email",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group" }, [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.messageRequest.phone,
+                        expression: "messageRequest.phone"
+                      }
+                    ],
+                    staticClass: "form-control",
+                    attrs: {
+                      type: "text",
+                      id: "phone",
+                      placeholder: "Телефон",
+                      required: ""
+                    },
+                    domProps: { value: _vm.messageRequest.phone },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.messageRequest,
+                          "phone",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group" }, [
+                  _c("textarea", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.messageRequest.message,
+                        expression: "messageRequest.message"
+                      }
+                    ],
+                    staticClass: "form-control textarea-contact",
+                    attrs: {
+                      rows: "5",
+                      id: "comment",
+                      name: "FB",
+                      placeholder: "Вашето съобщение...",
+                      required: ""
+                    },
+                    domProps: { value: _vm.messageRequest.message },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.messageRequest,
+                          "message",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("br"),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-lg-12" }, [
+                    _vm.errors.length
+                      ? _c(
+                          "p",
+                          { staticClass: "alert alert-danger" },
+                          _vm._l(_vm.errors, function(error) {
+                            return _c("span", [
+                              _vm._v("Моля попълнете следните полета:  "),
+                              _c("u", [_vm._v(_vm._s(error))])
+                            ])
+                          })
+                        )
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _vm.success.length
+                      ? _c(
+                          "p",
+                          { staticClass: "alert alert-success" },
+                          _vm._l(_vm.success, function(item) {
+                            return _c("span", [_vm._v(" " + _vm._s(item))])
+                          })
+                        )
+                      : _vm._e()
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn primary-button",
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          _vm.sendMessage(_vm.messageRequest)
+                        }
+                      }
+                    },
+                    [
+                      _c("span", { staticClass: "glyphicon glyphicon-send" }),
+                      _vm._v(" Изпрати запитване ")
+                    ]
+                  )
+                ])
+              ]
+            )
+          ])
+        ])
+      ])
+    ]),
     _vm._v(" "),
     _c("div", { staticClass: "container second-portion" }, [
       _c(
@@ -30687,98 +30941,26 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "contacts-header" }, [
-        _c("div", { staticClass: "products-title" }, [
-          _c("h2", [_c("span", [_vm._v("Свържете се с нас")])])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-lg-12", attrs: { id: "parent" } }, [
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-lg-6" }, [
-            _c("iframe", {
-              staticStyle: { border: "0", width: "100%", height: "320px" },
-              attrs: {
-                src:
-                  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11949.098406309664!2d26.1168047!3d41.5206679!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa03ec42de417e45a!2z0JnQvtGA0LTQsNC9INCa0LDRgNCw0LrQtdGF0LDQudC-0LIg0JXQntCe0JQ!5e0!3m2!1sen!2sbg!4v1538132805176",
-                frameborder: "0",
-                allowfullscreen: ""
-              }
-            })
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-lg-6" }, [
-            _c(
-              "form",
-              {
-                staticClass: "contact-form",
-                attrs: { action: "", method: "post" }
-              },
-              [
-                _c("div", { staticClass: "form-group" }, [
-                  _c("input", {
-                    staticClass: "form-control",
-                    attrs: {
-                      type: "text",
-                      id: "name",
-                      name: "nm",
-                      placeholder: "Имена",
-                      required: "",
-                      autofocus: ""
-                    }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "form-group form_left" }, [
-                  _c("input", {
-                    staticClass: "form-control",
-                    attrs: {
-                      type: "email",
-                      id: "email",
-                      name: "em",
-                      placeholder: "Имейл",
-                      required: ""
-                    }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "form-group" }, [
-                  _c("input", {
-                    staticClass: "form-control",
-                    attrs: {
-                      type: "text",
-                      id: "phone",
-                      placeholder: "Телефон",
-                      required: ""
-                    }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "form-group" }, [
-                  _c("textarea", {
-                    staticClass: "form-control textarea-contact",
-                    attrs: {
-                      rows: "5",
-                      id: "comment",
-                      name: "FB",
-                      placeholder: "Вашето съобщение...",
-                      required: ""
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("br"),
-                  _vm._v(" "),
-                  _c("button", { staticClass: "btn primary-button" }, [
-                    _c("span", { staticClass: "glyphicon glyphicon-send" }),
-                    _vm._v(" Изпрати ")
-                  ])
-                ])
-              ]
-            )
-          ])
-        ])
+    return _c("div", { staticClass: "contacts-header" }, [
+      _c("div", { staticClass: "products-title" }, [
+        _c("h2", [_c("span", [_vm._v("Свържете се с нас")])])
       ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-lg-6" }, [
+      _c("iframe", {
+        staticStyle: { border: "0", width: "100%", height: "320px" },
+        attrs: {
+          src:
+            "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11949.098406309664!2d26.1168047!3d41.5206679!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa03ec42de417e45a!2z0JnQvtGA0LTQsNC9INCa0LDRgNCw0LrQtdGF0LDQudC-0LIg0JXQntCe0JQ!5e0!3m2!1sen!2sbg!4v1538132805176",
+          frameborder: "0",
+          allowfullscreen: ""
+        }
+      })
     ])
   }
 ]
@@ -55769,7 +55951,7 @@ var render = function() {
       _c("div", [
         _c("a", { staticClass: "close-button", attrs: { href: "#" } }, [
           _c("img", {
-            attrs: { src: __webpack_require__(124) },
+            attrs: { src: __webpack_require__(117) },
             on: {
               click: function($event) {
                 _vm.active = !_vm.active
@@ -55940,7 +56122,7 @@ var render = function() {
           },
           [
             _c("img", {
-              attrs: { src: __webpack_require__(117), alt: "" }
+              attrs: { src: __webpack_require__(118), alt: "" }
             })
           ]
         ),
@@ -56250,24 +56432,19 @@ if (false) {
 /* 117 */
 /***/ (function(module, exports) {
 
-module.exports = "/images/hamMenu.png?2a76554bc1ec96e3026d71c84870da63";
+module.exports = "/images/CloseButton.png?a501922704564da9e7d8ded06d9d37b8";
 
 /***/ }),
 /* 118 */
 /***/ (function(module, exports) {
 
-// removed by extract-text-webpack-plugin
+module.exports = "/images/hamMenu.png?2a76554bc1ec96e3026d71c84870da63";
 
 /***/ }),
-/* 119 */,
-/* 120 */,
-/* 121 */,
-/* 122 */,
-/* 123 */,
-/* 124 */
+/* 119 */
 /***/ (function(module, exports) {
 
-module.exports = "/images/CloseButton.png?a501922704564da9e7d8ded06d9d37b8";
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);

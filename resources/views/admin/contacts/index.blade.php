@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-    <div class="col-lg-10">
+    <div class="col-lg-10 home-page-admin">
         <div class="carousel-info">
             <h2>Контакти</h2>
             <table class="table">
@@ -11,6 +11,8 @@
                     <th scope="col">Снимка/Икона</th>
                     <th scope="col">Заглавие</th>
                     <th scope="col">Информация</th>
+                    <th scope="col">Редактирай</th>
+                    <th scope="col">Изтрий</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -31,19 +33,19 @@
                 <input type="hidden" value="contacts_form" name="about_form">
                 <div class="row">
                     <div class="form-group col-md-12">
-                        <input name="contacts_image" id="contacts_image" type="file" class="form-control-file validate">
+                        <input name="contacts_image" id="contacts_image" type="file" class="form-control-file validate" required>
                     </div>
                     <div class="form-group col-md-12">
                         <label for="contacts_title">Заглавие</label>
-                        <input name="contacts_title" id="contacts_title" type="text" class="form-control validate">
+                        <input name="contacts_title" id="contacts_title" type="text" class="form-control validate" required>
                     </div>
                     <div class="form-group col-md-12">
                         <label for="contacts_paragraph">Параграф</label>
-                        <input name="contacts_paragraph" id="contacts_paragraph" type="text" class="form-control validate">
+                        <input name="contacts_paragraph" id="contacts_paragraph" type="text" class="form-control validate" required>
                     </div>
                     <div class="form-group col-md-12">
                         <label for="contacts_info">Информация</label>
-                        <input name="contacts_info" id="contacts_info" type="text" class="form-control validate">
+                        <input name="contacts_info" id="contacts_info" type="text" class="form-control validate" required>
                     </div>
                 </div>
                 <button type="submit" class="waves-effect waves-light btn">Добави контакти</button>

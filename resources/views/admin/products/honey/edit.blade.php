@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="home-page-admin edit-technologies">
-        <h1>Редакритрай технология</h1>
+        <h1>Редакритрай пчелен мед</h1>
         <form enctype="multipart/form-data" method="POST" action="{{ route('honey.update',['id'=>$honey->id]) }}" class="col-lg-12">
             <div class="row">
 
@@ -14,15 +14,15 @@
                     <img class="img-fluid" src="{{ URL::to('/') }}/uploads/{{ $honey->honey_image }}" alt="">
                 </div>
                 <div class="form-group col-lg-12">
-                    <label for="honey_title">Име</label>
+                    <label for="honey_title">Редактирай заглавието</label>
                     <input name="honey_title" value="{{ $honey->honey_title }}" id="honey_title" type="text" class="form-control validate">
                 </div>
                 <div class="form-group col-lg-12">
-                    <label for="honey_price">Цена</label>
+                    <label for="honey_price">Редактирай цената</label>
                     <input name="honey_price" value="{{ $honey->honey_price }}" id="honey_price" type="text" class="form-control validate">
                 </div>
                 <div class="form-group col-lg-12">
-                    <label for="honey_info">Информация</label>
+                    <label for="honey_info">Редактирай информацията</label>
                     <input name="honey_info" value="{{ $honey->honey_info }}" id="honey_info" type="text" class="form-control validate">
                 </div>
                 <div class="form-group col-lg-12">
@@ -31,7 +31,7 @@
                 </div>
             </div>
 
-            <button type="submit" class="waves-effect waves-light btn">Промени</button>
+            <button type="submit" class="waves-effect waves-light btn">Запази промените</button>
             @csrf
         </form>
     </div>

@@ -9,9 +9,11 @@
                 <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Carousel Image</th>
-                    <th scope="col">Carousel Title</th>
-                    <th scope="col">Carousel Info</th>
+                    <th scope="col">Слайдер снимка</th>
+                    <th scope="col">Заглавие на слайдера</th>
+                    <th scope="col">Инофрмация на слайдера</th>
+                    <th scope="col">Редактирай</th>
+                    <th scope="col">Изтрий</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -31,15 +33,15 @@
                 <input type="hidden" value="carousel_form" name="carousel_form">
                 <div class="row">
                     <div class="form-group col-md-12">
-                        <input name="carousel_image" id="carousel_image" type="file" class="form-control-file validate">
+                        <input name="carousel_image" id="carousel_image" type="file" class="form-control-file validate" required>
                     </div>
                     <div class="form-group col-md-12">
-                        <label for="carousel_title">Carousel Title</label>
-                        <input name="carousel_title" id="carousel_title" type="text" class="form-control validate">
+                        <label for="carousel_title">Слайдер заглавие</label>
+                        <input name="carousel_title" id="carousel_title" type="text" class="form-control validate" required>
                     </div>
                     <div class="form-group col-md-12">
-                        <label for="carousel_text">Carousel Info</label>
-                        <input name="carousel_text" id="carousel_text" type="text" class="form-control validate">
+                        <label for="carousel_text">Слайдер информация</label>
+                        <input name="carousel_text" id="carousel_text" type="text" class="form-control validate" required>
                     </div>
                 </div>
                 <button type="submit" class="waves-effect waves-light btn">Добави слайдер</button>
@@ -55,11 +57,11 @@
                 <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Product Image</th>
-                    <th scope="col">Product Title</th>
-                    <th scope="col">Product Info</th>
-                    <th scope="col">Edit</th>
-                    <th scope="col">Delete</th>
+                    <th scope="col">Снимка на продукта</th>
+                    <th scope="col">Име на продукта</th>
+                    <th scope="col">Информация за продукта</th>
+                    <th scope="col">Редактирай</th>
+                    <th scope="col">Изтрий</th>
                 </tr>
                 </thead>
 
@@ -87,15 +89,15 @@
                 <input type="hidden" value="products_form" name="products_form">
                 <div class="row">
                     <div class="form-group col-md-12">
-                        <input name="product_image" id="product_image" type="file" class="form-control-file validate">
+                        <input name="product_image" id="product_image" type="file" class="form-control-file validate" required>
                     </div>
                     <div class="form-group col-md-12">
-                        <label for="product_title">Product Title</label>
-                        <input name="product_title" id="product_title" type="text" class="form-control validate">
+                        <label for="product_title">Име на продукт</label>
+                        <input name="product_title" id="product_title" type="text" class="form-control validate" required>
                     </div>
                     <div class="form-group col-md-12">
-                        <label for="product_info">Product Info</label>
-                        <input name="product_info" id="product_info" type="text" class="form-control validate">
+                        <label for="product_info">Информация за продукт</label>
+                        <input name="product_info" id="product_info" type="text" class="form-control validate" required>
                     </div>
                 </div>
                 <button type="submit" class="waves-effect waves-light btn">Добави продукт</button>
@@ -113,11 +115,11 @@
                 <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Section Image</th>
-                    <th scope="col">Section Title</th>
-                    <th scope="col">Section Info</th>
-                    <th scope="col">Edit</th>
-                    <th scope="col">Delete</th>
+                    <th scope="col">Снимка на секция</th>
+                    <th scope="col">Заглавие на секция</th>
+                    <th scope="col">Информация на секция</th>
+                    <th scope="col">Редактирай</th>
+                    <th scope="col">Изтрий</th>
                 </tr>
                 </thead>
 
@@ -145,15 +147,15 @@
                 <input type="hidden" value="sections_form" name="sections_form">
                 <div class="row">
                     <div class="form-group col-md-12">
-                        <input name="section_image" id="section_image" type="file" class="form-control-file validate">
+                        <input name="section_image" id="section_image" type="file" class="form-control-file validate" required>
                     </div>
                     <div class="form-group col-md-12">
-                        <label for="section_title">Section Title</label>
-                        <input name="section_title" id="section_title" type="text" class="form-control validate">
+                        <label for="section_title">Заглавие на секция</label>
+                        <input name="section_title" id="section_title" type="text" class="form-control validate" required>
                     </div>
                     <div class="form-group col-md-12">
-                        <label for="section_info">Section Info</label>
-                        <input name="section_info" id="section_info" type="text" class="form-control validate">
+                        <label for="section_info">Иформация на секция</label>
+                        <input name="section_info" id="section_info" type="text" class="form-control validate" required>
                     </div>
                 </div>
                 <button type="submit" class="waves-effect waves-light btn">Добави нова секция</button>

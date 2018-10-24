@@ -19,16 +19,22 @@ class HoneyController extends Controller
         $honey = new Honey;
 
         $file = $request->file('honey_image');
-        $name =rand(11111, 99999) . '.' . $file->getClientOriginalExtension();
-        $honey->honey_image = $name;
-        $request->file('honey_image')->move("uploads", $name);
-        $honey->honey_title = $request->input('honey_title');
-        $honey->honey_price = $request->input('honey_price');
-        $honey->honey_info = $request->input('honey_info');
-        $honey->honey_more_info = $request->input('honey_more_info');
-        Auth::user()->honey()->save($honey);
+        if($file){
+            $name =rand(11111, 99999) . '.' . $file->getClientOriginalExtension();
+            $honey->honey_image = $name;
+            $request->file('honey_image')->move("uploads", $name);
+            $honey->honey_title = $request->input('honey_title');
+            $honey->honey_price = $request->input('honey_price');
+            $honey->honey_info = $request->input('honey_info');
+            $honey->honey_more_info = $request->input('honey_more_info');
+            Auth::user()->honey()->save($honey);
 
-        return redirect()->back();
+            return redirect()->back();
+        }
+        else{
+            echo "Не сте избрали снимка.";
+        }
+
     }
 
     public function edit($id)

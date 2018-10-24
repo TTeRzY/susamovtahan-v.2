@@ -10752,7 +10752,13 @@ h6 {
 }
 
 .home-page-admin {
-  padding-top: 30px;
+  padding: 15px;
+}
+
+@media only screen and (min-width: 768px) {
+  .home-page-admin {
+    padding: 80px;
+  }
 }
 
 .home-page-admin h1 {

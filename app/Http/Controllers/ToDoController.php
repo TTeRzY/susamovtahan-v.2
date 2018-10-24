@@ -104,8 +104,8 @@ class ToDoController extends Controller
         $carousel = Carousel::find($id);
         if($task)
         {
-            if($request->file('product_image')->isValid()) {
-                $file = $request->file('product_image');
+            $file = $request->file('product_image');
+            if($file) {
                 $name =rand(11111, 99999) . '.' . $file->getClientOriginalExtension();
                 $task->product_image = $name;
                 $request->file('product_image')->move("uploads", $name);
@@ -116,8 +116,9 @@ class ToDoController extends Controller
         }
         if($carousel)
         {
-            if($request->file('carousel_image')->isValid()) {
-                $file = $request->file('carousel_image');
+            $file = $request->file('carousel_image');
+
+            if($file) {
                 $name =rand(11111, 99999) . '.' . $file->getClientOriginalExtension();
                 $carousel->carousel_image = $name;
                 $request->file('carousel_image')->move("uploads", $name);
@@ -134,8 +135,9 @@ class ToDoController extends Controller
     {
         $carousel = Carousel::find($id);
 
-        if($request->file('carousel_image')) {
-            $file = $request->file('carousel_image');
+        $file = $request->file('carousel_image');
+
+        if($file) {
             $name =rand(11111, 99999) . '.' . $file->getClientOriginalExtension();
             $carousel->carousel_image = $name;
             $request->file('carousel_image')->move("uploads", $name);
@@ -150,9 +152,9 @@ class ToDoController extends Controller
     public function updateSections($id, Request $request)
     {
         $sections = Sections::find($id);
+        $file = $request->file('section_image');
 
-        if($request->file('section_image')) {
-            $file = $request->file('section_image');
+        if($file) {
             $name =rand(11111, 99999) . '.' . $file->getClientOriginalExtension();
             $sections->section_image = $name;
             $request->file('section_image')->move("uploads", $name);
@@ -171,8 +173,10 @@ class ToDoController extends Controller
         $task = Task::find($id);
 
         $image_path = public_path().'/uploads/'.$task->task_image;
-        unlink($image_path);
-        $task->delete();
+        if(file_exists($image_path)){
+            unlink($image_path);
+            $task->delete();
+        }
 
         return redirect()->back();
     }

@@ -61,26 +61,31 @@
                          Контакти
                     </a>
                 </li>
+                <li>
+                    <a href="{{ url('/admin/messages') }}">
+                        Съобщения
+                    </a>
+                </li>
                 <li data-toggle="collapse" data-target="#new" class="collapsed">
-                    <a href="#"> Продукция</a>
+                    <a href="#"> Продукция ></a>
                 </li>
                 <ul class="sub-menu collapse" id="new">
-                    <li class="nav-link">
+                    <li>
                         <a href="{{ url('/admin/products/tahan') }}">
                             Сусамов тахан
                         </a>
                     </li>
-                    <li class="nav-link">
+                    <li>
                         <a href="{{ url('/admin/products/honey') }}">
                             Пчелен мед
                         </a>
                     </li>
-                    <li class="nav-link">
+                    <li>
                         <a href="{{ url('/admin/products/sesame_oil') }}">
                             Сусамово масло
                         </a>
                     </li>
-                    <li class="nav-link">
+                    <li>
                         <a href="{{ url('/admin/products/limets') }}">
                             Брашно от Лимец
                         </a>

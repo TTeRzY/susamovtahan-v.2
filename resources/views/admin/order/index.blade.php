@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-    <div class="col-lg-10">
+    <div class="col-lg-10 home-page-admin">
         <div class="carousel-info">
             <h2>Поръчки добави продукт</h2>
             <table class="table">
@@ -11,6 +11,8 @@
                     <th scope="col">Снимка</th>
                     <th scope="col">Име</th>
                     <th scope="col">Цена</th>
+                    <th scope="col">Редактирай</th>
+                    <th scope="col">Изтрий</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -18,6 +20,7 @@
                     <tr>
                         <th scope="row">{{ $item->id }}</th>
                         <td class="technology_image"><img class="img-fluid" src="{{ URL::to('/') }}/uploads/{{ $item->image }}" alt=""></td>
+                        <td>{{ $item->name }}</td>
                         <td>{{ $item->price }}</td>
                         <td><a href="{{ route('order.edit', $item->id) }}" title="edit"><i class="small material-icons">edit</i></a></td>
                         <td><a onclick="return confirm('Delete?')" href="{{ route('order.delete', $item->id) }}" title="delete"><i class="small material-icons">delete_forever</i></a></td>
@@ -29,15 +32,15 @@
                 <input type="hidden" value="order_form" name="order_form">
                 <div class="row">
                     <div class="form-group col-md-12">
-                        <input name="image" id="image" type="file" class="form-control-file validate">
+                        <input name="image" id="image" type="file" class="form-control-file validate" required>
                     </div>
                     <div class="form-group col-md-12">
                         <label for="name">Име</label>
-                        <input name="name" id="name" type="text" class="form-control validate">
+                        <input name="name" id="name" type="text" class="form-control validate" required>
                     </div>
                     <div class="form-group col-md-12">
                         <label for="price">Цена</label>
-                        <input name="price" id="price" type="text" class="form-control validate">
+                        <input name="price" id="price" type="text" class="form-control validate" required>
                     </div>
                     <div class="form-group col-md-12">
                         <label for="unique_name">Уникално име</label>

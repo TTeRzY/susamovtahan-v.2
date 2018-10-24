@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-    <div class="col-lg-10">
+    <div class="col-lg-10 home-page-admin">
         <div class="carousel-info">
             <h2>Добави ново видео</h2>
             <table class="table">
@@ -11,6 +11,8 @@
                     <th scope="col">Видео съдържание</th>
                     <th scope="col">Име на видеото</th>
                     <th scope="col">Информация за видеото</th>
+                    <th scope="col">Редактирай</th>
+                    <th scope="col">Изтрий</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -34,15 +36,15 @@
                 <input type="hidden" value="video_form" name="video_form">
                 <div class="row">
                     <div class="form-group col-md-12">
-                        <input name="video_content" id="video_content" type="file" class="form-control-file validate">
+                        <input name="video_content" id="video_content" type="file" class="form-control-file validate" required>
                     </div>
                     <div class="form-group col-md-12">
                         <label for="video_title">Име на видеото</label>
-                        <input name="video_title" id="video_title" type="text" class="form-control validate">
+                        <input name="video_title" id="video_title" type="text" class="form-control validate" required>
                     </div>
                     <div class="form-group col-md-12">
                         <label for="video_info">Видео информация</label>
-                        <input name="video_info" id="video_info" type="text" class="form-control validate">
+                        <input name="video_info" id="video_info" type="text" class="form-control validate" required>
                     </div>
                 </div>
                 <button type="submit" class="waves-effect waves-light btn">Добави видео</button>

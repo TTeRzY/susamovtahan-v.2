@@ -8,7 +8,6 @@
                         <h2 class="text-center mb-5 mt-5">
                             <span> Технология на производството</span>
                         </h2>
-                        <p class="lead text-center">Описание на технологията на производство....</p>
                     </div>
                 </div>
             </div>

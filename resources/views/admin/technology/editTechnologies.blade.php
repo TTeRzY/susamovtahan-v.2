@@ -14,16 +14,16 @@
                     <img class="img-fluid" src="{{ URL::to('/') }}/uploads/{{ $technology->technology_image }}" alt="">
                 </div>
                 <div class="form-group col-lg-12">
-                    <label for="technology_title">Edit title</label>
+                    <label for="technology_title">Редактирай заглавието</label>
                     <input name="technology_title" value="{{ $technology->technology_title }}" id="technology_title" type="text" class="form-control validate">
                 </div>
                 <div class="form-group col-lg-12">
-                    <label for="technology_info">Edit info</label>
+                    <label for="technology_info">Редактирай информацията</label>
                     <input name="technology_info" value="{{ $technology->technology_info }}" id="technology_info" type="text" class="form-control validate">
                 </div>
             </div>
 
-            <button type="submit" class="waves-effect waves-light btn">Edit carousel</button>
+            <button type="submit" class="waves-effect waves-light btn">Запази промените</button>
             @csrf
         </form>
     </div>

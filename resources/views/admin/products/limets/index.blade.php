@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-    <div class="col-lg-10">
+    <div class="col-lg-10 home-page-admin">
         <div class="carousel-info">
             <h2>Продукт Брашно от Лимец</h2>
             <table class="table">
@@ -12,6 +12,8 @@
                     <th scope="col">Име</th>
                     <th scope="col">Цена</th>
                     <th scope="col">Информация</th>
+                    <th scope="col">Редактирай</th>
+                    <th scope="col">Изтрий</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -32,23 +34,23 @@
                 <input type="hidden" value="limets_form" name="limets_form">
                 <div class="row">
                     <div class="form-group col-md-12">
-                        <input name="limets_image" id="limets_image" type="file" class="form-control-file validate">
+                        <input name="limets_image" id="limets_image" type="file" class="form-control-file validate" required>
                     </div>
                     <div class="form-group col-md-12">
                         <label for="limets_title">Име</label>
-                        <input name="limets_title" id="limets_title" type="text" class="form-control validate">
+                        <input name="limets_title" id="limets_title" type="text" class="form-control validate" required>
                     </div>
                     <div class="form-group col-md-12">
                         <label for="limets_price">Цена</label>
-                        <input name="limets_price" id="limets_price" type="text" class="form-control validate">
+                        <input name="limets_price" id="limets_price" type="text" class="form-control validate" required>
                     </div>
                     <div class="form-group col-md-12">
                         <label for="limets_info">Информация</label>
-                        <input name="limets_info" id="limets_info" type="text" class="form-control validate">
+                        <input name="limets_info" id="limets_info" type="text" class="form-control validate" required>
                     </div>
                     <div class="form-group col-lg-12">
                         <label for="limets_more_info">Повече информация за продукта</label>
-                        <textarea name="limets_more_info" id="limets_more_info" type="text" class="form-control validate"></textarea>
+                        <textarea name="limets_more_info" id="limets_more_info" type="text" class="form-control validate" required></textarea>
                     </div>
                 </div>
                 <button type="submit" class="waves-effect waves-light btn">Добави</button>

@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-    <div>
+    <div style="padding-top: 80px">
         <div class="carousel-info orders-table">
             <h2>Заявки от клиенти</h2>
             <table class="table">

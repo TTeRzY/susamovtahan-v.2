@@ -14,17 +14,17 @@
                     <img class="img-fluid" src="{{ URL::to('/') }}/uploads/{{ $order->image }}" alt="">
                 </div>
                 <div class="form-group col-lg-12">
-                    <label for="title">Име</label>
+                    <label for="name">Редактирай заглавието</label>
                     <input name="name" value="{{ $order->name }}" id="name" type="text" class="form-control validate">
                 </div>
                 <div class="form-group col-lg-12">
-                    <label for="price">Цена</label>
+                    <label for="price">Редактирай цената</label>
                     <input name="price" value="{{ $order->price }}" id="price" type="text" class="form-control validate">
                 </div>
 
             </div>
 
-            <button type="submit" class="waves-effect waves-light btn">Промени</button>
+            <button type="submit" class="waves-effect waves-light btn">Запази промените</button>
             @csrf
         </form>
     </div>

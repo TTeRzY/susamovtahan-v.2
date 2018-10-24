@@ -17,16 +17,16 @@
                     </video>
                 </div>
                 <div class="form-group col-lg-12">
-                    <label for="video_title">Edit info</label>
+                    <label for="video_title">Редакритрай заглавието</label>
                     <input name="video_title" value="{{ $videos->video_title }}" id="video_title" type="text" class="form-control validate">
                 </div>
                 <div class="form-group col-lg-12">
-                    <label for="video_info">Edit info</label>
+                    <label for="video_info">Редакритрай информацията</label>
                     <input name="video_info" value="{{ $videos->video_info }}" id="video_info" type="text" class="form-control validate">
                 </div>
             </div>
 
-            <button type="submit" class="waves-effect waves-light btn">Редактирай видеото</button>
+            <button type="submit" class="waves-effect waves-light btn">Запази промените</button>
             @csrf
         </form>
     </div>

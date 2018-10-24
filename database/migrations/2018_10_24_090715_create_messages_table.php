@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTasksTable extends Migration
+class CreateMessagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,12 @@ class CreateTasksTable extends Migration
      */
     public function up()
     {
-        Schema::create('tasks', function (Blueprint $table) {
+        Schema::create('messages', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id');
-            $table->boolean('status')->default(false);
-            $table->text('product_image')->nullable();
-            $table->longText('product_info', 250)->nullable();
-            $table->longText('product_title')->nullable();
+            $table->longText('name', 250)->nullable();
+            $table->longText('email', 250)->nullable();
+            $table->longText('phone', 250)->nullable();
+            $table->longText('message', 250)->nullable();
             $table->timestamps();
         });
     }
@@ -31,6 +30,6 @@ class CreateTasksTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tasks');
+        Schema::dropIfExists('messages');
     }
 }

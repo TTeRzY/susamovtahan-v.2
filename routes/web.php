@@ -17,6 +17,7 @@ Route::get('/', function () {
 
 //Orders Controller
 Route::post('/admin/clientsOrders/store', 'ClientsController@store')->name('clientsOrders.store');
+Route::post('/admin/messages/store', 'MessagesController@store')->name('messages.store');
 
 
 Route::middleware(['auth'])->group(function () {
@@ -105,7 +106,11 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/admin/products/honey/update/{id}', 'HoneyController@update')->name('honey.update');
     Route::get('/admin/products/honey/delete/{id}', 'HoneyController@delete')->name('honey.delete');
 
+    //Clients Orders
     Route::get('/admin/clientsOrders/', 'ClientsController@index');
+
+    //Clients Messages
+    Route::get('/admin/messages/', 'MessagesController@index');
 
 
 });

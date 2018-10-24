@@ -19,21 +19,47 @@
                         <form action="" class="contact-form" method="post">
 
                             <div class="form-group">
-                                <input type="text" class="form-control" id="name" name="nm" placeholder="Имена" required="" autofocus="">
+                                <input type="text"
+                                       class="form-control"
+                                       id="name"
+                                       name="nm"
+                                       placeholder="Имена"
+                                       required
+                                       autofocus=""
+                                       v-model="messageRequest.names">
                             </div>
 
 
                             <div class="form-group form_left">
-                                <input type="email" class="form-control" id="email" name="em" placeholder="Имейл" required="">
+                                <input type="email"
+                                       class="form-control"
+                                       id="email"
+                                       name="em"
+                                       placeholder="Имейл"
+                                       required
+                                       v-model="messageRequest.email">
                             </div>
 
                             <div class="form-group">
-                                <input type="text" class="form-control" id="phone" placeholder="Телефон" required="">
+                                <input type="text"
+                                       class="form-control"
+                                       id="phone"
+                                       placeholder="Телефон"
+                                       required
+                                       v-model="messageRequest.phone">
                             </div>
                             <div class="form-group">
-                                <textarea class="form-control textarea-contact" rows="5" id="comment" name="FB" placeholder="Вашето съобщение..." required=""></textarea>
+                                <textarea class="form-control textarea-contact" rows="5" id="comment" name="FB" placeholder="Вашето съобщение..." required v-model="messageRequest.message"></textarea>
                                 <br>
-                                <button class="btn primary-button"> <span class="glyphicon glyphicon-send"></span> Изпрати </button>
+                                <div class="col-lg-12" >
+                                    <p v-if="errors.length" class="alert alert-danger">
+                                        <span v-for="error in errors">Моля попълнете следните полета:  <u>{{ error }}</u></span>
+                                    </p>
+                                    <p class="alert alert-success" v-if="success.length">
+                                        <span v-for="item in success"> {{ item }}</span>
+                                    </p>
+                                </div>
+                                <button class="btn primary-button" @click.prevent="sendMessage(messageRequest)"> <span class="glyphicon glyphicon-send"></span> Изпрати запитване </button>
                             </div>
                         </form>
                     </div>
@@ -74,7 +100,15 @@
     name: "contacts",
     data() {
       return {
-        contactsCard: []
+        contactsCard: [],
+        messageRequest: {
+          names: '',
+          email: '',
+          phone: '',
+          message: ''
+        },
+        errors: [],
+        success: []
       }
     },
     created () {
@@ -91,6 +125,30 @@
         }).catch((err) => {
           console.log(err.response.data.message);
         });
+      }
+    },
+    methods: {
+      validEmail: function (email) {
+        let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(email);
+      },
+      sendMessage(data){
+          this.errors = [];
+          if (data.names && data.phone && data.message) {
+            if(!this.validEmail(data.email)){
+              this.errors.push('Моля попълнете коректен имейл адрес!');
+            }else{
+              this.errors = [];
+              this.success.push('Вашето съобщение е изпратено успешно!');
+              axios.post('admin/messages/store', data, {headers: this.headers}).then((res) => {
+                this.$router.push("/contacts")
+              }).catch((err) => {
+                console.log(err.response.status);
+              })
+            }
+          } else {
+            this.errors.push('Моля попълнете всички полета!');
+          }
       }
     }
   }
