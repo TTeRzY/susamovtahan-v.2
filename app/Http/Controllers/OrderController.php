@@ -43,7 +43,7 @@ class OrderController extends Controller
         $order = Order::find($id);
         if($order)
         {
-            if($request->file('limets_image')) {
+            if($request->file('image')) {
                 $file = $request->file('image');
                 $name =rand(11111, 99999) . '.' . $file->getClientOriginalExtension();
                 $order->image = $name;

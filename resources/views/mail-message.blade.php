@@ -65,7 +65,7 @@
 <body>
 <div class="email-template">
     <div class="email-template-header">
-        <h1>Имате направена поръчка от: </h1>
+        <h1>Имате изпратено запитване от: </h1>
 
         <ul>
             <li>Имена: {{ $name }} </li>

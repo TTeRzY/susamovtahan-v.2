@@ -1,7 +1,7 @@
 <template>
     <div>
         <div v-for="item in susamovoMaslo">
-            <div class="card mt-4">
+            <div class="card">
                 <img class="card-img-top img-fluid" :src="'/uploads/' + item.sesame_oil_image" alt="">
                 <div class="card-body">
                     <div class="row">

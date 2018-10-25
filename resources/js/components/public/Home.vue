@@ -30,10 +30,6 @@
                 </div>
 
 
-                <!-- Marketing messaging and featurettes
-                ================================================== -->
-                <!-- Wrap the rest of the page in another container to center all the content. -->
-
                 <div class="container marketing">
                     <div class="products-title">
                         <h2 class="text-center"><span>Нашите продукти</span></h2>
@@ -54,6 +50,32 @@
                         </div><!-- /.col-lg-3 -->
                     </div><!-- /.row -->
                 </div>
+                <div class="container marketing">
+                    <!-- START THE FEATURETTES -->
+
+                    <hr class="featurette-divider">
+
+                    <div class="row featurette-holder" v-for="(sec, index) in sections" v-if="index === 0">
+                        <div class="row featurette">
+                            <div class="col-md-7">
+                                <h2 class="featurette-heading">
+                                    <span class="text-muted">{{ sec.section_title}}</span>
+                                </h2>
+                                <p class="lead">
+                                    {{ sec.section_info}}
+                                </p>
+                            </div>
+                            <div class="col-md-5">
+                                <img class="featurette-image img-fluid mx-auto" :src="'/uploads/' + sec.section_image"
+                                     alt="Generic placeholder image">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /END THE FEATURETTES -->
+                </div><!-- /.container -->
+
+
+            </div>
 
 
                     <div class="parallax-background">
@@ -67,7 +89,7 @@
 
                     <hr class="featurette-divider">
 
-                    <div class="row featurette-holder" v-for="(sec, index) in sections" v-if="index === 0">
+                    <div class="row featurette-holder" v-for="(sec, index) in sections" v-if="index !== 0">
                         <div class="row featurette">
                             <div class="col-md-7">
                                 <h2 class="featurette-heading">

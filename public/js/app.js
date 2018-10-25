@@ -28557,7 +28557,7 @@ exports = module.exports = __webpack_require__(0)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -28603,6 +28603,28 @@ module.exports = function listToStyles (parentId, list) {
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -29745,8 +29767,6 @@ var render = function() {
           )
         ]),
         _vm._v(" "),
-        _vm._m(4),
-        _vm._v(" "),
         _c(
           "div",
           { staticClass: "container marketing" },
@@ -29789,7 +29809,52 @@ var render = function() {
           ],
           2
         )
-      ])
+      ]),
+      _vm._v(" "),
+      _vm._m(4),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "container marketing" },
+        [
+          _c("hr", { staticClass: "featurette-divider" }),
+          _vm._v(" "),
+          _vm._l(_vm.sections, function(sec, index) {
+            return index !== 0
+              ? _c("div", { staticClass: "row featurette-holder" }, [
+                  _c("div", { staticClass: "row featurette" }, [
+                    _c("div", { staticClass: "col-md-7" }, [
+                      _c("h2", { staticClass: "featurette-heading" }, [
+                        _c("span", { staticClass: "text-muted" }, [
+                          _vm._v(_vm._s(sec.section_title))
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "lead" }, [
+                        _vm._v(
+                          "\n                                " +
+                            _vm._s(sec.section_info) +
+                            "\n                            "
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-5" }, [
+                      _c("img", {
+                        staticClass: "featurette-image img-fluid mx-auto",
+                        attrs: {
+                          src: "/uploads/" + sec.section_image,
+                          alt: "Generic placeholder image"
+                        }
+                      })
+                    ])
+                  ])
+                ])
+              : _vm._e()
+          })
+        ],
+        2
+      )
     ])
   ])
 }
@@ -29980,7 +30045,7 @@ exports = module.exports = __webpack_require__(0)(false);
 
 
 // module
-exports.push([module.i, "\n.technology-page[data-v-91460e52]{\n    width: 100%;\n}\n.technology-page .jumbotron[data-v-91460e52]{\n    min-height: 350px\n}\n.vertical-line[data-v-91460e52]{\n    font-size: 30px;\n    line-height: 1;\n}\n.vertical-line span[data-v-91460e52]{\n    content: '';\n    display: block;\n    width: 2px;\n    color: #000000;\n    height: 160px;\n    background: #000000;\n    margin: 10px auto;\n}\nimg[data-v-91460e52]{\n    width: 250px;\n    height: 250px;\n}\n.technology-section[data-v-91460e52]{\n    margin-bottom: 12rem;\n}\n", ""]);
+exports.push([module.i, "\n.technology-page[data-v-91460e52]{\n    width: 100%;\n}\n", ""]);
 
 // exports
 
@@ -29993,6 +30058,7 @@ exports.push([module.i, "\n.technology-page[data-v-91460e52]{\n    width: 100%;\
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
+//
 //
 //
 //
@@ -30084,6 +30150,8 @@ var render = function() {
         _vm._l(_vm.technologies, function(item, index) {
           return index % 2 === 0
             ? _c("div", { staticClass: "row technology-page-body-content" }, [
+                _c("div", { staticClass: "white-background-box" }),
+                _vm._v(" "),
                 _c("div", { staticClass: "col-lg-7 about-page-body-text" }, [
                   _c("h2", [_vm._v(_vm._s(item.technology_title))]),
                   _vm._v(" "),
@@ -30507,7 +30575,7 @@ exports = module.exports = __webpack_require__(0)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -30668,7 +30736,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
           this.errors = [];
           this.success.push('Вашето съобщение е изпратено успешно!');
           __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post('admin/messages/store', data, { headers: this.headers }).then(function (res) {
-            _this2.$router.push("/contacts");
+            if (res.status === 200) {
+              _this2.$router.push('/');
+            }
           }).catch(function (err) {
             console.log(err.response.status);
           });
@@ -32255,7 +32325,7 @@ var render = function() {
     _vm._v(" "),
     _c(
       "div",
-      { staticClass: "row justify-content-center" },
+      { staticClass: "row justify-content-between order-cards-holder" },
       _vm._l(_vm.products, function(item, index) {
         return _c("div", { staticClass: "card" }, [
           _c("div", { staticClass: "card-body top-card-content" }, [
@@ -32540,11 +32610,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
 
 
 
@@ -32720,7 +32785,7 @@ var render = function() {
     [
       _vm._l(_vm.tahan, function(item) {
         return _c("div", [
-          _c("div", { staticClass: "card mt-4" }, [
+          _c("div", { staticClass: "card" }, [
             _c("img", {
               staticClass: "card-img-top img-fluid",
               attrs: { src: "/uploads/" + item.tahan_image, alt: "" }
@@ -33001,7 +33066,7 @@ var render = function() {
     "div",
     _vm._l(_vm.susamovoMaslo, function(item) {
       return _c("div", [
-        _c("div", { staticClass: "card mt-4" }, [
+        _c("div", { staticClass: "card" }, [
           _c("img", {
             staticClass: "card-img-top img-fluid",
             attrs: { src: "/uploads/" + item.sesame_oil_image, alt: "" }
@@ -33203,7 +33268,7 @@ var render = function() {
     "div",
     _vm._l(_vm.limets, function(item) {
       return _c("div", [
-        _c("div", { staticClass: "card mt-4" }, [
+        _c("div", { staticClass: "card" }, [
           _c("img", {
             staticClass: "card-img-top img-fluid",
             attrs: { src: "/uploads/" + item.limets_image, alt: "" }
@@ -33405,7 +33470,7 @@ var render = function() {
     "div",
     _vm._l(_vm.honey, function(item) {
       return _c("div", [
-        _c("div", { staticClass: "card mt-4" }, [
+        _c("div", { staticClass: "card" }, [
           _c("img", {
             staticClass: "card-img-top img-fluid",
             attrs: { src: "/uploads/" + item.honey_image, alt: "" }
@@ -33488,87 +33553,69 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
     _c("div", { staticClass: "row" }, [
+      _c("h1", { staticClass: "col-lg-12 mt-5 mb-5 text-center" }, [
+        _vm._v("Нашите продукти")
+      ]),
+      _vm._v(" "),
       _c("div", { staticClass: "col-lg-4 products-page-holder" }, [
-        _c("h1", { staticClass: "my-4" }, [_vm._v("Нашите продукти")]),
-        _vm._v(" "),
-        _c("div", { staticClass: "list-group" }, [
-          _c(
-            "a",
-            { staticClass: "list-group-item", attrs: { href: "#" } },
-            [
-              _c(
-                "router-link",
-                { staticClass: "nav-item", attrs: { to: "/products" } },
-                [
-                  _vm._v(
-                    "\n                        Сусамов тахан\n                    "
-                  )
-                ]
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "a",
-            { staticClass: "list-group-item", attrs: { href: "#" } },
-            [
-              _c(
-                "router-link",
-                {
-                  staticClass: "nav-item",
-                  attrs: { to: "/products/susamovo-maslo" }
-                },
-                [
-                  _vm._v(
-                    "\n                        Сусамово масло\n                    "
-                  )
-                ]
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "a",
-            { staticClass: "list-group-item", attrs: { href: "#" } },
-            [
-              _c(
-                "router-link",
-                {
-                  staticClass: "nav-item",
-                  attrs: { to: "/products/brashno-ot-limets" }
-                },
-                [
-                  _vm._v(
-                    "\n                        Брашно от лимец\n                    "
-                  )
-                ]
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "a",
-            { staticClass: "list-group-item", attrs: { href: "#" } },
-            [
-              _c(
-                "router-link",
-                {
-                  staticClass: "nav-item",
-                  attrs: { to: "/products/pchelen-med" }
-                },
-                [
-                  _vm._v(
-                    "\n                        Пчелен мед\n                    "
-                  )
-                ]
-              )
-            ],
-            1
-          )
-        ])
+        _c(
+          "div",
+          { staticClass: "list-group" },
+          [
+            _c(
+              "router-link",
+              {
+                staticClass: "list-group-item",
+                attrs: { to: "/products", exact: "" }
+              },
+              [
+                _c("a", { staticClass: "nav-item", attrs: { href: "#" } }, [
+                  _vm._v("  Сусамов тахан ")
+                ])
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "router-link",
+              {
+                staticClass: "list-group-item",
+                attrs: { to: "/products/susamovo-maslo" }
+              },
+              [
+                _c("a", { staticClass: "nav-item", attrs: { href: "#" } }, [
+                  _vm._v("Сусамово масло")
+                ])
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "router-link",
+              {
+                staticClass: "list-group-item",
+                attrs: { to: "/products/brashno-ot-limets" }
+              },
+              [
+                _c("a", { staticClass: "nav-item", attrs: { href: "#" } }, [
+                  _vm._v("Брашно от лимец")
+                ])
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "router-link",
+              {
+                staticClass: "list-group-item",
+                attrs: { to: "/products/pchelen-med" }
+              },
+              [
+                _c("a", { staticClass: "nav-item", attrs: { href: "#" } }, [
+                  _vm._v("Пчелен мед")
+                ])
+              ]
+            )
+          ],
+          1
+        )
       ]),
       _vm._v(" "),
       _c(
@@ -55712,7 +55759,7 @@ exports = module.exports = __webpack_require__(0)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/* Enter and leave animations can use different */\n/* durations and timing functions.              */\n.slide-fade-enter-active[data-v-332fccf4] {\n    -webkit-transition: all .3s ease;\n    transition: all .3s ease;\n}\n.slide-fade-leave-active[data-v-332fccf4] {\n    -webkit-transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);\n    transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);\n}\n.slide-fade-enter[data-v-332fccf4], .slide-fade-leave-to[data-v-332fccf4]\n    /* .slide-fade-leave-active below version 2.1.8 */ {\n    -webkit-transform: translateX(10px);\n            transform: translateX(10px);\n    opacity: 0;\n}\n", ""]);
 
 // exports
 
@@ -55723,6 +55770,8 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
 //
 //
 //
@@ -56247,7 +56296,19 @@ var render = function() {
     ),
     _vm._v(" "),
     _c("div", { staticClass: "container-fluid pages_template" }, [
-      _c("div", { staticClass: "row" }, [_c("router-view")], 1)
+      _c(
+        "div",
+        { staticClass: "row" },
+        [
+          _c(
+            "transition",
+            { attrs: { name: "slide-fade" } },
+            [_c("router-view")],
+            1
+          )
+        ],
+        1
+      )
     ]),
     _vm._v(" "),
     _c("footer", [

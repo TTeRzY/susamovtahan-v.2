@@ -141,7 +141,9 @@
               this.errors = [];
               this.success.push('Вашето съобщение е изпратено успешно!');
               axios.post('admin/messages/store', data, {headers: this.headers}).then((res) => {
-                this.$router.push("/contacts")
+                if(res.status === 200){
+                  this.$router.push('/')
+                }
               }).catch((err) => {
                 console.log(err.response.status);
               })

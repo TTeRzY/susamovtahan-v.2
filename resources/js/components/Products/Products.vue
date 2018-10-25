@@ -3,30 +3,25 @@
     <div class="container">
 
         <div class="row">
+            <h1 class="col-lg-12 mt-5 mb-5 text-center">Нашите продукти</h1>
 
             <div class="col-lg-4 products-page-holder">
-                <h1 class="my-4">Нашите продукти</h1>
                 <div class="list-group">
-                    <a href="#" class="list-group-item">
-                        <router-link class="nav-item" to="/products">
-                            Сусамов тахан
+                        <router-link class="list-group-item" to="/products" exact>
+                            <a href="#" class="nav-item" >  Сусамов тахан </a>
                         </router-link>
-                    </a>
-                    <a href="#" class="list-group-item">
-                        <router-link class="nav-item" to="/products/susamovo-maslo">
-                            Сусамово масло
+
+                        <router-link class="list-group-item" to="/products/susamovo-maslo" >
+                            <a href="#"class="nav-item"  >Сусамово масло</a>
                         </router-link>
-                    </a>
-                    <a href="#" class="list-group-item">
-                        <router-link class="nav-item"  to="/products/brashno-ot-limets">
-                            Брашно от лимец
+
+                        <router-link   class="list-group-item" to="/products/brashno-ot-limets">
+                            <a href="#" class="nav-item">Брашно от лимец</a>
                         </router-link>
-                    </a>
-                    <a href="#" class="list-group-item">
-                        <router-link class="nav-item" to="/products/pchelen-med">
-                            Пчелен мед
+
+                        <router-link class="list-group-item" to="/products/pchelen-med">
+                            <a href="#" class="nav-item" >Пчелен мед</a>
                         </router-link>
-                    </a>
                 </div>
             </div>
             <!-- /.col-lg-3 -->

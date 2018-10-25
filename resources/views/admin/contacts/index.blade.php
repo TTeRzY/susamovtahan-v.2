@@ -11,6 +11,7 @@
                     <th scope="col">Снимка/Икона</th>
                     <th scope="col">Заглавие</th>
                     <th scope="col">Информация</th>
+                    <th scope="col">Допълнителна информация</th>
                     <th scope="col">Редактирай</th>
                     <th scope="col">Изтрий</th>
                 </tr>
@@ -40,11 +41,11 @@
                         <input name="contacts_title" id="contacts_title" type="text" class="form-control validate" required>
                     </div>
                     <div class="form-group col-md-12">
-                        <label for="contacts_paragraph">Параграф</label>
+                        <label for="contacts_paragraph">Информация</label>
                         <input name="contacts_paragraph" id="contacts_paragraph" type="text" class="form-control validate" required>
                     </div>
                     <div class="form-group col-md-12">
-                        <label for="contacts_info">Информация</label>
+                        <label for="contacts_info">Допълнителна информация</label>
                         <input name="contacts_info" id="contacts_info" type="text" class="form-control validate" required>
                     </div>
                 </div>

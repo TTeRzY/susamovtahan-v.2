@@ -8,14 +8,22 @@
 
                 <div class="form-group col-lg-12">
 
-                    <input name="gallery_image" value="{{ $gallery->technology_image }}" id="gallery_image" type="file" class="validate">
+                    <input name="contacts_image" value="{{ $contacts->contacts_image }}" id="contacts_image" type="file" class="validate">
                 </div>
                 <div class="form-group">
-                    <img class="img-fluid" src="{{ URL::to('/') }}/uploads/{{ $gallery->gallery_image }}" alt="">
+                    <img class="img-fluid" src="{{ URL::to('/') }}/uploads/{{ $contacts->contacts_image }}" alt="">
                 </div>
                 <div class="form-group col-lg-12">
-                    <label for="gallery_info">Редактирай информацията</label>
-                    <input name="gallery_info" value="{{ $gallery->gallery_info }}" id="gallery_info" type="text" class="form-control validate">
+                    <label for="contacts_title">Редактирай заглавието</label>
+                    <input name="contacts_title" value="{{ $contacts->contacts_title }}" id="contacts_title" type="text" class="form-control validate">
+                </div>
+                <div class="form-group col-lg-12">
+                    <label for="contacts_paragraph">Редактирай Параграфа</label>
+                    <input name="contacts_paragraph" value="{{ $contacts->contacts_paragraph }}" id="contacts_paragraph" type="text" class="form-control validate">
+                </div>
+                <div class="form-group col-lg-12">
+                    <label for="contacts_info">Редактирай информацията</label>
+                    <input name="contacts_info" value="{{ $contacts->contacts_info }}" id="contacts_info" type="text" class="form-control validate">
                 </div>
             </div>
 

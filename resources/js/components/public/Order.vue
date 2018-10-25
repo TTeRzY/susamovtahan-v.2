@@ -3,7 +3,7 @@
         <div class="products-title">
             <h2 class="text-center mb-5 mt-5"><span>Изберете продукти</span></h2>
         </div>
-        <div class="row justify-content-center">
+        <div class="row justify-content-between order-cards-holder">
 
             <div class="card" v-for="(item, index) in products">
                 <div class="card-body top-card-content">

@@ -22,11 +22,11 @@
 }
 
 .navbar-laravel a{
-  color: #fff;
+  color: $white;
 }
 
 .nav-link{
-  color: #ffffff !important;
+  color: $white !important;
   font-weight: 700;
   font-size: 14px;
   cursor: pointer;
@@ -51,7 +51,7 @@
 }
 
 .navbar-expand-lg{
-  background-color: $header;
+  background-color: $green-sheen;
   padding: 30px 0;
   @media #{$tablets} {
     padding: 30px 15px;
@@ -184,8 +184,8 @@
     top: 10px;
     z-index: 10 !important;
     padding: 3px;
-    background-color: #ffffff;
-    color: #000;
+    background-color: $white;
+    color: $raisin-black;
     width: 40px;
     text-align: center;
   }
@@ -214,12 +214,12 @@
 }
 
 .home-page-table{
-  background: #ffffff;
+  background: $white;
   padding: 30px;
 }
 
 .home-form{
-  background: #ffffff;
+  background: $white;
   padding: 30px;
 }
 
@@ -248,6 +248,7 @@
 }
 
 .parallax-background{
+  width: 100%;
   margin: 120px 0 80px;
   padding: 120px 0;
   z-index: 0;
@@ -270,8 +271,8 @@
     position: relative;
     z-index: 999;
     font-size: 20px;
-    color: #ffffff;
-    font-weight: $white;
+    color: $white;
+    font-weight: $regular;
     padding: 30px;
 
     @media #{$tablets} {
@@ -281,7 +282,7 @@
 }
 
 .mbr-overlay {
-  background-color: #000;
+  background-color: $raisin-black;
   bottom: 0;
   left: 0;
   opacity: .5;
@@ -344,13 +345,13 @@
 ###################################*/
 
 footer{
-  background-color: $footer;
+  background-color: $green-sheen;
   position: relative;
   padding: 30px 0;
   .footer-top{
     text-align: center;
     position: relative;
-    border-bottom: 1px solid #818181;
+    border-bottom: 1px solid $white;
     padding-bottom: 70px;
     .footer-logo{
       img{
@@ -437,23 +438,29 @@ footer{
 
 
 .primary-button{
-  background: $btn-color;
-  color: #fff;
+  background: $bright-cerulean;
+  color: $white;
   font-weight: 700;
   max-width: 18rem;
   min-width: 15rem;
   margin: auto;
   display: block;
+  transition: ease 0.3s;
+  &:hover{
+    background: $yellow-orange;
+    transition: ease 0.3s;
+  }
 }
 
 //CART STYLES
 
 
 .cart-holder {
-  background-color: #ffffff;
+  background-color: $white;
   box-shadow: 0 1px 20px rgba(0, 0, 0, 0.2);
   padding-bottom: 60px;
   margin-top: 80px;
+  margin-bottom: 80px;
 }
 
 .cart-holder .top-cart-content {
@@ -472,7 +479,7 @@ footer{
 .cart-holder .head-text h2 {
   font-size: 32px;
   font-weight: 700;
-  color: #fbb13c;
+  color: $yellow-orange;
   padding-left: 15px;
 }
 
@@ -488,20 +495,22 @@ footer{
   img {
     max-width: 60px;
     max-height: 60px;
-    @media #{$tablets} {
-      max-width: 143px;
-      max-height: 107px;
-    }
+  }
+
+  .product-image-hold{
+   @media #{$laptops} {
+     min-width: 80px;
+     display: -ms-flex;
+     display: flex;
+     justify-content: center;
+   }
   }
 }
-
-.cart-items-content
-
 .cart-product-name {
   width: 20%;
 
   a{
-    color: $lapis-lazuli;
+    color: $raisin-black;
     font-weight: 700;
     font-size: 18px;
   }
@@ -523,10 +532,8 @@ footer{
   line-height: 1.65;
   display: block;
   padding: 0;
-  padding-left: 0px;
   margin: 0;
-  margin-right: 0px;
-  margin-left: 0px;
+  margin-right: 0;
   font-size: 30px;
   font-family: "Ubuntu", sans-serif;
   font-weight: 300;
@@ -628,12 +635,7 @@ input[type="number"] {
 
 .order-details .total-order-info-holder {
   background-color: #F7F9FA;
-  padding: 28px 15px 56px 15px;
-}
-
-
-.order-details .total-order-info-holder {
-  padding: 15px 40px 56px 32px;
+  padding: 15px 32px 56px 32px;
   min-height: 348px;
 }
 
@@ -717,13 +719,13 @@ input[type="number"] {
 .order-details .top-text h5 {
   margin-bottom: 30px;
   font-size: 17px;
-  color: #fbb13c;;
+  color: $yellow-orange;
   font-weight: 900;
   text-transform: uppercase;
   font-family: "Roboto Condensed", sans-serif;
 }
 .order-details p {
-  color: #777777;
+  color: $raisin-black;
   font-size: 16px;
   font-weight: 500;
 }
@@ -731,22 +733,51 @@ input[type="number"] {
 .send-order-btn{
   display: block;
   z-index: 9;
+  background-color: $yellow-orange;
+  color: $white;
+  border-radius: 30px;
+  min-height: 65px;
+  margin-top: 45px;
+  font-size: 16px !important;
+  display: -ms-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  &:hover{
+    color: $white;
+  }
+
+  svg{
+    margin-right: 10px;
+  }
+}
+
+.delete-product{
+  a{
+    svg{
+      fill: $yellow-orange;
+    }
+  }
 }
 
 
-
-.head-text a, .send-order-btn, .more-options a{
-  color: $lapis-lazuli;
+.head-text a, .send-order-btn{
+  color: $white;
   font-size: 14px;
   font-weight: 700;
   outline: none !important;
-  svg{
-    margin-right: 15px;
-  }
+}
 
-  @media #{$tablets} {
-    padding-right: 30px;
-    font-size: 18px;
+.more-options a{
+  color: #C7D5DC;
+  font-size: 14px;
+  font-weight: 700;
+  outline: none !important;
+  transition:  ease 0.3s;
+  &:hover{
+    color: $yellow-orange;
+    transition: ease 0.3s;
   }
 }
 
@@ -774,7 +805,7 @@ input[type="number"] {
 svg {
   width: 20px;
   height: 20px;
-  fill: $lapis-lazuli;
+  fill: $white;
 
   @media #{$tablets} {
     width: 32px;
@@ -798,7 +829,7 @@ svg {
       right: 5px;
       bottom: 5px;
       text-align: center;
-      color: #ffffff;
+      color: $white;
       padding-bottom: 0;
       margin-bottom: 0;
       @media only screen and(min-width: 1366px) {
@@ -821,7 +852,7 @@ svg {
 }
 
 .developer-name a{
-  color: #ffffff;
+  color: $white;
   font-size: 18px;
   font-weight: 500;
 }
@@ -834,18 +865,22 @@ svg {
 
 .order-container{
   /*Products Card*/
+
+
   .card {
-    margin-bottom: 30px;
+    margin-bottom: 70px;
     width: 17.20rem;
     flex-direction: column;
     padding: 0;
     align-items: unset;
     justify-content: unset;
-    margin-left: 15px;
-    margin-right: 15px;
-    background: linear-gradient(to top, #FAFAFA 16%, #ffffff 0%);
+    margin-left: 30px;
+    margin-right: 30px;
+    background: linear-gradient(to top, $green-sheen 16%, $white 0%);
     border-radius: 15px;
     box-shadow: 0 4px 12px -5px rgba(0,0,0,0.3);
+    border: none;
+
   }
 
   .top-card-content {
@@ -860,47 +895,54 @@ svg {
 
   }
 
-  .card-body .add-section {
+  .card-body {
+    .add-section {
 
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
 
+      .number-of-badges {
+        border: none;
+        color: $raisin-black;
+        font-size: 18px;
+        font-weight: 700;
+        text-align: center;
+      }
+      .subtraction{
+        svg{
+          height: 35px;
+          .cls-1{
+            fill: #F3FFBD;
+            transition: ease-in-out 0.5s;
+          }
+          .cls-2{
+            fill: $raisin-black;
+            transition: ease-in-out 0.5s;
+          }
+        }
+      }
+      .addition{
+        svg {
+          height: 35px;
+          .cls-1{
+            fill: #F3FFBD;
+            transition: ease-in-out 0.5s;
+          }
+          .cls-2{
+            fill: $raisin-black;
+            transition: ease-in-out 0.5s;
+          }
+        }
+      }
+    }
   }
 
-  .add-section .number-of-badges {
-
-    border: none;
-    color: #000000;
-    font-size: 18px;
-    font-weight: 700;
-    text-align: center;
-
-  }
-
-  .add-section .subtraction svg, .add-section .addition svg {
-
-    height: 35px;
-
-  }
-  .add-section .subtraction svg .cls-1, .add-section .addition svg .cls-1 {
-
-    fill: #F3FFBD;
-    transition: ease-in-out 0.5s;
-
-  }
-
-  .add-section .subtraction svg .cls-2, .add-section .addition svg .cls-2 {
-
-    fill: #000000;
-    transition: ease-in-out 0.5s;
-
-  }
 
   .id-body a, .price-body a {
     font-weight: 700;
     font-size: 18px;
-    color: #C8C8C8;
+    color: $raisin-black;
     text-transform: uppercase;
 
   }
@@ -929,7 +971,7 @@ svg {
     order: unset;
 
     a{
-      color: #C8C8C8;;
+      color: $raisin-black;;
       font-weight: 700;
       font-size: 14px;
     }
@@ -976,13 +1018,13 @@ svg {
 
   .medium-button {
 
-    border: 3px solid #E6E6E6;
+    //border: 3px solid $white;
     border-radius: 40px;
     width: 100%;
-    color: #000000;
+    color: $white;
     font-weight: 700;
     padding: 15px;
-    background-color: #ffffff;
+    background-color: $yellow-orange;
     position: relative;
     transition: ease-in-out 0.5s;
     display: -ms-flex;
@@ -996,15 +1038,13 @@ svg {
 
   }
   .buy-me {
-
     position: relative;
     z-index: 1;
-    color: #000000;
+    color: $black;
     font-weight: 700;
-
   }
 
-
+  /*
   .buy-me::after {
 
     display: inline-block;
@@ -1015,10 +1055,11 @@ svg {
     content: "";
     width: 100%;
     height: 8px;
-    background-color: $very-pale-yellow;
+    background-color: $bright-cerulean;
 
   }
 
+*/
   .card-img-top {
     width: initial;
     display: block;
@@ -1059,7 +1100,7 @@ svg {
 .rounded-circle {
   border-radius: 50% !important;
   display: block;
-  background: #fff;
+  background: $white;
   width: 140px;
   height: 140px;
   margin: auto;
@@ -1069,7 +1110,7 @@ svg {
 
 .products-title{
   h2{
-    color: $dark-silver-ver1;
+    color: $raisin-black;
     font-weight: $bold;
     font-size: 32px;
     position: relative;
@@ -1101,6 +1142,8 @@ svg {
 
   .btn-secondary{
     color: $white !important;
+    background-color: $yellow-orange;
+    border: none;
   }
   .col-lg-5{
     margin-bottom: 80px;
@@ -1132,7 +1175,7 @@ svg {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: $green-sheen;
+  background-color: $yellow-orange;
   color: $white !important;
   font-weight: $black;
   letter-spacing: 2px;
@@ -1147,18 +1190,33 @@ svg {
   }
 
   @media #{$tablets} {
-    font-size: 26px;
-    height: 80px;
+    height: 65px;
     margin-top: 0;
   }
 }
 
 .products-page-holder{
   .list-group{
+    .list-group-item{
+      &.router-link-active{
+        background-color: $bright-cerulean;
+        a{
+          color: $white;
+        }
+      }
+      &:hover{
+        background-color: $bright-cerulean;
+        transition: ease 0.3s;
+        a{
+          color: $white;
+        }
+      }
+    }
     a{
       font-weight: $bold;
-      color: $dark-silver-ver2;
+      color: $raisin-black;
       font-size: 18px;
+      transition: ease 0.3s;
     }
   }
 }
@@ -1168,111 +1226,132 @@ svg {
     CONTACTS
 ############################*/
 
+#parent{
+  background-color: $white;
+  padding: 60px;
+  margin-bottom: 80px;
+}
+
 .contacts-header{
   padding-top: 60px;
   padding-bottom: 40px;
   text-align: center;
   width: 100%;
+  h1{
+    text-transform: uppercase;
+  }
 }
 
-.contacts-header h1{
-  text-transform: uppercase;
-}
-
-.form-control
-{
+.form-control{
   border-radius: 0;
   border:1px solid #EDEDED;
+
+  &:focus{
+    border:1px solid #00bfff;
+  }
 }
 
-.form-control:focus
-{
-  border:1px solid #00bfff;
-}
-
-.textarea-contact
-{
+.textarea-contact{
   resize:none;
 }
 
-.second-portion
-{
+.second-portion{
+  background-color: $white;
+  padding: 60px;
   margin-top:50px;
+  margin-bottom: 80px;
 }
 
-.box > .icon {
-  text-align: center;
-  position: relative;
-}
-.box > .icon > .image {
-  position: relative;
-  z-index: 2;
-  margin: auto;
-  width: 88px;
-  height: 88px;
-  border: 8px solid #ddd;
-  line-height: 48px;
-  border-radius: 50%;
-  background-color: #ddd;
-  vertical-align: middle;
-}
+.box {
+  .icon {
+    text-align: center;
+    position: relative;
+    .image {
+      position: relative;
+      z-index: 2;
+      margin: auto;
+      width: 88px;
+      height: 88px;
+      line-height: 80px;
+      border-radius: 50%;
+      background-color: $white;
+      vertical-align: middle;
+      box-shadow: 0 0 10px -4px rgba(0, 0, 0, 0.3);
 
-.box > .icon > .image img{
-  max-height: 45px;
-}
-.box > .icon:hover > .image {
-  opacity: 0.8;
-}
-.box > .icon > .image > i {
-  font-size: 36px !important;
-  color: #fff !important;
-}
-.box > .icon:hover > .image > i {
-  color: white !important;
-}
-.box > .icon > .info {
-  margin-top: -24px;
-  background: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.03);
-  padding: 15px 0 10px 0;
-  min-height:163px;
-  box-shadow: 02px 3px 3px rgba(0,0,0,0.3);
+      img{
+        max-height: 45px;
 
-}
-.box > .icon:hover > .info {
-  background: rgba(0, 0, 0, 0.04);
-  border-color: #e0e0e0;
-  color: white;
-}
-.box > .icon > .info > h3.title {
-  padding-top: 15px;
-  font-family: "Robot",sans-serif !important;
-  font-size: 16px;
-  color: #6c757d !important;
-  font-weight: 700;
-}
-.box > .icon > .info > p {
-  font-family: "Robot",sans-serif !important;
-  font-size: 13px;
-  color: #6c757d !important;
-  font-weight: 700;
-  line-height: 1.5em;
-  margin: 20px;
-}
-.box > .icon:hover > .info > h3.title, .box > .icon:hover > .info > p, .box > .icon:hover > .info > .more > a {
-  color: #707070;
-}
-.box > .icon > .info > .more a {
-  font-family: "Robot",sans-serif !important;
-  font-size: 12px;
-  color: #222;
-  line-height: 12px;
-  text-transform: uppercase;
-  text-decoration: none;
-}
-.box > .icon:hover > .info > .more > a { color: #fff; padding: 6px 8px; background-color: #63B76C; }
-.box .space {
-  height: 30px;
+        &:hover > .image {
+          opacity: 0.8;
+        }
+
+        i {
+          font-size: 36px !important;
+          color: $white !important;
+        }
+      }
+    }
+
+    .info {
+      transition: ease 0.3s;
+      margin-top: -24px;
+      background: $bright-cerulean;
+      border: 1px solid rgba(0, 0, 0, 0.03);
+      padding: 15px 0 10px 0;
+      min-height:163px;
+      box-shadow: 02px 3px 3px rgba(0,0,0,0.3);
+
+      h3{
+       &.title {
+         padding-top: 15px;
+         font-family: "Robot",sans-serif !important;
+         font-size: 16px;
+         color: $white !important;
+         font-weight: 700;
+       }
+      }
+
+    }
+
+    &:hover{
+      .info {
+        background: $yellow-orange;
+        transition: ease 0.3s;
+        border-color: $white;
+        color: white;
+      }
+
+      .image{
+        i {
+          color: white !important;
+        }
+      }
+    }
+
+    p {
+      font-family: "Robot",sans-serif !important;
+      font-size: 13px;
+      color: $white !important;
+      font-weight: 700;
+      line-height: 1.5em;
+      margin: 20px;
+    }
+
+    .more{
+      a {
+        font-family: "Robot",sans-serif !important;
+        font-size: 12px;
+        color: $white;
+        line-height: 12px;
+        text-transform: uppercase;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .space {
+    height: 30px;
+  }
 }
 
 @media only screen and (max-width: 768px)
@@ -1299,7 +1378,23 @@ svg {
 }
 
 .technology-page-body-content{
+  padding: 60px 80px;
   margin-bottom: 80px;
+  position: relative;
+  z-index: 0;
+  background-color: $white;
+
+  /*
+  .white-background-box{
+    display: block;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    bottom: 0;
+    min-height: 370px;
+  }
+  */
 }
 
 .vue-navbar{
@@ -1401,4 +1496,17 @@ svg {
     top: 30px;
     z-index: 999;
   }
+}
+
+.card{
+  .card-header{
+    color: $white;
+    font-weight: 700;
+    background-color: $bright-cerulean;
+  }
+}
+
+.order-cards-holder{
+  width: 95%;
+  margin: 60px auto;
 }

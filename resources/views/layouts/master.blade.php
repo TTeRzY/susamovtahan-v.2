@@ -16,7 +16,7 @@
 <div class="container-fluid">
 
 <div class="row admin-container">
-    <div class="col-sm-2 col-lg-1 nav-side-menu">
+    <div class="col-sm-3 col-lg-2 nav-side-menu">
         <div class="brand">
             <p>Добре дошъл, <b>{{ Auth::user()->name }}</b></p>
             <a href="#"  data-toggle="collapse" data-target="#menu-content" class="d-inline d-sm-none"><img src="{{URL::asset('images/hamMenu.png')}}" alt="HamMenu Icon"></a>
@@ -112,7 +112,7 @@
             </ul>
         </div>
     </div>
-    <div class="col-sm-10 col-lg-11">
+    <div class="col-sm-9 col-lg-10">
         <div class="row d-none d-sm-block">
             <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
                 <!-- Right Side Of Navbar -->
