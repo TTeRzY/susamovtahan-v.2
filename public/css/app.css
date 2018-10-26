@@ -12180,7 +12180,7 @@ svg {
 
 @media only screen and (min-width: 768px) {
   .vue-navbar .navbar-collapse ul .nav-link {
-    padding: 0;
+    padding: 0 15px;
   }
 }
 
