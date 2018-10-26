@@ -10,7 +10,7 @@
                     </ol>
                     <div class="carousel-inner">
                         <div class="carousel-item" v-for="(item,index) in carousels" :class="{'active': index === 0}">
-                            <img class="d-block w-100" :src="'/uploads/' + item.carousel_image" alt="Carousel">
+                            <img class="d-block w-100" :src="'uploads/' + item.carousel_image" alt="Carousel">
                             <div class="carousel-caption d-none d-md-block">
                                 <h1>{{ item.carousel_title }}</h1>
                                 <p>
@@ -40,7 +40,7 @@
                         <div class="col-lg-5" v-for="item in products">
                             <div class="silver-background-box"></div>
                             <div class="rounded-circle">
-                                <img class="img-fluid" :src="'/uploads/' + item.product_image" alt="Generic placeholder image">
+                                <img class="img-fluid" :src="'uploads/' + item.product_image" alt="Generic placeholder image">
                             </div>
                             <h2>{{ item.product_title}}</h2>
                             <p>{{ item.product_info }}</p>
@@ -66,7 +66,7 @@
                                 </p>
                             </div>
                             <div class="col-md-5">
-                                <img class="featurette-image img-fluid mx-auto" :src="'/uploads/' + sec.section_image"
+                                <img class="featurette-image img-fluid mx-auto" :src="'uploads/' + sec.section_image"
                                      alt="Generic placeholder image">
                             </div>
                         </div>

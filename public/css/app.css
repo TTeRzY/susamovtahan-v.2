@@ -10587,7 +10587,7 @@ h6 {
 
 .navbar-expand-lg {
   background-color: #70c1b3;
-  padding: 30px 0;
+  padding: 12px 0;
   -webkit-box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.3);
           box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.3);
 }
@@ -10874,8 +10874,16 @@ h6 {
 
 .about-page .about-page-body .about-page-body-content .about-page-body-text h2 {
   color: #636363;
-  font-size: 46px;
+  font-size: 27px;
   font-weight: 700;
+  padding-top: 30px;
+}
+
+@media only screen and (min-width: 1366px) {
+  .about-page .about-page-body .about-page-body-content .about-page-body-text h2 {
+    padding-top: 15px;
+    font-size: 46px;
+  }
 }
 
 .about-page .about-page-body .about-page-body-content .about-page-body-text p {
@@ -11006,7 +11014,19 @@ footer .footer-bottom a img {
 }
 
 .home-content .carousel-item {
-  max-height: 650px;
+  max-height: 160px;
+}
+
+@media only screen and (min-width: 768px) {
+  .home-content .carousel-item {
+    max-height: 320px;
+  }
+}
+
+@media only screen and (min-width: 1366px) {
+  .home-content .carousel-item {
+    max-height: 650px;
+  }
 }
 
 .home-content .carousel-caption {
@@ -11357,7 +11377,7 @@ input[type="number"] {
   border-radius: 30px;
   min-height: 65px;
   margin-top: 45px;
-  font-size: 16px !important;
+  font-size: 14px !important;
   display: -ms-flex;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -11497,6 +11517,7 @@ svg {
 }
 
 .pages_template {
+  padding-top: 70px;
   background: #fafafa;
 }
 
@@ -11651,7 +11672,13 @@ svg {
 .order-container .badge-img a {
   color: #271F30;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 13px;
+}
+
+@media only screen and (min-width: 768px) {
+  .order-container .badge-img a {
+    font-size: 14px;
+  }
 }
 
 .order-container .plus-minus {
@@ -11817,6 +11844,10 @@ svg {
   }
 }
 
+.products-holder {
+  padding-top: 50px;
+}
+
 .products-holder .btn-secondary {
   color: #ffffff !important;
   background-color: #FBB13C;
@@ -11844,6 +11875,12 @@ svg {
   display: none;
   min-height: 220px;
   background: #70c1b3;
+}
+
+@media only screen and (min-width: 1366px) {
+  .products-holder {
+    padding-top: 0;
+  }
 }
 
 .buy-btn {
@@ -11884,6 +11921,10 @@ svg {
   }
 }
 
+.products-page-holder {
+  margin-bottom: 60px;
+}
+
 .products-page-holder .list-group .list-group-item.router-link-active {
   background-color: #1E91D6;
 }
@@ -11910,14 +11951,26 @@ svg {
   transition: ease 0.3s;
 }
 
+@media only screen and (min-width: 1366px) {
+  .products-page-holder {
+    margin-bottom: 0;
+  }
+}
+
 /*#############################
     CONTACTS
 ############################*/
 
 #parent {
   background-color: #ffffff;
-  padding: 60px;
+  padding: 15px;
   margin-bottom: 80px;
+}
+
+@media only screen and (min-width: 1366px) {
+  #parent {
+    padding: 60px;
+  }
 }
 
 .contacts-header {
@@ -11946,9 +11999,15 @@ svg {
 
 .second-portion {
   background-color: #ffffff;
-  padding: 60px;
+  padding: 15px;
   margin-top: 50px;
   margin-bottom: 80px;
+}
+
+@media only screen and (min-width: 1366px) {
+  .second-portion {
+    padding: 60px;
+  }
 }
 
 .box .icon {
@@ -12057,7 +12116,7 @@ svg {
 }
 
 .technology-page-body-content {
-  padding: 60px 80px;
+  padding: 60px 15px;
   margin-bottom: 80px;
   position: relative;
   z-index: 0;
@@ -12075,13 +12134,20 @@ svg {
   */
 }
 
+@media only screen and (min-width: 1366px) {
+  .technology-page-body-content {
+    padding: 60px 80px;
+  }
+}
+
 .vue-navbar {
+  z-index: 9999;
+  position: fixed;
   overflow: hidden;
   top: 0;
   left: 0;
   -webkit-transition: ease 0.8s;
   transition: ease 0.8s;
-  position: relative;
   width: 100%;
 }
 
@@ -12090,6 +12156,50 @@ svg {
   z-index: 9999;
   -webkit-transition: ease 0.8s;
   transition: ease 0.8s;
+}
+
+.vue-navbar .navbar-collapse {
+  margin: 15px;
+}
+
+.vue-navbar .navbar-collapse ul {
+  border-top: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.vue-navbar .navbar-collapse ul .nav-link {
+  font-size: 16px;
+  padding: 15px 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .vue-navbar .navbar-collapse ul .nav-link {
+    padding: 0;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .vue-navbar .navbar-collapse ul {
+    border: none;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .vue-navbar .navbar-collapse {
+    margin: 0;
+  }
+}
+
+@media only screen and (min-width: 1366px) {
+  .vue-navbar {
+    position: relative;
+  }
 }
 
 .email-table-template {
@@ -12145,17 +12255,16 @@ svg {
 }
 
 .mobile-navbar {
+  display: none;
   background-color: #70c1b3;
   text-align: center;
   padding: 80px 30px 60px;
-  position: absolute;
-  z-index: 999;
+  position: relative;
+  z-index: 10000;
   width: 100%;
   overflow: hidden;
   -webkit-transition: ease 0.7s;
   transition: ease 0.7s;
-  transform: translate(0, -100%);
-  -webkit-transform: translate(0, -100%);
 }
 
 .mobile-navbar .navbar-brand {
@@ -12174,13 +12283,6 @@ svg {
   padding-bottom: 15px;
 }
 
-.mobile-navbar.show {
-  -webkit-transition: ease 0.7s;
-  transition: ease 0.7s;
-  -webkit-transform: translate(0, 0);
-  transform: translate(0, 0);
-}
-
 .mobile-navbar .close-button {
   position: absolute;
   right: 30px;
@@ -12197,5 +12299,9 @@ svg {
 .order-cards-holder {
   width: 95%;
   margin: 60px auto;
+}
+
+.navbar-brand {
+  margin-right: 0;
 }
 

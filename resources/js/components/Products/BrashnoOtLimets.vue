@@ -2,7 +2,7 @@
     <div>
         <div v-for="item in limets">
             <div class="card">
-                <img class="card-img-top img-fluid" :src="'/uploads/' + item.limets_image" alt="">
+                <img class="card-img-top img-fluid" :src="'uploads/' + item.limets_image" alt="">
                 <div class="card-body">
                     <div class="row">
                         <div class="col-lg-6">

@@ -42,7 +42,7 @@
                             <a href="#">
 
                                 <img class="img-fluid"
-                                     :src="'/uploads/' + item.image" alt="">
+                                     :src="'uploads/' + item.image" alt="">
                             </a>
                         </div>
                         <div class="cart-product-name">

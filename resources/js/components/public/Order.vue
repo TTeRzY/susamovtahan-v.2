@@ -16,7 +16,7 @@
                 </div>
                 <div class="badge-img">
                     <a href="#" class="" @click="flyToCart(item)">
-                        <img class="card-img-top img-fluid" :src="'/uploads/' + item.image" alt="">
+                        <img class="card-img-top img-fluid" :src="'uploads/' + item.image" alt="">
                         <span>{{ item.name }}</span>
                     </a>
                 </div>

@@ -24,12 +24,12 @@
                         </p>
                     </div>
                     <div class="col-lg-5 about-page-body-image">
-                        <img class="img-fluid" :src="'/uploads/' + item.about_image" alt="">
+                        <img class="img-fluid" :src="'uploads/' + item.about_image" alt="">
                     </div>
                 </div>
                 <div class="row about-page-body-content" v-else>
                     <div class="col-lg-5 about-page-body-image">
-                        <img class="img-fluid" :src="'/uploads/' + item.about_image" alt="">
+                        <img class="img-fluid" :src="'uploads/' + item.about_image" alt="">
                     </div>
                     <div class="col-lg-7 about-page-body-text">
                         <h2>{{ item.about_title }}</h2>

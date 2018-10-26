@@ -2,7 +2,7 @@
     <div>
         <div v-for="item in susamovoMaslo">
             <div class="card">
-                <img class="card-img-top img-fluid" :src="'/uploads/' + item.sesame_oil_image" alt="">
+                <img class="card-img-top img-fluid" :src="'uploads/' + item.sesame_oil_image" alt="">
                 <div class="card-body">
                     <div class="row">
                         <div class="col-lg-6">

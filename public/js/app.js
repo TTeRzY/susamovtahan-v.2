@@ -29692,7 +29692,7 @@ var render = function() {
                     _c("img", {
                       staticClass: "d-block w-100",
                       attrs: {
-                        src: "/uploads/" + item.carousel_image,
+                        src: "uploads/" + item.carousel_image,
                         alt: "Carousel"
                       }
                     }),
@@ -29740,7 +29740,7 @@ var render = function() {
                     _c("img", {
                       staticClass: "img-fluid",
                       attrs: {
-                        src: "/uploads/" + item.product_image,
+                        src: "uploads/" + item.product_image,
                         alt: "Generic placeholder image"
                       }
                     })
@@ -29797,7 +29797,7 @@ var render = function() {
                         _c("img", {
                           staticClass: "featurette-image img-fluid mx-auto",
                           attrs: {
-                            src: "/uploads/" + sec.section_image,
+                            src: "uploads/" + sec.section_image,
                             alt: "Generic placeholder image"
                           }
                         })
@@ -30166,14 +30166,16 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "col-lg-5 about-page-body-image" }, [
                   _c("img", {
-                    attrs: { src: "/uploads/" + item.technology_image, alt: "" }
+                    staticClass: "img-fluid",
+                    attrs: { src: "uploads/" + item.technology_image, alt: "" }
                   })
                 ])
               ])
             : _c("div", { staticClass: "row technology-page-body-content" }, [
                 _c("div", { staticClass: "col-lg-5 about-page-body-image" }, [
                   _c("img", {
-                    attrs: { src: "/uploads/" + item.technology_image, alt: "" }
+                    staticClass: "img-fluid",
+                    attrs: { src: "uploads/" + item.technology_image, alt: "" }
                   })
                 ]),
                 _vm._v(" "),
@@ -30431,7 +30433,7 @@ var render = function() {
                 _c("div", { staticClass: "col-lg-5 about-page-body-image" }, [
                   _c("img", {
                     staticClass: "img-fluid",
-                    attrs: { src: "/uploads/" + item.about_image, alt: "" }
+                    attrs: { src: "uploads/" + item.about_image, alt: "" }
                   })
                 ])
               ])
@@ -30439,7 +30441,7 @@ var render = function() {
                 _c("div", { staticClass: "col-lg-5 about-page-body-image" }, [
                   _c("img", {
                     staticClass: "img-fluid",
-                    attrs: { src: "/uploads/" + item.about_image, alt: "" }
+                    attrs: { src: "uploads/" + item.about_image, alt: "" }
                   })
                 ]),
                 _vm._v(" "),
@@ -30971,7 +30973,7 @@ var render = function() {
                 _c("div", { staticClass: "image" }, [
                   _c("img", {
                     staticClass: "img-fluid",
-                    attrs: { src: "/uploads/" + item.contacts_image, alt: "" }
+                    attrs: { src: "uploads/" + item.contacts_image, alt: "" }
                   })
                 ]),
                 _vm._v(" "),
@@ -31559,7 +31561,7 @@ var render = function() {
                     _c("a", { attrs: { href: "#" } }, [
                       _c("img", {
                         staticClass: "img-fluid",
-                        attrs: { src: "/uploads/" + item.image, alt: "" }
+                        attrs: { src: "uploads/" + item.image, alt: "" }
                       })
                     ])
                   ]),
@@ -32350,7 +32352,7 @@ var render = function() {
               [
                 _c("img", {
                   staticClass: "card-img-top img-fluid",
-                  attrs: { src: "/uploads/" + item.image, alt: "" }
+                  attrs: { src: "uploads/" + item.image, alt: "" }
                 }),
                 _vm._v(" "),
                 _c("span", [_vm._v(_vm._s(item.name))])
@@ -32788,7 +32790,7 @@ var render = function() {
           _c("div", { staticClass: "card" }, [
             _c("img", {
               staticClass: "card-img-top img-fluid",
-              attrs: { src: "/uploads/" + item.tahan_image, alt: "" }
+              attrs: { src: "uploads/" + item.tahan_image, alt: "" }
             }),
             _vm._v(" "),
             _c("div", { staticClass: "card-body" }, [
@@ -33069,7 +33071,7 @@ var render = function() {
         _c("div", { staticClass: "card" }, [
           _c("img", {
             staticClass: "card-img-top img-fluid",
-            attrs: { src: "/uploads/" + item.sesame_oil_image, alt: "" }
+            attrs: { src: "uploads/" + item.sesame_oil_image, alt: "" }
           }),
           _vm._v(" "),
           _c("div", { staticClass: "card-body" }, [
@@ -33271,7 +33273,7 @@ var render = function() {
         _c("div", { staticClass: "card" }, [
           _c("img", {
             staticClass: "card-img-top img-fluid",
-            attrs: { src: "/uploads/" + item.limets_image, alt: "" }
+            attrs: { src: "uploads/" + item.limets_image, alt: "" }
           }),
           _vm._v(" "),
           _c("div", { staticClass: "card-body" }, [
@@ -33473,7 +33475,7 @@ var render = function() {
         _c("div", { staticClass: "card" }, [
           _c("img", {
             staticClass: "card-img-top img-fluid",
-            attrs: { src: "/uploads/" + item.honey_image, alt: "" }
+            attrs: { src: "uploads/" + item.honey_image, alt: "" }
           }),
           _vm._v(" "),
           _c("div", { staticClass: "card-body" }, [
@@ -33736,7 +33738,7 @@ exports = module.exports = __webpack_require__(0)(false);
 
 
 // module
-exports.push([module.i, "\n.gallery-page[data-v-06488e97]{\n    width: 100%;\n}\nh2[data-v-06488e97]{\n    padding: 45px 0;\n    color: #707070;\n}\n.row[data-v-06488e97]{\n    margin: 15px;\n}\n", ""]);
+exports.push([module.i, "\n.gallery-page[data-v-06488e97]{\n    width: 100%;\n}\nh2[data-v-06488e97]{\n    padding: 45px 0;\n    color: #707070;\n}\n", ""]);
 
 // exports
 
@@ -33837,7 +33839,7 @@ var render = function() {
                     display: "block"
                   },
                   attrs: {
-                    src: "/uploads/" + item.gallery_image,
+                    src: "uploads/" + item.gallery_image,
                     "data-holder-rendered": "true"
                   }
                 }),
@@ -34092,7 +34094,7 @@ var render = function() {
                     [
                       _c("source", {
                         attrs: {
-                          src: "/uploads/videos/" + item.video_content,
+                          src: "uploads/videos/" + item.video_content,
                           type: "video/mp4"
                         }
                       })
@@ -34132,7 +34134,7 @@ var render = function() {
                     [
                       _c("source", {
                         attrs: {
-                          src: "/uploads/videos/" + item.video_content,
+                          src: "uploads/videos/" + item.video_content,
                           type: "video/mp4"
                         }
                       })
@@ -55759,7 +55761,7 @@ exports = module.exports = __webpack_require__(0)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/* Enter and leave animations can use different */\n/* durations and timing functions.              */\n.slide-fade-enter-active[data-v-332fccf4] {\n    -webkit-transition: all .3s ease;\n    transition: all .3s ease;\n}\n.slide-fade-leave-active[data-v-332fccf4] {\n    -webkit-transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);\n    transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);\n}\n.slide-fade-enter[data-v-332fccf4], .slide-fade-leave-to[data-v-332fccf4]\n    /* .slide-fade-leave-active below version 2.1.8 */ {\n    -webkit-transform: translateX(10px);\n            transform: translateX(10px);\n    opacity: 0;\n}\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/* Enter and leave animations can use different */\n/* durations and timing functions.              */\n.slide-fade-enter-active[data-v-332fccf4] {\n    -webkit-transition: all .3s ease;\n    transition: all .3s ease;\n}\n.slide-fade-leave-active[data-v-332fccf4] {\n    -webkit-transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);\n    transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);\n}\n.slide-fade-enter[data-v-332fccf4], .slide-fade-leave-to[data-v-332fccf4]\n    /* .slide-fade-leave-active below version 2.1.8 */ {\n    -webkit-transform: translateX(10px);\n            transform: translateX(10px);\n    opacity: 0;\n}\n", ""]);
 
 // exports
 
@@ -55945,11 +55947,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
-            active: false,
             itemsInCart: [],
             cartItems: null
         };
@@ -55977,6 +55982,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 result += data[i].count;
             }
             this.cartItems = result;
+        },
+        '$route': function $route() {
+            $('.navbar-collapse').collapse('hide');
         }
     },
     created: function created() {
@@ -55996,92 +56004,6 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", { staticClass: "mobile-navbar", class: { show: _vm.active } }, [
-      _c("div", [
-        _c("a", { staticClass: "close-button", attrs: { href: "#" } }, [
-          _c("img", {
-            attrs: { src: __webpack_require__(117) },
-            on: {
-              click: function($event) {
-                _vm.active = !_vm.active
-              }
-            }
-          })
-        ]),
-        _vm._v(" "),
-        _c(
-          "ul",
-          { staticClass: "navbar-nav ml-auto" },
-          [
-            _c(
-              "router-link",
-              { staticClass: "navbar-brand", attrs: { to: "/" } },
-              [
-                _c("a", { staticClass: "nav-link" }, [
-                  _vm._v('"Йордан Каракехайов ЕООД"')
-                ])
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "router-link",
-              { staticClass: "nav-item", attrs: { tag: "li", to: "/order" } },
-              [_c("a", { staticClass: "nav-link" }, [_vm._v("Поръчай")])]
-            ),
-            _vm._v(" "),
-            _c(
-              "router-link",
-              { staticClass: "nav-item", attrs: { tag: "li", to: "/about" } },
-              [_c("a", { staticClass: "nav-link" }, [_vm._v("За Нас")])]
-            ),
-            _vm._v(" "),
-            _c(
-              "router-link",
-              {
-                staticClass: "nav-item",
-                attrs: { tag: "li", to: "/products" }
-              },
-              [_c("a", { staticClass: "nav-link" }, [_vm._v("Продукти")])]
-            ),
-            _vm._v(" "),
-            _c(
-              "router-link",
-              {
-                staticClass: "nav-item",
-                attrs: { tag: "li", to: "/contacts" }
-              },
-              [_c("a", { staticClass: "nav-link" }, [_vm._v("Контакти")])]
-            ),
-            _vm._v(" "),
-            _c(
-              "router-link",
-              {
-                staticClass: "nav-item",
-                attrs: { tag: "li", to: "/technology" }
-              },
-              [_c("a", { staticClass: "nav-link" }, [_vm._v("Технология")])]
-            ),
-            _vm._v(" "),
-            _c(
-              "router-link",
-              { staticClass: "nav-item", attrs: { tag: "li", to: "/gallery" } },
-              [_c("a", { staticClass: "nav-link" }, [_vm._v("Галерия")])]
-            ),
-            _vm._v(" "),
-            _c(
-              "router-link",
-              {
-                staticClass: "nav-item video-item",
-                attrs: { tag: "li", to: "/videos" }
-              },
-              [_c("a", { staticClass: "nav-link" }, [_vm._v("Видео")])]
-            )
-          ],
-          1
-        )
-      ])
-    ]),
-    _vm._v(" "),
     _c(
       "nav",
       {
@@ -56160,100 +56082,103 @@ var render = function() {
             attrs: {
               type: "button",
               "aria-controls": "mobileNavbar",
+              "aria-label": "Toggle navigation",
               "aria-expanded": "false",
-              "aria-label": "Toggle navigation"
-            },
-            on: {
-              click: function($event) {
-                _vm.active = !_vm.active
-              }
+              "data-toggle": "collapse",
+              "data-target": "#mobileNavbar"
             }
           },
-          [
-            _c("img", {
-              attrs: { src: __webpack_require__(118), alt: "" }
-            })
-          ]
+          [_c("img", { attrs: { src: "images/hamMenu.png", alt: "" } })]
         ),
         _vm._v(" "),
         _c(
-          "ul",
-          { staticClass: "navbar-nav ml-auto d-none d-md-flex" },
+          "div",
+          {
+            staticClass: "collapse navbar-collapse",
+            attrs: { id: "mobileNavbar" }
+          },
           [
             _c(
-              "router-link",
-              { staticClass: "nav-item", attrs: { tag: "li", to: "/order" } },
-              [_c("a", { staticClass: "nav-link" }, [_vm._v("Поръчай")])]
-            ),
-            _vm._v(" "),
-            _c(
-              "router-link",
-              { staticClass: "nav-item", attrs: { tag: "li", to: "/about" } },
-              [_c("a", { staticClass: "nav-link" }, [_vm._v("За Нас")])]
-            ),
-            _vm._v(" "),
-            _c(
-              "router-link",
-              {
-                staticClass: "nav-item",
-                attrs: { tag: "li", to: "/products" }
-              },
-              [_c("a", { staticClass: "nav-link" }, [_vm._v("Продукти")])]
-            ),
-            _vm._v(" "),
-            _c(
-              "router-link",
-              {
-                staticClass: "nav-item",
-                attrs: { tag: "li", to: "/contacts" }
-              },
-              [_c("a", { staticClass: "nav-link" }, [_vm._v("Контакти")])]
-            ),
-            _vm._v(" "),
-            _c(
-              "router-link",
-              {
-                staticClass: "nav-item",
-                attrs: { tag: "li", to: "/technology" }
-              },
-              [_c("a", { staticClass: "nav-link" }, [_vm._v("Технология")])]
-            ),
-            _vm._v(" "),
-            _c(
-              "router-link",
-              { staticClass: "nav-item", attrs: { tag: "li", to: "/gallery" } },
-              [_c("a", { staticClass: "nav-link" }, [_vm._v("Галерия")])]
-            ),
-            _vm._v(" "),
-            _c(
-              "router-link",
-              { staticClass: "nav-item", attrs: { tag: "li", to: "/videos" } },
-              [_c("a", { staticClass: "nav-link" }, [_vm._v("Видео")])]
-            ),
-            _vm._v(" "),
-            _c(
-              "router-link",
-              {
-                staticClass: "nav-item cart d-none d-lg-block",
-                attrs: { tag: "li", to: "/cart" }
-              },
+              "ul",
+              { staticClass: "navbar-nav ml-auto d-md-flex" },
               [
-                _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
-                  _c(
-                    "svg",
-                    {
-                      attrs: {
-                        xmlns: "http://www.w3.org/2000/svg",
-                        viewBox: "0 0 23.854 22.917"
-                      }
-                    },
-                    [
+                _c(
+                  "router-link",
+                  {
+                    staticClass: "nav-item",
+                    attrs: { tag: "li", to: "/order" }
+                  },
+                  [_c("a", { staticClass: "nav-link" }, [_vm._v("Поръчай")])]
+                ),
+                _vm._v(" "),
+                _c(
+                  "router-link",
+                  {
+                    staticClass: "nav-item",
+                    attrs: { tag: "li", to: "/about" }
+                  },
+                  [_c("a", { staticClass: "nav-link" }, [_vm._v("За Нас")])]
+                ),
+                _vm._v(" "),
+                _c(
+                  "router-link",
+                  {
+                    staticClass: "nav-item",
+                    attrs: { tag: "li", to: "/products" }
+                  },
+                  [_c("a", { staticClass: "nav-link" }, [_vm._v("Продукти")])]
+                ),
+                _vm._v(" "),
+                _c(
+                  "router-link",
+                  {
+                    staticClass: "nav-item",
+                    attrs: { tag: "li", to: "/contacts" }
+                  },
+                  [_c("a", { staticClass: "nav-link" }, [_vm._v("Контакти")])]
+                ),
+                _vm._v(" "),
+                _c(
+                  "router-link",
+                  {
+                    staticClass: "nav-item",
+                    attrs: { tag: "li", to: "/technology" }
+                  },
+                  [_c("a", { staticClass: "nav-link" }, [_vm._v("Технология")])]
+                ),
+                _vm._v(" "),
+                _c(
+                  "router-link",
+                  {
+                    staticClass: "nav-item",
+                    attrs: { tag: "li", to: "/gallery" }
+                  },
+                  [_c("a", { staticClass: "nav-link" }, [_vm._v("Галерия")])]
+                ),
+                _vm._v(" "),
+                _c(
+                  "router-link",
+                  {
+                    staticClass: "nav-item",
+                    attrs: { tag: "li", to: "/videos" }
+                  },
+                  [_c("a", { staticClass: "nav-link" }, [_vm._v("Видео")])]
+                ),
+                _vm._v(" "),
+                _c(
+                  "router-link",
+                  {
+                    staticClass: "nav-item cart d-none d-lg-block",
+                    attrs: { tag: "li", to: "/cart" }
+                  },
+                  [
+                    _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
                       _c(
-                        "g",
+                        "svg",
                         {
                           attrs: {
-                            id: "Group_1132",
-                            transform: "translate(-2725 -529)"
+                            xmlns: "http://www.w3.org/2000/svg",
+                            viewBox: "0 0 23.854 22.917"
                           }
                         },
                         [
@@ -56261,35 +56186,46 @@ var render = function() {
                             "g",
                             {
                               attrs: {
-                                id: "Group_956",
-                                transform: "translate(2725 529)"
+                                id: "Group_1132",
+                                transform: "translate(-2725 -529)"
                               }
                             },
                             [
-                              _c("path", {
-                                staticClass: "cls-1",
-                                attrs: {
-                                  id: "Path_228",
-                                  d:
-                                    "M23.6,17.494a1.184,1.184,0,0,1,.237.947l-1,5.737a1.082,1.082,0,0,1-.408.737,1.237,1.237,0,0,1-.8.289H7.048l-.289,1.632H20.653a1.21,1.21,0,0,1,.868.355,1.239,1.239,0,0,1,0,1.763,1.21,1.21,0,0,1-.868.355H5.285a1.222,1.222,0,0,1-.947-.447,1.278,1.278,0,0,1-.289-1.026l.658-3.579-1-10.052L.864,13.31A1.164,1.164,0,0,1,.141,12.7a1.308,1.308,0,0,1-.092-.947,1.157,1.157,0,0,1,.618-.724,1.286,1.286,0,0,1,.934-.092L5.232,12.1a1.115,1.115,0,0,1,.566.395,1.376,1.376,0,0,1,.276.658l.211,2,16.473,1.842A1.171,1.171,0,0,1,23.6,17.494ZM7.154,29.994a1.887,1.887,0,0,1,1.895,1.895A1.871,1.871,0,0,1,8.5,33.244a1.875,1.875,0,0,1-2.684,0,1.871,1.871,0,0,1-.553-1.355,1.887,1.887,0,0,1,1.895-1.895Zm11.237,0a1.887,1.887,0,0,1,1.895,1.895,1.871,1.871,0,0,1-.553,1.355,1.875,1.875,0,0,1-2.684,0,1.871,1.871,0,0,1-.553-1.355,1.887,1.887,0,0,1,1.895-1.895Z",
-                                  transform: "translate(0 -10.893)"
-                                }
-                              })
+                              _c(
+                                "g",
+                                {
+                                  attrs: {
+                                    id: "Group_956",
+                                    transform: "translate(2725 529)"
+                                  }
+                                },
+                                [
+                                  _c("path", {
+                                    staticClass: "cls-1",
+                                    attrs: {
+                                      id: "Path_228",
+                                      d:
+                                        "M23.6,17.494a1.184,1.184,0,0,1,.237.947l-1,5.737a1.082,1.082,0,0,1-.408.737,1.237,1.237,0,0,1-.8.289H7.048l-.289,1.632H20.653a1.21,1.21,0,0,1,.868.355,1.239,1.239,0,0,1,0,1.763,1.21,1.21,0,0,1-.868.355H5.285a1.222,1.222,0,0,1-.947-.447,1.278,1.278,0,0,1-.289-1.026l.658-3.579-1-10.052L.864,13.31A1.164,1.164,0,0,1,.141,12.7a1.308,1.308,0,0,1-.092-.947,1.157,1.157,0,0,1,.618-.724,1.286,1.286,0,0,1,.934-.092L5.232,12.1a1.115,1.115,0,0,1,.566.395,1.376,1.376,0,0,1,.276.658l.211,2,16.473,1.842A1.171,1.171,0,0,1,23.6,17.494ZM7.154,29.994a1.887,1.887,0,0,1,1.895,1.895A1.871,1.871,0,0,1,8.5,33.244a1.875,1.875,0,0,1-2.684,0,1.871,1.871,0,0,1-.553-1.355,1.887,1.887,0,0,1,1.895-1.895Zm11.237,0a1.887,1.887,0,0,1,1.895,1.895,1.871,1.871,0,0,1-.553,1.355,1.875,1.875,0,0,1-2.684,0,1.871,1.871,0,0,1-.553-1.355,1.887,1.887,0,0,1,1.895-1.895Z",
+                                      transform: "translate(0 -10.893)"
+                                    }
+                                  })
+                                ]
+                              )
                             ]
                           )
                         ]
-                      )
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c("span", { staticClass: "added-items" }, [
-                    _vm._v(_vm._s(_vm.cartItems))
-                  ])
-                ])
-              ]
+                      ),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "added-items" }, [
+                        _vm._v(_vm._s(_vm.cartItems))
+                      ])
+                    ])
+                  ]
+                )
+              ],
+              1
             )
-          ],
-          1
+          ]
         )
       ],
       1
@@ -56490,18 +56426,8 @@ if (false) {
 }
 
 /***/ }),
-/* 117 */
-/***/ (function(module, exports) {
-
-module.exports = "/images/CloseButton.png?a501922704564da9e7d8ded06d9d37b8";
-
-/***/ }),
-/* 118 */
-/***/ (function(module, exports) {
-
-module.exports = "/images/hamMenu.png?2a76554bc1ec96e3026d71c84870da63";
-
-/***/ }),
+/* 117 */,
+/* 118 */,
 /* 119 */
 /***/ (function(module, exports) {
 

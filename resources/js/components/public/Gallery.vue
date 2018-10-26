@@ -15,7 +15,7 @@
                         <div class="card mb-4 shadow-sm">
                             <img class="card-img-top"
                                  style="height: 225px; width: 100%; display: block;"
-                                 :src="'/uploads/' + item.gallery_image" data-holder-rendered="true">
+                                 :src="'uploads/' + item.gallery_image" data-holder-rendered="true">
                             <div class="card-body">
                                 <p class="card-text">
                                     {{ item.gallery_info }}
@@ -64,8 +64,5 @@
     h2{
         padding: 45px 0;
         color: #707070;
-    }
-    .row{
-        margin: 15px;
     }
 </style>

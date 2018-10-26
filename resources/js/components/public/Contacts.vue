@@ -73,7 +73,7 @@
                     <div class="box">
                         <div class="icon">
                             <div class="image">
-                                <img class="img-fluid" :src="'/uploads/' + item.contacts_image" alt="">
+                                <img class="img-fluid" :src="'uploads/' + item.contacts_image" alt="">
                             </div>
                             <div class="info">
                                 <h3 class="title">{{ item.contacts_title}}</h3>

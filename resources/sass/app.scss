@@ -52,7 +52,7 @@
 
 .navbar-expand-lg{
   background-color: $green-sheen;
-  padding: 30px 0;
+  padding: 12px 0;
   @media #{$tablets} {
     padding: 30px 15px;
   }
@@ -313,8 +313,13 @@
 
         h2{
           color: $dark-silver-ver1;
-          font-size: 46px;
+          font-size: 27px;
           font-weight: $bold;
+          padding-top: 30px;
+          @media #{$laptops} {
+            padding-top: 15px;
+            font-size: 46px;
+          }
         }
 
         p{
@@ -427,7 +432,13 @@ footer{
   }
 
   .carousel-item{
-    max-height: 650px;
+    max-height: 160px;
+    @media #{$tablets}{
+      max-height: 320px;
+    }
+    @media #{$laptops}{
+      max-height: 650px;
+    }
   }
 
   .carousel-caption{
@@ -738,7 +749,7 @@ input[type="number"] {
   border-radius: 30px;
   min-height: 65px;
   margin-top: 45px;
-  font-size: 16px !important;
+  font-size: 14px !important;
   display: -ms-flex;
   display: flex;
   align-items: center;
@@ -858,6 +869,7 @@ svg {
 }
 
 .pages_template{
+  padding-top: 70px;
   background: #fafafa;
 }
 
@@ -973,7 +985,10 @@ svg {
     a{
       color: $raisin-black;;
       font-weight: 700;
-      font-size: 14px;
+      font-size: 13px;
+      @media #{$tablets} {
+        font-size: 14px;
+      }
     }
 
   }
@@ -1139,6 +1154,7 @@ svg {
 }
 
 .products-holder{
+  padding-top: 50px;
 
   .btn-secondary{
     color: $white !important;
@@ -1164,6 +1180,10 @@ svg {
       min-height: 220px;
       background: $green-sheen;
     }
+  }
+
+  @media #{$laptops} {
+    padding-top: 0;
   }
 }
 
@@ -1196,6 +1216,7 @@ svg {
 }
 
 .products-page-holder{
+  margin-bottom: 60px;
   .list-group{
     .list-group-item{
       &.router-link-active{
@@ -1219,6 +1240,9 @@ svg {
       transition: ease 0.3s;
     }
   }
+  @media #{$laptops} {
+    margin-bottom: 0;
+  }
 }
 
 
@@ -1228,8 +1252,11 @@ svg {
 
 #parent{
   background-color: $white;
-  padding: 60px;
+  padding: 15px;
   margin-bottom: 80px;
+  @media #{$laptops} {
+    padding: 60px;
+  }
 }
 
 .contacts-header{
@@ -1257,9 +1284,12 @@ svg {
 
 .second-portion{
   background-color: $white;
-  padding: 60px;
+  padding: 15px;
   margin-top:50px;
   margin-bottom: 80px;
+  @media #{$laptops} {
+    padding: 60px;
+  }
 }
 
 .box {
@@ -1378,11 +1408,14 @@ svg {
 }
 
 .technology-page-body-content{
-  padding: 60px 80px;
+  padding: 60px 15px;
   margin-bottom: 80px;
   position: relative;
   z-index: 0;
   background-color: $white;
+  @media #{$laptops} {
+    padding: 60px 80px;
+  }
 
   /*
   .white-background-box{
@@ -1398,17 +1431,48 @@ svg {
 }
 
 .vue-navbar{
+  z-index: 9999;
+  position: fixed;
   overflow: hidden;
   top:0;
   left: 0;
   transition: ease 0.8s;
-  position: relative;
   width: 100%;
  &.sticky{
    position: fixed;
    z-index: 9999;
    transition: ease 0.8s;
  }
+
+  .navbar-collapse{
+    margin: 15px;
+
+    ul{
+      border-top: 1px solid $white;
+      border-bottom: 1px solid $white;
+      justify-content: center;
+      align-items: center;
+
+      .nav-link{
+        font-size: 16px;
+        padding: 15px 0;
+        @media #{$tablets} {
+          padding: 0;
+        }
+      }
+
+      @media #{$tablets} {
+        border: none;
+      }
+    }
+    @media #{$tablets} {
+      margin: 0;
+    }
+  }
+
+  @media #{$laptops} {
+    position: relative;
+  }
 }
 
 .email-table-template{
@@ -1459,16 +1523,15 @@ svg {
 }
 
 .mobile-navbar{
+  display: none;
   background-color: $green-sheen;
   text-align: center;
   padding: 80px 30px 60px;
-  position: absolute;
-  z-index: 999;
+  position: relative;
+  z-index: 10000;
   width: 100%;
   overflow: hidden;
   transition: ease 0.7s;
-  transform: translate(0, -100%);
-  -webkit-transform: translate(0, -100%);
   .navbar-brand{
     padding-bottom: 15px;
     margin-bottom: 20px;
@@ -1484,12 +1547,6 @@ svg {
     border-bottom: 1px solid $white;
     padding-bottom: 15px;
   }
-  &.show{
-    transition: ease 0.7s;
-    -webkit-transform: translate(0, 0);
-    transform: translate(0, 0);
-  }
-
   .close-button{
     position: absolute;
     right: 30px;
@@ -1509,4 +1566,8 @@ svg {
 .order-cards-holder{
   width: 95%;
   margin: 60px auto;
+}
+
+.navbar-brand{
+  margin-right: 0;
 }

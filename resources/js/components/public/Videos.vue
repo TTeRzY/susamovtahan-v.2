@@ -13,7 +13,7 @@
                <div class="row news-holder" v-if="index % 2 === 0">
                    <div class="col-lg-8">
                        <video controls="" width="100%" height="auto">
-                           <source :src="'/uploads/videos/' + item.video_content" type="video/mp4">
+                           <source :src="'uploads/videos/' + item.video_content" type="video/mp4">
                        </video>
                    </div>
                    <!-- /.col-lg-8 -->
@@ -34,7 +34,7 @@
                     </div>
                     <div class="col-lg-8">
                         <video controls="" width="100%" height="auto">
-                            <source :src="'/uploads/videos/' + item.video_content" type="video/mp4">
+                            <source :src="'uploads/videos/' + item.video_content" type="video/mp4">
                         </video>
                     </div>
 

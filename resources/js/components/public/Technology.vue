@@ -23,12 +23,12 @@
                         </p>
                     </div>
                     <div class="col-lg-5 about-page-body-image">
-                        <img :src="'/uploads/' + item.technology_image" alt="">
+                        <img class="img-fluid" :src="'uploads/' + item.technology_image" alt="">
                     </div>
                 </div>
                 <div class="row technology-page-body-content" v-else>
                     <div class="col-lg-5 about-page-body-image">
-                        <img :src="'/uploads/' + item.technology_image" alt="">
+                        <img class="img-fluid" :src="'uploads/' + item.technology_image" alt="">
                     </div>
                     <div class="col-lg-7 about-page-body-text">
                         <h2>{{ item.technology_title }}</h2>
